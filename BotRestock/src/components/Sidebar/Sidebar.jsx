@@ -26,13 +26,13 @@ class Sidebar extends Component {
                 <div className="aside-holder">
                     <nav className="aside-nav">
                         <ul>
-                            <li className="active">
+                            <li className={window.location.pathname == "/" ? "active": ""}>
                                 <a onClick={this.index}>
                                     <img className="normal" width="20" height="20" src="/images/dash.svg" alt="description" />
                                     <img className="over" width="20" height="20" src="/images/dash-hov.svg" alt="description" />
                                 </a>
                             </li>
-                            <li>
+                            <li className={window.location.pathname == "/settings" ? "active": ""}>
                                 <a onClick={this.settings}>
                                     <img className="normal" width="19" height="20" src="/images/setting.svg" alt="description" />
                                     <img className="over" width="19" height="20" src="/images/setting-hov.svg" alt="description" />
