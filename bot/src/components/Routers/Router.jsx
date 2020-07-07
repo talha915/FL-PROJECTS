@@ -7,7 +7,7 @@ function Router() {
   return (
     <div >
       <Switch>
-        <Route path="/" component={Index} />
+        <Route path="/" component={Index} exact />
         <Route path="/settings" component={Settings} />
       </Switch>
     </div>

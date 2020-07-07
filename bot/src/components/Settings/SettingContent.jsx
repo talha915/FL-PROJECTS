@@ -26,14 +26,14 @@ class SettingContent extends Component {
                         </div>
                         <ul className="info">
                             <li>
-                                <strong className="title" >Need some help?</strong>
+                                <strong className="title">Need some help?</strong>
                                 <p>Join our Discord server for more help and guides.</p>
-                                <a  className="btn btn-gradient"><i className="icon-discord"></i>Need some help?</a>
+                                <a href="#" className="btn btn-gradient"><i className="icon-discord"></i>Need some help?</a>
                             </li>
                             <li>
                                 <strong className="title">Stay Updated</strong>
                                 <p>Follow us on Twitter to stay up to date on out progress and succes!</p>
-                                <a onClick={this.addToken} className="btn btn-gradient-blue tweets-opener"><i className="icon-twitter"></i>Need some help?</a>
+                                <a href="#" className="btn btn-gradient-blue tweets-opener"><i className="icon-twitter"></i>Need some help?</a>
                             </li>
                         </ul>
                     </div>
@@ -61,7 +61,7 @@ class SettingContent extends Component {
                                     <i className="icon icon-setting"></i>
                                     <input type="text" placeholder="Token Name" />
                                 </div>
-                                <a className="btn btn-primary" ><i className="icon-plus"></i>Add Token</a>
+                                <a className="btn btn-primary" onClick={this.addToken}><i className="icon-plus"></i>Add Token</a>
                             </div>
                         </form>
                         <div className="table-data token">
