@@ -41,7 +41,7 @@ class PopupTweets extends Component {
                                                 <span className="d-block"><a href="#">https://cybersole.io/pacman/password?=H984erYTVNERSlergGUSuiv</a></span>
                                             </div>
                                             <strong className="password">Password:ff927gfeuef</strong>
-                                            {/* <time className="time" datetime="2011-01-12">11:09:43.734 AM</time> */}
+                                            <time className="time" datetime="2011-01-12">11:09:43.734 AM</time>
                                         </div>
                                     </li>
                                     <li>
@@ -57,7 +57,7 @@ class PopupTweets extends Component {
                                                 <strong className="title">Restock Live FCFS:</strong>
                                                 <span className="d-block"><a href="#">https://cybersole.io/password?=</a></span>
                                             </div>
-                                            {/* <time className="time" datetime="2011-01-12">11:09:43.734 AM</time> */}
+                                            <time className="time" datetime="2011-01-12">11:09:43.734 AM</time>
                                         </div>
                                     </li>
                                 </ul>
