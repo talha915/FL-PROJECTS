@@ -1971,7 +1971,7 @@ a {
 }
 
 .scroll-holder {
-	height: calc(100vh - 200px);
+	height: calc(100vh - 200px) !important;
 	overflow: auto;
 }
 
