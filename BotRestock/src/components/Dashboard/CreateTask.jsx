@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Select from 'react-select';
 import '../../styles/main.css';
 
 class CreateTask extends Component {
@@ -8,7 +8,8 @@ class CreateTask extends Component {
         super(props);
         this.state = {
             closeTask: false,
-            autoCheck: false
+            autoCheck: false,
+            values: ''
         }
     }
 
@@ -20,6 +21,15 @@ class CreateTask extends Component {
     checkout=()=> {
         this.setState({autoCheck: !this.state.autoCheck});
     }
+
+    dummyOptions = [
+        { label: "Option1", value: 1 },
+        { label: "Option2", value: 2 },
+        { label: "Option3", value: 3 },
+        { label: "Option4", value: 4 },
+        { label: "Option5", value: 5 },
+        { label: "Option6", value: 6 },
+    ];
 
     render() {
         return (
@@ -50,11 +60,12 @@ class CreateTask extends Component {
                                         <div className="form-group">
                                             <i className="icon icon-setting"></i>
                                             <div className="custom-select">
-                                                <select>
+                                                {/* <select>
                                                     <option>Discord Token</option>
                                                     <option>Discord Token 2</option>
                                                     <option>Discord Token 3</option>
-                                                </select>
+                                                </select> */}
+                                                <Select options={ this.dummyOptions } />
                                             </div>
                                         </div>
                                     </div>
@@ -93,11 +104,12 @@ class CreateTask extends Component {
                                                 <div className="form-group">
                                                     <i className="icon icon-dash"></i>
                                                     <div className="custom-select">
-                                                        <select>
+                                                        {/* <select>
                                                             <option>Dashboard Type</option>
                                                             <option>Dashboard Type 2</option>
                                                             <option>Dashboard Type 3</option>
-                                                        </select>
+                                                        </select> */}
+                                                        <Select options={ this.dummyOptions } />
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
@@ -109,11 +121,12 @@ class CreateTask extends Component {
                                                 <div className="form-group">
                                                     <i className="icon icon-user"></i>
                                                     <div className="custom-select">
-                                                        <select>
+                                                        {/* <select>
                                                             <option>Select Profile</option>
                                                             <option>Profile 1</option>
                                                             <option>Profile 2</option>
-                                                        </select>
+                                                        </select> */}
+                                                        <Select options={ this.dummyOptions } />
                                                     </div>
                                                 </div>
                                                 <div className="form-group">

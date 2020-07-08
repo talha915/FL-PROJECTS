@@ -584,6 +584,7 @@ textarea {
 	box-sizing: border-box;
 	border: 1px solid #4b4a5c;
 	padding: 11px 16px 11px 43px;
+	outline: none !important;
 	border-radius: 8px;
 	height: 40px;
 	width: 100%;
@@ -1605,6 +1606,8 @@ a {
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
 	margin-left: 15px;
+	display: flex;
+	align-items: center;
 }
 
 .tweet-popup-head .heading {
