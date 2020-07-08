@@ -74,8 +74,73 @@ class SettingContent extends Component {
                                     <div className="th">Actions</div>
                                 </div>
                             </div>
-                            <Scrollbars >
+                            <Scrollbars style={{ height: 350 }} className="scrollbar-holder">
                                 <div className="tbody">
+                                    <div className="tr">
+                                        <div data-title="ID" className="td"><div className="text">1</div></div>
+                                        <div data-title="Name" className="td"><div className="text">Bot 2</div></div>
+                                        <div data-title="Token" className="td"><div className="text"><span className="key">9rtJq9.34tc9Hwy!qut09yEH209ryq39t209y3rWuyw4ytow</span></div></div>
+                                        <div data-title="Actions" className="td">
+                                            <div className="text">
+                                                <ul className="action-list">
+                                                    <li><a href="#"><i className="icon-pencil"></i></a></li>
+                                                    <li><a href="#"><i className="icon-cross"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="tr">
+                                        <div data-title="ID" className="td"><div className="text">1</div></div>
+                                        <div data-title="Name" className="td"><div className="text">Bot 2</div></div>
+                                        <div data-title="Token" className="td"><div className="text"><span className="key">9rtJq9.34tc9Hwy!qut09yEH209ryq39t209y3rWuyw4ytow</span></div></div>
+                                        <div data-title="Actions" className="td">
+                                            <div className="text">
+                                                <ul className="action-list">
+                                                    <li><a href="#"><i className="icon-pencil"></i></a></li>
+                                                    <li><a href="#"><i className="icon-cross"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="tr">
+                                        <div data-title="ID" className="td"><div className="text">1</div></div>
+                                        <div data-title="Name" className="td"><div className="text">Bot 2</div></div>
+                                        <div data-title="Token" className="td"><div className="text"><span className="key">9rtJq9.34tc9Hwy!qut09yEH209ryq39t209y3rWuyw4ytow</span></div></div>
+                                        <div data-title="Actions" className="td">
+                                            <div className="text">
+                                                <ul className="action-list">
+                                                    <li><a href="#"><i className="icon-pencil"></i></a></li>
+                                                    <li><a href="#"><i className="icon-cross"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="tr">
+                                        <div data-title="ID" className="td"><div className="text">1</div></div>
+                                        <div data-title="Name" className="td"><div className="text">Bot 2</div></div>
+                                        <div data-title="Token" className="td"><div className="text"><span className="key">9rtJq9.34tc9Hwy!qut09yEH209ryq39t209y3rWuyw4ytow</span></div></div>
+                                        <div data-title="Actions" className="td">
+                                            <div className="text">
+                                                <ul className="action-list">
+                                                    <li><a href="#"><i className="icon-pencil"></i></a></li>
+                                                    <li><a href="#"><i className="icon-cross"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="tr">
+                                        <div data-title="ID" className="td"><div className="text">1</div></div>
+                                        <div data-title="Name" className="td"><div className="text">Bot 2</div></div>
+                                        <div data-title="Token" className="td"><div className="text"><span className="key">9rtJq9.34tc9Hwy!qut09yEH209ryq39t209y3rWuyw4ytow</span></div></div>
+                                        <div data-title="Actions" className="td">
+                                            <div className="text">
+                                                <ul className="action-list">
+                                                    <li><a href="#"><i className="icon-pencil"></i></a></li>
+                                                    <li><a href="#"><i className="icon-cross"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div className="tr">
                                         <div data-title="ID" className="td"><div className="text">1</div></div>
                                         <div data-title="Name" className="td"><div className="text">Bot 2</div></div>
