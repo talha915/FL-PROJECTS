@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 
+import {withRouter} from 'react-router-dom';
+
+
 import '../../styles/main.css';
 
 class Sidebar extends Component {
+
+    index=()=> {
+        this.props.history.push('/');
+    }
+
+    settings=()=> {
+        this.props.history.push('/settings');
+    }
+
     render() {
         return (
             <aside className="aside">
@@ -14,14 +26,14 @@ class Sidebar extends Component {
                 <div className="aside-holder">
                     <nav className="aside-nav">
                         <ul>
-                            <li className="active">
-                                <a href="index.html">
+                            <li className={window.location.pathname == "/" ? "active": ""}>
+                                <a onClick={this.index}>
                                     <img className="normal" width="20" height="20" src="/images/dash.svg" alt="description" />
                                     <img className="over" width="20" height="20" src="/images/dash-hov.svg" alt="description" />
                                 </a>
                             </li>
-                            <li>
-                                <a href="settings.html">
+                            <li className={window.location.pathname == "/settings" ? "active": ""}>
+                                <a onClick={this.settings}>
                                     <img className="normal" width="19" height="20" src="/images/setting.svg" alt="description" />
                                     <img className="over" width="19" height="20" src="/images/setting-hov.svg" alt="description" />
                                 </a>
@@ -35,4 +47,4 @@ class Sidebar extends Component {
     }
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);

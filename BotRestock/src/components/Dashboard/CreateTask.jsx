@@ -7,13 +7,18 @@ class CreateTask extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            closeTask: false
+            closeTask: false,
+            autoCheck: false
         }
     }
 
     closeTask=()=> {
         this.setState({closeTask: !this.state.closeTask});
         this.props.taskStatus(false);
+    }
+
+    checkout=()=> {
+        this.setState({autoCheck: !this.state.autoCheck});
     }
 
     render() {
@@ -76,8 +81,9 @@ class CreateTask extends Component {
                                     <div className="checkout-box">
                                         <label className="custom-checkbox">
                                             <input type="checkbox" />
-                                            <span className="custom-lable">Auto Checkout</span>
+                                            <span className="custom-lable" onClick={this.checkout}>Auto Checkout</span>
                                         </label>
+                                        {this.state.autoCheck && this.state.autoCheck ?
                                         <div className="checkout-filed active">
                                             <div className="form-row">
                                                 <div className="form-group">
@@ -112,6 +118,7 @@ class CreateTask extends Component {
                                                 </div>
                                             </div>
                                         </div>
+                                        : ''}
                                     </div>
                                     <div className="popup-tfoot">
                                         <a href="#" className="btn btn-primary"><i className="icon-plus"></i>Create Task</a>

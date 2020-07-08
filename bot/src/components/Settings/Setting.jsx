@@ -15,8 +15,12 @@ class Setting extends Component {
         }
     }
 
-    popupTweets=()=> {
-        this.setState({ popupTweet: !this.state.popupTweet });
+    addToken=(props)=> {
+        this.setState({ popupTweet: props });
+    }
+
+    closeTweets=(props)=> {
+        this.setState({ popupTweet: props });
     }
 
     render() {
@@ -25,13 +29,13 @@ class Setting extends Component {
                 <div id="page">
                     <main className="dashboard-wrap">
                         <Sidebar />
-                        <SettingContent addToken={this.popupTweets}/>
+                        <SettingContent addToken={this.addToken}/>
                     </main>
                 </div>
-
+                
                 {   
                     this.state.popupTweet && this.state.popupTweet ? 
-                        <PopupTweets />
+                        <PopupTweets closeTweets={this.closeTweets}/>
                     :
                         ''    
                 }

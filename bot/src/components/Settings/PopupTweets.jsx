@@ -3,9 +3,14 @@ import React, { Component } from 'react';
 import '../../styles/main.css';
 
 class PopupTweets extends Component {
+
+    closePopUp=()=> {
+        this.props.closeTweets(false);
+    }
+
     render() {
         return (
-            <div className="popup-task-active">
+            <div className="popup-tweets-active">
                 <div className="popup popup-tweets">
                     <div className="popup-frame">
                         <div className="pupup-content">
@@ -18,7 +23,7 @@ class PopupTweets extends Component {
                                 <div className="heading">
                                     <h3>Monitoring Tweets</h3>
                                 </div>
-                                <a href="#" className="btn small btn-danger close-tweets-popup"><i className="icon-cross"></i></a>
+                                <a onClick={this.closePopUp} className="btn small btn-danger close-tweets-popup"><i className="icon-cross"></i></a>
                             </div>
                             <div className="popup-body">
                                 <ul className="tweet-list">
@@ -36,7 +41,7 @@ class PopupTweets extends Component {
                                                 <span className="d-block"><a href="#">https://cybersole.io/pacman/password?=H984erYTVNERSlergGUSuiv</a></span>
                                             </div>
                                             <strong className="password">Password:ff927gfeuef</strong>
-                                            {/* <time className="time" datetime="2011-01-12">11:09:43.734 AM</time> */}
+                                            <time className="time" datetime="2011-01-12">11:09:43.734 AM</time>
                                         </div>
                                     </li>
                                     <li>
@@ -52,7 +57,7 @@ class PopupTweets extends Component {
                                                 <strong className="title">Restock Live FCFS:</strong>
                                                 <span className="d-block"><a href="#">https://cybersole.io/password?=</a></span>
                                             </div>
-                                            {/* <time className="time" datetime="2011-01-12">11:09:43.734 AM</time> */}
+                                            <time className="time" datetime="2011-01-12">11:09:43.734 AM</time>
                                         </div>
                                     </li>
                                 </ul>
