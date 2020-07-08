@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import SettingContent from '../Settings/SettingContent';
 import PopupTweets from '../Settings/PopupTweets';
-
+import {withRouter} from 'react-router-dom';
 import '../../styles/main.css';
 
 class Setting extends Component {
@@ -23,6 +23,10 @@ class Setting extends Component {
         this.setState({ popupTweet: props });
     }
 
+    popUpTweets=()=> {
+        this.props.history.push('/settings/PopupTweets');
+    }
+
     render() {
         return (
             <div>
@@ -32,7 +36,12 @@ class Setting extends Component {
                         <SettingContent addToken={this.addToken}/>
                     </main>
                 </div>
-                
+                {/* {
+                    this.state.popupTweet && this.state.popupTweet ?
+                    this.popUpTweets()
+                    : 
+                    ''
+                } */}
                 {   
                     this.state.popupTweet && this.state.popupTweet ? 
                         <PopupTweets closeTweets={this.closeTweets}/>
@@ -44,4 +53,4 @@ class Setting extends Component {
     }
 }
 
-export default Setting;
+export default withRouter(Setting);

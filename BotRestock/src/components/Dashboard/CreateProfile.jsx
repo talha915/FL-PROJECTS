@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Scrollbars } from 'react-custom-scrollbars';
 class CreateProfile extends Component {
 
     closeProfile=()=> {
@@ -69,6 +69,7 @@ class CreateProfile extends Component {
                                             </div>
                                         </div>
                                         <div className="card-info">
+                                            <Scrollbars style={{ height: 300 }}>
                                             <ul>
                                                 <li>
                                                     <div className="card-icon">
@@ -125,6 +126,7 @@ class CreateProfile extends Component {
                                                     </div>
                                                 </li>
                                             </ul>
+                                            </Scrollbars>
                                         </div>
                                     </div>
                                 </form>
