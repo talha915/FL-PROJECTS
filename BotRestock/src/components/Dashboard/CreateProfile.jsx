@@ -69,7 +69,7 @@ class CreateProfile extends Component {
                                             </div>
                                         </div>
                                         <div className="card-info">
-                                            <Scrollbars style={{ height: 300 }}>
+                                            <Scrollbars style={{ height: 285 }}>
                                             <ul>
                                                 <li>
                                                     <div className="card-icon">

@@ -64,16 +64,17 @@ class SettingContent extends Component {
                                 <a className="btn btn-primary" ><i className="icon-plus"></i>Add Token</a>
                             </div>
                         </form>
-                        <Scrollbars style={{ height: 300 }}>
-                            <div className="table-data token">
-                                <div className="thead">
-                                    <div className="tr">
-                                        <div className="th">ID</div>
-                                        <div className="th">Name</div>
-                                        <div className="th">Token</div>
-                                        <div className="th">Actions</div>
-                                    </div>
+
+                        <div className="table-data token">
+                            <div className="thead">
+                                <div className="tr">
+                                    <div className="th">ID</div>
+                                    <div className="th">Name</div>
+                                    <div className="th">Token</div>
+                                    <div className="th">Actions</div>
                                 </div>
+                            </div>
+                            <Scrollbars >
                                 <div className="tbody">
                                     <div className="tr">
                                         <div data-title="ID" className="td"><div className="text">1</div></div>
@@ -167,8 +168,9 @@ class SettingContent extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Scrollbars>
+                            </Scrollbars>
+                        </div>
+
                     </div>
                 </div>
             </div>

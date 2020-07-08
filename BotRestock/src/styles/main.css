@@ -1725,11 +1725,11 @@ a {
 	display: block;
 }
 
-.card-info ul {
+/* .card-info ul {
 	height: 356px;
 	overflow: hidden;
 	overflow-y: auto;
-}
+} */
 
 .card-info ul li {
 	display: -webkit-box;
@@ -1970,7 +1970,7 @@ a {
 	align-self: center;
 }
 
-.table-data .tbody {
+.scroll-holder {
 	height: calc(100vh - 200px);
 	overflow: auto;
 }
