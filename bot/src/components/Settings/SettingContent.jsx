@@ -74,7 +74,7 @@ class SettingContent extends Component {
                                     <div className="th">Actions</div>
                                 </div>
                             </div>
-                            <Scrollbars style={{ height: 350 }} className="scrollbar-holder">
+                            <Scrollbars style={{ height: 378 }} className="scrollbar-holder">
                                 <div className="tbody">
                                     <div className="tr">
                                         <div data-title="ID" className="td"><div className="text">1</div></div>

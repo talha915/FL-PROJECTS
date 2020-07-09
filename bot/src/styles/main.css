@@ -584,6 +584,7 @@ textarea {
 	box-sizing: border-box;
 	border: 1px solid #4b4a5c;
 	padding: 11px 16px 11px 43px;
+	outline: none !important;
 	border-radius: 8px;
 	height: 40px;
 	width: 100%;
@@ -1605,6 +1606,8 @@ a {
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
 	margin-left: 15px;
+	display: flex;
+	align-items: center;
 }
 
 .tweet-popup-head .heading {
@@ -2545,3 +2548,84 @@ a {
 	}
 }
 
+
+.custom-select {
+	z-index: 15;
+  }
+  
+  .custom-select .icon {
+	z-index: 16;
+  }
+  
+  .custom-select > div .css1pahdxg-control {
+	background: #17161F !important;
+	border-color: #4B4A5C !important;
+  }
+  
+  .custom-select > div > div,
+  .custom-select > div .css-yk16xz-control {
+	background: #17161F !important;
+	border-color: #4B4A5C !important;
+  }
+  
+  .custom-select > div > div > div,
+  .custom-select > div > div .css-1hwfws3,
+  .custom-select > div .css-yk16xz-control > div,
+  .custom-select > div .css-yk16xz-control .css-1hwfws3 {
+	padding-left: 43px !important;
+	padding-right: 25px !important;
+  }
+  
+  @media (min-width: 768px) {
+  
+	.custom-select > div > div > div,
+	.custom-select > div > div .css-1hwfws3,
+	.custom-select > div .css-yk16xz-control > div,
+	.custom-select > div .css-yk16xz-control .css-1hwfws3 {
+	  padding-left: 37px !important;
+	}
+  }
+  
+  @media (min-width: 1024px) {
+  
+	.custom-select > div > div > div,
+	.custom-select > div > div .css-1hwfws3,
+	.custom-select > div .css-yk16xz-control > div,
+	.custom-select > div .css-yk16xz-control .css-1hwfws3 {
+	  padding-left: 43px !important;
+	}
+  }
+  
+  .custom-select > div > div > div + div,
+  .custom-select > div > div .css-1hwfws3 + div,
+  .custom-select > div .css-yk16xz-control > div + div,
+  .custom-select > div .css-yk16xz-control .css-1hwfws3 + div {
+	display: none !important;
+  }
+  
+  .custom-select > div > div + div,
+  .custom-select > div .css-yk16xz-control + div {
+	z-index: 99 !important;
+  }
+  
+  .custom-select > div .css-1hwfws3 {
+	padding-left: 43px !important;
+	padding-right: 25px !important;
+  }
+  
+  @media (min-width: 768px) {
+	.custom-select > div .css-1hwfws3 {
+	  padding-left: 37px !important;
+	}
+  }
+  
+  @media (min-width: 1024px) {
+	.custom-select > div .css-1hwfws3 {
+	  padding-left: 43px !important;
+	}
+  }
+  
+  .custom-select > div input {
+	height: auto !important;
+  }
+  
