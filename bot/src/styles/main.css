@@ -2549,6 +2549,10 @@ a {
 }
 
 
+
+
+
+
 .form-group .icon {
 	z-index: 16;
   }
@@ -2600,21 +2604,30 @@ a {
   .custom-select > div .css-2613qy-menu {
 	z-index: 16 !important;
   }
-  .custom-checkbox .checkbox {
+  .checkout-box .custom-checkbox .checkbox {
 	border-radius: 0;
-	border: 0;
-  }
-  .custom-checkbox .checkbox:before {
-	background: #fff;
-	width: 15px;
-	border: 1px solid #6032ff;
-	border-radius: 3px;
-	height: 15px;
+	border: 0 !important;
   }
   .custom-checkbox .checkbox::after {
+	left: 1px;
+  }
+  .checkout-box .custom-checkbox .checkbox:before {
+	background: #fff;
+	width: 16px;
+	border: 1px solid #6032ff;
+	border-radius: 3px;
+	height: 16px;
+  }
+  .checkout-box .custom-checkbox .checkbox::after {
 	left: 1px !important;
 	color: #fff !important;
+	transform: scale(.9);
   }
-  .custom-checkbox input:checked + .checkbox::before {
+  .checkout-box .custom-checkbox input:checked + .checkbox::before {
 	background: #6032ff;
+	border-color: #6032ff;
   }
+  .css-2613qy-menu {
+	z-index: 5000 !important;
+  }
+  

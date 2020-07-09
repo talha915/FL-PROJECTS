@@ -2631,3 +2631,26 @@ a {
 	z-index: 5000 !important;
   }
   
+
+
+
+
+.custom-checkbox .custom-lable em{
+	font-style:normal;
+}
+
+.custom-select div{
+	color:#6d6c82 !important;
+}	
+
+.css-2163qy-menu{
+	z-index:9999;
+}
+
+.custom-select > div > div{
+	box-shadow:none !important;
+}
+
+.custom-select:before{
+	pointer-events:none;
+}
