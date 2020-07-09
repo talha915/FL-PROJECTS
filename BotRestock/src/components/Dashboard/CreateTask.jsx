@@ -72,7 +72,7 @@ class CreateTask extends Component {
                                     <ul className="checkbox-list">
                                         <li>
                                             <label className="custom-checkbox">
-                                                <input type="checkbox" checked />
+                                                <input type="checkbox" />
                                                 <span className="checkbox"></span>
                                                 <span className="custom-lable"><em>Copy Password</em></span>
                                             </label>
