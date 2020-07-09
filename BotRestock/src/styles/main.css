@@ -2639,9 +2639,9 @@ a {
 	font-style:normal;
 }
 
-.custom-select div{
+/* .custom-select div{
 	color:#6d6c82 !important;
-}	
+}	 */
 
 .css-2163qy-menu{
 	z-index:9999;
@@ -2657,4 +2657,9 @@ a {
 
 .css-2613qy-menu{
 	z-index:9999 !important;
+}
+
+.select-holder {
+	position: relative;
+	z-index: 99;
 }

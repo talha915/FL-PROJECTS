@@ -57,7 +57,7 @@ class CreateTask extends Component {
                                             <i className="icon icon-world"></i>
                                             <input type="text" placeholder="Keyword" />
                                         </div>
-                                        <div className="form-group">
+                                        <div className="form-group select-holder">
                                             <i className="icon icon-setting"></i>
                                             <div className="custom-select">
                                                 {/* <select>
@@ -101,7 +101,7 @@ class CreateTask extends Component {
                                         {this.state.autoCheck && this.state.autoCheck ?
                                         <div className="checkout-filed active">
                                             <div className="form-row">
-                                                <div className="form-group">
+                                                <div className="form-group select-holder">
                                                     <i className="icon icon-dash"></i>
                                                     <div className="custom-select">
                                                         {/* <select>
