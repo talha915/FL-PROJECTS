@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import { Scrollbars } from 'react-custom-scrollbars';
 import '../../styles/main.css';
 
 class SettingContent extends Component {
 
     addToken = () => {
-        this.props.addToken(true);
+        this.props.history.push('/settings/PopupTweets')
     }
 
     render() {
@@ -243,4 +244,4 @@ class SettingContent extends Component {
     }
 }
 
-export default SettingContent;
+export default withRouter(SettingContent);

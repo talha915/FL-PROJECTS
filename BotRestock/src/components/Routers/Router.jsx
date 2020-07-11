@@ -9,7 +9,7 @@ function Router() {
     <div >
       <Switch>
         <Route path="/" component={Index} exact />
-        <Route path="/settings" component={Settings} />
+        <Route path="/settings" component={Settings} exact/>
         <Route path="/settings/PopupTweets" component={PopupTweets} />
       </Switch>
     </div>

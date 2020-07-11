@@ -1573,7 +1573,7 @@ a {
 	background: #17161f;
 }
 
-.popup-tweets-active .popup-tweets {
+.popup-tweets.active {
 	opacity: 1;
 	visibility: visible;
 	max-height: 99999px;
@@ -2670,4 +2670,8 @@ a {
 
 .css-1uccc91-singleValue{
     color:#6d6c82;
+}
+
+.toggle-component {
+	transition: 2.5s;
 }

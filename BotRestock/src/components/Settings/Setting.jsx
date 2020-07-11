@@ -15,14 +15,6 @@ class Setting extends Component {
         }
     }
 
-    addToken=(props)=> {
-        this.setState({ popupTweet: props });
-    }
-
-    closeTweets=(props)=> {
-        this.setState({ popupTweet: props });
-    }
-
     popUpTweets=()=> {
         this.props.history.push('/settings/PopupTweets');
     }
@@ -33,21 +25,9 @@ class Setting extends Component {
                 <div id="page">
                     <main className="dashboard-wrap">
                         <Sidebar />
-                        <SettingContent addToken={this.addToken}/>
+                        <SettingContent />
                     </main>
                 </div>
-                {/* {
-                    this.state.popupTweet && this.state.popupTweet ?
-                    this.popUpTweets()
-                    : 
-                    ''
-                } */}
-                {   
-                    this.state.popupTweet && this.state.popupTweet ? 
-                        <PopupTweets closeTweets={this.closeTweets}/>
-                    :
-                        ''    
-                }
             </div>
         )
     }

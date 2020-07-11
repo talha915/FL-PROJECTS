@@ -13,13 +13,13 @@ class CreateTask extends Component {
         }
     }
 
-    closeTask=()=> {
-        this.setState({closeTask: !this.state.closeTask});
+    closeTask = () => {
+        this.setState({ closeTask: !this.state.closeTask });
         this.props.taskStatus(false);
     }
 
-    checkout=()=> {
-        this.setState({autoCheck: !this.state.autoCheck});
+    checkout = () => {
+        this.setState({ autoCheck: !this.state.autoCheck });
     }
 
     dummyOptions = [
@@ -65,7 +65,7 @@ class CreateTask extends Component {
                                                     <option>Discord Token 2</option>
                                                     <option>Discord Token 3</option>
                                                 </select> */}
-                                                <Select options={ this.dummyOptions } />
+                                                <Select options={this.dummyOptions} />
                                             </div>
                                         </div>
                                     </div>
@@ -98,44 +98,46 @@ class CreateTask extends Component {
                                             <span className="checkbox no-bg" onClick={this.checkout}></span>
                                             <span className="custom-lable" onClick={this.checkout}><em>Auto Checkout</em></span>
                                         </label>
+
                                         {this.state.autoCheck && this.state.autoCheck ?
-                                        <div className="checkout-filed active">
-                                            <div className="form-row">
-                                                <div className="form-group select-holder">
-                                                    <i className="icon icon-dash"></i>
-                                                    <div className="custom-select">
-                                                        {/* <select>
-                                                            <option>Dashboard Type</option>
-                                                            <option>Dashboard Type 2</option>
-                                                            <option>Dashboard Type 3</option>
-                                                        </select> */}
-                                                        <Select options={ this.dummyOptions } />
+
+                                            <div className="checkout-filed active toggle-component">
+                                                <div className="form-row">
+                                                    <div className="form-group select-holder">
+                                                        <i className="icon icon-dash"></i>
+                                                        <div className="custom-select">
+                                                            {/* <select>
+                                                        <option>Dashboard Type</option>
+                                                        <option>Dashboard Type 2</option>
+                                                        <option>Dashboard Type 3</option>
+                                                    </select> */}
+                                                            <Select options={this.dummyOptions} />
+                                                        </div>
+                                                    </div>
+                                                    <div className="form-group">
+                                                        <i className="icon icon-url"></i>
+                                                        <input type="text" placeholder="Site URL" />
                                                     </div>
                                                 </div>
-                                                <div className="form-group">
-                                                    <i className="icon icon-url"></i>
-                                                    <input type="text" placeholder="Site URL" />
-                                                </div>
-                                            </div>
-                                            <div className="form-row">
-                                                <div className="form-group">
-                                                    <i className="icon icon-user"></i>
-                                                    <div className="custom-select">
-                                                        {/* <select>
-                                                            <option>Select Profile</option>
-                                                            <option>Profile 1</option>
-                                                            <option>Profile 2</option>
-                                                        </select> */}
-                                                        <Select options={ this.dummyOptions } />
+                                                <div className="form-row">
+                                                    <div className="form-group">
+                                                        <i className="icon icon-user"></i>
+                                                        <div className="custom-select">
+                                                            {/* <select>
+                                                        <option>Select Profile</option>
+                                                        <option>Profile 1</option>
+                                                        <option>Profile 2</option>
+                                                    </select> */}
+                                                            <Select options={this.dummyOptions} />
+                                                        </div>
+                                                    </div>
+                                                    <div className="form-group">
+                                                        <i className="icon icon-pencil"></i>
+                                                        <input type="text" placeholder="Task Name" />
                                                     </div>
                                                 </div>
-                                                <div className="form-group">
-                                                    <i className="icon icon-pencil"></i>
-                                                    <input type="text" placeholder="Task Name" />
-                                                </div>
                                             </div>
-                                        </div>
-                                        : ''}
+                                            : ''}
                                     </div>
                                     <div className="popup-tfoot">
                                         <a href="#" className="btn btn-primary"><i className="icon-plus"></i>Create Task</a>

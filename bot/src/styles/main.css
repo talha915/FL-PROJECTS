@@ -1573,7 +1573,7 @@ a {
 	background: #17161f;
 }
 
-.popup-tweets-active .popup-tweets {
+.popup-tweets.active {
 	opacity: 1;
 	visibility: visible;
 	max-height: 99999px;
@@ -2631,3 +2631,47 @@ a {
 	z-index: 5000 !important;
   }
   
+
+
+
+
+.custom-checkbox .custom-lable em{
+	font-style:normal;
+}
+
+.custom-select div.css-1uccc91-singleValue {
+	color:#6d6c82 !important;
+}	
+
+.css-2163qy-menu{
+	z-index:9999;
+}
+
+.custom-select > div > div{
+	box-shadow:none !important;
+}
+
+.custom-select:before{
+	pointer-events:none;
+}
+
+.css-2613qy-menu{
+	z-index:9999 !important;
+}
+
+.select-holder {
+	position: relative;
+	z-index: 99;
+}
+
+.css-1hwfws3{
+    color:#6d6c82;
+}
+
+.css-1uccc91-singleValue{
+    color:#6d6c82;
+}
+
+.toggle-component {
+	transition: 2.5s;
+}
