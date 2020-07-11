@@ -1548,13 +1548,18 @@ a {
 }
 
 .popup .checkout-box .checkout-filed {
-	opacity: .35;
 	pointer-events: none;
+    transition: height 300ms ease-in,overflow 300ms ease-in, opacity 300ms ease-in;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
 }
 
 .popup .checkout-box .checkout-filed.active {
 	opacity: 1;
-	pointer-events: auto;
+    pointer-events: auto;
+    height: auto;
+    overflow: visible;
 }
 
 .popup-task-active .popup-task {
