@@ -30,7 +30,7 @@ class Sidebar extends Component {
                     <li className="nav-item" key={index}>
                         <a className={data.activeStatus ? "nav-link active" : "nav-link"} href="#" onClick={()=>this.sidebarClick(index)}>
                             <span className="align">
-                                <i className="icon icon-video"></i>
+                                <i className={data.iconType}></i>
                                 <span className="text d-block">{data.name}</span>
                             </span>
                         </a>

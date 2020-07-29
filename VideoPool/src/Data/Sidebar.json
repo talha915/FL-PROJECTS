@@ -2,27 +2,33 @@
     "sidebarList": [
         {
             "name": "Video",
-            "activeStatus": true
+            "activeStatus": true,
+            "iconType": "icon icon-video"
         },
         {
             "name": "Question",
-            "activeStatus": false
+            "activeStatus": false,
+            "iconType": "icon icon-communications"
         },
         {
             "name": "Outro",
-            "activeStatus": false
+            "activeStatus": false,
+            "iconType": "icon icon-chat"
         },
         {
             "name": "Branding",
-            "activeStatus": false
+            "activeStatus": false,
+            "iconType": "icon icon-branding"
         },
         {
             "name": "General Setting",
-            "activeStatus": false
+            "activeStatus": false,
+            "iconType": "icon icon-interface"
         },
         {
             "name": "Results",
-            "activeStatus": false
+            "activeStatus": false,
+            "iconType": "icon icon-results"
         }
     ]
 }
