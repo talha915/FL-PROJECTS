@@ -28,7 +28,7 @@ class Sidebar extends Component {
             let sidebarData = this.state.sidebarList.sidebarList.map((data, index)=> {
                 return(
                     <li className="nav-item" key={index}>
-                        <a className={data.activeStatus ? "nav-link active" : "nav-link"} data-toggle="pill"  role="tab" aria-selected="true">
+                        <a className={data.activeStatus ? "nav-link active" : "nav-link"} href="#" onClick={()=>this.sidebarClick(index)}>
                             <span className="align">
                                 <i className="icon icon-video"></i>
                                 <span className="text d-block">{data.name}</span>
@@ -38,14 +38,25 @@ class Sidebar extends Component {
                 )
             })
             return sidebarData;
-            
         }   
+    }
+
+    sidebarClick=(data)=> {
+        let activeStatus = true;
+        let inactiveStatus = false;
+        for(let i=0; i<this.state.sidebarList.sidebarList.length; i++) {
+            if(this.state.sidebarList.sidebarList[i].activeStatus === activeStatus) {
+                this.state.sidebarList.sidebarList[i].activeStatus = inactiveStatus;
+            }
+        }
+        let Indexkey = this.state.sidebarList.sidebarList[data];
+        Indexkey.activeStatus = activeStatus;
     }
 
     render() {
         return (
             <aside className="aside">
-                <ul className="nav nav-pills main-nav-pills" role="tablist">
+                <ul className="nav nav-pills main-nav-pills">
                     {this.getSideBarData()}
                 </ul>
             </aside>

@@ -3,6 +3,7 @@ import React from 'react';
 /* Components */
 import Header from './Header';
 import Sidebar from './Sidebar';
+import Video from './Video/Video';
 import Footer from './Footer';
 
 /* Styles */
@@ -18,6 +19,9 @@ function Index() {
                         <div className="container-fluid">
                             <div className="main-tabs-wrap">
                                 <Sidebar />
+                                <div className="main-tabs-content tab-content">
+                                    <Video />
+                                </div>
                             </div>
                         </div>
                     </div>
