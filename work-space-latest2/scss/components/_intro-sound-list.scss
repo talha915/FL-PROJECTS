@@ -1,0 +1,50 @@
+.intro-sound-list{
+	li{
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid rgba($gray-700,.4);
+		padding: 15px 0;
+		.btn{
+			flex-shrink: 0;
+			min-width: 59px;
+			@include font(12,16);
+			margin-left: 20px;
+			padding: 4px 15px;
+			@include media-breakpoint-up (md){
+				@include font(15,19);
+				min-width: 73px;
+				padding: 6px 15px;
+			}
+		}
+	}
+	.sound-leftsize{
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		.icon-wrap{
+			flex-shrink: 0;
+			width: 30px;
+			margin-right: 18px;
+			@include media-breakpoint-up (md){
+				width: 47px;
+			}
+		}
+		.sound-detail{
+			flex-grow: 1;
+			.title{
+				display: block;
+				@include font(12,14,$font-weight-bold);
+				@include media-breakpoint-up (md){
+					@include font(15,18);
+				}
+			}
+			.subtitle{
+				display: block;
+				@include font(12,14);
+				@include media-breakpoint-up (md){
+					@include font(14,16);
+				}
+			}
+		}
+	}
+}

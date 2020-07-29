@@ -1,0 +1,11 @@
+.dashboard-footer{
+	position: fixed;
+	left: 0;
+	bottom: 83px;
+	width: 100%;
+	z-index: 8;
+	min-width: $base-min-width;
+	@include media-breakpoint-up (lg){
+		bottom: 0;
+	}
+}

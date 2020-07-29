@@ -1,0 +1,31 @@
+.gif-block-wrap{
+	overflow: hidden;
+}
+.gif-bloks-list{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -3px -8px;
+	padding-bottom: 30px;
+	@include media-breakpoint-up (xl){
+		margin: 0 -10px -22px;
+	}
+	&:last-child{
+		padding-bottom: 0;
+	}
+	li{
+		padding: 0 3px 8px;
+		width: 25%;
+		@include media-breakpoint-up (xl){
+			padding: 0 10px 22px;
+		}
+		img{
+			border-radius: 8px;
+		}
+		a{
+			&:hover,
+			&:focus{
+				outline: none !important;
+			}
+		}
+	}
+}

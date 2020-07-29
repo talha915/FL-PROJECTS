@@ -1,0 +1,36 @@
+.accordion{
+	.card-header{
+		padding: 0;
+		background:$white;
+		border-color: $gray-350;
+		.btn.btn-link{
+			position: relative;
+			@include font(14,16);
+			padding: 12px 48px 12px 15px;
+			color:$cap-black;
+			border-radius: 0;
+			@include media-breakpoint-up (lg){
+				@include font(18,21);
+				padding: 15px 48px 15px 15px;
+			}
+			&[aria-expanded="true"]{
+				i{
+					transform: translateY(-50%) rotate(90deg);	
+				}
+			}
+			&:hover{
+				background:darken($white,4%);
+			}
+			i{
+				position: absolute;
+				right: 13px;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 12px;
+				@include media-breakpoint-up (lg){
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
