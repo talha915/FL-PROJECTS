@@ -27,8 +27,8 @@ class Sidebar extends Component {
         if(this.state.sidebarList) {
             let sidebarData = this.state.sidebarList.sidebarList.map((data, index)=> {
                 return(
-                    <li className="nav-item">
-                        <a className="nav-link" data-toggle="pill"  role="tab" aria-selected="true">
+                    <li className="nav-item" key={index}>
+                        <a className={data.activeStatus ? "nav-link active" : "nav-link"} data-toggle="pill"  role="tab" aria-selected="true">
                             <span className="align">
                                 <i className="icon icon-video"></i>
                                 <span className="text d-block">{data.name}</span>
@@ -46,7 +46,7 @@ class Sidebar extends Component {
         return (
             <aside className="aside">
                 <ul className="nav nav-pills main-nav-pills" role="tablist">
-                    {this.getSideBarData()}           
+                    {this.getSideBarData()}
                 </ul>
             </aside>
         )
