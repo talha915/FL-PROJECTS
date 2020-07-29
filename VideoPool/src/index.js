@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter } from 'react-router-dom';
 
+import './styles/bootstrap.css';
 
 ReactDOM.render(
   <React.StrictMode>
