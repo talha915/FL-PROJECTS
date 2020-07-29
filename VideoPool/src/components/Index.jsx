@@ -14,9 +14,9 @@ function Index() {
             <div className="dashboard-page">
                 <Header />
                 <main>
-                    <div class="dashboard-wrap">
-                        <div class="container-fluid">
-                            <div class="main-tabs-wrap">
+                    <div className="dashboard-wrap">
+                        <div className="container-fluid">
+                            <div className="main-tabs-wrap">
                                 <Sidebar />
                             </div>
                         </div>

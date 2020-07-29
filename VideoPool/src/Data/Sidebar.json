@@ -1,0 +1,28 @@
+{
+    "sidebarList": [
+        {
+            "name": "Video",
+            "activeStatus": true
+        },
+        {
+            "name": "Question",
+            "activeStatus": false
+        },
+        {
+            "name": "Outro",
+            "activeStatus": false
+        },
+        {
+            "name": "Branding",
+            "activeStatus": false
+        },
+        {
+            "name": "General Setting",
+            "activeStatus": false
+        },
+        {
+            "name": "Results",
+            "activeStatus": false
+        }
+    ]
+}
