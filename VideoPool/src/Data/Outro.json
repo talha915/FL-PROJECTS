@@ -15,5 +15,22 @@
             "activeStatus": false,
             "redirect": "/outro/text"
         }
+    ],
+    "outroGif": [
+        {
+            "img": "/images/gif01.png"
+        },
+        {
+            "img": "/images/gif03.png"
+        },
+        {
+            "img": "/images/gif01.png"
+        },
+        {
+            "img": "/images/gif03.png"
+        },
+        {
+            "img": "/images/gif01.png"
+        }
     ]
 }
