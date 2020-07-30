@@ -21,7 +21,6 @@ class Outros extends Component {
 
     componentDidMount() {
         this.setOutroNav();
-        console.log("Windows: ", window.location.pathname);
     }
 
     setOutroNav=()=> {
@@ -48,6 +47,13 @@ class Outros extends Component {
 
     outroClick=(data, index)=> {
         this.props.history.push(data.redirect);
+        let outroNav = [...this.state.outrosList];
+        for(let i=0; i<outroNav.length; i++) {
+            if(outroNav[i].activeStatus === true) {
+                outroNav[i].activeStatus = false;
+            }
+        }
+        data.activeStatus = true;
     }
 
     render() {
