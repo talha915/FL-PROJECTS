@@ -98,7 +98,7 @@ class Questions extends Component {
                         </div>
                     </div>
                     <div className="video-box order-1 order-lg-2 text-center">
-                        <a href="#" className="btn-paly"><img src="images/play.png" width="76" height="76" alt="play button" /></a>
+                        <a href="#" className="btn-paly"><img src="/images/play.png" width="76" height="76" alt="play button" /></a>
                         <div className="d-none d-lg-block">
                             <img src="/images/frame-video-desktop.png" className="img-fluid" width="364" height="718" alt="image description" />
                         </div>

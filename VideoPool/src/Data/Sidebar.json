@@ -15,7 +15,7 @@
         {
             "name": "Outro",
             "activeStatus": false,
-            "redirect": "/",
+            "redirect": "/outro/video",
             "iconType": "icon icon-chat"
         },
         {
