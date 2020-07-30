@@ -3,31 +3,37 @@
         {
             "name": "Video",
             "activeStatus": true,
+            "redirect": "/",
             "iconType": "icon icon-video"
         },
         {
             "name": "Question",
             "activeStatus": false,
+            "redirect": "/question",
             "iconType": "icon icon-communications"
         },
         {
             "name": "Outro",
             "activeStatus": false,
+            "redirect": "/",
             "iconType": "icon icon-chat"
         },
         {
             "name": "Branding",
             "activeStatus": false,
+            "redirect": "/",
             "iconType": "icon icon-branding"
         },
         {
             "name": "General Setting",
             "activeStatus": false,
+            "redirect": "/",
             "iconType": "icon icon-interface"
         },
         {
             "name": "Results",
             "activeStatus": false,
+            "redirect": "/",
             "iconType": "icon icon-results"
         }
     ]

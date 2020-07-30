@@ -6,6 +6,9 @@ import '../styles/main.css';
 /* Data */
 import SidebarData from '../Data/Sidebar.json';
 
+/* Router */
+import {withRouter} from 'react-router-dom';
+
 class Sidebar extends Component {
 
     constructor(props) {
@@ -51,6 +54,7 @@ class Sidebar extends Component {
         }
         let Indexkey = this.state.sidebarList.sidebarList[data];
         Indexkey.activeStatus = activeStatus;
+        this.props.history.push(Indexkey.redirect);
     }
 
     render() {
@@ -63,4 +67,4 @@ class Sidebar extends Component {
         )
     }
 }
-export default Sidebar;
+export default withRouter(Sidebar);
