@@ -6,8 +6,12 @@ function Router() {
   return (
     <div >
       <Switch>
-        <Route path="/" component={Index} exact />     
-        <Route path="/question" component={Question} exact /> 
+        <Route exact path="/" component={Index} />     
+        <Route path="/question/vote1" component={Question} exact/> 
+        {/* <Route path="/question/vote1" exact/> */}
+        <Route path="/question/vote2" component={Question} exact/>
+        <Route path="/question/vote3" component={Question} exact/>
+        <Route path="/question/addvote" component={Question} exact/>
       </Switch>
     </div>
   );

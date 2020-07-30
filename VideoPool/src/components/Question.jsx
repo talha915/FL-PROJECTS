@@ -7,6 +7,7 @@ import Footer from './Footer';
 
 /* Styles */
 import '../styles/main.css';
+import Questions from './Question/Questions';
 
 function Question() {
     return (
@@ -19,7 +20,7 @@ function Question() {
                             <div className="main-tabs-wrap">
                                 <Sidebar />
                                 <div className="main-tabs-content tab-content">
-                                    
+                                    <Questions />
                                 </div>
                             </div>
                         </div>

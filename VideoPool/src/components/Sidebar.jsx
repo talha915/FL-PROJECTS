@@ -11,8 +11,8 @@ import {withRouter} from 'react-router-dom';
 
 class Sidebar extends Component {
 
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
         this.state = {
             sidebarList: ''
         }

@@ -2,74 +2,74 @@ import React from 'react';
 
 function Video() {
     return (
-        <div class="tab-pane fade show active" id="video">
-            <div class="d-flex flex-wrap flex-lg-nowrap w-100">
-                <div class="inner-tab-container order-2 order-lg-1">
-                    <div class="inner-tabs-wrap">
-                        <ul class="nav inner-tabs nav-pills" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="pill" href="#video1" role="tab" aria-selected="true">
-                                    <span class="align">
-                                        <i class="icon icon-video d-lg-none"></i>
-                                        <span class="text d-block">video</span>
+        <div className="tab-pane fade show active" id="video">
+            <div className="d-flex flex-wrap flex-lg-nowrap w-100">
+                <div className="inner-tab-container order-2 order-lg-1">
+                    <div className="inner-tabs-wrap">
+                        <ul className="nav inner-tabs nav-pills" role="tablist">
+                            <li className="nav-item">
+                                <a className="nav-link active" data-toggle="pill" href="#video1" role="tab" aria-selected="true">
+                                    <span className="align">
+                                        <i className="icon icon-video d-lg-none"></i>
+                                        <span className="text d-block">video</span>
                                     </span>
                                 </a>
                             </li>
                         </ul>
-                        <div class="inner-tabs-content tab-content">
-                            <div class="tab-pane fade show active" id="video1">
-                                <div class="inner-tabs-holder w-100">
-                                    <div class="scroll-area sm-scroll">
-                                        <div class="video-block-wrap">
-                                            <ul class="video-bloks-list list-unstyled">
+                        <div className="inner-tabs-content tab-content">
+                            <div className="tab-pane fade show active" id="video1">
+                                <div className="inner-tabs-holder w-100">
+                                    <div className="scroll-area sm-scroll">
+                                        <div className="video-block-wrap">
+                                            <ul className="video-bloks-list list-unstyled">
                                                 <li>
-                                                    <div class="video-block">
-                                                        <div class="img">
-                                                            <img src="images/img2.jpg" class="img-fluid" alt="image description" />
-                                                            <a href="#" class="btn-play"><i class="icon-play"></i></a>
-                                                            <span class="video-time">00:30</span>
+                                                    <div className="video-block">
+                                                        <div className="img">
+                                                            <img src="images/img2.jpg" className="img-fluid" alt="image description" />
+                                                            <a href="#" className="btn-play"><i className="icon-play"></i></a>
+                                                            <span className="video-time">00:30</span>
                                                         </div>
-                                                        <div class="video-descrip">
-                                                            <strong class="video-title d-block"><a href="#">Video_1245.mp4</a></strong>
-                                                            <span class="video-size d-block">3.2 MB</span>
+                                                        <div className="video-descrip">
+                                                            <strong className="video-title d-block"><a href="#">Video_1245.mp4</a></strong>
+                                                            <span className="video-size d-block">3.2 MB</span>
                                                         </div>
-                                                        <a href="#conformationModal" data-toggle="modal" class="btn-delete"><i class="icon-delete"></i></a>
+                                                        <a href="#conformationModal" data-toggle="modal" className="btn-delete"><i className="icon-delete"></i></a>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="btn-wrap">
-                                        <a href="#" class="btn rounded-btn btn-warning btn-sm"><i class="icon-recording"></i> Record</a>
-                                        <a href="#" class="btn rounded-btn btn-warning btn-sm"><i class="icon-upload"></i> Upload</a>
-                                        <a href="#" class="btn rounded-btn btn-warning btn-sm"><i class="icon-url"></i> URL</a>
+                                    <div className="btn-wrap">
+                                        <a href="#" className="btn rounded-btn btn-warning btn-sm"><i className="icon-recording"></i> Record</a>
+                                        <a href="#" className="btn rounded-btn btn-warning btn-sm"><i className="icon-upload"></i> Upload</a>
+                                        <a href="#" className="btn rounded-btn btn-warning btn-sm"><i className="icon-url"></i> URL</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="video-box order-1 order-lg-2 text-center">
-                    <a href="#" class="btn-paly"><img src="images/play.png" width="76" height="76" alt="play button" /></a>
-                    <div class="d-none d-lg-block">
-                        <img src="images/frame-video-desktop.png" class="img-fluid" width="364" height="718" alt="image description" />
+                <div className="video-box order-1 order-lg-2 text-center">
+                    <a href="#" className="btn-paly"><img src="images/play.png" width="76" height="76" alt="play button" /></a>
+                    <div className="d-none d-lg-block">
+                        <img src="images/frame-video-desktop.png" className="img-fluid" width="364" height="718" alt="image description" />
                     </div>
-                    <div class="d-lg-none">
-                        <img src="images/frame-video-mobile.png" class="img-fluid" width="394" height="218" alt="image description" />
+                    <div className="d-lg-none">
+                        <img src="images/frame-video-mobile.png" className="img-fluid" width="394" height="218" alt="image description" />
                     </div>
                 </div>
             </div>
-            <div class="personal-poll d-none">
-                <div class="icon-logo">
+            <div className="personal-poll d-none">
+                <div className="icon-logo">
                     <a href="#"><img src="images/logo-v.png" width="80" height="70" alt="image description" /></a>
                 </div>
-                <div class="large-text">
+                <div className="large-text">
                     <p>Hi, add a video clip to start creating your personal poll</p>
                 </div>
-                <div class="btn-wrap">
-                    <a href="#" class="btn btn-primary btn-sm"><i class="icon-recording"></i> Record</a>
-                    <a href="#" class="btn btn-primary btn-sm"><i class="icon-upload"></i> Upload</a>
-                    <a href="#" class="btn btn-primary btn-sm"><i class="icon-url"></i> URL</a>
+                <div className="btn-wrap">
+                    <a href="#" className="btn btn-primary btn-sm"><i className="icon-recording"></i> Record</a>
+                    <a href="#" className="btn btn-primary btn-sm"><i className="icon-upload"></i> Upload</a>
+                    <a href="#" className="btn btn-primary btn-sm"><i className="icon-url"></i> URL</a>
                 </div>
             </div>
         </div>
