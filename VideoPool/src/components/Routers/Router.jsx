@@ -14,6 +14,8 @@ function Router() {
         <Route path="/question/vote3" component={Question} exact/>
         <Route path="/question/addvote" component={Question} exact/>
         <Route path="/outro/video" component={Outro} exact/>
+        <Route path="/outro/gif" component={Outro} exact/>
+        <Route path="/outro/text" component={Outro} exact/>
       </Switch>
     </div>
   );

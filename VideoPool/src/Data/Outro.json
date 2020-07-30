@@ -1,0 +1,19 @@
+{
+    "outro": [
+        {
+            "name": "video",
+            "activeStatus": true,
+            "redirect": "/outro/video"
+        },
+        {
+            "name": "GIF",
+            "activeStatus": false,
+            "redirect": "/outro/gif"
+        },
+        {
+            "name": "Text",
+            "activeStatus": false,
+            "redirect": "/outro/text"
+        }
+    ]
+}

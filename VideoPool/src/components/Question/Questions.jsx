@@ -46,7 +46,6 @@ class Questions extends Component {
     }
 
     getQuestions = () => {
-        console.log("Window: ", window.location.pathname);
         if (this.state.questionList) {
             let listData = this.state.questionList.questions.map((data, index) => {
                 return (
