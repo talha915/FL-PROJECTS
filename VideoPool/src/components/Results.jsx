@@ -3,6 +3,7 @@ import React from 'react';
 /* Components */
 import Header from './Header';
 import Sidebar from './Sidebar';
+import Result from './Results/Result';
 import Footer from './Footer';
 
 /* Styles */
@@ -19,7 +20,7 @@ function Results() {
                             <div className="main-tabs-wrap">
                                 <Sidebar />
                                 <div className="main-tabs-content tab-content">
-                                    
+                                    <Result />
                                 </div>
                             </div>
                         </div>

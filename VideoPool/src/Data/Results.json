@@ -1,0 +1,24 @@
+{
+    "resultList": [
+        {
+            "name": "Vote 1",
+            "activeStatus": true,
+            "redirect": ""
+        },
+        {
+            "name": "Vote 2",
+            "activeStatus": false,
+            "redirect": ""
+        },
+        {
+            "name": "Vote 3",
+            "activeStatus": false,
+            "redirect": ""
+        },
+        {
+            "name": "Analytics",
+            "activeStatus": false,
+            "redirect": ""
+        }
+    ]
+}

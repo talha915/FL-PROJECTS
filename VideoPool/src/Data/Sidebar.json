@@ -33,7 +33,7 @@
         {
             "name": "Results",
             "activeStatus": false,
-            "redirect": "/",
+            "redirect": "/results/vote1",
             "iconType": "icon icon-results"
         }
     ]
