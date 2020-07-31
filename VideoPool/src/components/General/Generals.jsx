@@ -32,11 +32,11 @@ class Generals extends Component {
         if(this.state.generalList) {
             let generals = this.state.generalList.map((data, index) => {
                 return(
-                    <li class="nav-item" key={index}>
-                        <a class={data.activeStatus ? "nav-link active" : "nav-link"} data-toggle="pill" href="#setting" role="tab" aria-selected="true" onClick={()=>this.generalClick(data, index)}>
-                            <span class="align">
-                                <i class="icon icon-interface d-lg-none"></i>
-                                <span class="text d-block">{data.name}</span>
+                    <li className="nav-item" key={index}>
+                        <a className={data.activeStatus ? "nav-link active" : "nav-link"} data-toggle="pill" href="#setting" role="tab" aria-selected="true" onClick={()=>this.generalClick(data, index)}>
+                            <span className="align">
+                                <i className="icon icon-interface d-lg-none"></i>
+                                <span className="text d-block">{data.name}</span>
                             </span>
                         </a>
                     </li>
@@ -59,14 +59,14 @@ class Generals extends Component {
 
     render() {
         return (
-            <div class="tab-pane fade show active" id="g-setting">
-                <div class="d-flex flex-wrap flex-lg-nowrap w-100">
-                    <div class="inner-tab-container order-2 order-lg-1">
-                        <div class="inner-tabs-wrap">
-                            <ul class="nav inner-tabs nav-pills" role="tablist">
+            <div className="tab-pane fade show active" id="g-setting">
+                <div className="d-flex flex-wrap flex-lg-nowrap w-100">
+                    <div className="inner-tab-container order-2 order-lg-1">
+                        <div className="inner-tabs-wrap">
+                            <ul className="nav inner-tabs nav-pills" role="tablist">
                                 {this.getGeneralList()}
                             </ul>
-                            <div class="inner-tabs-content tab-content">
+                            <div className="inner-tabs-content tab-content">
                                 {window.location.pathname === "/general/settings"
                                     ?
                                     <Settings />
@@ -76,13 +76,13 @@ class Generals extends Component {
                             </div>
                         </div>
                     </div>
-                    <div class="video-box d-none d-lg-block order-1 order-lg-2 text-center">
-                        <a href="#" class="btn-paly"><img src="/images/play.png" width="76" height="76" alt="play button" /></a>
-                        <div class="d-none d-lg-block">
-                            <img src="/images/frame-video-desktop.png" class="img-fluid" width="364" height="718" alt="image description" />
+                    <div className="video-box d-none d-lg-block order-1 order-lg-2 text-center">
+                        <a href="#" className="btn-paly"><img src="/images/play.png" width="76" height="76" alt="play button" /></a>
+                        <div className="d-none d-lg-block">
+                            <img src="/images/frame-video-desktop.png" className="img-fluid" width="364" height="718" alt="image description" />
                         </div>
-                        <div class="d-lg-none">
-                            <img src="/images/frame-video-mobile.png" class="img-fluid" width="394" height="218" alt="image description" />
+                        <div className="d-lg-none">
+                            <img src="/images/frame-video-mobile.png" className="img-fluid" width="394" height="218" alt="image description" />
                         </div>
                     </div>
                 </div>

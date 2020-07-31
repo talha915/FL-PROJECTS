@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 /* Data */
 import ResultsData from '../../Data/Results.json';
 
+/* Router */
+import { withRouter } from 'react-router-dom';
+
 class Result extends Component {
 
     constructor(props) {
@@ -25,7 +28,7 @@ class Result extends Component {
             let results = this.state.resultsList.map((data, index)=> {
                 return(
                     <li className="nav-item" key={index}>
-                        <a className={data.activeStatus ? "nav-link active" : "nav-link"} data-toggle="pill" href="#result-vote1" role="tab" aria-selected="true">
+                        <a className={data.activeStatus ? "nav-link active" : "nav-link"} data-toggle="pill" href="#result-vote1" role="tab" aria-selected="true" onClick={()=>{this.resultClick(data, index)}}>
                             <span className="align">
                                 <i className="icon icon-vote d-lg-none"></i>
                                 <span className="text d-block">{data.name}</span>
@@ -36,6 +39,17 @@ class Result extends Component {
             })
             return results;
         }
+    }
+
+    resultClick=(data, index)=> {
+        this.props.history.push(data.redirect);
+        let activeStates = [...this.state.resultsList];
+        for(let i=0; i<activeStates.length; i++) {
+            if(activeStates[i].activeStatus === true) {
+                activeStates[i].activeStatus = false;
+            }
+        }
+        data.activeStatus = true;
     }
 
     render() {
@@ -224,4 +238,4 @@ class Result extends Component {
         )
     }
 }
-export default Result;
+export default withRouter(Result);
