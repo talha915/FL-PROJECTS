@@ -27,7 +27,7 @@
         {
             "name": "General Setting",
             "activeStatus": false,
-            "redirect": "/",
+            "redirect": "/general/settings",
             "iconType": "icon icon-interface"
         },
         {

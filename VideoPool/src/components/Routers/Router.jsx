@@ -4,6 +4,7 @@ import Index from '../Index';
 import Question from '../Question';
 import Outro from '../Outro';
 import Branding from '../Branding';
+import General from '../General';
 
 function Router() {
   return (
@@ -20,6 +21,8 @@ function Router() {
         <Route path="/branding/colors" component={Branding} exact/>
         <Route path="/branding/logo" component={Branding} exact/>
         <Route path="/branding/logosounds" component={Branding} exact/>
+        <Route path="/general/export" component={General} exact/>
+        <Route path="/general/settings" component={General} exact/>
       </Switch>
     </div>
   );
