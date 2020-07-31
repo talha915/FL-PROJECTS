@@ -1,0 +1,14 @@
+{
+    "generalList": [
+        {
+            "name": "Settings",
+            "activeStatus": true,
+            "redirect": "/general/settings"
+        },
+        {
+            "name": "Export",
+            "activeStatus": false,
+            "redirect": "/general/export"
+        }
+    ]
+}

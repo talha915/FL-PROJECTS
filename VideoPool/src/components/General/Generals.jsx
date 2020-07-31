@@ -1,6 +1,62 @@
 import React, { Component } from 'react';
 
+/* Components */
+import Exports from './Exports';
+import Settings from './Settings';
+
+/* Data */
+import GeneralData from '../../Data/General.json';
+
+/* Router */
+import { withRouter } from 'react-router-dom';
+
+
 class Generals extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            generalList: ''
+        }
+    }
+
+    componentDidMount() {
+        this.setGeneralList();
+    }
+
+    setGeneralList=()=> {
+        this.setState({generalList: GeneralData.generalList});
+    }
+
+    getGeneralList=()=> {
+        if(this.state.generalList) {
+            let generals = this.state.generalList.map((data, index) => {
+                return(
+                    <li class="nav-item" key={index}>
+                        <a class={data.activeStatus ? "nav-link active" : "nav-link"} data-toggle="pill" href="#setting" role="tab" aria-selected="true" onClick={()=>this.generalClick(data, index)}>
+                            <span class="align">
+                                <i class="icon icon-interface d-lg-none"></i>
+                                <span class="text d-block">{data.name}</span>
+                            </span>
+                        </a>
+                    </li>
+                )
+            })
+            return generals;
+        }
+    }
+
+    generalClick=(data, index)=> {
+        this.props.history.push(data.redirect);
+        let activeStates = [...this.state.generalList];
+        for(let i=0; i<activeStates.length; i++) {
+            if(activeStates[i].activeStatus === true) {
+                activeStates[i].activeStatus = false;
+            }
+        }
+        data.activeStatus = true;
+    }
+
     render() {
         return (
             <div class="tab-pane fade show active" id="g-setting">
@@ -8,73 +64,15 @@ class Generals extends Component {
                     <div class="inner-tab-container order-2 order-lg-1">
                         <div class="inner-tabs-wrap">
                             <ul class="nav inner-tabs nav-pills" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="pill" href="#setting" role="tab" aria-selected="true">
-                                        <span class="align">
-                                            <i class="icon icon-interface d-lg-none"></i>
-                                            <span class="text d-block">Settings</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="pill" href="#export" role="tab" aria-selected="false">
-                                        <span class="align">
-                                            <i class="icon icon-export d-lg-none"></i>
-                                            <span class="text d-block">Export</span>
-                                        </span>
-                                    </a>
-                                </li>
+                                {this.getGeneralList()}
                             </ul>
                             <div class="inner-tabs-content tab-content">
-                                <div class="tab-pane fade show active" id="setting">
-                                    <div class="inner-tabs-holder w-100">
-                                        <div class="scroll-area">
-                                            <form class="settings-form">
-                                                <div class="form-group">
-                                                    <label for="pass">Password</label>
-                                                    <div class="inpupt-wrap">
-                                                        <input class="form-control" type="password" id="pass" placeholder="Enter your password" />
-                                                        <i class="icon icon-preview"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="date">Start Date</label>
-                                                    <div class="inpupt-wrap">
-                                                        <input class="form-control" type="text" id="date" placeholder="DD/MM/YYYY" />
-                                                        <i class="icon icon-calendar"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <span class="label">Do you want the recipient to see the poll result?</span>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck1" />
-                                                        <label class="custom-control-label" for="customCheck1">No</label>
-                                                    </div>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck2" />
-                                                        <label class="custom-control-label" for="customCheck2">Yes, show result during voting?</label>
-                                                    </div>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck3" />
-                                                        <label class="custom-control-label" for="customCheck3">Yes, show result after voting?</label>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="export">
-                                    <div class="inner-tabs-holder w-100">
-                                        <div class="scroll-area sm-scroll">
-                                            <div class="exports-btns-wrap">
-                                                <div class="hold">
-                                                    <a href="#" class="btn btn-warning btn-sm rounded-btn"><i class="icon-share"></i> Share result</a>
-                                                    <a href="#" class="btn btn-warning btn-sm rounded-btn"><i class="icon-upload"></i> Export result</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {window.location.pathname === "/general/settings"
+                                    ?
+                                    <Settings />
+                                    :
+                                    <Exports />
+                                }               
                             </div>
                         </div>
                     </div>
@@ -92,4 +90,4 @@ class Generals extends Component {
         )
     }
 }
-export default Generals;
+export default withRouter(Generals);
