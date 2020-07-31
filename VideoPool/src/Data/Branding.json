@@ -1,0 +1,19 @@
+{
+    "brandingList": [
+        {
+            "name": "Colors",
+            "activeStatus": false,
+            "redirect": "/branding/colors"
+        },
+        {
+            "name": "Logo",
+            "activeStatus": false,
+            "redirect": "/branding/logo"
+        },
+        {
+            "name": "Logo Intro Sound",
+            "activeStatus": true,
+            "redirect": "/branding/logosounds"
+        }
+    ]
+}

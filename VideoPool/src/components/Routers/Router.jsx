@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Index from '../Index';
 import Question from '../Question';
 import Outro from '../Outro';
+import Branding from '../Branding';
 
 function Router() {
   return (
@@ -16,6 +17,9 @@ function Router() {
         <Route path="/outro/video" component={Outro} exact/>
         <Route path="/outro/gif" component={Outro} exact/>
         <Route path="/outro/text" component={Outro} exact/>
+        <Route path="/branding/colors" component={Branding} exact/>
+        <Route path="/branding/logo" component={Branding} exact/>
+        <Route path="/branding/logosounds" component={Branding} exact/>
       </Switch>
     </div>
   );

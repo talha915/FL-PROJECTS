@@ -21,7 +21,7 @@
         {
             "name": "Branding",
             "activeStatus": false,
-            "redirect": "/",
+            "redirect": "/branding/colors",
             "iconType": "icon icon-branding"
         },
         {
