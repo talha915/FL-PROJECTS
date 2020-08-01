@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
+import { Scrollbars } from 'react-custom-scrollbars';
+
 class BrandingSound extends Component {
     render() {
         return (
             <div className="tab-pane fade show active" id="logo-sound">
                 <div className="inner-tabs-holder w-100">
-                    <div className="scroll-area sm-scroll">
+                    <Scrollbars className="scroll-area sm-scroll">
                         <ul className="intro-sound-list list-unstyled">
                             <li>
                                 <div className="sound-leftsize">
@@ -204,7 +206,11 @@ class BrandingSound extends Component {
                                 <a href="#" className="btn btn-warning rounded-btn">Use</a>
                             </li>
                         </ul>
-                    </div>
+                    </Scrollbars>
+                
+                
+                
+                
                 </div>
             </div>
         )
