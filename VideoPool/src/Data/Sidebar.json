@@ -21,7 +21,7 @@
         {
             "name": "Branding",
             "activeStatus": false,
-            "redirect": "/branding/colors",
+            "redirect": "/branding/logosounds",
             "iconType": "icon icon-branding"
         },
         {
