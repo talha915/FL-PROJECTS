@@ -185,8 +185,8 @@
 	min-width: 1024px;
 	background: #fff;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, .04);
-	padding-top: 19px;
-	padding-bottom: 19px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	z-index: 10;
 }
 
@@ -221,7 +221,7 @@ body {
 
 .dashboard-page {
 	padding-top: 77px;
-	padding-bottom: 129px;
+	padding-bottom: 114px;
 }
 
 .btn {
@@ -266,7 +266,7 @@ body {
 }
 
 .btn i.icon-share {
-	font-size: 23px;
+	font-size: 20px;
 }
 
 .btn i.icon-preview {
@@ -274,7 +274,7 @@ body {
 }
 
 .btn i.icon-trim {
-	font-size: 19px;
+	font-size: 18px;
 }
 
 .btn.rounded-btn {
@@ -349,6 +349,7 @@ img {
 	transform: translateY(-50%);
 	color: rgba(0, 0, 0, .7);
 	font-size: 21px;
+	pointer-events: none;
 }
 
 .form-group .inpupt-wrap .icon.icon-preview {
@@ -414,6 +415,7 @@ textarea.form-control.sm {
 	min-width: 160px;
 }
 
+.settings-form .inpupt-wrap,
 .settings-form .form-control {
 	max-width: 346px;
 }
@@ -465,6 +467,11 @@ textarea.form-control.sm {
 		width: 100%;
 		z-index: 11;
 		background:$white;@include media('>=widescreen')
+	} */ /* @include media-breakpoint-up (xxxl){
+		margin-right: 53px;
+		padding: 31px 39px;
+		width: 167px;
+		min-height:calc(100vh - 362px);
 	} */
 }
 
@@ -686,11 +693,6 @@ textarea.form-control.sm {
 }
 
 .video-bloks-list {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
 	margin: 0 -10px -20px;
 	padding-bottom: 30px;
 }
@@ -702,10 +704,6 @@ textarea.form-control.sm {
 .video-bloks-list li {
 	width: 100%;
 	padding: 0 10px 20px;
-}
-
-.video-bloks-list li:only-child {
-	width: 100%;
 }
 
 .video-block {
@@ -852,14 +850,11 @@ textarea.form-control.sm {
 	position: relative;
 	margin: 0 auto 18px;
 	max-width: 408px;
-	-ms-flex-item-align: start;
-	align-self: flex-start;
-	overflow: hidden;
 	border-radius: 8px;
 }
 
 .video-box img {
-	width: 100%;
+	max-height: 100%;
 }
 
 .video-box .btn-paly {
@@ -876,10 +871,20 @@ textarea.form-control.sm {
 	width: auto;
 }
 
+.video-boxe-holder {
+	position: relative;
+}
+
+.video-boxe-holder div {
+	margin-bottom: -10px;
+	display: inline-block;
+	vertical-align: top;
+}
+
 .media-panel {
 	box-shadow: 0 -4px 10px rgba(0, 0, 0, .07);
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	background: #fff;
 }
 
@@ -1177,25 +1182,17 @@ body {
 
 @media (min-width: 320px) {
 	.logo a .logo-text {
-		font-size: 1.5625rem;
-		line-height: 1.875rem;
+		font-size: 1.5rem;
+		line-height: 1.75rem;
 	}
 
 	.dashboard-page {
-		padding-bottom: 160px;
-		padding-top: 103px;
+		padding-top: 71px;
 	}
 
 	.btn {
-		/*My changes*/
-		font-size: 1rem !important;
-		line-height: 1.25rem !important;
-		border-radius: 8px !important;
-		padding: 12px 15px !important;
-	}
-
-	.btn i {
-		line-height: 20px;
+		border-radius: 8px;
+		padding: 12px 15px;
 	}
 
 	.btn.rounded-btn {
@@ -1218,9 +1215,9 @@ body {
 	}
 
 	.scroll-area {
-		min-height: 500px;
+		min-height: 300px;
 		height: 100%;
-		/* max-height: none; */
+		max-height: none;
 	}
 
 	.os-theme-dark > .os-scrollbar-vertical,
@@ -1230,10 +1227,6 @@ body {
 
 	.dashboard-footer {
 		bottom: 0;
-	}
-
-	.form-group {
-		margin-bottom: 28px;
 	}
 
 	.label,
@@ -1264,7 +1257,7 @@ body {
 		width: 96px;
 		background: #fff;
 		box-shadow: 0 2px 7px rgba(0, 0, 0, .14);
-		padding: 20px 12px;
+		padding: 15px 12px;
 		border-radius: 8px;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -1272,7 +1265,9 @@ body {
 		-ms-flex-negative: 0;
 		flex-shrink: 0;
 		margin-right: 8px;
-		min-height: calc(100vh - 264px);
+		margin-bottom: 7px;
+		margin-top: 7px;
+		min-height: calc(100vh - 205px);
 	}
 
 	.nav-pills {
@@ -1294,7 +1289,7 @@ body {
 	}
 
 	.nav-pills.main-nav-pills .nav-item {
-		margin-bottom: 16px;
+		margin-bottom: 10px;
 		font-size: .75rem;
 		line-height: 1rem;
 	}
@@ -1440,7 +1435,7 @@ body {
 	}
 
 	.next-prev-btns {
-		margin: 0 -10px 15px;
+		margin: 0 -10px 10px;
 	}
 
 	.next-prev-btns .btn {
@@ -1454,12 +1449,11 @@ body {
 	}
 
 	.video-box {
-		width: 364px;
-		height: 718px;
 		-ms-flex-negative: 0;
 		flex-shrink: 0;
 		margin: 0 0 0 15px;
 		border-radius: 0;
+		width: 323px;
 	}
 
 	.video-box .btn-paly {
@@ -1544,30 +1538,16 @@ body {
 	}
 
 	.nav-pills.main-nav-pills .nav-item {
-		font-size: .9375rem;
-		line-height: 1.125rem;
+		font-size: .8125rem;
+		line-height: 1rem;
 	}
 
 	.nav-pills.main-nav-pills .nav-item .nav-link {
 		padding: 10px 8px;
-		min-height: 91px;
 	}
 
 	.nav-pills .nav-item .nav-link {
 		min-width: 120px;
-	}
-
-	.nav-pills .nav-item .nav-link .icon {
-		font-size: 26px;
-		line-height: 26px;
-	}
-
-	.nav-pills .nav-item .nav-link .icon.icon-video {
-		font-size: 19px;
-	}
-
-	.nav-pills .nav-item .nav-link .icon.icon-branding {
-		font-size: 24px;
 	}
 
 	.tab-content.inner-tabs-content {
@@ -1587,14 +1567,10 @@ body {
 	}
 }
 
-@media (min-width: 1500px) {
-	.btn {
-		padding: 15px;
-	}
-
+@media (min-width: 1440px) {
 	.btn.btn-sm {
-		font-size: 1.25rem;
-		line-height: 1.375rem;
+		font-size: .875rem;
+		line-height: 1.125rem;
 		padding-top: 12px;
 		padding-bottom: 12px;
 	}
@@ -1606,13 +1582,9 @@ body {
 	}
 
 	.aside {
-		padding: 20px;
+		padding: 15px 20px;
 		width: 131px;
 		margin-right: 23px;
-	}
-
-	.nav-pills.main-nav-pills .nav-item {
-		margin-bottom: 22px;
 	}
 
 	.nav-pills .nav-item .nav-link {
@@ -1647,7 +1619,7 @@ body {
 	}
 
 	.video-box {
-		margin: 0 60px;
+		margin: 0 30px;
 	}
 }
 
@@ -1662,48 +1634,16 @@ body {
 		line-height: 2.1875rem;
 	}
 
-	.dashboard-page {
-		padding-top: 137px;
-		padding-bottom: 221px;
-	}
-
 	.dashboard-wrap {
 		padding: 0 35px;
 	}
 
 	.btn {
-		font-size: 1.25rem;
-		line-height: 1.5625rem;
 		border-radius: 10px;
-	}
-
-	.btn i {
-		font-size: 15px;
-		line-height: 25px;
 	}
 
 	.btn i.icon-image {
 		font-size: 23px;
-	}
-
-	.aside {
-		margin-right: 53px;
-		padding: 31px 39px;
-		width: 167px;
-		min-height: calc(100vh - 362px);
-	}
-
-	.nav-pills .nav-item {
-		font-size: 1.125rem;
-		line-height: 1.3125rem;
-	}
-
-	.nav-pills .nav-item .nav-link {
-		padding: 18px 15px;
-	}
-
-	.inner-tab-container {
-		padding: 31px 27px;
 	}
 
 	.tab-content.inner-tabs-content {
@@ -1714,17 +1654,11 @@ body {
 		padding-right: 20px;
 	}
 
-	.video-bloks-list li {
-		width: 50%;
-	}
-
 	.video-box {
-		margin: 0 100px;
+		margin: 0 80px;
 	}
 
 	.media-panel {
-		padding-top: 48px;
-		padding-bottom: 48px;
 		padding-left: 15px;
 		padding-right: 15px;
 	}
@@ -1746,6 +1680,12 @@ body {
 		-webkit-box-direction: normal;
 		-ms-flex-direction: column;
 		flex-direction: column;
+	}
+}
+
+@media (max-height: 830px) {
+	.video-box {
+		width: 293px;
 	}
 }
 
