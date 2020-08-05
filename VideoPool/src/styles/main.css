@@ -1689,3 +1689,10 @@ body {
 	}
 }
 
+.intro-sound-list{
+    padding-right:40px !important;
+}
+
+.tab-content>.active{
+    display:flex !important;
+}
