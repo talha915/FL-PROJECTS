@@ -2680,3 +2680,70 @@ a {
 .toggle-component {
 	transition: 2.5s;
 }
+
+
+
+
+.tabset {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	position: relative;
+	margin:0 0 20px;
+	list-style: none;
+	padding: 0;
+	}
+	
+	.tabset:before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	border-radius: 5px;
+	content: "";
+	background: #22212d;
+	}
+	
+	.tabset li {
+	width: 50%;
+	cursor: pointer;
+	}
+	
+	.tabset li.active a {
+	color: #fff;
+	}
+	
+	.tabset li.active a:after {
+	display: block;
+	}
+	
+	.tabset a {
+	display: block;
+	padding: 12px 15px;
+	position: relative;
+	cursor: pointer;
+	color: #6c6b82;
+	-webkit-transition: .2s linear;
+	transition: .2s linear;
+	}
+	
+	.tabset a:after {
+	background: #7852f3;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	content: "";
+	height: 3px;
+	border-radius: 5px;
+	display: none;
+	}
+	
+	.tabset a:hover {
+	color: #fff;
+	}
