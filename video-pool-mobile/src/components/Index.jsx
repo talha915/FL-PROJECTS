@@ -12,7 +12,7 @@ class Index extends Component {
         return (
             <div>
                 <div id="page">
-                    <div class="dashboard-page">
+                    <div className="dashboard-page">
                         <Header />
                         <Tabs />
                     </div>
