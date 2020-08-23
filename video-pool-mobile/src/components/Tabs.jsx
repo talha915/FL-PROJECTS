@@ -1,63 +1,52 @@
 import React, { Component } from 'react';
 import '../../src/styles/main.css';
 
+import TabsList from '../Data/Tab.json';
+
 class Tabs extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            tabList: ''
+        }
+    }
+
+    componentDidMount() {
+        this.setTabs();
+    }
+
+    setTabs=()=> {
+        this.setState({tabList: TabsList});
+    }
+
+    getTabs=()=> {
+        if(this.state.tabList) {
+            let tabsData = this.state.tabList.tabs.map((data, index)=> {
+                return(
+                    <li className="nav-item" key={index}>
+                        <a className="nav-link" data-toggle="pill" href="#" role="tab" aria-selected="false">
+                            <span className="align">
+                                <i className={data.icon}></i>
+                                <span className="text d-block">{data.name}</span>
+                            </span>
+                        </a>
+                    </li>
+                )
+            });
+            return tabsData;
+        }
+    }
+
     render() {
         return (
             <main>
                 <div className="dashboard-wrap">
                     <div className="container-fluid">
                         <div className="main-tabs-wrap">
+                            
                             <aside className="aside">
                                 <ul className="nav nav-pills main-nav-pills" role="tablist">
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="pill" href="#video" role="tab" aria-selected="false">
-                                            <span className="align">
-                                                <i className="icon icon-video"></i>
-                                                <span className="text d-block">Video</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="pill" href="#question" role="tab" aria-selected="false">
-                                            <span className="align">
-                                                <i className="icon icon-communications"></i>
-                                                <span className="text d-block">Question</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="pill" href="#outro" role="tab" aria-selected="false">
-                                            <span className="align">
-                                                <i className="icon icon-chat"></i>
-                                                <span className="text d-block">Outro</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="pill" href="#branding" role="tab" aria-selected="false">
-                                            <span className="align">
-                                                <i className="icon icon-branding"></i>
-                                                <span className="text d-block">Branding</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="pill" href="#g-setting" role="tab" aria-selected="false">
-                                            <span className="align">
-                                                <i className="icon icon-interface"></i>
-                                                <span className="text d-block"><span className="d-none d-sm-inline">General</span> Setting</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="pill" href="#results" role="tab" aria-selected="false">
-                                            <span className="align">
-                                                <i className="icon icon-results"></i>
-                                                <span className="text d-block">Results</span>
-                                            </span>
-                                        </a>
-                                    </li>
+                                    {this.getTabs()}
                                 </ul>
                             </aside>
                             <div className="personal-poll">

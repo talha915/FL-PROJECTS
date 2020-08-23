@@ -1,0 +1,28 @@
+{
+    "tabs": [
+        {
+            "name": "Video",
+            "icon": "icon icon-video"
+        },
+        {
+            "name": "Question",
+            "icon": "icon icon-communications"
+        },
+        {
+            "name": "Outro",
+            "icon": "icon icon-chat"
+        },
+        {
+            "name": "Branding",
+            "icon": "icon icon-branding"
+        },
+        {
+            "name": "General Setting",
+            "icon": "icon icon-interface"
+        },
+        {
+            "name": "Results",
+            "icon": "icon icon-results"
+        }
+    ]
+}
