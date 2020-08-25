@@ -6,6 +6,7 @@ import Index from '../Index';
 import Question from '../Question';
 import Video from '../Video';
 import Outro from '../Outro';
+import Branding from '../Branding';
 class Router extends Component {
     render() {
         return(
@@ -20,6 +21,9 @@ class Router extends Component {
                     <Route component={Outro} path="/outro/video" exact/>
                     <Route component={Outro} path="/outro/gif" exact/>
                     <Route component={Outro} path="/outro/text" exact/>
+                    <Route component={Branding} path="/branding/colors" exact/>
+                    <Route component={Branding} path="/branding/logo" exact/>
+                    <Route component={Branding} path="/branding/logosounds" exact/>
                 </Switch>
             </div>
         )
