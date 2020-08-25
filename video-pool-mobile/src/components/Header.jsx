@@ -29,7 +29,7 @@ class Header extends Component {
 				<div className="container-fluid">
 					<div className="d-flex align-items-center justify-content-between">
 						<div className="logo order-2 order-md-1"><a href="#"><span className="logo-text">Project Name</span></a></div>
-						{this.state.router == 0 ? <a className="btn-back" href="#" onClick={this.backRoute()}><i className="icon-arrow-back"></i></a>: ''}
+						{this.state.router == 0 ? <a className="btn-back" href="#" onClick={()=>this.backRoute()}><i className="icon-arrow-back"></i></a>: ''}
 					</div>
 				</div>
 			</header>
