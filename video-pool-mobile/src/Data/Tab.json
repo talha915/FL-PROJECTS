@@ -12,7 +12,7 @@
         },
         {
             "name": "Outro",
-            "route": "/",
+            "route": "/outro/video",
             "icon": "icon icon-chat"
         },
         {
