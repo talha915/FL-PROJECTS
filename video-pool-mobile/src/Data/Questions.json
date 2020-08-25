@@ -1,0 +1,24 @@
+{
+    "questions": [
+        {
+            "name": "Vote 1",
+            "activeStatus": true,
+            "redirect": "/question/vote1"
+        },
+        {
+            "name": "Vote 2",
+            "activeStatus": false,
+            "redirect": "/question/vote2"
+        },
+        {
+            "name": "Vote 3",
+            "activeStatus": false,
+            "redirect": "/question/vote3"
+        },
+        {
+            "name": "+ Add Vote",
+            "activeStatus": false,
+            "redirect": "/question/addvote"
+        }
+    ]
+}

@@ -7,7 +7,7 @@
         },
         {
             "name": "Question",
-            "route": "/",
+            "route": "/question/vote1",
             "icon": "icon icon-communications"
         },
         {
