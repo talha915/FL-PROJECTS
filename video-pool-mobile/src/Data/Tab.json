@@ -2,26 +2,32 @@
     "tabs": [
         {
             "name": "Video",
+            "route": "/video",
             "icon": "icon icon-video"
         },
         {
             "name": "Question",
+            "route": "/",
             "icon": "icon icon-communications"
         },
         {
             "name": "Outro",
+            "route": "/",
             "icon": "icon icon-chat"
         },
         {
             "name": "Branding",
+            "route": "/",
             "icon": "icon icon-branding"
         },
         {
             "name": "General Setting",
+            "route": "/",
             "icon": "icon icon-interface"
         },
         {
             "name": "Results",
+            "route": "/",
             "icon": "icon icon-results"
         }
     ]

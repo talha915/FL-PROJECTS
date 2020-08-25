@@ -3,6 +3,9 @@ import '../../src/styles/main.css';
 
 import TabsList from '../Data/Tab.json';
 
+/* Router */
+import {withRouter} from 'react-router-dom';
+
 class Tabs extends Component {
     constructor(props) {
         super(props);
@@ -19,11 +22,15 @@ class Tabs extends Component {
         this.setState({tabList: TabsList});
     }
 
+    route=(data)=> {
+        this.props.history.push(data);
+    }
+
     getTabs=()=> {
         if(this.state.tabList) {
             let tabsData = this.state.tabList.tabs.map((data, index)=> {
                 return(
-                    <li className="nav-item" key={index}>
+                    <li className="nav-item" key={index} onClick={()=>this.route(data.route)}>
                         <a className="nav-link" data-toggle="pill" href="#" role="tab" aria-selected="false">
                             <span className="align">
                                 <i className={data.icon}></i>
@@ -70,4 +77,4 @@ class Tabs extends Component {
     }
 }
 
-export default Tabs;
+export default withRouter(Tabs);
