@@ -1,0 +1,16 @@
+{
+    "generalList": [
+        {
+            "name": "Settings",
+            "icon": "icon icon-interface",
+            "activeStatus": true,
+            "redirect": "/general/settings"
+        },
+        {
+            "name": "Export",
+            "icon": "icon icon-export",
+            "activeStatus": false,
+            "redirect": "/general/export"
+        }
+    ]
+}

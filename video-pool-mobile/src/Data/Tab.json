@@ -22,7 +22,7 @@
         },
         {
             "name": "General Setting",
-            "route": "/",
+            "route": "/general/settings",
             "icon": "icon icon-interface"
         },
         {
