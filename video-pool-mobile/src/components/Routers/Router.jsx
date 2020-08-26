@@ -8,6 +8,7 @@ import Video from '../Video';
 import Outro from '../Outro';
 import Branding from '../Branding';
 import Setting from '../Setting';
+import Result from '../Result';
 
 class Router extends Component {
     render() {
@@ -28,6 +29,10 @@ class Router extends Component {
                     <Route component={Branding} path="/branding/logosounds" exact/>
                     <Route component={Setting} path="/general/settings" exact/>
                     <Route component={Setting} path="/general/export" exact/>
+                    <Route component={Result} path="/results/vote1" exact/>
+                    <Route component={Result} path="/results/vote2" exact/>
+                    <Route component={Result} path="/results/vote3" exact/>
+                    <Route component={Result} path="/results/analytics" exact/>
                 </Switch>
             </div>
         )

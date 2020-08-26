@@ -1,0 +1,28 @@
+{
+    "resultList": [
+        {
+            "name": "Vote 1",
+            "activeStatus": true,
+            "icon": "icon icon-vote",
+            "redirect": "/results/vote1"
+        },
+        {
+            "name": "Vote 2",
+            "activeStatus": false,
+            "icon": "icon icon-vote",
+            "redirect": "/results/vote2"
+        },
+        {
+            "name": "Vote 3",
+            "activeStatus": false,
+            "icon": "icon icon-vote",
+            "redirect": "/results/vote3"
+        },
+        {
+            "name": "Analytics",
+            "activeStatus": false,
+            "icon": "icon icon-analytics",
+            "redirect": "/results/analytics"
+        }
+    ]
+}

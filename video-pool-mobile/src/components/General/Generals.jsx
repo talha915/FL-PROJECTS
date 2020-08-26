@@ -32,11 +32,11 @@ class Generals extends Component {
         if (this.state.generalList) {
             let generals = this.state.generalList.map((data, index) => {
                 return (
-                    <li class="nav-item" key={index}>
+                    <li className="nav-item" key={index}>
                         <a className={data.activeStatus ? "nav-link active" : "nav-link"} data-toggle="pill" href="#setting" role="tab" aria-selected="true" onClick={()=>this.generalClick(data, index)}>
-                            <span class="align">
-                                <i class={data.icon}></i>
-                                <span class="text d-block">{data.name}</span>
+                            <span className="align">
+                                <i className={data.icon}></i>
+                                <span className="text d-block">{data.name}</span>
                             </span>
                         </a>
                     </li>

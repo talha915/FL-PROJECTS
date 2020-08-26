@@ -27,7 +27,7 @@
         },
         {
             "name": "Results",
-            "route": "/",
+            "route": "/results/vote1",
             "icon": "icon icon-results"
         }
     ]
