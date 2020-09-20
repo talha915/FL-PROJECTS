@@ -34,6 +34,8 @@ function Router() {
         <Route path="/results/vote3" component={Results} exact/>
         <Route path="/results/analytics" component={Results} exact/>
         <Route path="/workspace/project" component={Project} exact/>
+        <Route path="/workspace/branding" component={Project} exact/>
+        <Route path="/workspace/setting" component={Project} exact/>
       </Switch>
     </div>
   );
