@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 /* Components */
 import Exports from './Exports';
 import Settings from './Settings';
+import Analytics from '../Results/Analytics';
 
 /* Data */
 import GeneralData from '../../Data/General.json';
@@ -33,7 +34,7 @@ class Generals extends Component {
             let generals = this.state.generalList.map((data, index) => {
                 return(
                     <li className="nav-item" key={index}>
-                        <a className={data.activeStatus ? "nav-link active" : "nav-link"} data-toggle="pill" href="#setting" role="tab" aria-selected="true" onClick={()=>this.generalClick(data, index)}>
+                        <a className={data.activeStatus ? "nav-link active" : index === 2 ? "nav-link analytics": "nav-link"} data-toggle="pill" href="#setting" role="tab" aria-selected="true" onClick={()=>this.generalClick(data, index)}>
                             <span className="align">
                                 <i className="icon icon-interface d-lg-none"></i>
                                 <span className="text d-block">{data.name}</span>
@@ -70,6 +71,10 @@ class Generals extends Component {
                                 {window.location.pathname === "/general/settings"
                                     ?
                                     <Settings />
+                                    :
+                                    window.location.pathname === "/general/analytics"
+                                    ?
+                                    <Analytics />
                                     :
                                     <Exports />
                                 }               
