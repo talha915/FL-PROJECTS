@@ -1,0 +1,35 @@
+{
+    "sidebar": {
+        "title": "FX",
+        "name": "Enter Name",
+        "email": "foxylady@gmail.com",
+        "rowlist": [
+            {
+                "name": "Workspaces"
+            },
+            {
+                "name": "Create+"
+            }
+        ],
+        "menu-holder-list": [
+            {
+                "image": "images/folder.png",
+                "name": "My Workspace"
+            }
+        ],
+        "info-nav-list": [
+            {
+                "name": "FAQ"
+            },
+            {
+                "name": "Report a bug"
+            },
+            {
+                "name": "Request a feature"
+            },
+            {
+                "name": "Logout"
+            }
+        ]
+    }
+}

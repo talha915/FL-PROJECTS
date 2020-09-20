@@ -7,6 +7,10 @@ import Branding from '../Branding';
 import General from '../General';
 import Results from '../Results';
 
+// Workspace
+import Project from '../Workspace/Project';
+
+
 function Router() {
   return (
     <div >
@@ -29,6 +33,7 @@ function Router() {
         <Route path="/results/vote2" component={Results} exact/>
         <Route path="/results/vote3" component={Results} exact/>
         <Route path="/results/analytics" component={Results} exact/>
+        <Route path="/workspace/project" component={Project} exact/>
       </Switch>
     </div>
   );
