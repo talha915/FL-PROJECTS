@@ -1,18 +1,45 @@
 import React, { Component } from 'react';
 
+// Data
+import SidebarData from '../Data/Sidebar.json';
+
 class Sidebar extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            sidebarData: ''
+        }
+    }
+
+    componentDidMount() {
+        this.setSidebarData();
+    }
+
+    setSidebarData=()=> {
+        this.setState({sidebarData: SidebarData.sidebar});
+    }
+
+    getSidebar=()=> {
+        if(this.state.sidebarData) {
+            return(
+                <div className="user-box">
+                    <div className="img-box">
+                        <span>{this.state.sidebarData.title}</span>
+                    </div>
+                    <div className="text-box">
+                        <strong className="name">{this.state.sidebarData.name}</strong>
+                        <a className="mail" href="#">{this.state.sidebarData.email}</a>
+                    </div>
+                </div>
+            )
+        }
+    }
+
     render() {
         return (
             <aside className="sidebar">
-                <div className="user-box">
-                    <div className="img-box">
-                        <span>FX</span>
-                    </div>
-                    <div className="text-box">
-                        <strong className="name">Enter Name</strong>
-                        <a className="mail" href="#">foxylady@gmail.com</a>
-                    </div>
-                </div>
+                {this.getSidebar()}
                 <ul className="list">
                     <li><a href="#">Workspaces</a></li>
                     <li><a href="#">Create+</a></li>
