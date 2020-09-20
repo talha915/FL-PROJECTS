@@ -9,6 +9,11 @@
             "name": "Export",
             "activeStatus": false,
             "redirect": "/general/export"
+        },
+        {
+            "name": "Analytics",
+            "activeStatus": false,
+            "redirect": "/general/analytics"
         }
     ]
 }
