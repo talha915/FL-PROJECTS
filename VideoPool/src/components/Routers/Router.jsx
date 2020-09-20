@@ -24,6 +24,7 @@ function Router() {
         <Route path="/branding/logosounds" component={Branding} exact/>
         <Route path="/general/export" component={General} exact/>
         <Route path="/general/settings" component={General} exact/>
+        <Route path="/general/analytics" component={General} exact/>
         <Route path="/results/vote1" component={Results} exact/>
         <Route path="/results/vote2" component={Results} exact/>
         <Route path="/results/vote3" component={Results} exact/>
