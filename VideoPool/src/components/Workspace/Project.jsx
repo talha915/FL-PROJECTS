@@ -24,7 +24,7 @@ class Project extends Component {
                                         <div className="text-box">
                                             <a className="more" href="#"></a>
                                             <strong className="title">Project Name</strong>
-                                            <time className="date" datetime="2008-02-14">4/4/2020</time>
+                                            <time className="date" dateTime="2008-02-14">4/4/2020</time>
                                         </div>
                                     </div>
                                 </div>

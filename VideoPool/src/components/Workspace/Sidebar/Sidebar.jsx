@@ -36,26 +36,55 @@ class Sidebar extends Component {
         }
     }
 
+    getRowList=()=> {
+        if(this.state.sidebarData) {
+            let rowList = this.state.sidebarData.rowlist.map((data, index)=> {
+                return(
+                    <li key={index}><a href="#">{data.name}</a></li>
+                )
+            });
+            return rowList;
+        }
+    }
+
+    getInfoList=()=> {
+        if(this.state.sidebarData) {
+            let rowList = this.state.sidebarData.infoNavList.map((data, index)=> {
+                return(
+                    <li key={index}><a href="#">{data.name}</a></li>
+                )
+            });
+            return rowList;
+        }
+    }
+
+    getMenu=()=> {
+        if(this.state.sidebarData) {
+            let menus = this.state.sidebarData.menuHolderList.map((data, index) => {
+                return(
+                    <li className="active" key={index}><a href="#">
+                        <img className="icon" src={data.image} width="37" height="36" alt="img description" /> {data.name}</a>
+                    </li>
+                )
+            })
+            return menus;
+        }
+    }
+
     render() {
         return (
             <aside className="sidebar">
                 {this.getSidebar()}
                 <ul className="list">
-                    <li><a href="#">Workspaces</a></li>
-                    <li><a href="#">Create+</a></li>
+                    {this.getRowList()}
                 </ul>
                 <div className="menu-holder">
                     <ul className="side-nav">
-                        <li className="active"><a href="#">
-                            <img className="icon" src="/images/folder.png" width="37" height="36" alt="img description" /> My Workspace</a>
-                        </li>
+                        {this.getMenu()}
                     </ul>
                 </div>
                 <ul className="info-nav">
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Report a bug</a></li>
-                    <li><a href="#">Request a feature</a></li>
-                    <li><a href="#">Logout</a></li>
+                    {this.getInfoList()}
                 </ul>
             </aside>
         )

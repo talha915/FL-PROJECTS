@@ -11,13 +11,13 @@
                 "name": "Create+"
             }
         ],
-        "menu-holder-list": [
+        "menuHolderList": [
             {
-                "image": "images/folder.png",
+                "image": "/images/folder.png",
                 "name": "My Workspace"
             }
         ],
-        "info-nav-list": [
+        "infoNavList": [
             {
                 "name": "FAQ"
             },
