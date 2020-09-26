@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1024">
+	<meta name="MobileOptimized" content="1024">
+	<title>Workspace</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.12.0/css/OverlayScrollbars.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.12.0/js/jquery.overlayScrollbars.min.js" defer></script>
+	<script src="js/jquery.main.js" defer></script>
+</head>
+<body>
+	<div id="page">
+		<div class="dashboard-page">
+			<header id="header">
+				<div class="container-fluid">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo order-2 order-md-1"><a href="#"><span class="logo-text">Project Name</span></a></div>
+					</div>
+				</div>
+			</header>
+			<main>
+				<div class="dashboard-wrap">
+					<div class="container-fluid">
+						<div class="main-tabs-wrap">
+							<aside class="aside">
+								<ul class="nav nav-pills main-nav-pills" role=tablist>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#video" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-video"></i>
+												<span class="text d-block">Video</span>
+											</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#question" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-communications"></i>
+												<span class="text d-block">Question</span>
+											</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#outro" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-chat"></i>
+												<span class="text d-block">Outro</span>
+											</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#branding" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-branding"></i>
+												<span class="text d-block">Branding</span>
+											</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#g-setting" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-interface"></i>
+												<span class="text d-block"><span class="d-none d-sm-inline">General</span> Setting</span>
+											</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#results" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-results"></i>
+												<span class="text d-block">Results</span>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</aside>
+							<div class="personal-poll">
+								<div class="btn-wrap extra">
+									<div class="align">
+										<strong class="title d-block mb-40">Outro</strong>
+										<a href="#" class="btn btn-primary btn-sm"><i class="icon icon-video"></i> video</a>
+										<a href="#" class="btn btn-primary btn-sm"><i class="icon icon-gif"></i> video</a>
+										<a href="#" class="btn btn-primary btn-sm"><i class="icon icon-open-text"></i> Text</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+	<div class="modal conformation-modal fade" id="conformationModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xs">
+      <div class="modal-content">
+        <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-body text-center">
+        	<form>
+	        	<h3>Do you want to delete this clip?</h3>
+	        	<div class="btn-wrap">
+	        		<a href="#" class="btn btn-primary">Yes</a>
+	        		<a href="#" class="btn btn-light">NO</a>
+        		</div>
+        	</form>
+        </div> 
+      </div>
+    </div>  
+  </div>
+</body>
+</html>

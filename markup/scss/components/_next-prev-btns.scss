@@ -1,0 +1,50 @@
+.next-prev-btns-wrap{
+	padding: 0 15px;
+	@include media-breakpoint-up (lg){
+		padding-right: 25px;
+	}
+	@include media-breakpoint-up (xl){
+		padding-right: 23%;
+	}
+	@include media-breakpoint-up (xxl){
+		padding-right: 24px;
+	}
+	@include media-breakpoint-up (xxxl){
+		padding-right: 20px;
+	}
+}
+.next-prev-btns{
+	display: flex;
+	justify-content:center;
+	margin: 0 -6px;
+	@include media-breakpoint-up (lg){
+		margin: 0 -10px 10px;
+	}
+	.btn{
+		@include size(30px);
+		background:$white;
+		box-shadow: 0 0 8px rgba($black,.16);
+		border-radius: 5px;
+		position: relative;
+		color:$gray-300;
+		margin: 0 6px;
+		@include media-breakpoint-up (lg){
+			@include size(36px);
+			margin: 0 10px;
+		}
+		i{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			font-size: 14px;
+			@include media-breakpoint-up (lg){
+				font-size: 16px;
+			}
+		}
+		&:hover,
+		&:focus{
+			background:darken($white,5%);
+		}
+	}
+}

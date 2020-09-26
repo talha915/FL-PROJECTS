@@ -1,0 +1,42 @@
+.personal-poll{
+	width: 100%;
+	.icon-logo{
+		margin-bottom: 60px;
+	}
+	.large-text{
+		@include font(22,26,$font-weight-semibold);
+		text-align: center;
+		margin-bottom: 60px;
+	}
+	strong{
+		font-weight: $font-weight-semibold;
+	}
+	.btn-wrap{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		min-height: 250px;
+		&.extra{
+			min-height: calc(100vh - 200px);
+			flex-direction: row;
+		}
+		&:after{
+			min-height: inherit;
+			content: "";
+		}
+		.btn{
+			min-width: 174px;
+		}
+		.align{
+			width: 100%;
+			max-width: 242px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			align-self: center;
+		}
+	}
+}
+

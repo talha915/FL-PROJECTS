@@ -1,0 +1,22 @@
+.logo-select-wrap{
+	ul{
+		display: flex;
+		margin: 0 -3px -7px;
+		padding-bottom: 36px;
+		&:last-child{
+			padding-bottom: 0;
+		}
+		li{
+			margin: 0 3px 7px;
+			padding: 4px;
+			a{
+				display: block;
+				box-shadow: 1px 2px 4px rgba($black,.13);
+				border-radius: 16px;
+			}
+			img{
+				border-radius: 8px;
+			}
+		}
+	}
+}

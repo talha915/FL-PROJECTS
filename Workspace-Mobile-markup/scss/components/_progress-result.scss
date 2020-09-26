@@ -1,0 +1,44 @@
+.progress-result{
+	li{
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		.title-wrap{
+			width: 108px;
+			flex-shrink: 0;
+			padding-right: 10px;
+			display: flex;
+			text-align: left;
+			align-items: center;
+			.img{
+				flex-shrink: 0;
+				width: 29px;
+				margin-right: 8px;
+			}
+			.title{
+				flex-grow: 1;
+				@include font(12,14,500);
+			}
+		}
+		.persentage{
+			width: 55px;
+			flex-shrink: 0;
+			padding-left: 10px;
+			text-align: right;
+			@include font(12,14,400);
+		}
+		.progress{
+			flex-grow: 1;
+		}
+	}
+}
+.progress{
+	height: 6px;
+	.bg-info{
+		background:$pink2 !important;
+		border-radius: 3px;
+	}	
+}

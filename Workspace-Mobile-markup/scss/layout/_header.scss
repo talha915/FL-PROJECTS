@@ -1,0 +1,30 @@
+#header{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	min-width: $base-min-width;
+	background:$white;
+	box-shadow: 0 3px 10px rgba($black,.04);
+	padding-top: 19px;
+	padding-bottom: 19px;
+	z-index: 10;
+	.btn{
+		i{
+			margin-right: 16px;
+		}
+	}
+}
+.btn-back{
+	@include align();
+	color:$black;
+}
+.logo{
+	a{
+		.logo-text{
+			color:$cap-black;
+			@include font(20,24,$font-weight-bold);
+			text-transform: capitalize;
+		}	
+	}
+}

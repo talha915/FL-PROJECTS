@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1024">
+	<meta name="MobileOptimized" content="1024">
+	<title>Workspace</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.12.0/css/OverlayScrollbars.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.12.0/js/jquery.overlayScrollbars.min.js" defer></script>
+	<script src="js/jquery.main.js" defer></script>
+</head>
+<body>
+	<div id="page">
+		<div class="dashboard-page">
+			<header id="header">
+				<div class="container-fluid">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo order-2 order-md-1"><a href="#"><span class="logo-text">Project Name</span></a></div>
+						<a class="btn-back" href="main-index.html"><i class="icon-arrow-back"></i></a>
+					</div>
+				</div>
+			</header>
+			<main>
+				<div class="dashboard-wrap">
+					<div class="container-fluid">
+						<div class="main-tabs-wrap">
+							<aside class="aside">
+								<ul class="nav nav-pills main-nav-pills" role=tablist>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#video" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-video"></i>
+												<span class="text d-block">Video</span>
+											</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#question" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-communications"></i>
+												<span class="text d-block">Question</span>
+											</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#outro" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-chat"></i>
+												<span class="text d-block">Outro</span>
+											</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#branding" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-branding"></i>
+												<span class="text d-block">Branding</span>
+											</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="pill" href="#g-setting" role="tab" aria-selected="false">
+											<span class="align">
+												<i class="icon icon-interface"></i>
+												<span class="text d-block"><span class="d-none d-sm-inline">General</span> Setting</span>
+											</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link active" data-toggle="pill" href="#results" role="tab" aria-selected="true">
+											<span class="align">
+												<i class="icon icon-results"></i>
+												<span class="text d-block">Results</span>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</aside>
+							<div class="main-tabs-content tab-content">
+								<div class="tab-pane fade" id="video">
+									<div class="d-flex flex-wrap w-100">
+										<div class="inner-tab-container order-2">
+											<div class="inner-tabs-wrap">
+												<ul class="nav inner-tabs nav-pills" role=tablist>
+													<li class="nav-item">
+														<a class="nav-link active" data-toggle="pill" href="#video1" role="tab" aria-selected="true">
+															<span class="align">
+																<i class="icon icon-video"></i>
+																<span class="text d-block">video</span>
+															</span>
+														</a>
+													</li>
+												</ul>
+												<div class="inner-tabs-content tab-content">
+													<div class="tab-pane fade show active" id="video1">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area sm-scroll">
+																<div class="video-block-wrap">
+																	<ul class="video-bloks-list list-unstyled">
+																		<li>
+																			<div class="video-block">
+																				<div class="img">
+																					<img src="images/img2.jpg" class="img-fluid" alt="image description">	
+																					<a href="#" class="btn-play"><i class="icon-play"></i></a>
+																					<span class="video-time">00:30</span>
+																				</div>
+																				<div class="video-descrip">
+																					<strong class="video-title d-block"><a href="#">Video_1245.mp4</a></strong>
+																					<span class="video-size d-block">3.2 MB</span>
+																				</div>
+																				<a href="#conformationModal" data-toggle="modal" class="btn-delete"><i class="icon-delete"></i></a>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+															<div class="btn-wrap">
+																<a href="#" class="btn rounded-btn btn-warning btn-sm"><i class="icon-recording"></i> Record</a>
+																<a href="#" class="btn rounded-btn btn-warning btn-sm"><i class="icon-upload"></i> Upload</a>
+																<a href="#" class="btn rounded-btn btn-warning btn-sm"><i class="icon-url"></i> URL</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="video-box order-1 text-center">
+											<a href="#video-Modal" data-toggle="modal" class="btn-play"><img src="images/play.png" width="76" height="76" alt="play button"></a>
+											<img src="images/frame-video-mobile.png" class="img-fluid" width="394" height="218" alt="image description">
+										</div>
+									</div>
+									<div class="personal-poll d-none">
+										<div class="icon-logo">
+											<a href="#"><img src="images/logo-v.png" width="80" height="70" alt="image description"></a>
+										</div>
+										<div class="large-text">
+											<p>Hi, add a video clip to start creating your personal poll</p>
+										</div>
+										<div class="btn-wrap">
+											<a href="#" class="btn btn-primary btn-sm"><i class="icon-recording"></i> Record</a>
+											<a href="#" class="btn btn-primary btn-sm"><i class="icon-upload"></i> Upload</a>
+											<a href="#" class="btn btn-primary btn-sm"><i class="icon-url"></i> URL</a>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="question">
+									<div class="d-flex flex-wrap w-100">
+										<div class="inner-tab-container order-2">
+											<div class="inner-tabs-wrap">
+												<ul class="nav inner-tabs nav-pills" role=tablist>
+													<li class="nav-item">
+														<a class="nav-link active" data-toggle="pill" href="#vote1" role="tab" aria-selected="true">
+															<span class="align">
+																<i class="icon icon-vote"></i>
+																<span class="text d-block">Vote 1</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="pill" href="#vote2" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-vote"></i>
+																<span class="text d-block">Vote 2</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="pill" href="#vote3" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-vote"></i>
+																<span class="text d-block">Vote 3</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="pill" href="#vote-add" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-add"></i>
+																<span class="text d-block">+ Add Vote</span>
+															</span>
+														</a>
+													</li>
+												</ul>
+												<div class="inner-tabs-content tab-content">
+													<div class="tab-pane fade show active" id="vote1">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area md-scroll">
+																<form>
+																	<div class="vote-box">
+																		<h3>Question:</h3>
+																		<textarea placeholder="Ask a question...." class="form-control pl-0 sm border-0"></textarea>
+																		<div class="text-left">
+																			<a href="#" class="vote-box-link">+ Add an alternative</a>
+																		</div>
+																	</div>
+																	<a href="#" class="btn rounded-btn round btn-warning btn-sm"><i class="icon-stettings-ouline"></i> Settings</a>
+																</form>
+															</div>
+															<div class="btn-wrap text-center">
+																<a href="#" class="btn rounded-btn btn-warning btn-sm"><i class="icon-plus"></i> Create Vote</a>
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="vote2">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area md-scroll">
+																<form>
+																	<div class="vote-box">
+																		<h3>Question:</h3>
+																		<textarea placeholder="Ask a question...." class="form-control pl-0 sm border-0"></textarea>
+																		<div class="text-left">
+																			<a href="#" class="vote-box-link">+ Add an alternative</a>
+																		</div>
+																	</div>
+																	<a href="#" class="btn rounded-btn round btn-warning btn-sm"><i class="icon-stettings-ouline"></i> Settings</a>
+																</form>
+															</div>
+															<div class="btn-wrap text-center">
+																<a href="#" class="btn rounded-btn btn-warning btn-sm"><i class="icon-plus"></i> Create Vote</a>
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="vote3">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area md-scroll">
+																<form>
+																	<div class="vote-box">
+																		<h3>Question:</h3>
+																		<textarea id=:ques3 placeholder="Ask a question...." class="form-control pl-0 sm border-0"></textarea>
+																		<div class="text-left">
+																			<a href="#" class="vote-box-link">+ Add an alternative</a>
+																		</div>
+																	</div>
+																	<a href="#" class="btn rounded-btn round btn-warning btn-sm"><i class="icon-stettings-ouline"></i> Settings</a>
+																</form>
+															</div>
+															<div class="btn-wrap text-center">
+																<a href="#" class="btn rounded-btn btn-warning btn-sm"><i class="icon-plus"></i> Create Vote</a>
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="vote-add">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area md-scroll">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="outro">
+									<div class="d-flex flex-wrap w-100">
+										<div class="inner-tab-container order-2">
+											<div class="inner-tabs-wrap">
+												<ul class="nav inner-tabs nav-pills" role=tablist>
+													<li class="nav-item">
+														<a class="nav-link active" data-toggle="pill" href="#video3" role="tab" aria-selected="true">
+															<span class="align">
+																<i class="icon icon-video "></i>
+																<span class="text d-block">video</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="pill" href="#gif" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-gif "></i>
+																<span class="text d-block">GIF</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="pill" href="#text" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-open-text"></i>
+																<span class="text d-block">Text</span>
+															</span>
+														</a>
+													</li>
+												</ul>
+												<div class="inner-tabs-content tab-content">
+													<div class="tab-pane fade show active" id="video3">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area sm-scroll">
+																<div class="video-block-wrap">
+																	<ul class="video-bloks-list list-unstyled">
+																		<li>
+																			<div class="video-block">
+																				<div class="img">
+																					<img src="images/img2.jpg" class="img-fluid" alt="image description">	
+																					<a href="#" class="btn-play"><i class="icon-play"></i></a>
+																					<span class="video-time">00:30</span>
+																				</div>
+																				<div class="video-descrip">
+																					<strong class="video-title d-block"><a href="#">Video_1245.mp4</a></strong>
+																					<span class="video-size d-block">3.2 MB</span>
+																				</div>
+																				<a href="#conformationModal" data-toggle="modal" class="btn-delete"><i class="icon-delete"></i></a>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+															<div class="btn-wrap">
+																<a href="#" class="btn btn-sm rounded-btn btn-warning"><i class="icon-recording"></i> Record</a>
+																<a href="#" class="btn btn-sm rounded-btn btn-warning"><i class="icon-upload"></i> Upload</a>
+																<a href="#" class="btn btn-sm rounded-btn btn-warning"><i class="icon-url"></i> URL</a>
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="gif">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area sm-scroll">
+																<form class="search-form">
+																	<div class="search-wrap">
+																		<input type="search" class="form-control" placeholder="Search for GIFs">
+																		<button type="submit" class="btn-search btn"><i class="icon-search"></i></button>
+																	</div>
+																</form>
+																<div class="gif-block-wrap">
+																	<ul class="gif-bloks-list list-unstyled">
+																		<li><a href="#"><img src="images/gif01.png" width="200" height="161" alt="image description"></a></li>
+																		<li><a href="#"><img src="images/gif03.png" width="200" height="161" alt="image description"></a></li>
+																		<li><a href="#"><img src="images/gif01.png" width="200" height="161" alt="image description"></a></li>
+																		<li><a href="#"><img src="images/gif03.png" width="200" height="161" alt="image description"></a></li>
+																		<li><a href="#"><img src="images/gif01.png" width="200" height="161" alt="image description"></a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="text">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area sm-scroll">
+																<form>
+																	<div class="form-group mb-60">
+																		<textarea class="form-control" placeholder="Type here ......"></textarea>
+																	</div>
+																	<div class="text-center">
+																		<button type="submit" class="btn btn-submit btn-warning btn-sm rounded-btn">Submit</button>
+																	</div>
+																	<div class="thank-you-message">
+																		<div class="align">
+																			<p>Thank you for answering</p>
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="video-box order-1 text-center">
+											<a href="#video-Modal" data-toggle="modal" class="btn-play"><img src="images/play.png" width="76" height="76" alt="play button"></a>
+											<img src="images/frame-video-mobile.png" class="img-fluid" width="394" height="218" alt="image description">
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="branding">
+									<div class="d-flex flex-wrap w-100">
+										<div class="inner-tab-container order-2">
+											<div class="inner-tabs-wrap">
+												<ul class="nav inner-tabs nav-pills" role=tablist>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="pill" href="#color" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-color-swatch"></i>
+																<span class="text d-block">Colors</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="pill" href="#logo" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-swift"></i>
+																<span class="text d-block">Logo</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link active" data-toggle="pill" href="#logo-sound" role="tab" aria-selected="true">
+															<span class="align">
+																<i class="icon icon-soundwave"></i>
+																<span class="text d-block">Logo intro sound</span>
+															</span>
+														</a>
+													</li>
+												</ul>
+												<div class="inner-tabs-content tab-content">
+													<div class="tab-pane fade" id="color">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area">
+																
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="logo">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area sm-scroll">
+																<form>
+																	<div class="logo-select-wrap">
+																		<ul class="list-unstyled">
+																			<li><a href="#"><img src="images/demo-company.jpg" width="147" height="147" alt=""></a></li>
+																		</ul>
+																		<div class="text-center">
+																			<a href="#" class="btn btn-warning btn-sm rounded-btn"><i class="icon-image"></i> Select Logo</a>
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade show active" id="logo-sound">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area sm-scroll">
+																<ul class="intro-sound-list list-unstyled">
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																	<li>
+																		<div class="sound-leftsize">
+																			<div class="icon-wrap">
+																				<a href="#">
+																					<img src="images/play.png" width="45" height="45" alt="play button">
+																				</a>
+																			</div>
+																			<div class="sound-detail">
+																				<strong class="title">Then you k...</strong>
+																				<span class="subtitle">Snow Dept.</span>
+																			</div>
+																		</div>
+																		<a href="#" class="btn btn-warning rounded-btn">Use</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="g-setting">
+									<div class="d-flex flex-wrap w-100">
+										<div class="inner-tab-container order-2">
+											<div class="inner-tabs-wrap">
+												<ul class="nav inner-tabs nav-pills" role=tablist>
+													<li class="nav-item">
+														<a class="nav-link active" data-toggle="pill" href="#setting" role="tab" aria-selected="true">
+															<span class="align">
+																<i class="icon icon-interface"></i>
+																<span class="text d-block">Settings</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="pill" href="#export" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-export"></i>
+																<span class="text d-block">Export</span>
+															</span>
+														</a>
+													</li>
+												</ul>
+												<div class="inner-tabs-content tab-content">
+													<div class="tab-pane fade show active" id="setting">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area">
+																<form class="settings-form">
+																	<div class="form-group">
+																		<label for="pass">Password</label>
+																		<div class="inpupt-wrap">
+																			<input class="form-control" type="password" id="pass" placeholder="Enter your password">
+																			<i class="icon icon-preview"></i>
+																		</div>
+																	</div>
+																	<div class="form-group">
+																		<label for="date">Start Date</label>
+																		<div class="inpupt-wrap">
+																			<input class="form-control" type="text" id="date" placeholder="DD/MM/YYYY">
+																			<i class="icon icon-calendar"></i>
+																		</div>
+																	</div>
+																	<div class="form-group">
+																		<span class="label">Do you want the recipient to see the poll result?</span>
+																		<div class="custom-control custom-checkbox">
+																		  <input type="checkbox" class="custom-control-input" id="customCheck1">
+																		  <label class="custom-control-label" for="customCheck1">No</label>
+																		</div>
+																		<div class="custom-control custom-checkbox">
+																		  <input type="checkbox" class="custom-control-input" id="customCheck2">
+																		  <label class="custom-control-label" for="customCheck2">Yes, show result during voting?</label>
+																		</div>
+																		<div class="custom-control custom-checkbox">
+																		  <input type="checkbox" class="custom-control-input" id="customCheck3">
+																		  <label class="custom-control-label" for="customCheck3">Yes, show result after voting?</label>
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="export">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area">
+																<div class="exports-btns-wrap">
+																	<div class="hold">
+																		<a href="#" class="btn btn-warning btn-sm rounded-btn"><i class="icon-share"></i> Share result</a>
+																		<a href="#" class="btn btn-warning btn-sm rounded-btn"><i class="icon-upload"></i> Export result</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade show active" id="results">
+									<div class="d-flex flex-wrap w-100">
+										<div class="inner-tab-container order-2">
+											<div class="inner-tabs-wrap">
+												<ul class="nav inner-tabs nav-pills" role=tablist>
+													<li class="nav-item">
+														<a class="nav-link active" data-toggle="pill" href="#result-vote1" role="tab" aria-selected="true">
+															<span class="align">
+																<i class="icon icon-vote"></i>
+																<span class="text d-block">Vote 1</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="pill" href="#result-vote2" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-vote"></i>
+																<span class="text d-block">Vote 2</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="pill" href="#result-vote3" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-vote"></i>
+																<span class="text d-block">Vote 3</span>
+															</span>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link analytics" data-toggle="pill" href="#analytics" role="tab" aria-selected="false">
+															<span class="align">
+																<i class="icon icon-analytics"></i>
+																<span class="text d-block">Analytics</span>
+															</span>
+														</a>
+													</li>
+												</ul>
+												<div class="inner-tabs-content tab-content">
+													<div class="tab-pane fade show active" id="result-vote1">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area">
+																<ul class="list-unstyled progress-result">
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Julia</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">22%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar02.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Sanders</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 19%" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">19%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar02.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Buttigieg</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 18%" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">18%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar02.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Biden</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">17%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Klobuchar</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 04%" aria-valuenow="04" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">04%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Harris</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 03%" aria-valuenow="03" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">03%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Yang</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 03%" aria-valuenow="03" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">03%</strong>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="result-vote2">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area">
+																<ul class="list-unstyled progress-result">
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Julia</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">22%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar02.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Sanders</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 19%" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">19%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar02.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Buttigieg</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 18%" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">18%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar02.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Biden</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">17%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Klobuchar</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 04%" aria-valuenow="04" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">04%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Harris</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 03%" aria-valuenow="03" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">03%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Yang</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 03%" aria-valuenow="03" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">03%</strong>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="result-vote3">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area">
+																<ul class="list-unstyled progress-result">
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Julia</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">22%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar02.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Sanders</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 19%" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">19%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar02.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Buttigieg</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 18%" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">18%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar02.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Biden</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">17%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Klobuchar</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 04%" aria-valuenow="04" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">04%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Harris</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 03%" aria-valuenow="03" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">03%</strong>
+																	</li>
+																	<li>
+																		<div class="title-wrap">
+																			<div class="img">
+																				<img src="images/avtar01.png" width="29" height="29" alt="image description">
+																			</div>
+																			<strong class="title">Yang</strong>
+																		</div>
+																		<div class="progress">
+																			<div class="progress-bar bg-info" role="progressbar" style="width: 03%" aria-valuenow="03" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																		<strong class="persentage">03%</strong>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="analytics">
+														<div class="inner-tabs-holder w-100">
+															<div class="scroll-area">
+																<div class="graph-wrap">
+																	<img src="images/graph.jpg" width="640" height="510"  alt="graph">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			<div class="next-prev-btns-wrap">
+				<div class="next-prev-btns">
+					<a href="#" class="btn"><i class="icon-prev"></i></a>
+					<a href="#" class="btn"><i class="icon-next"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal conformation-modal fade" id="conformationModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xs">
+      <div class="modal-content">
+        <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-body text-center">
+        	<form>
+	        	<h3>Do you want to delete this clip?</h3>
+	        	<div class="btn-wrap">
+	        		<a href="#" class="btn btn-primary">Yes</a>
+	        		<a href="#" class="btn btn-light">NO</a>
+        		</div>
+        	</form>
+        </div> 
+      </div>
+    </div>  
+  </div>
+  <div class="modal video-modal fade" id="video-Modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-body">
+        	<div class="video-wrap">
+        		<img class="img-fluid" src="images/frame-video-lightbox.png" alt="image description">
+        	</div>
+        </div> 
+      </div>
+    </div>  
+  </div>
+</body>
+</html>

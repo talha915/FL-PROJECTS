@@ -1,0 +1,33 @@
+.video-box{
+	position: relative;
+	margin: 0 auto 18px;
+	max-width: 408px;
+	align-self: flex-start;
+	overflow: hidden;
+	border-radius: 8px;
+	img{
+		width: 100%;
+	}
+	.btn-play{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		width: 44px;
+		img{
+			width: auto;
+		}
+	}
+}
+.media-panel{
+	box-shadow: 0 -4px 10px rgba($black,.07);
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background:$white;
+}
+
+.audio-wrap{
+	audio{
+		width: 100%;
+	}
+}

@@ -1,0 +1,135 @@
+.nav-pills{
+	flex-wrap: nowrap;
+	margin: 0 -7px;
+	width: calc(100% + 14px);
+	&.main-nav-pills{
+		display: flex;
+		flex-direction: row;
+		margin: 0;
+		width: 100%;
+		justify-content: center;
+		.nav-item{
+			display: inline-flex;
+			padding: 0;
+			@include media-breakpoint-up (sm){
+				flex-grow: 1;	
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+			.nav-link{
+				display: flex;
+				align-items: center;
+				i{
+					margin-bottom: 8px;
+				}
+				.align{
+					width: 100%;
+				}
+			}
+		}
+	}
+	&.inner-tabs{
+		background:$white;
+		position: fixed;
+		justify-content: center;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 12;
+		min-width: 320px;
+	}
+	.nav-item{
+		padding: 0 7px;
+		@include font(12,14,$font-weight-semibold);
+		.nav-link{
+			width: 100%;
+			text-align: center;
+			color:$gray-900;
+			background:transparent;
+			padding: 11px 5px;
+			.icon{
+				@include align();
+				margin-bottom: 5px;
+				font-size: 19px;
+				line-height: 19px;
+				&.icon-video{
+					font-size: 16px;
+				}
+				&.icon-branding{
+					font-size: 18px;
+				}
+				&.icon-results{
+					font-size: 21px;
+				}
+				&.icon-analytics{
+					font-size: 23px;
+				}
+				&.icon-gif{
+					font-size: 14px;
+				}
+				&.icon-add{
+					font-size: 25px;
+				}
+				&.icon-vote{
+					font-size: 23px;
+				}
+				&.icon-open-text{
+					font-size: 16px;
+				}
+			}
+			&:focus,
+			&:hover{
+				color:darken($red,5%);
+			}
+			&.active{
+				color:theme-color('primary');
+				background:transparent;
+				font-weight:$font-weight-bold;
+			}
+		}
+	}
+}
+.inner-tabs-wrap{
+	width: 100%;
+	position: relative;
+}
+.inner-tab-container{
+	box-shadow: 0 2px 7px rgba($black,.14);
+	background:$white;
+	border-radius: 5px;
+	padding:11px 13px;
+	width: 100%;
+}
+.tab-content{
+	border:1px solid $gray-400;
+	padding: 20px;
+	&.main-tabs-content{
+		border:0;
+		padding: 0;
+	}
+	&.inner-tabs-content{
+		padding-right: 5px;
+		flex-grow: 1;
+		overflow: hidden;
+		text-align: center;
+		border-radius: 5px;
+		.btn-wrap{
+			width: calc(100% + 10px);
+			padding-top: 20px;
+			text-align: center;
+			max-width: 300px;
+			@include align();
+		}
+	}
+}
+.tab-pane{
+	width: 100%;
+	position: relative;
+	.row{
+		width: calc(100% + 30px);
+	}
+}
+.inner-tabs-holder{
+	position: relative;
+}

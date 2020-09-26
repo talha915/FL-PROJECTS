@@ -1,0 +1,33 @@
+.next-prev-btns-wrap{
+	padding: 0 15px;
+	position: fixed;
+	left: 0;
+	width: 100%;
+	bottom: 72px;
+	z-index: 99;
+}
+.next-prev-btns{
+	display: flex;
+	justify-content:center;
+	margin: 0 -6px;
+	.btn{
+		@include size(30px);
+		background:$white;
+		box-shadow: 0 0 8px rgba($black,.16);
+		border-radius: 5px;
+		position: relative;
+		color:$gray-300;
+		margin: 0 6px;
+		i{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			font-size: 14px;
+		}
+		&:hover,
+		&:focus{
+			background:darken($white,5%);
+		}
+	}
+}

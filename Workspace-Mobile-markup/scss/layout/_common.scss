@@ -1,0 +1,104 @@
+#page{
+	overflow: hidden;
+	position: relative;
+	min-height: 100%;
+}
+body{
+	@include font(18,21);
+	
+}
+.dashboard-page{
+	padding-top: 77px;
+	padding-bottom: 113px;
+}
+.btn{
+	@include font(14,18,$font-weight-bold);
+	padding: 11px 15px;
+	&:hover,
+	&:focus{
+		box-shadow: none !important;
+		outline: none !important;
+	}
+	i{
+		font-size: 13px;
+		margin-right: 5px;
+		@include align(middle);
+		line-height: 18px;
+		&.icon-image{
+			font-size: 20px;
+		}
+		&.icon-stettings-ouline{
+			font-size: 24px;
+		}
+		&.icon-plus{
+			font-size: 17px;
+		}
+		&.icon-upload{
+			font-size: 20px;
+		}
+		&.icon-url{
+			font-size: 24px;
+		}
+		&.icon-share{
+			font-size: 23px;
+		}
+		&.icon-preview{
+			font-size: 14px;	
+		}
+		&.icon-trim{
+			font-size: 19px;	
+		}
+	}
+	&.rounded-btn{
+		border-radius: 24px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+img{
+	vertical-align: top;
+	height: auto;
+	max-width: 100%;
+}
+.btn-wrap{
+	margin: -9px -5px;
+	.btn{
+		min-width: 174px;
+		margin: 9px 5px;
+	}
+}
+.scroll-area{
+	min-height:calc(100vh - 300px);
+	max-height: calc(100vh - 300px);
+	overflow: hidden;
+	overflow-y: auto;
+	width: 100% !important;
+	padding-right: 12px;
+	&.sm-scroll{
+		min-height: 300px;
+		max-height: 300px;
+	}
+	&.md-scroll{
+		min-height:calc(100vh - 350px);
+		max-height: calc(100vh - 350px);
+	}
+}
+.video-wrap{
+	img{
+		width: 100%;
+	}
+}
+.os-theme-dark > .os-scrollbar-vertical, .os-theme-light > .os-scrollbar-vertical{
+	width: 8px;
+	@include media-breakpoint-up (md){
+		width: 12px;
+	}
+}
+.os-theme-dark > .os-scrollbar, .os-theme-light > .os-scrollbar{
+	border:1px solid $gray-500;
+	border-radius: 15px;
+	padding: 0;
+}
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle{
+	background:$gray-300;
+}

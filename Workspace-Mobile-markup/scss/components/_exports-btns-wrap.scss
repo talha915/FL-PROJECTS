@@ -1,0 +1,15 @@
+.exports-btns-wrap{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 400px;
+	.hold{
+		max-width: 255px;
+		.btn{
+			margin: 10px 0;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,186 @@
+#page{
+	overflow: hidden;
+	position: relative;
+	min-height: 100%;
+}
+body{
+	@include font(18,21);
+	@include media-breakpoint-up (xl){
+		@include font(18,21);
+	}
+}
+.dashboard-page{
+	padding-top: 77px;
+	padding-bottom: 114px;
+	@include media-breakpoint-up (lg){
+		padding-top: 71px;
+	}
+	@include media-breakpoint-up (xxxl){
+		//padding-top: 137px;
+		//padding-bottom: 221px;
+	}
+}
+.dashboard-wrap{
+	@include media-breakpoint-up (xxxl){
+		padding: 0 35px;
+	}
+}
+.btn{
+	@include font(14,18,$font-weight-semibold);
+	padding: 11px 15px;
+	@include media-breakpoint-up (md){
+		//@include font(16,20);
+		border-radius: 8px;
+		padding:12px 15px;
+	}
+	@include media-breakpoint-up (xxl){
+		//padding: 15px;
+	}
+	@include media-breakpoint-up (xxxl){
+		border-radius: 10px;
+	}
+	&:hover,
+	&:focus{
+		box-shadow: none !important;
+		outline: none !important;
+	}
+	&.btn-sm{
+		@include media-breakpoint-up (xxl){
+			@include font(14,18);
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+	}
+	i{
+		font-size: 13px;
+		margin-right: 5px;
+		@include align(middle);
+		line-height: 18px;
+		&.icon-image{
+			font-size: 20px;
+			@include media-breakpoint-up (xxxl){
+				font-size: 23px;
+			}
+		}
+		&.icon-stettings-ouline{
+			font-size: 24px;
+		}
+		&.icon-plus{
+			font-size: 17px;
+		}
+		&.icon-upload{
+			font-size: 20px;
+		}
+		&.icon-url{
+			font-size: 24px;
+		}
+		&.icon-share{
+			font-size: 20px;
+		}
+		&.icon-preview{
+			font-size: 14px;	
+		}
+		&.icon-trim{
+			font-size: 18px;	
+		}
+	}
+	&.rounded-btn{
+		border-radius: 24px;
+		padding-left: 30px;
+		padding-right: 30px;
+		@include media-breakpoint-up (lg){
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		@include media-breakpoint-up (xl){
+			padding-left: 24px;
+			padding-right: 24px;
+		}
+		@include media-breakpoint-up (xxl){
+			padding-left: 30px;
+			padding-right: 30px;
+			border-radius: 27px;
+		}
+	}
+}
+img{
+	vertical-align: top;
+	height: auto;
+	max-width: 100%;
+}
+.btn-wrap{
+	margin: -9px -5px;
+	@include media-breakpoint-down (md){
+		text-align: center;
+	}
+	.btn{
+		min-width: 174px;
+		margin: 9px 5px;
+		@include media-breakpoint-up (md){
+			min-width: 145px;
+		}
+		@include media-breakpoint-up (lg){
+			min-width: 130px;
+		}
+		@include media-breakpoint-up (xl){
+			min-width: 145px;
+		}
+	}
+}
+.scroll-area{
+	min-height: 500px;
+	max-height: 500px;
+	overflow: hidden;
+	overflow-y: auto;
+	width: 100% !important;
+	padding-right: 12px;
+	&.sm-scroll{
+		@include media-breakpoint-down (md){
+			min-height: 400px;
+			max-height: 400px;
+		}
+	}
+	@include media-breakpoint-up (md){
+		padding-right: 19px;
+		min-height: 500px;
+		max-height: 500px;
+		
+	}
+	@include media-breakpoint-up (lg){
+		min-height: 300px;
+		height: 100%;
+		max-height: none;
+	}
+}
+.os-theme-dark > .os-scrollbar-vertical, .os-theme-light > .os-scrollbar-vertical{
+	width: 8px;
+	@include media-breakpoint-up (md){
+		width: 12px;
+	}
+}
+.os-theme-dark > .os-scrollbar, .os-theme-light > .os-scrollbar{
+	border:1px solid $gray-500;
+	border-radius: 15px;
+	padding: 0;
+}
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle{
+	background:$gray-300;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
