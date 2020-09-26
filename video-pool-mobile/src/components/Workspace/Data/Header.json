@@ -1,0 +1,21 @@
+{
+    "header": {
+        "navList": [
+            {
+                "name": "Project",
+                "activeStatus": false,
+                "path": "/workspace/project"
+            },
+            {
+                "name": "Branding",
+                "activeStatus": false,
+                "path": "/workspace/branding"
+            },
+            {
+                "name": "Setting",
+                "activeStatus": false,
+                "path": "/workspace/setting"
+            }
+        ]
+    }
+}
