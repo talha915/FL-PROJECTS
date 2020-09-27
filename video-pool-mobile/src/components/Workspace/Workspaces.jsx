@@ -4,7 +4,7 @@ import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Project from './Project/Project';
 import Branding from './Branding/Branding';
-import Footer from './Footer/Footer';
+import Setting from './Setting/Setting';
 
 class Workspaces extends Component {
 
@@ -31,7 +31,11 @@ class Workspaces extends Component {
                         <Project />:
                         window.location.pathname === "/workspace/branding" ?
                         <Branding />
-                        : ""}
+                        : 
+                        window.location.pathname === "/workspace/setting" ?
+                        <Setting />
+                            : ""
+                    }
                     </div>
                 </div>
             </body>
