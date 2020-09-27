@@ -4,16 +4,22 @@
             {
                 "name": "Project",
                 "activeStatus": false,
+                "icon": "ico project-icon",
+                "img": "/images/project-icon.svg",
                 "path": "/workspace/project"
             },
             {
                 "name": "Branding",
                 "activeStatus": false,
+                "icon": "ico project-icon",
+                "img": "/images/branding-icon.svg",
                 "path": "/workspace/branding"
             },
             {
                 "name": "Setting",
                 "activeStatus": false,
+                "icon": "ico project-icon",
+                "img": "/images/setting-icon.svg",
                 "path": "/workspace/setting"
             }
         ]

@@ -10,6 +10,9 @@ import Branding from '../Branding';
 import Setting from '../Setting';
 import Result from '../Result';
 
+import Project from '../Workspace/Project/Project';
+import Workspaces from '../Workspace/Workspaces';
+
 class Router extends Component {
     render() {
         return(
@@ -33,6 +36,8 @@ class Router extends Component {
                     <Route component={Result} path="/results/vote2" exact/>
                     <Route component={Result} path="/results/vote3" exact/>
                     <Route component={Result} path="/results/analytics" exact/>
+
+                    <Route component={Workspaces} path="/workspace/project" exact />
                 </Switch>
             </div>
         )

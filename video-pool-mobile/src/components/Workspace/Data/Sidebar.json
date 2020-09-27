@@ -15,6 +15,10 @@
             {
                 "image": "/images/folder.png",
                 "name": "My Workspace"
+            },
+            {
+                "image": "/images/folder.png",
+                "name": "My Workspace"
             }
         ],
         "infoNavList": [
