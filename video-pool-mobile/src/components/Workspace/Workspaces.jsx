@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Project from './Project/Project';
+import Branding from './Branding/Branding';
 import Footer from './Footer/Footer';
 
 class Workspaces extends Component {
@@ -25,7 +26,12 @@ class Workspaces extends Component {
                     <Sidebar />
                     <div className="right-content">
                         <Header sendSide={this.getSidebar}/>
-                        <Project />
+                        {
+                            window.location.pathname === "/workspace/project" ?
+                        <Project />:
+                        window.location.pathname === "/workspace/branding" ?
+                        <Branding />
+                        : ""}
                     </div>
                 </div>
             </body>

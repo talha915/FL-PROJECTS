@@ -38,6 +38,7 @@ class Router extends Component {
                     <Route component={Result} path="/results/analytics" exact/>
 
                     <Route component={Workspaces} path="/workspace/project" exact />
+                    <Route component={Workspaces} path="/workspace/branding" exact />
                 </Switch>
             </div>
         )
