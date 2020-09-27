@@ -22,6 +22,10 @@ class Tabs extends Component {
         this.setState({tabList: TabsList});
     }
 
+    workSpace=()=> {
+        this.props.history.push('/workspace/project');
+    }
+
     route=(data)=> {
         this.props.history.push(data);
     }
@@ -58,7 +62,7 @@ class Tabs extends Component {
                             </aside>
                             <div className="personal-poll">
                                 <div className="icon-logo">
-                                    <a href="#"><img src="images/logo-v.png" width="80" height="70" alt="image description" /></a>
+                                    <a href="#" onClick={this.workSpace}><img src="images/logo-v.png" width="80" height="70" alt="image description" /></a>
                                 </div>
                                 <div className="large-text">
                                     <p>Hi, add a video clip to start creating your personal poll</p>

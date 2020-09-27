@@ -24,12 +24,16 @@ class Header extends Component {
         this.setState({ headerData: HeaderData.header });
     }
 
+    route=(data)=> {
+        this.props.history.push(data);
+    }
+
     getHeaderList = () => {
         if (this.state.headerData) {
             let data = this.state.headerData.navList;
             let headerList = data.map((datas, index) => {
                 return (
-                    <li key={index} className="active"><a href="#"><img className={datas.icon} src={datas.img} alt="img description" /> {datas.name}</a></li>
+                    <li key={index} className={window.location.pathname === datas.path ? "active" : ""} onClick={()=>this.route(datas.path, index)}><a href="#"><img className={datas.icon} src={datas.img} alt="img description" /> {datas.name}</a></li>
                 )
             })
             return headerList;

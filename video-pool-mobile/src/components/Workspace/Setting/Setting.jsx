@@ -41,13 +41,13 @@ class Setting extends Component {
                         <div className="content-group">
                             <strong className="title">Personal/Company</strong>
                             <div className="content-row input-row justify-content-start">
-                                <label for="fname">First Name :</label>
+                                <label htmlFor="fname">First Name :</label>
                                 <div className="input-box">
                                     <input id="fname" type="text" />
                                 </div>
                             </div>
                             <div className="content-row input-row justify-content-start">
-                                <label for="lname">Last Name :</label>
+                                <label htmlFor="lname">Last Name :</label>
                                 <div className="input-box">
                                     <input id="lname" type="text" />
                                 </div>
@@ -64,7 +64,7 @@ class Setting extends Component {
                                 </div>
                             </div>
                             <div className="content-row input-row justify-content-start">
-                                <label for="company">Company Name :</label>
+                                <label htmlFor="company">Company Name :</label>
                                 <div className="input-box">
                                     <input id="company" type="text" />
                                 </div>
