@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rent A Car</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <link rel="stylesheet" id="stm-stm-icon-css"
+    href="https://motors.stylemixthemes.com/dealer-two/wp-content/uploads/sites/9/stm_fonts/stm-icon/stm-icon.css?ver=1.1"
+    type="text/css" media="all">
+  <link rel="stylesheet" id="stm-google-fonts-css"
+    href="//fonts.googleapis.com/css?family=Open+Sans%3Aregular%2Citalic%2C700%2C300%2C300italic%2C600%2C600italic%2C700italic%2C800%2C800italic%7CMontserrat%3Aregular%2C700%2C500%2C600%2C800%2C900&amp;ver=1.0.7"
+    type="text/css" media="all">
+  <link rel="stylesheet" href="css/skin-custom.css">
+  <link rel="stylesheet" href="css/stm-icon.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+    integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+    crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" href="#"><img src="images/logo.svg" alt="Logo"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li> -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      PAGES
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">FAQ</a>
+                      <a class="dropdown-item" href="#">About Us</a>
+                      <a class="dropdown-item" href="#">Contact Us</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="banner">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="images/slide_1.jpg" alt="First slide">
+            <div class="carousel-content">
+              <h1>Mercedes-Benz AMG GT 2017</h1>
+              <strong>$320<small>/MO</small></strong>
+              <p>FOR 36 MONTHS</p>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-transparent">
+                  <i class="stm-icon-steering_wheel"></i>
+                  Test Drive</button>
+                <button type="button" class="btn btn-secondary btn-blue">Learn More</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item bg-black-opacity">
+            <img class="d-block w-100" src="images/slide_2.jpg" alt="Second slide">
+            <div class="container">
+              <div class="carousel-content content-2">
+                <h2><strong>2018 New</strong> Toyota Highlander LE</h2>
+                <p>$499 per Month for 24 months. 0% APR Representative</p>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary btn-transparent">
+                    <i class="stm-icon-steering_wheel"></i>
+                    Test Drive</button>
+                  <button type="button" class="btn btn-secondary btn-blue">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="search-banner">
+      <div class="container">
+        <div class="row search-banner-container">
+          <div class="col-md-12">
+            <h2>
+              <i class="stm-icon-car_search"></i>
+              Search Inventory</h2>
+          </div>
+          <div class="col-md-3">
+            <form>
+              <label>Select</label>
+              <select class="form-control select2">
+                <option>Choose Year</option>
+                <option>Car</option>
+                <option>Bike</option>
+                <option>Scooter</option>
+                <option>Cycle</option>
+                <option>Horse</option>
+              </select>
+            </form>
+          </div>
+          <div class="col-md-3">
+            <form>
+              <label>Select</label>
+              <select class="form-control select2">
+                <option>Choose Make</option>
+                <option>Car</option>
+                <option>Bike</option>
+                <option>Scooter</option>
+                <option>Cycle</option>
+                <option>Horse</option>
+              </select>
+            </form>
+          </div>
+          <div class="col-md-3">
+            <form>
+              <label>Select</label>
+              <select class="form-control select2">
+                <option>Choose Model</option>
+                <option>Car</option>
+                <option>Bike</option>
+                <option>Scooter</option>
+                <option>Cycle</option>
+                <option>Horse</option>
+              </select>
+            </form>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-primary btn-transparent">
+              <i class="las la-search"></i>
+              Search</button>
+          </div>
+          <div class="col-md-1">
+            <button type="button" class="btn btn-secondary btn-blue">
+              <i class="las la-undo-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Recent <strong>Cars</strong></h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+              <img class="card-img-full" src="images/card-img-1.jpg" alt="Card image">
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+              <img class="card-img-top" src="images/card-img-2.jpg" alt="Card image">
+              <div class="card-body">
+                <div class="title-button">
+                  <h5 class="card-title">New 2017 Chevrolet Malibu</h5>
+                  <button type="button" class="btn btn-blue">
+                    <span>Buy Online</span>
+                    <strong>$32 000</strong>
+                  </button>
+                </div>
+                <div class="specs">
+                  <i class="stm-icon-road"><span>2017</span></i>
+                  <i class="stm-icon-fuel"><span>45/56</span></i>
+                  <i class="stm-icon-transmission_fill"><span>Semi-automatic</span></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+              <img class="card-img-top" src="images/card-img-3.jpg" alt="Card image">
+              <div class="card-body">
+                <div class="title-button">
+                  <h5 class="card-title">New 2017 Chevrolet Malibu</h5>
+                  <button type="button" class="btn btn-blue">
+                    <span>Buy Online</span>
+                    <strong>$32 000</strong>
+                  </button>
+                </div>
+                <div class="specs">
+                  <i class="stm-icon-road"><span>2017</span></i>
+                  <i class="stm-icon-fuel"><span>45/56</span></i>
+                  <i class="stm-icon-transmission_fill"><span>Semi-automatic</span></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+              <img class="card-img-top" src="images/card-img-4.jpg" alt="Card image">
+              <div class="card-body">
+                <div class="title-button">
+                  <h5 class="card-title">New 2017 Chevrolet Malibu</h5>
+                  <button type="button" class="btn btn-blue">
+                    <!-- <span>Buy Online</span> -->
+                    <strong>$20 000</strong>
+                  </button>
+                </div>
+                <div class="specs">
+                  <i class="stm-icon-road"><span>2017</span></i>
+                  <i class="stm-icon-fuel"><span>45/56</span></i>
+                  <i class="stm-icon-transmission_fill"><span>Semi-automatic</span></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+              <img class="card-img-top" src="images/card-img-5.jpg" alt="Card image">
+              <div class="card-body">
+                <div class="title-button">
+                  <h5 class="card-title">New 2017 Chevrolet Malibu</h5>
+                  <button type="button" class="btn btn-blue">
+                    <!-- <span>Buy Online</span> -->
+                    <strong>$58 000</strong>
+                  </button>
+                </div>
+                <div class="specs">
+                  <i class="stm-icon-road"><span>2017</span></i>
+                  <i class="stm-icon-fuel"><span>45/56</span></i>
+                  <i class="stm-icon-transmission_fill"><span>Semi-automatic</span></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+              <img class="card-img-top" src="images/card-img-6.jpg" alt="Card image">
+              <div class="card-body">
+                <div class="title-button">
+                  <h5 class="card-title">New 2017 Chevrolet Malibu</h5>
+                  <button type="button" class="btn btn-blue">
+                    <!-- <span>Buy Online</span> -->
+                    <strong>Call Us</strong>
+                  </button>
+                </div>
+                <div class="specs">
+                  <i class="stm-icon-road"><span>2017</span></i>
+                  <i class="stm-icon-fuel"><span>45/56</span></i>
+                  <i class="stm-icon-transmission_fill"><span>Semi-automatic</span></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="inner-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="static-bg white-bg">
+                <i class="stm-icon-car_search"></i>
+                <h3>Looking for a Car</h3>
+                <p>Our cars are delivered fully-registered with all requirements completed. We’ll deliver your car
+                  wherever you are.</p>
+                <button type="button" class="btn btn-blue">Inventory</button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="static-bg yellow-bg">
+                <i class="stm-icon-car_sale"></i>
+                <h3>Want to sell a Car</h3>
+                <p>Receive the absolute best value for your trade-in vehicle. We even handle all paperwork. Schedule
+                  your
+                  appointment today!</p>
+                <button type="button" class="btn btn-blue">Sell Your Car</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="services">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="white-bg">
+                <i class="stm-icon-speedometr stm-service-primary-color"></i>
+                <div class="service-discription">
+                  <h4>WIDE RANGE OF BRANDS</h4>
+                  <p>With a robust selection of popular vehicles on hand, as well as leading vehicles from BMW.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="white-bg">
+                <i class="stm-icon-chat stm-service-primary-color"></i>
+                <div class="service-discription">
+                  <h4>TRUSTED BY THOUSANDS</h4>
+                  <p>10 new offers every day. 350 offers on site, trusted by a community of thousands of users.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="white-bg">
+                <i class="stm-icon-application stm-service-primary-color"></i>
+                <div class="service-discription">
+                  <h4>SERVICE & MAINTENANCE</h4>
+                  <p>Our service department maintain your car to stay safe on the road for many more years.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Review Slider Section -->
+
+      <div class="review-slider">
+        <div class="container">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="images/reviewee-1.jpg" alt="First slide">
+                <div class="reviewer-details">
+                  <h5>Joana Olsen
+                    <span>Customer</span>
+                  </h5>
+                  <p>“Impressed! I have installed 50+ themes. This is by far the best one I have ever worked on. Easy to
+                    use and loaded with functions. Support is also great! A++”
+                  </p>
+                  <i class="fa fa-quote-right"></i>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/reviewee-2.jpg" alt="Second slide">
+                <div class="reviewer-details">
+                  <h5>Khalid
+                    <span>Customer</span>
+                  </h5>
+                  <p>
+                    “This theme has a lot of features and does load fairly fast despite all the different plugins used.
+                    Support is quick and courteous and the theme is nice to work with.”
+                  </p>
+                  <i class="fa fa-quote-right"></i>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review Slider Section Ends-->
+
+      <!-- Video Section -->
+
+      <div class="video-section">
+        <div class="container">
+          <div class="col-md-12 text-center">
+            <h2>Welcome to <strong>Motors</strong></h2>
+            <p>With specialists on hand to help with any part of the car shopping or vehicle ownership experience,
+              Motors provides financing, car service and a great selection of vehicles for luxury car shoppers in
+              Chicago, IL. Motors is ultimate Car Dealer,</p>
+            <div class="play-circle-wrapper">
+              <div class="play-circle">
+                <i class="fa fa-play"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Section Ends-->
+
+      <!-- Feedback Section -->
+
+      <div class="feedback-section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12 col-lg-6">
+              <h3>Have a Questions? <span>Feel free to ask...</span></h3>
+            </div>
+            <div class="contact-number col-md-12 col-lg-6 d-flex align-items-center justify-content-between">
+              <a href="tel:+1 878-9674-4455">
+                <i class="stm-icon-phone2"></i>
+                +1 878-9674-4455
+              </a>
+              <button type="button" class="btn btn-transparent"><i class="fa fa-envelope-o"></i>Feedback</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback Section Ends-->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div>
+              <h6><span class="colored">Motors</span> Wordpress theme</h6>
+              <p>Fusce interdum ipsum egestas urna amet fringilla, et placerat ex venenatis. Aliquet luctus pharetra.
+                Proin sed fringilla lectus...
+                ar sit amet tellus in mollis. Proin nec egestas nibh, eget egestas urna. Phasellus sit amet vehicula
+                nunc.
+                In hac habitasse platea dictumst. </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div>
+              <h6>Photo gallery</h6>
+              <div class="gallery-item">
+                <img src="images/footer-widget-1.jpg" alt="Widget 1">
+                <img src="images/footer-widget-2.jpg" alt="Widget 2">
+                <img src="images/footer-widget-3.jpg" alt="Widget 3">
+                <img src="images/footer-widget-1.jpg" alt="Widget 1">
+                <img src="images/footer-widget-2.jpg" alt="Widget 2">
+                <img src="images/footer-widget-3.jpg" alt="Widget 3">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div>
+              <h6>Latest Blog posts</h6>
+              <p>Cras condimentum a elit eget sagittis. Ut dignissim sapien feugiat purus tristique, vitae...</p>
+              <div class="comments-number">
+                <a href="#"><i class="stm-icon-message"></i> NO COMMENTS</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div>
+              <h6>Social Network</h6>
+              <ul class="widget_socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row no-border">
+          <div class="col-md-6 col-lg-3">
+            <div>
+              <h6>Subscribe</h6>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter your email...">
+                <button class="btn btn-secondary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+                <span>Get latest updates and offers.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div>
+              <h6>Sales Hours</h6>
+              <div class="textwidget">
+                <p><span>Monday – Friday:</span> 09:00AM – 07:00PM</p>
+                <p><span>Saturday:</span> 09:00AM – 07:00PM</p>
+                <p><span>Sunday:</span> Closed</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div>
+              <h6>Service Hours</h6>
+              <div class="textwidget">
+                <p><span>Monday – Friday:</span> 09:00AM – 07:00PM</p>
+                <p><span>Saturday:</span> 09:00AM – 07:00PM</p>
+                <p><span>Sunday:</span> Closed</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div>
+              <h6>Parts Hours</h6>
+              <div class="textwidget">
+                <p><span>Monday – Friday:</span> 09:00AM – 07:00PM</p>
+                <p><span>Saturday:</span> 09:00AM – 07:00PM</p>
+                <p><span>Sunday:</span> Closed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="footer-copyright">
+            <div class="copyright-text"> Copyright © 2020.
+              <a href="#">Motors</a> – WordPress Theme by <a href="#">StylemixThemes</a>
+            </div>
+            <div class="pull-right">
+              <div class="copyright-socials">
+                <ul class="clearfix">
+                  <li>
+                    <a href="https://www.facebook.com/" target="_blank">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/" target="_blank">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/" target="_blank">
+                      <i class="fa fa-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/" target="_blank">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/" target="_blank">
+                      <i class="fa fa-youtube-play"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    $('.select2').select2();
+  </script>
+</body>
+
+</html>

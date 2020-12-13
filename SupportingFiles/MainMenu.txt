@@ -1,0 +1,50 @@
+Top Menu for the website:  Home  Features   FAQs   Join Us   Contact Us
+
+Menu for inside the app will be:
+My Networks
+  Network 1
+      Member Directory
+      Small Groups
+      Training
+  Network 2
+      Member Directory
+      Small Groups
+      Training
+My Contacts
+  All Contacts
+  Referrals
+  Prospects Sorting
+My Cards
+My Profile
+  Reviews
+Reports
+   Revenue
+Settings
+Help
+
+
+
+Dialogs  [order to completion] position >
+
+[ 1] Login
+[ 2] Dashboard
+[ 6] My Networks
+[ 7] > Network 1
+[ 8] > > Member Directory
+[17] > > Small Groups
+[18] > > Training
+[  7] > Network 2
+[  8] > > Member Directory
+[17] > > Small Groups
+[18] > >  Training
+[10] My Contacts
+[11] > All Contacts
+[15] > Referrals
+[16] > Prospects Sorting
+[  9] My Cards
+[ 3] My Profile
+[12] > Reviews
+[13] Reports
+[14] > Revenue
+[ 4] Settings
+[ 5] Help
