@@ -24,7 +24,6 @@ class Main extends Component {
     }
 
     getData = () => {
-        console.log("Data: ", this.state.data);
         if (this.state.data) {
             let data = this.state.data;
             return (
