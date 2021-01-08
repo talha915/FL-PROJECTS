@@ -4,6 +4,9 @@ import { Row, Col } from 'reactstrap';
 
 import '../styles/login.css';
 
+// Components
+import LoginForm from './Login/LoginForm';
+
 function Login(props) {
     
     const [heading, loginHeading] = useState('');
@@ -21,7 +24,15 @@ function Login(props) {
     const setLoginForm=()=> {
         loginData(props.loginDetails.loginForm);
     }
-    console.log("Login", loginform);
+    
+    const getLoginForm=()=> {
+        if(loginform) {
+            return (
+                <LoginForm formData={loginform}/>
+            )
+        }
+    }
+
     return (
         
         <div className="login-container">
@@ -32,7 +43,7 @@ function Login(props) {
                     </h1>
                 </Col>
                 <Col md="6" sm="4">
-                    Login
+                    {getLoginForm()}
                 </Col>
             </Row>
         </div>
