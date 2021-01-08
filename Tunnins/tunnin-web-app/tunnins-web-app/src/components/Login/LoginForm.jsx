@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 // Style
 import '../../styles/login.css';
@@ -15,6 +15,10 @@ function LoginForm(props) {
     const setFormData = () => {
         setForm(props.formData);
     }
+
+    const [modal, setModal] = useState(false);
+
+    const toggle = () => setModal(!modal);
 
     const getFormData = () => {
         if (Object.keys(loginForm).length > 0) {
@@ -40,16 +44,31 @@ function LoginForm(props) {
                                 <Input type="checkbox" /> {loginForm.remember}
                             </Label>
                         </FormGroup>
-                        <FormGroup check inline style={{textAlign: "right"}}>
+                        <FormGroup check inline style={{ textAlign: "right" }}>
                             <Label check>
-                                <a href="#">{loginForm.forgot}</a> 
+                                <a href="#" onClick={toggle}>{loginForm.forgot}</a>
                             </Label>
                         </FormGroup>
                         <FormGroup>
-                            <Button color="secondary" size="lg" >{loginForm.loginBtn}</Button>
+                            <Button color="info" size="lg" >{loginForm.loginBtn}</Button>
                         </FormGroup>
-                        
+
                     </Form>
+
+                    <Modal isOpen={modal} toggle={toggle} >
+                        <ModalHeader >{loginForm.forgot}</ModalHeader>
+                        <ModalBody>
+                            <Form>
+                                <FormGroup>
+                                    <Label for="exampleEmail">{loginForm.email}</Label>
+                                    <Input type="email" name="email" id="exampleEmail" placeholder="dodgeui2020@gmail.com" />
+                                </FormGroup>
+                            </Form>
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button color="secondary" onClick={toggle}>Send</Button>
+                        </ModalFooter>
+                    </Modal>
                 </div>
             )
         }
