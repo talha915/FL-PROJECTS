@@ -9,7 +9,7 @@
         "password": "Password",
         "remember": "Remember Me",
         "forgot": "Forgot Password?",
-        "login-btn": "Login",
+        "loginBtn": "Login",
         "signup-text": "Don’t have an account? SIGN UP"
     }
 }

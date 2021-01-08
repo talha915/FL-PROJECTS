@@ -45,7 +45,10 @@ function LoginForm(props) {
                                 <a href="#">{loginForm.forgot}</a> 
                             </Label>
                         </FormGroup>
-                        <Button color="secondary" size="lg" block>Block level button</Button>
+                        <FormGroup>
+                            <Button color="secondary" size="lg" >{loginForm.loginBtn}</Button>
+                        </FormGroup>
+                        
                     </Form>
                 </div>
             )
