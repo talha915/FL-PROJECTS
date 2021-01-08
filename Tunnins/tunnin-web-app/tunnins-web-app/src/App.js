@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
 // Components
 import Main from './components/Main';

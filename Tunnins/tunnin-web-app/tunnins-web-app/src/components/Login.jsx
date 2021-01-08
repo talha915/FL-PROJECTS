@@ -24,9 +24,9 @@ function Login(props) {
     const setLoginForm=()=> {
         loginData(props.loginDetails.loginForm);
     }
-    
+
     const getLoginForm=()=> {
-        if(loginform) {
+        if(Object.keys(loginform).length > 0) {
             return (
                 <LoginForm formData={loginform}/>
             )

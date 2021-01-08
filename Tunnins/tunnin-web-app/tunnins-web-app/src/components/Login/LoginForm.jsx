@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function LoginForm(props) {
-    console.log("Props: ", props);
+    
+    const [loginForm, setForm] = useState({});
+
+    useEffect(() => {
+        setFormData();
+    }, []);
+
+    const setFormData = ()=> {  
+        setForm(props.formData);
+    }
+
+    const getFormData=()=> {
+        if(Object.keys(loginForm).length > 0) {
+            console.log(loginForm);
+        }
+    }
+    
     return(
         <div>
-            Form
+            {getFormData()}
         </div>
     )
 }
