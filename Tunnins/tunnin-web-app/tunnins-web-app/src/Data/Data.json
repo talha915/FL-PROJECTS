@@ -1,0 +1,14 @@
+{
+    "login": {
+        "heading": "Tunnin"
+    },
+    "login-form": {
+        "welcome-text": "Welcome back. Please login to continue",
+        "email": "Email Address",
+        "password": "Password",
+        "remember": "Remember Me",
+        "forgot": "Forgot Password?",
+        "login-btn": "Login",
+        "signup-text": "Don’t have an account? SIGN UP"
+    }
+}
