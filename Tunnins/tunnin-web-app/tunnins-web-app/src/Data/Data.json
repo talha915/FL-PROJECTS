@@ -3,7 +3,8 @@
         "heading": "Tunnin"
     },
     "loginForm": {
-        "welcomeText": "Welcome back. Please login to continue",
+        "welcomeText": "Welcome back.",
+        "loginNote": "Please login to continue",
         "email": "Email Address",
         "password": "Password",
         "remember": "Remember Me",

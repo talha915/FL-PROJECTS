@@ -17,3 +17,18 @@
     transform: translate(-50%, -50%);
     color: #D0A592;
 }
+
+.login-form-heading {
+    color: #D0A592;
+    padding-top: 90px;
+}
+
+.login-form {
+    padding-left: 30px;
+}
+
+.login-form-note {
+    color: #585B8F;
+    font-size: 20px;
+    padding-bottom: 50px;
+}
