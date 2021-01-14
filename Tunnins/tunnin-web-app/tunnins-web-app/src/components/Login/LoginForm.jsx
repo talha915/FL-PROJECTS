@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+
+import ModalPopup from './ModalPopup';
 
 // Style
-import '../../styles/login.css';
+import '../../styles/login.scss';
 
 function LoginForm(props) {
 
@@ -52,23 +54,8 @@ function LoginForm(props) {
                         <FormGroup>
                             <Button color="info" size="lg" >{loginForm.loginBtn}</Button>
                         </FormGroup>
-
                     </Form>
-
-                    <Modal isOpen={modal} toggle={toggle} >
-                        <ModalHeader >{loginForm.forgot}</ModalHeader>
-                        <ModalBody>
-                            <Form>
-                                <FormGroup>
-                                    <Label for="exampleEmail">{loginForm.email}</Label>
-                                    <Input type="email" name="email" id="exampleEmail" placeholder="dodgeui2020@gmail.com" />
-                                </FormGroup>
-                            </Form>
-                        </ModalBody>
-                        <ModalFooter>
-                            <Button color="secondary" onClick={toggle}>Send</Button>
-                        </ModalFooter>
-                    </Modal>
+                    <ModalPopup isOpen={modal} loginData={loginForm}/>                 
                 </div>
             )
         }

@@ -1,8 +1,7 @@
-import { objectExpression } from '@babel/types';
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'reactstrap';
 
-import '../styles/login.css';
+import '../styles/login.scss';
 
 // Components
 import LoginForm from './Login/LoginForm';
