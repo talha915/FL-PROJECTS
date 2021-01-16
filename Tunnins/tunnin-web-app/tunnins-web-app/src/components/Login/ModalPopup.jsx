@@ -17,6 +17,10 @@ function ModalPopup(props) {
         setForm(props.loginData);
     }
 
+    const updateData=()=> {
+        console.log("Time To Update Modal");
+    }
+
     return (
         <Modal isOpen={props.isOpen} >
             <ModalHeader >{loginForm.forgot}</ModalHeader>
@@ -29,7 +33,7 @@ function ModalPopup(props) {
                 </Form>
             </ModalBody>
             <ModalFooter>
-                <Button color="secondary" >Send</Button>
+                <Button color="secondary" onClick={()=>updateData()}>Send</Button>
             </ModalFooter>
         </Modal>
     )
