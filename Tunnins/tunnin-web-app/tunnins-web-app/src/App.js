@@ -11,11 +11,16 @@ import {Provider} from 'react-redux';
 // Redux Components
 import rootReducer from './reducer/index';
 
+const store = createStore(
+  rootReducer,
+  applyMiddleware(logger, thunkMiddleware)
+);
+
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <Main />
-    </div>
+    </Provider>
   );
 }
 

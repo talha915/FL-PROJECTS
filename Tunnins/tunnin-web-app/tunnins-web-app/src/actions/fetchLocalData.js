@@ -8,7 +8,7 @@ export const getLocal=()=>{
         .then((res)=> {
             dispatch({
                 type: 'fetchLocalData',
-                data: res
+                payload: res
             })
         })
     }
