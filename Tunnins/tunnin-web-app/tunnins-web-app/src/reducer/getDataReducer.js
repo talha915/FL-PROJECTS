@@ -1,14 +1,14 @@
 const initialState = {
-    dataState: []
+    dataState: {}
 }
 
 export default function(state=initialState, actions) {
     switch(actions.type) {
         case 'fetchLocalData':
-            return [
-                ...state.dataState,
-                actions.payload
-            ]
+            return {
+                ...state,
+                dataState: actions.payload
+            }
         default:
             return state;    
     }

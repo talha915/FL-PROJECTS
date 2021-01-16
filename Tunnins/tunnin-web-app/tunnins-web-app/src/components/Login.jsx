@@ -17,11 +17,11 @@ function Login(props) {
     }, []);
 
     const setHeading=()=> {
-        loginHeading(props.loginDetails.login.heading);
+        loginHeading(props.loginDetails.dataState.login.heading);
     }
 
     const setLoginForm=()=> {
-        loginData(props.loginDetails.loginForm);
+        loginData(props.loginDetails.dataState.loginForm);
     }
 
     const getLoginForm=()=> {

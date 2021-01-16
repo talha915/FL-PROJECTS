@@ -24,17 +24,15 @@ class Main extends Component {
 
     componentDidMount() {
         this.setData();
-        // ReduxAction
-        this.props.getLocal();
     }
 
     setData = () => {
-        this.setState({ data: Data });
+        this.props.dispatch(getLocal());
     }
 
     getData = () => {
-        if (this.state.data) {
-            let data = this.state.data;
+        if (Object.keys(this.props.localData.dataState).length > 0) {
+            let data = this.props.localData;
             return (
                 <Login loginDetails={data} />
             )
@@ -52,7 +50,7 @@ class Main extends Component {
 
 function mapStateToProps(state) {
     return {
-        localData: state
+        localData: state.localData
     }
 }
 
@@ -62,4 +60,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps)(Main);
