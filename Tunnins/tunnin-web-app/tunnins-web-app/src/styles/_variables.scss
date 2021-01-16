@@ -1,0 +1,42 @@
+$base-font-size: 18px;
+$primary: #1A1B2F;
+$secondary: #D8A48F;
+
+$font-primary: 'Poppins', sans-serif;
+
+$theme-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    // "success":    $success,
+    // "info":       $info,
+    // "warning":    $warning,
+    // "danger":     $danger,
+    // "light":      $light,
+    // "dark":       $dark
+  ),
+  $theme-colors
+);
+
+// headings
+$h1-font-size:                $base-font-size * 2.75;
+$h2-font-size:                $base-font-size * 2;
+$h3-font-size:                $base-font-size * 1.5;
+$h4-font-size:                $base-font-size * 1;
+
+$grid-breakpoints: (
+    xs: 0,
+    xs-mb: 375px,
+    sm: 544px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+$container-max-widths: (
+    md: 720px,
+    lg: 940px,
+    xl: 1140px
+);

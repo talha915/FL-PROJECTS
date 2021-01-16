@@ -1,0 +1,15 @@
+//map-get(map, key)
+//$map-get($colors, "black");
+$colors: (
+  "mirage":#1A1B2F,
+);
+
+// Shade classes
+@each $color, $color_value in $colors {
+    .#{$color} {
+      background-color: $color_value !important;
+    }
+    .#{$color}-text {
+      color: $color_value !important;
+    }
+  }

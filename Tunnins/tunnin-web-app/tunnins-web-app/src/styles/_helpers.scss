@@ -1,0 +1,34 @@
+// clearfix
+%clearfix {
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+}
+
+// reset for list
+%listreset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// vertical inline top
+%align-top {
+	display: inline-block;
+	vertical-align:top;
+}
+
+// vertical inline middle
+%align-middle {
+	display: inline-block;
+	vertical-align:middle;
+}
+
+// image full width
+%img-full-width {
+	width: 100%;
+	height:auto;
+	display: block;
+}
