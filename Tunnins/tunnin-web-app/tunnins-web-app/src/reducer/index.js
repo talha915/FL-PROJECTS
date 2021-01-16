@@ -1,9 +1,9 @@
-import { combineReducer } from 'redux';
+import { combineReducers } from 'redux';
 
 // Reducers
 import localData from './getDataReducer';
 
-const rootReducer = combineReducer({
+const rootReducer = combineReducers({
     localData
 })
 
