@@ -3,6 +3,13 @@ import React, { Component } from 'react';
 // Components
 import Login from './Login';
 
+// Redux
+import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+
+// Redux Action
+import { getLocal } from '../actions/fetchLocalData';
+
 // Data
 import Data from '../Data/Data.json';
 
@@ -17,6 +24,8 @@ class Main extends Component {
 
     componentDidMount() {
         this.setData();
+        // ReduxAction
+        this.props.getLocal();
     }
 
     setData = () => {
@@ -40,4 +49,17 @@ class Main extends Component {
         )
     }
 }
-export default Main;
+
+function mapStateToProps(state) {
+    return {
+        localData: state
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        getLocal: bindActionCreators(getLocal, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
