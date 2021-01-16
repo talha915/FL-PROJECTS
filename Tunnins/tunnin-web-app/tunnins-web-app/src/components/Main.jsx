@@ -27,7 +27,7 @@ class Main extends Component {
     }
 
     setData = () => {
-        this.props.dispatch(getLocal());
+        this.props.getLocal();
     }
 
     getData = () => {
@@ -60,4 +60,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
