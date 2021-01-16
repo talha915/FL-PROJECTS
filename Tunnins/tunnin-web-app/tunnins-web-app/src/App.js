@@ -8,6 +8,8 @@ import {applyMiddleware, createStore} from 'redux';
 import {logger} from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import {Provider} from 'react-redux';
+// Redux Components
+import rootReducer from './reducer/index';
 
 function App() {
   return (
