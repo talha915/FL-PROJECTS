@@ -11,6 +11,9 @@ import {Provider} from 'react-redux';
 // Redux Components
 import rootReducer from './reducer/index';
 
+// Router
+import Router from './components/Router/Router';
+
 const store = createStore(
   rootReducer,
   applyMiddleware(logger, thunk)
@@ -19,7 +22,7 @@ const store = createStore(
 function App() {
   return (
     <Provider store={store}>
-      <Main />
+      <Router />
     </Provider>
   );
 }

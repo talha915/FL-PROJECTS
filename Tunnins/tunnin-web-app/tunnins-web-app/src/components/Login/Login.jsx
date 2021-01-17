@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'reactstrap';
 
-import '../styles/login.scss';
+import '../../styles/login.scss';
 
 // Components
-import LoginForm from './Login/LoginForm';
+import LoginForm from './LoginForm';
 
 function Login(props) {
     
