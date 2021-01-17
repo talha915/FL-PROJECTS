@@ -6,12 +6,16 @@ import ModalPopup from './ModalPopup';
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
+// Action
+import { updateModal } from '../../actions/updateModal';
+
 // Style
 import '../../styles/login.scss';
 
 function LoginForm(props) {
 
     const [loginForm, setForm] = useState({});
+    const [modalData, setModalData] = useState({});
 
     useEffect(() => {
         setFormData();
@@ -23,8 +27,16 @@ function LoginForm(props) {
 
     const [modal, setModal] = useState(false);
 
-    const toggle = () => setModal(!modal);
+    const dispatch = useDispatch();
 
+    const toggle = ()=>{
+        setModal(!modal);
+        dispatch(updateModal('forgot'));
+    } 
+
+    const modalState = useSelector(state => state.updateModal);
+    
+    
     const getFormData = () => {
         if (Object.keys(loginForm).length > 0) {
             return (
@@ -58,7 +70,7 @@ function LoginForm(props) {
                             <Button color="info" size="lg" >{loginForm.loginBtn}</Button>
                         </FormGroup>
                     </Form>
-                    <ModalPopup isOpen={modal} loginData={loginForm}/>                 
+                    <ModalPopup isOpen={modal} loginData={modalState}/>                 
                 </div>
             )
         }
