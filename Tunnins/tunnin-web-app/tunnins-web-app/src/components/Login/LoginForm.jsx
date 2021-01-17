@@ -30,7 +30,7 @@ function LoginForm(props) {
     const dispatch = useDispatch();
 
     const toggle = ()=>{
-        setModal(!modal);
+        //setModal(!modal);
         dispatch(updateModal('forgot'));
     } 
 

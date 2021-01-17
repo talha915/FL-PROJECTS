@@ -8,4 +8,10 @@ export const updateModal = (typeModal) => {
             payload: localData.forgotPassword
         }
     }
+    else if(typeModal == 'reset') {
+        return {
+            type: 'resetPassword',
+            payload: localData.resetPassword
+        }
+    }
 }
