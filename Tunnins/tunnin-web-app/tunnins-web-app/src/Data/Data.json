@@ -11,5 +11,10 @@
         "forgot": "Forgot Password?",
         "loginBtn": "Login",
         "signup-text": "Don’t have an account? SIGN UP"
+    },
+    "forgotPassword": {
+        "heading": "Forgot Password?",
+        "email": "Email Address",
+        "btnText": "Send"
     }
 }
