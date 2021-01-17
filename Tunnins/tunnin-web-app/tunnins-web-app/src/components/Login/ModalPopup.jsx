@@ -21,15 +21,13 @@ function ModalPopup(props) {
 
     const modalState = useSelector(state => state.updateModal);
 
-    console.log("Modal State: ", modalState);
+    const closeModal=()=> {
+        dispatch(updateModal('close'));
+    }
 
     const getModal = () => {
         if (Object.keys(props.loginData).length > 0) {
-            console.log("Props", props.loginData);
             let data = props.loginData.modalState;
-            if (data.hasOwnProperty('text')) {
-                console.log("Reset")
-            }
             return (
                 <Modal isOpen={props.loginData.popUp} >
                     <ModalHeader >{data.heading}</ModalHeader>
@@ -51,7 +49,7 @@ function ModalPopup(props) {
                     </ModalBody>
                     <ModalFooter>
                         {data.hasOwnProperty('text') ?
-                            <Button color="secondary" >Ok</Button>
+                            <Button color="secondary" onClick={() => closeModal()}>Ok</Button>
                             :
                             <Button color="secondary" onClick={() => updateData()}>Send</Button>
                         }

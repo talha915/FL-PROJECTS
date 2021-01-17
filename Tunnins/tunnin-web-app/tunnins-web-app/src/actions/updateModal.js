@@ -14,4 +14,10 @@ export const updateModal = (typeModal) => {
             payload: localData.resetPassword
         }
     }
+    else if(typeModal == 'close') {
+        return {
+            type: 'closeModal',
+            payload: localData.resetPassword
+        }
+    }
 }

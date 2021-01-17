@@ -12,13 +12,17 @@ export default function(state=initialState, actions) {
                 popUp: !state.modalState.popUp,
                 modalState: actions.payload
             }
-        break;
         case 'resetPassword':
             return {
                 //popUp: !state.modalState.popUp,
                 modalState: actions.payload,
                 popUp: !state.modalState.popUp
-            }    
+            } 
+        case 'closeModal':
+            return {
+                popUp: false,
+                modalState: actions.payload
+            }
         default:
             return state;    
     }
