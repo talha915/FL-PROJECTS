@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Components
-import Login from './Login';
+import Login from './Login/Login';
 
 // Redux
 import { connect } from 'react-redux';
