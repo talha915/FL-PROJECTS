@@ -7,9 +7,9 @@ const initialState = {
 export default function(state=initialState, actions) {
     switch(actions.type) {
         case 'forgotPassword':
-            console.log("I am called");
             return {
-                ...state,
+                ...state.modalState,
+                popUp: !state.modalState.popUp,
                 modalState: actions.payload
             }
         default:

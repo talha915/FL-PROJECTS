@@ -12,7 +12,7 @@ function ModalPopup(props) {
 
     const getModal = () => {
         if(Object.keys(props.loginData).length > 0) {
-            console.log("Props", props.loginData.modalState);
+            console.log("Props", props.loginData);
             let data = props.loginData.modalState;
             return (
                 <Modal isOpen={props.isOpen} >
