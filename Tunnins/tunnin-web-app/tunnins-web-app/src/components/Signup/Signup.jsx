@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Row, Col, Label, Input } from 'reactstrap';
+import { Row, Col, Label, Input, Button } from 'reactstrap';
 
 // Constants
 import sign_up from '../../constants/constants';
@@ -17,6 +17,9 @@ import '../../styles/signup.scss'
 function SignUp() {
 
     const dispatch = useDispatch();
+
+    // State
+    const [formVal, setForm] = useState('');
 
     useEffect(() => {
         dispatchSignupAction();
@@ -42,18 +45,44 @@ function SignUp() {
                     <Row>
                         {formDetail(signupState.data)}
                     </Row>
-                    <Input type="checkbox"/> {signupState.data.subscribe}
+                    <Input type="checkbox" onChange={(e)=>handleSubscribe('subscribe', e.target.checked)}/> {signupState.data.subscribe}
+                    <Button onClick={formValue} >
+                        {signupState.data.btnText}
+                    </Button>
                 </div>
             )
         }
     }
+
+    let form = {};
+
+    const handleSubscribe=(key, data)=> {
+        form[key] = data;
+        console.log("form", form);
+    }
+
+    
+
+    const handleChange=(key, data)=> {
+        console.log("Key: ", key);
+        console.log("Data: ", data);
+        form[key] = data;
+        console.log("Form", form);
+    }
+
+    const formValue=()=> {
+        setForm(form);
+        console.log("Overall Form: ", formVal);
+    }
+
+    
 
     const formDetail = (data) => {
         let formDetails = data.details.map((item, index) => {
             return (
                 <Col xs="6" sm="6" md="6" lg="6" key={index}>
                     <Label className="formheading"><p>{item.name}</p></Label>                      
-                    <input type={item.type} placeholder={item.placeholder} className="form-control-lg"/>          
+                    <input type={item.type} placeholder={item.placeholder} className="form-control-lg" onChange={(e)=>handleChange(item.field, e.target.value)}/>          
                 </Col>
             )
         })

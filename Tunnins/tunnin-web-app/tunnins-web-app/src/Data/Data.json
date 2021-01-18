@@ -37,27 +37,32 @@
             {
                 "name": "Full Name",
                 "placeholder": "Elias Manik",
-                "type": "text"
+                "type": "text",
+                "field": "f_name"
             },
             {
                 "name": "Password",
                 "placeholder": "***************",
-                "type": "password"
+                "type": "password",
+                "field": "pass"
             },
             {
                 "name": "Email Address",
                 "placeholder": "dodgeui2020@gmail.com",
-                "type": "email"
+                "type": "email",
+                "field": "email"
             },
             {
                 "name": "Confirm Password",
                 "placeholder": "***************",
-                "type": "password"
+                "type": "password",
+                "field": "c_pass"
             },
             {
                 "name": "Date of Birth",
                 "placeholder": "15-July-1996",
-                "type": "date"
+                "type": "date",
+                "field": "dob"
             }
         ],
         "subscribe": "Subscribe to our newsletter",
