@@ -45,7 +45,7 @@ function SignUp() {
                     <Row>
                         {formDetail(signupState.data)}
                     </Row>
-                    <Input type="checkbox" onChange={(e)=>handleSubscribe('subscribe', e.target.checked)}/> {signupState.data.subscribe}
+                    <Input type="checkbox" onChange={(e)=>handleChange('subscribe', e.target.checked)}/> {signupState.data.subscribe}
                     <Button onClick={formValue} >
                         {signupState.data.btnText}
                     </Button>
@@ -55,27 +55,14 @@ function SignUp() {
     }
 
     let form = {};
-
-    const handleSubscribe=(key, data)=> {
-        form[key] = data;
-        console.log("form", form);
-    }
-
     
-
     const handleChange=(key, data)=> {
-        console.log("Key: ", key);
-        console.log("Data: ", data);
         form[key] = data;
-        console.log("Form", form);
     }
 
     const formValue=()=> {
         setForm(form);
-        console.log("Overall Form: ", formVal);
     }
-
-    
 
     const formDetail = (data) => {
         let formDetails = data.details.map((item, index) => {
