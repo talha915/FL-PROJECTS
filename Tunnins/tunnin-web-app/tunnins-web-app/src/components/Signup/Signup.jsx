@@ -4,17 +4,22 @@ import { Row, Col, Label, Input, Button } from 'reactstrap';
 
 // Constants
 import sign_up from '../../constants/constants';
+import signed_up from '../../constants/constants';
 
 // Actions
 import { Signup } from '../../actions/Signup';
+import { SignedUp } from '../../actions/signedUp';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
+// Router
+import { withRouter } from 'react-router-dom';
+
 // Styles
 import '../../styles/signup.scss'
 
-function SignUp() {
+function SignUp(props) {
 
     const dispatch = useDispatch();
 
@@ -46,7 +51,7 @@ function SignUp() {
                         {formDetail(signupState.data)}
                     </Row>
                     <Input type="checkbox" onChange={(e)=>handleChange('subscribe', e.target.checked)}/> {signupState.data.subscribe}
-                    <Button onClick={formValue} >
+                    <Button onClick={()=>formValue(signupState.data)} >
                         {signupState.data.btnText}
                     </Button>
                 </div>
@@ -60,9 +65,15 @@ function SignUp() {
         form[key] = data;
     }
 
-    const formValue=()=> {
+    const formValue=(data)=> {
         setForm(form);
+        props.history.push({
+            pathname: data.route,
+            routeData: data
+        });
     }
+
+    
 
     const formDetail = (data) => {
         let formDetails = data.details.map((item, index) => {
@@ -83,4 +94,4 @@ function SignUp() {
     )
 }
 
-export default SignUp;
+export default withRouter(SignUp);

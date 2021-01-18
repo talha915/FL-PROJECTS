@@ -66,6 +66,7 @@
             }
         ],
         "subscribe": "Subscribe to our newsletter",
-        "btnText": "NEXT"
+        "btnText": "NEXT",
+        "route": "/verify"
     }
 }
