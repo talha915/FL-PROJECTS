@@ -21,5 +21,12 @@
         "heading": "Reset Password",
         "text": "A link to reset your password has been sent to your registered email address",
         "btnText": "Ok"
+    },
+    "signUp": {
+        "welcomeText": "Welcome to Tunnin.",
+        "heading": "Create your account to continue",
+        "btnText": "GET STARTED",
+        "question": "Already have an account? ",
+        "signIn": "SIGN IN"
     }
 }

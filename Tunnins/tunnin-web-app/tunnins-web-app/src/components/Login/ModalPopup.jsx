@@ -25,11 +25,19 @@ function ModalPopup(props) {
         dispatch(updateModal('close'));
     }
 
+    const handleChange=(data)=> {
+        props.sendData(data);
+    }
+
     const getModal = () => {
         if (Object.keys(props.loginData).length > 0) {
             let data = props.loginData.modalState;
+            if(props.loginData.popUp == false) {
+                //props.onChange(props.loginData);
+                handleChange(props.loginData);
+            }
             return (
-                <Modal isOpen={props.loginData.popUp} >
+                <Modal isOpen={props.loginData.popUp} onChange={handleChange}>
                     <ModalHeader >{data.heading}</ModalHeader>
                     <ModalBody>
                         <Form>

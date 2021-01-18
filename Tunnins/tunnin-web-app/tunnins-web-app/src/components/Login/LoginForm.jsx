@@ -12,6 +12,8 @@ import { updateModal } from '../../actions/updateModal';
 // Style
 import '../../styles/login.scss';
 
+let dataNew;
+
 function LoginForm(props) {
 
     const [loginForm, setForm] = useState({});
@@ -21,24 +23,58 @@ function LoginForm(props) {
         setFormData();
     }, []);
 
+
     const setFormData = () => {
         setForm(props.formData);
     }
 
     const [modal, setModal] = useState(false);
 
+    const [datacall, setDataCall] = useState({});
+
     const dispatch = useDispatch();
 
-    const toggle = ()=>{
+    const toggle = () => {
         //setModal(!modal);
         dispatch(updateModal('forgot'));
-    } 
+    }
 
     const modalState = useSelector(state => state.updateModal);
-    
-    
+
+
+    const getDataFromChild = (val) => {
+        callAgain(val);
+    }
+
+    const callAgain = (data) => {
+        //getFormData(data);
+        setDataCall(data);
+    }
+
     const getFormData = () => {
-        if (Object.keys(loginForm).length > 0) {
+
+        if (datacall.hasOwnProperty('modalState')) {
+            return (
+                <div className="login-form">
+                    <h2 className="login-form-heading">
+                        {datacall.modalState.welcomeText}
+                    </h2>
+                    <p className="login-form-note">
+                        {datacall.modalState.heading}
+                    </p>
+                    <Form >
+                        <FormGroup>
+                            <Button color="info" size="lg">
+                                {datacall.modalState.btnText}
+                            </Button>
+                        </FormGroup>
+                    </Form>
+                </div>
+            )
+        }
+
+        else if (Object.keys(loginForm).length > 0) {
+
             return (
                 <div className="login-form">
                     <h2 className="login-form-heading">
@@ -70,7 +106,7 @@ function LoginForm(props) {
                             <Button color="info" size="lg" >{loginForm.loginBtn}</Button>
                         </FormGroup>
                     </Form>
-                    <ModalPopup isOpen={modal} loginData={modalState}/>                 
+                    <ModalPopup isOpen={modal} loginData={modalState} sendData={getDataFromChild} />
                 </div>
             )
         }

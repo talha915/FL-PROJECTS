@@ -17,7 +17,7 @@ export const updateModal = (typeModal) => {
     else if(typeModal == 'close') {
         return {
             type: 'closeModal',
-            payload: localData.resetPassword
+            payload: localData.signUp
         }
     }
 }
