@@ -29,5 +29,38 @@
         "question": "Already have an account? ",
         "signIn": "SIGN IN",
         "route": "/signup"
+    },
+    "createAccount": {
+        "heading": "Let’s create your account.",
+        "subHeading": "Fill in the details below",
+        "details": [
+            {
+                "name": "Full Name",
+                "placeholder": "Elias Manik",
+                "type": "text"
+            },
+            {
+                "name": "Password",
+                "placeholder": "***************",
+                "type": "password"
+            },
+            {
+                "name": "Email Address",
+                "placeholder": "dodgeui2020@gmail.com",
+                "type": "email"
+            },
+            {
+                "name": "Confirm Password",
+                "placeholder": "***************",
+                "type": "password"
+            },
+            {
+                "name": "Date of Birth",
+                "placeholder": "15-July-1996",
+                "type": "date"
+            }
+        ],
+        "subscribe": "Subscribe to our newsletter",
+        "btnText": "NEXT"
     }
 }
