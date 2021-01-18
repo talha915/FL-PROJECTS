@@ -10,12 +10,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateModal } from '../../actions/updateModal';
 
 // Router
-import { Route , withRouter} from 'react-router-dom';
+import { withRouter} from 'react-router-dom';
 
 // Style
 import '../../styles/login.scss';
-
-let dataNew;
 
 function LoginForm(props) {
 
