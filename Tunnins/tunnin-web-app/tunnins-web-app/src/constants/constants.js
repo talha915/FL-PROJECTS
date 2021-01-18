@@ -1,5 +1,5 @@
-sign_up = 'signUp'  
+let sign_up = 'signUp'  
 
-export {
+export default {
     sign_up
 }

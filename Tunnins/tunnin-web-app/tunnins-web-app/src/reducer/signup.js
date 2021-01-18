@@ -11,7 +11,7 @@ export default function(state=initialState, actions) {
     switch(actions.type) {
         case sign_up:
             return {
-                ...signUp,
+                ...state,
                 data: actions.payload
             }
         default:
