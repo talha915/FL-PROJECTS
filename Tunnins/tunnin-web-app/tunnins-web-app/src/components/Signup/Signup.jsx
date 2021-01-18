@@ -30,7 +30,6 @@ function SignUp() {
 
 
     const getSignUp = () => {
-        console.log("SignUp State", signupState);
         if (signupState.hasOwnProperty('data')) {
             return (
                 <div className="container">
@@ -43,6 +42,7 @@ function SignUp() {
                     <Row>
                         {formDetail(signupState.data)}
                     </Row>
+                    <Input type="checkbox"/> {signupState.data.subscribe}
                 </div>
             )
         }
@@ -53,7 +53,7 @@ function SignUp() {
             return (
                 <Col xs="6" sm="6" md="6" lg="6" key={index}>
                     <Label className="formheading"><p>{item.name}</p></Label>                      
-                    <input type={item.type} placeholder={item.placeholder} className="form-control-lg"/>                  
+                    <input type={item.type} placeholder={item.placeholder} className="form-control-lg"/>          
                 </Col>
             )
         })
