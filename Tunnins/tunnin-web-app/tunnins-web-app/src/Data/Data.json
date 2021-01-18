@@ -27,6 +27,7 @@
         "heading": "Create your account to continue",
         "btnText": "GET STARTED",
         "question": "Already have an account? ",
-        "signIn": "SIGN IN"
+        "signIn": "SIGN IN",
+        "route": "/signup"
     }
 }

@@ -9,6 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 // Action
 import { updateModal } from '../../actions/updateModal';
 
+// Router
+import { Route , withRouter} from 'react-router-dom';
+
 // Style
 import '../../styles/login.scss';
 
@@ -51,6 +54,10 @@ function LoginForm(props) {
         setDataCall(data);
     }
 
+    const route=(data)=> {
+        props.history.push(data);
+    }
+
     const getFormData = () => {
 
         if (datacall.hasOwnProperty('modalState')) {
@@ -71,7 +78,7 @@ function LoginForm(props) {
                         <FormGroup>
                             <div style={{display: "inline-block"}}>
                                 <p style={{display: "inline-block"}}>{datacall.modalState.question}</p>
-                                <p style={{display: "inline-block", cursor: "pointer"}}>{datacall.modalState.signIn}</p>
+                                <p style={{display: "inline-block", cursor: "pointer"}} onClick={()=>route(datacall.modalState.route)}>{datacall.modalState.signIn}</p>
                             </div>
                         </FormGroup>
                     </Form>
@@ -125,4 +132,4 @@ function LoginForm(props) {
     )
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
