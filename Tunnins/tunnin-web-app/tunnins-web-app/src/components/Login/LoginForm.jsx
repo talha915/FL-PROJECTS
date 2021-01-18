@@ -68,6 +68,12 @@ function LoginForm(props) {
                                 {datacall.modalState.btnText}
                             </Button>
                         </FormGroup>
+                        <FormGroup>
+                            <div style={{display: "inline-block"}}>
+                                <p style={{display: "inline-block"}}>{datacall.modalState.question}</p>
+                                <p style={{display: "inline-block", cursor: "pointer"}}>{datacall.modalState.signIn}</p>
+                            </div>
+                        </FormGroup>
                     </Form>
                 </div>
             )
