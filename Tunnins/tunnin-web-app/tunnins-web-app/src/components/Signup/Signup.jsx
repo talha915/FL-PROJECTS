@@ -67,14 +67,14 @@ function SignUp(props) {
 
     const formValue=(data)=> {
         setForm(form);
-        props.history.push({
-            pathname: data.route,
-            routeData: data
-        });
+        if(Object.keys(form).length > 0) {
+            props.history.push({
+                pathname: data.route,
+                routeData: form
+            });
+        }
     }
-
     
-
     const formDetail = (data) => {
         let formDetails = data.details.map((item, index) => {
             return (
