@@ -6,13 +6,15 @@ import updateModal from './updateModal';
 import signup from './signup';
 import signedup from './signedup';
 import verify from './verify';
+import signupProfile from './signUpProfle';
 
 const rootReducer = combineReducers({
     localData,
     updateModal,
     signup,
     signedup,
-    verify
+    verify,
+    signupProfile
 })
 
 export default rootReducer;
