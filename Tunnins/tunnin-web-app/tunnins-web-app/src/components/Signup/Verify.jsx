@@ -5,6 +5,7 @@ import { Row, Col, Label, Input, Button } from 'reactstrap';
 // Constants
 import signed_up from '../../constants/constants';
 import verify_type from '../../constants/constants';
+
 // Router
 import { useLocation } from "react-router-dom";
 
@@ -15,10 +16,13 @@ import { VerifyAction } from '../../actions/verify';
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
+// Router
+import { withRouter } from 'react-router-dom';
+
 // Style
 import '../../styles/verified.scss';
 
-function Verify() {
+function Verify(props) {
 
     const location = useLocation();
     const dispatch = useDispatch();
@@ -38,6 +42,9 @@ function Verify() {
 
     const verifiedData = useSelector(state => state);
     
+    const routeToForm=(routeTo)=> {
+        props.history.push(routeTo);
+    }
 
     const getVerified=()=> {
         if(verifiedData.hasOwnProperty('verify')) {
@@ -49,6 +56,10 @@ function Verify() {
                     <p className="text">
                         {verifiedData.verify.data.msg}
                     </p>
+
+                    <Button onClick={()=>routeToForm(verifiedData.verify.data.route)}>
+                        {verifiedData.verify.data.btnText}
+                    </Button>
                 </div>
             )
         }
@@ -61,4 +72,4 @@ function Verify() {
     )
 }
 
-export default Verify;
+export default withRouter(Verify);

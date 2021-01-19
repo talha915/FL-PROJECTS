@@ -71,6 +71,8 @@
     },
     "verify": {
         "heading": "Verify your email.",
-        "msg": "An email has been sent to your inbox. Please verify your email to continue."
+        "msg": "An email has been sent to your inbox. Please verify your email to continue.",
+        "btnText": "Ok",
+        "route": "/signup-profile"
     }
 }
