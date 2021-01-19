@@ -56,7 +56,6 @@ function Verify(props) {
                     <p className="text">
                         {verifiedData.data.msg}
                     </p>
-
                     <Button onClick={()=>routeToForm(verifiedData.data.route)}>
                         {verifiedData.data.btnText}
                     </Button>
