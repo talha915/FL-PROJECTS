@@ -17,7 +17,7 @@ import { signUpProfile } from '../../actions/signupProfile';
 // Router
 import { withRouter } from 'react-router-dom';
 
-function Profile() {
+function Profile(props) {
 
     useEffect(() => {
         dispatchSignUpProfile();
@@ -43,9 +43,29 @@ function Profile() {
                     <Row>
                         {formList(profile.data)}
                     </Row>
+                    <Label className="formheading"><p>{profile.data.categories}</p></Label>
+                    {formChecks(profile.data)}   
+                    <Button onClick={()=>routeTo(profile.data.route)}>
+                        {profile.data.btnText}
+                    </Button>
                 </div>
             )
         }
+    }
+
+    const routeTo=(data)=> {
+        props.history.push(data);
+    }
+
+    const formChecks=(data)=> {
+        let checks = data.catFields.map((item, index)=> {
+            return (
+                <div>
+                    <input type="checkbox" value={item.value} key={index} /> {item.name} 
+                </div>
+            )
+        })
+        return checks;
     }
 
     const formList=(data)=> {

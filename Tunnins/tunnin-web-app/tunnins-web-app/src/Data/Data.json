@@ -109,6 +109,51 @@
                 "type": "text",
                 "placeholder": "Area Code + Telephone Number"
             }
-        ]
+        ],
+        "categories": "Select Categories",
+        "catFields": [
+            {
+                "name": "Cardio",
+                "value": "Cardio"
+            },
+            {
+                "name": "Strength",
+                "value": "Strength"
+            },
+            {
+                "name": "HIIT",
+                "value": "HIIT"
+            },
+            {
+                "name": "CrossFit",
+                "value": "CrossFit"
+            },
+            {
+                "name": "Boxing",
+                "value": "Boxing"
+            },
+            {
+                "name": "Yoga",
+                "value": "Yoga"
+            },
+            {
+                "name": "Barre",
+                "value": "Barre"
+            },
+            {
+                "name": "Pilates",
+                "value": "Pilates"
+            },
+            {
+                "name": "Zumba",
+                "value": "Zumba"
+            },
+            {
+                "name": "Dance",
+                "value": "Dance"
+            }
+        ],
+        "btnText": "NEXT",
+        "route": "/signup-face"
     }
 }
