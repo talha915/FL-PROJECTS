@@ -28,13 +28,46 @@ function Profile() {
     }
 
     const dispatch = useDispatch();
-    const profile = useSelector(state => state);
+    const profile = useSelector(state => state.signupProfile);
 
-    console.log("Profile", profile);
+    const getProfile=()=> {
+        if(profile.hasOwnProperty('data')) {
+            return(
+                <div className="container">
+                    <h3 className="heading">
+                        {profile.data.heading}
+                    </h3>
+                    <h5 className="subheading">
+                        {profile.data.subHeading}
+                    </h5>
+                    <Row>
+                        {formList(profile.data)}
+                    </Row>
+                </div>
+            )
+        }
+    }
+
+    const formList=(data)=> {
+        let formFields = data.formFields.map((item, index)=> {
+            return(
+                <Col xs="6" sm="6" md="6" lg="6" key={index}>
+                    <Label className="formheading"><p>{item.labelName}</p></Label>
+                    {item.type == 'textarea' ?
+                        <Input type={item.type} placeholder={item.placeholder} className="form-control-lg" sm={4}/>
+                        :
+                        <input type={item.type} placeholder={item.placeholder} className="form-control-lg" />
+                    }                      
+                              
+                </Col>
+            )
+        })
+        return formFields;
+    }
 
     return(
         <div className="profile">
-            Profile
+            {getProfile()}
         </div>
     )
 }
