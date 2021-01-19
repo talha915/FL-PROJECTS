@@ -1,13 +1,18 @@
+// Constants
+import verify_type from '../constants/constants';
+
 const initialState = {
-    dataState: {}
+    verifyData: {
+
+    } 
 }
 
 export default function(state=initialState, actions) {
     switch(actions.type) {
-        case 'fetchLocalData':
+        case verify_type:
             return {
-                ...state.dataState,
-                dataState: actions.payload
+                ...state.verify,
+                data: actions.payload
             }
         default:
             return state;    

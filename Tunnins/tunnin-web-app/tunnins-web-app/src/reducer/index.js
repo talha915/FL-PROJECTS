@@ -4,11 +4,15 @@ import { combineReducers } from 'redux';
 import localData from './getDataReducer';
 import updateModal from './updateModal';
 import signup from './signup';
+import signedup from './signedup';
+import verify from './verify';
 
 const rootReducer = combineReducers({
     localData,
     updateModal,
-    signup
+    signup,
+    signedup,
+    verify
 })
 
 export default rootReducer;

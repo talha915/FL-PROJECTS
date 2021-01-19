@@ -3,9 +3,9 @@ import localData from '../Data/Data.json';
 // Constants
 import signed_up from '../constants/constants';
 
-export const SignedUp=(data)=> {
+export const SignedUp=(action_type, data)=> {
     return {
-        type: signed_up,
-        payload: data
+        type: action_type,
+        payload: data,
     }
 }

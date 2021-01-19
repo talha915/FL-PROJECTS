@@ -8,7 +8,6 @@ import signed_up from '../../constants/constants';
 
 // Actions
 import { Signup } from '../../actions/Signup';
-import { SignedUp } from '../../actions/signedUp';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
