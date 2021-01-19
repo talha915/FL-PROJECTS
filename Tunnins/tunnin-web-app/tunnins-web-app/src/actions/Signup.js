@@ -1,7 +1,7 @@
 import localData from '../Data/Data.json';
 
 // Constants
-import sign_up from '../constants/constants';
+import { sign_up } from '../constants/constants';
 
 export const Signup=()=> {
     return {

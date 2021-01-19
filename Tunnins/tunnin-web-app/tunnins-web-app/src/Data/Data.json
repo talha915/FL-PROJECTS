@@ -74,5 +74,41 @@
         "msg": "An email has been sent to your inbox. Please verify your email to continue.",
         "btnText": "Ok",
         "route": "/signup-profile"
+    },
+    "profile": {
+        "heading": "Tell us more about your fitness practice.",
+        "subHeading": "Setup your profile",
+        "formFields": [
+            {
+                "labelName": "Username",
+                "type": "text",
+                "placeholder": "We recommend using the same username as your Instagram"
+            },
+            {
+                "labelName": "About",
+                "type": "textarea",
+                "placeholder": "Describe your fitness practice here (500 characters max)"
+            },
+            {
+                "labelName": "Business Name",
+                "type": "text",
+                "placeholder": "Enter your business name here"
+            },
+            {
+                "labelName": "Location",
+                "type": "text",
+                "placeholder": "Where are you located?"
+            },
+            {
+                "labelName": "Instagram Profile URL",
+                "type": "text",
+                "placeholder": "www.instagram.com/yourprofile"
+            },
+            {
+                "labelName": "Phone Number",
+                "type": "text",
+                "placeholder": "Area Code + Telephone Number"
+            }
+        ]
     }
 }

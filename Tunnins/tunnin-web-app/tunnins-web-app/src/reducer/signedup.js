@@ -1,5 +1,5 @@
 // Constants
-import signed_up from '../constants/constants';
+import { signed_up } from '../constants/constants';
 
 const initialState = {
     signedUp: {

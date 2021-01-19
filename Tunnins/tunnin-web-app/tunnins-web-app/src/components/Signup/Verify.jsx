@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Row, Col, Label, Input, Button } from 'reactstrap';
 
 // Constants
-import signed_up from '../../constants/constants';
-import verify_type from '../../constants/constants';
+import { signed_up } from '../../constants/constants';
+import { verify_type } from '../../constants/constants';
 
 // Router
 import { useLocation } from "react-router-dom";
@@ -40,25 +40,25 @@ function Verify(props) {
         dispatch(VerifyAction(verify_type));
     }
 
-    const verifiedData = useSelector(state => state);
+    const verifiedData = useSelector(state => state.verify);
     
     const routeToForm=(routeTo)=> {
         props.history.push(routeTo);
     }
 
     const getVerified=()=> {
-        if(verifiedData.hasOwnProperty('verify')) {
+        if(verifiedData.hasOwnProperty('data')) {
             return(
                 <div>
                     <h3 className="heading">
-                        {verifiedData.verify.data.heading}
+                        {verifiedData.data.heading}
                     </h3>
                     <p className="text">
-                        {verifiedData.verify.data.msg}
+                        {verifiedData.data.msg}
                     </p>
 
-                    <Button onClick={()=>routeToForm(verifiedData.verify.data.route)}>
-                        {verifiedData.verify.data.btnText}
+                    <Button onClick={()=>routeToForm(verifiedData.data.route)}>
+                        {verifiedData.data.btnText}
                     </Button>
                 </div>
             )

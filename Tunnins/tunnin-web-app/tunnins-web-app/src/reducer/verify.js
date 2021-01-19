@@ -1,5 +1,5 @@
 // Constants
-import verify_type from '../constants/constants';
+import { verify_type } from '../constants/constants';
 
 const initialState = {
     verifyData: {

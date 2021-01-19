@@ -1,9 +1,4 @@
-let sign_up = 'signUp';  
-let signed_up = 'signedUp';
-let verify_type = 'verify';
-
-export default {
-    sign_up,
-    signed_up,
-    verify_type
-}
+export const sign_up = 'signUp';  
+export const signed_up = 'signedUp';
+export const verify_type = 'verify';
+export const signup_profile = 'signupProfile';

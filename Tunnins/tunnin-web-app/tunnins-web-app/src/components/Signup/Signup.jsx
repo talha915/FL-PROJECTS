@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Row, Col, Label, Input, Button } from 'reactstrap';
 
 // Constants
-import sign_up from '../../constants/constants';
+import { sign_up } from '../../constants/constants';
 import signed_up from '../../constants/constants';
 
 // Actions
