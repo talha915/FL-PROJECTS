@@ -60,7 +60,7 @@ function Profile(props) {
     const formChecks=(data)=> {
         let checks = data.catFields.map((item, index)=> {
             return (
-                <div>
+                <div key={index}>
                     <input type="checkbox" value={item.value} key={index} /> {item.name} 
                 </div>
             )

@@ -8,6 +8,7 @@ import signedup from './signedup';
 import verify from './verify';
 import signupProfile from './signUpProfle';
 import profileForm from './profileForm';
+import profileFace from './profileFace';
 
 const rootReducer = combineReducers({
     localData,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
     signedup,
     verify,
     signupProfile,
-    profileForm
+    profileForm,
+    profileFace
 })
 
 export default rootReducer;
