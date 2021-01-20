@@ -17,7 +17,7 @@ import { profileFace } from '../../actions/profileFace';
 // Router
 import { withRouter } from 'react-router-dom';
 
-function Face() {
+function Face(props) {
 
     const dispatch = useDispatch();
     const signUpFace = useSelector(state => state.profileFace);
@@ -46,9 +46,16 @@ function Face() {
                         {signUpFace.data.upload}
                     </h6>
                     {uploads(signUpFace.data)}
+                    <Button onClick={()=>routeTo(signUpFace.data.route)}>
+                        {signUpFace.data.btnText}
+                    </Button>
                 </div>
             )
         }
+    }
+
+    const routeTo=(data)=> {
+        props.history.push(data);
     }
 
     const uploads=(data)=> {

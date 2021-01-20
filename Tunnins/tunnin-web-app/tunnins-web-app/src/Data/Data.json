@@ -176,6 +176,8 @@
             {
                 "label": "Gallery Image"
             }
-        ]
+        ],
+        "btnText": "NEXT",
+        "route": "/signup-bank"
     }
 }
