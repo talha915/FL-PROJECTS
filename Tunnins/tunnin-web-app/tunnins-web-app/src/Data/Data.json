@@ -179,5 +179,20 @@
         ],
         "btnText": "NEXT",
         "route": "/signup-bank"
+    },
+    "signupBank": {
+        "heading": "Connect your bank account.",
+        "subHeading": "We will use this account to deposit your payments",
+        "country": "Select Country",
+        "countryList": [
+            {
+                "name": "Canada",
+                "value": "Canada"
+            },
+            {
+                "name": "USA",
+                "value": "USA"
+            }
+        ]
     }
 }

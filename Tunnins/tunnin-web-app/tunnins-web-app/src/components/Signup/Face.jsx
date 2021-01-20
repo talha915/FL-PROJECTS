@@ -30,8 +30,6 @@ function Face(props) {
         dispatch(profileFace(profile_face));
     }
 
-    console.log("SignUpFace: ", signUpFace);
-
     const getProfileFace = () => {
         if (signUpFace.hasOwnProperty('data')) {
             return (
