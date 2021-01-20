@@ -155,5 +155,27 @@
         ],
         "btnText": "NEXT",
         "route": "/signup-face"
+    },
+    "profileFace": {
+        "heading": "Put a face to the name.",
+        "subHeading": "Complete your profile with your best pictures",
+        "upload": "Upload Images",
+        "imageList": [
+            {
+                "label": "Cover Image"
+            },
+            {
+                "label": "Gallery Image"
+            },
+            {
+                "label": "Gallery Image"
+            },
+            {
+                "label": "Gallery Image"
+            },
+            {
+                "label": "Gallery Image"
+            }
+        ]
     }
 }
