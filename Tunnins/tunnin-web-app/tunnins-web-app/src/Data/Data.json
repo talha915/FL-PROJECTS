@@ -186,6 +186,10 @@
         "country": "Select Country",
         "countryList": [
             {
+                "name": "United States or Canada",
+                "value": "United States or Canada"
+            },
+            {
                 "name": "Canada",
                 "value": "Canada"
             },
@@ -193,6 +197,8 @@
                 "name": "USA",
                 "value": "USA"
             }
-        ]
+        ],
+        "btnText": "NEXT",
+        "route": "/connect-bank"
     }
 }
