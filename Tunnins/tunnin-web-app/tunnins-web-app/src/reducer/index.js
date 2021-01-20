@@ -10,6 +10,7 @@ import signupProfile from './signUpProfle';
 import profileForm from './profileForm';
 import profileFace from './profileFace';
 import signupBank from './signupBank';
+import connectBank from './connectBank';
 
 const rootReducer = combineReducers({
     localData,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
     signupProfile,
     profileForm,
     profileFace,
-    signupBank
+    signupBank,
+    connectBank
 })
 
 export default rootReducer;

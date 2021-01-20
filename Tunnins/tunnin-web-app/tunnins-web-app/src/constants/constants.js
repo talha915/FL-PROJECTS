@@ -5,3 +5,4 @@ export const signup_profile = 'signupProfile';
 export const profile_form = 'profileForm';
 export const profile_face = 'profileFace';
 export const signup_bank = 'signupBank';
+export const connect_bank = 'connectBank';
