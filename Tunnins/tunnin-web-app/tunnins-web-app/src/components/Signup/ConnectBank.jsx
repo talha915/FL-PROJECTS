@@ -42,6 +42,10 @@ function ConnectBank() {
                     <h6 className="subheading">
                         {connectbank.data.subHeading}
                     </h6>
+                    <p className="label">
+                        {connectbank.data.label}
+                    </p>
+                    <Input type="text" />
                 </div>
             )
         }
