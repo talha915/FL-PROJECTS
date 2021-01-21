@@ -67,14 +67,14 @@ function LoginForm(props) {
                     <p className="login-form-note">
                         {datacall.modalState.heading}
                     </p>
-                    <Form >
-                        <FormGroup>
-                            <Button color="info" size="lg">
+                    <Form className="get-started-wrapper">
+                        <FormGroup className="text-center">
+                            <Button color="primary" size="lg">
                                 {datacall.modalState.btnText}
                             </Button>
                         </FormGroup>
                         <FormGroup>
-                            <div style={{display: "inline-block"}}>
+                            <div className="text-center" style={{display: "inline-block"}}>
                                 <p style={{display: "inline-block"}}>{datacall.modalState.question}</p>
                                 <p style={{display: "inline-block", cursor: "pointer"}} onClick={()=>route(datacall.modalState.route)}>{datacall.modalState.signIn}</p>
                             </div>
@@ -103,18 +103,17 @@ function LoginForm(props) {
                             <Label for="examplePassword">{loginForm.password}</Label>
                             <Input type="password" name="password" id="examplePassword" placeholder="***************" />
                         </FormGroup>
-                        <FormGroup check inline>
-                            <Label check>
+                        <FormGroup className="d-flex justify-content-between align-items-center mb-5" check >
+                            <Label class="tunnin-checkbox" check>
                                 <Input type="checkbox" /> {loginForm.remember}
                             </Label>
-                        </FormGroup>
-                        <FormGroup check inline style={{ textAlign: "right" }}>
                             <Label check>
-                                <a href="#" onClick={toggle}>{loginForm.forgot}</a>
+                                <a class="tunnin-link" href="#" onClick={toggle}>{loginForm.forgot}</a>
                             </Label>
                         </FormGroup>
-                        <FormGroup>
-                            <Button color="info" size="lg" >{loginForm.loginBtn}</Button>
+                        <FormGroup className="text-center">
+                            <Button color="primary" size="lg" >{loginForm.loginBtn}</Button>
+                            <p className="text-grey mt-3">Don’t have an account? <a class="tunnin-link" href="#">SIGNUP</a></p>
                         </FormGroup>
                     </Form>
                     <ModalPopup isOpen={modal} loginData={modalState} sendData={getDataFromChild} />

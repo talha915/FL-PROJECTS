@@ -1,10 +1,11 @@
+import { objectExpression } from '@babel/types';
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'reactstrap';
-import logo from '../../images/tunnin-logo.png';
-import '../../styles/login.scss';
+import logo from '../images/tunnin-logo.png';
+
 
 // Components
-import LoginForm from './LoginForm';
+import LoginForm from './Login/LoginForm';
 
 function Login(props) {
     
@@ -17,11 +18,11 @@ function Login(props) {
     }, []);
 
     const setHeading=()=> {
-        loginHeading(props.loginDetails.dataState.login.heading);
+        loginHeading(props.loginDetails.login.heading);
     }
 
     const setLoginForm=()=> {
-        loginData(props.loginDetails.dataState.loginForm);
+        loginData(props.loginDetails.loginForm);
     }
 
     const getLoginForm=()=> {
@@ -37,9 +38,9 @@ function Login(props) {
         <div className="login-container">
             <Row>
                 <Col md="6" sm="4" className="left-login">
-                <h1 className="login-logo">
+                    <h1 className="login-logo">
                     <img src={logo} alt="Logo" />
-                </h1>
+                    </h1>
                 </Col>
                 <Col md="6" sm="4" className="right-login">
                     {getLoginForm()}
