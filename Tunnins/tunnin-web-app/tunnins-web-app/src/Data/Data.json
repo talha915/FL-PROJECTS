@@ -10,7 +10,8 @@
         "remember": "Remember Me",
         "forgot": "Forgot Password?",
         "loginBtn": "Login",
-        "signup-text": "Don’t have an account? SIGN UP"
+        "signup-text": "Don’t have an account? SIGN UP",
+        "route": "/signup"
     },
     "forgotPassword": {
         "heading": "Forgot Password?",
@@ -28,7 +29,7 @@
         "btnText": "GET STARTED",
         "question": "Already have an account? ",
         "signIn": "SIGN IN",
-        "route": "/signup"
+        "route": "/"
     },
     "createAccount": {
         "heading": "Let’s create your account.",
