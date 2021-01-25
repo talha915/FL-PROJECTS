@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Row, Col, Card, CardText, CardBody, CardLink,
+    CardTitle, CardSubtitle } from 'reactstrap';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -40,8 +41,26 @@ function Notification() {
                 )
             })
             return sidebar;
+        }       
+    }
+
+    const getCards=()=> {
+        if(getNotification.hasOwnProperty('data')) {
+            let lists = getNotification.data.cards;
+            let cards = lists.map((data, index)=> {
+                return(
+                    <Col sm="6" key={index}>
+                        <Card body>
+                            <CardTitle tag="h5">{data.heading}</CardTitle>
+                            <CardText>{data.date}</CardText>
+                            <CardText>{data.time}</CardText>
+                            <Button>{data.golive}</Button>
+                        </Card>
+                    </Col>
+                )
+            })
+            return cards;
         }
-        
     }
 
     console.log("Notification", getNotification);
@@ -55,7 +74,9 @@ function Notification() {
                     </ul>
                 </Col>
                 <Col sm="10">
-                    
+                    <Row>
+                        {getCards()}
+                    </Row>
                 </Col>
             </Row>
         </div>
