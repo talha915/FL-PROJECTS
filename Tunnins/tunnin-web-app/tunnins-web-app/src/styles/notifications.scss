@@ -1,0 +1,26 @@
+.notifications {
+    background-color: #1A1B2F;
+    min-height: 100vh;
+    .left-container {
+        background-color: #262744;
+        min-height: 100vh;
+        .list {
+            color: #FFFFFF;
+            text-decoration: none;
+            list-style: none;
+            padding-left: 0;
+            padding-top: 45px;
+            cursor: pointer;
+        }
+    }
+    .heading {
+        color: #D0A592;
+    }
+    .subheading {
+        color: #585B8F;
+    }
+    .label {
+        color: #ffffff;
+        padding-top: 50px;
+    }
+}
