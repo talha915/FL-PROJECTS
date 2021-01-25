@@ -57,7 +57,6 @@ function LoginForm(props) {
 
     const getFormData = () => {
         if (Object.keys(loginForm).length > 0) {
-
             return (
                 <div className="login-form">
                     <h2 className="login-form-heading">

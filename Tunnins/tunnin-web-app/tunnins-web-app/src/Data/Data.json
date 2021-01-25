@@ -206,6 +206,7 @@
         "heading": "Connect your bank account.",
         "subHeading": "We will use this account to deposit your payments",
         "label": "Fields to be populated based on Stripe requirements. Will be country specific (one for US and one for Canada)",
-        "btnText": "NEXT"
+        "btnText": "NEXT",
+        "route": "/notification"
     }
 }

@@ -17,7 +17,7 @@ import { connectBank } from '../../actions/connectBank';
 // Router
 import { withRouter } from 'react-router-dom';
 
-function ConnectBank() {
+function ConnectBank(props) {
 
     const dispatch = useDispatch();
 
@@ -31,6 +31,10 @@ function ConnectBank() {
 
     const connectbank = useSelector(state => state.connectBank);
     console.log("Connect ank: ", connectbank);
+
+    const routeTo=(location)=>{
+        props.history.push(location);
+    }
 
     const getConnectBank=()=> {
         if(connectbank.hasOwnProperty('data')) {
@@ -46,6 +50,9 @@ function ConnectBank() {
                         {connectbank.data.label}
                     </p>
                     <Input type="text" />
+                    <Button onClick={()=>routeTo(connectbank.data.route)}>
+                        {connectbank.data.btnText}
+                    </Button>
                 </div>
             )
         }
