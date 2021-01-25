@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 // Action
 import { updateModal } from '../../actions/updateModal';
 
+// Router
+import { withRouter } from 'react-router-dom';
+
 // Style
 import '../../styles/login.scss';
 
@@ -23,7 +26,10 @@ function ModalPopup(props) {
 
     const closeModal=()=> {
         dispatch(updateModal('close'));
+        props.history.push('/create-account');
     }
+
+    
 
     const handleChange=(data)=> {
         props.sendData(data);
@@ -83,4 +89,4 @@ function ModalPopup(props) {
     )
 }
 
-export default ModalPopup;
+export default withRouter(ModalPopup);

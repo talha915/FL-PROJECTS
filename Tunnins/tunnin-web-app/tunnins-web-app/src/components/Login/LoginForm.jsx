@@ -48,43 +48,11 @@ function LoginForm(props) {
     }
 
     const callAgain = (data) => {
-        //getFormData(data);
         setDataCall(data);
     }
 
-    const route=(data)=> {
-        props.history.push(data);
-    }
-
     const getFormData = () => {
-
-        if (datacall.hasOwnProperty('modalState')) {
-            return (
-                <div className="login-form">
-                    <h2 className="login-form-heading">
-                        {datacall.modalState.welcomeText}
-                    </h2>
-                    <p className="login-form-note">
-                        {datacall.modalState.heading}
-                    </p>
-                    <Form className="get-started-wrapper">
-                        <FormGroup className="text-center">
-                            <Button color="primary" size="lg">
-                                {datacall.modalState.btnText}
-                            </Button>
-                        </FormGroup>
-                        <FormGroup>
-                            <div className="text-center" style={{display: "inline-block"}}>
-                                <p style={{display: "inline-block"}}>{datacall.modalState.question}</p>
-                                <p style={{display: "inline-block", cursor: "pointer"}} onClick={()=>route(datacall.modalState.route)}>{datacall.modalState.signIn}</p>
-                            </div>
-                        </FormGroup>
-                    </Form>
-                </div>
-            )
-        }
-
-        else if (Object.keys(loginForm).length > 0) {
+        if (Object.keys(loginForm).length > 0) {
 
             return (
                 <div className="login-form">

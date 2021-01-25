@@ -9,6 +9,7 @@ import Profile from '../Signup/Profile';
 import Face from '../Signup/Face';
 import Bank from '../Signup/Bank';
 import ConnectBank from '../Signup/ConnectBank';
+import CreateAccount from '../Signup/CreateAccount';
 
 class Router extends Component {
     render() {
@@ -22,6 +23,7 @@ class Router extends Component {
                     <Route component={Face} path="/signup-face" exact/>
                     <Route component={Bank} path="/signup-bank" exact/>
                     <Route component={ConnectBank} path="/connect-bank" exact/>
+                    <Route component={CreateAccount} path="/create-account" exact/>
                 </Switch>
             </div>
         )
