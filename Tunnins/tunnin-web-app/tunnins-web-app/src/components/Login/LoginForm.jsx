@@ -51,6 +51,10 @@ function LoginForm(props) {
         setDataCall(data);
     }
 
+    const routeSignUp=()=> {
+        props.history.push('/signup');
+    }
+
     const getFormData = () => {
         if (Object.keys(loginForm).length > 0) {
 
@@ -81,7 +85,7 @@ function LoginForm(props) {
                         </FormGroup>
                         <FormGroup className="text-center">
                             <Button color="primary" size="lg" >{loginForm.loginBtn}</Button>
-                            <p className="text-grey mt-3">Don’t have an account? <a class="tunnin-link" href="#">SIGNUP</a></p>
+                            <p className="text-grey mt-3">Don’t have an account? <a class="tunnin-link" onClick={routeSignUp}>SIGNUP</a></p>
                         </FormGroup>
                     </Form>
                     <ModalPopup isOpen={modal} loginData={modalState} sendData={getDataFromChild} />
