@@ -418,6 +418,7 @@
         "detailTime": "5:00 AM - 6:00 AM",
         "booked": "10 Users Booked",
         "cancellationPolicy": "See Cancellation Policy",
+        "cancelroute": "/cancellation-policy",
         "usersViewed": "Users who have booked",
         "usersList": [
             {

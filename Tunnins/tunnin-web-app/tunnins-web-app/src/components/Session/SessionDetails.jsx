@@ -23,7 +23,7 @@ import '../../styles/sessionDetails.scss';
 import Sidebar from '../Sidebar/Sidebar';
 import Popup from './Popup';
 
-function SessionDetail() {
+function SessionDetail(props) {
 
     const dispatch = useDispatch();
 
@@ -37,7 +37,6 @@ function SessionDetail() {
 
     const sessionDetail = useSelector(state => state.sessionDetails);
     
-    console.log("Session Detail: ", sessionDetail);
 
     const getUpper=()=> {
         if(sessionDetail.hasOwnProperty('data')) {
@@ -96,7 +95,7 @@ function SessionDetail() {
                                 {sessionDetail.data.usersViewed}
                             </p>
                         </Col>
-                        <Col sm="6">
+                        <Col sm="6" onClick={()=>cancelPolicy(sessionDetail.data.cancelroute)}>
                             <p>
                                 {sessionDetail.data.cancellationPolicy}
                             </p>
@@ -105,6 +104,10 @@ function SessionDetail() {
                 </div>
             )
         }
+    }
+
+    const cancelPolicy=(location)=> {
+        props.history.push(location);
     }
 
     const getBookedUsers=()=> {
