@@ -95,7 +95,7 @@ function AddSession() {
                 return(
                     <Col key={index} sm={data.size}>
                         <FormGroup>
-                            <Label className="form-title">
+                            <Label className={data.title !="" ? "form-title": "form-empty-title"}>
                                 {data.title}
                             </Label>
                             <Input placeholder={data.placeholder} type={data.type} />
@@ -117,7 +117,7 @@ function AddSession() {
                 <Col sm="10">
                     {getSessionTop()}
                     {getImages()}
-                    <Form>
+                    <Form className="form">
                         <Row>
                             {getForm()}
                         </Row>

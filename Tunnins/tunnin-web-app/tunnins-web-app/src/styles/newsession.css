@@ -41,6 +41,15 @@
   margin-left: 5px;
 }
 
-.new-session .form-title {
+.new-session .form {
+  padding-top: 20px;
+}
+
+.new-session .form .form-title {
   color: #FFFFFF;
+}
+
+.new-session .form .form-empty-title {
+  color: #FFFFFF;
+  margin-top: 16px;
 }
