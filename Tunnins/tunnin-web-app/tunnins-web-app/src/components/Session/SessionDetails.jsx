@@ -8,14 +8,13 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 // Action
-import { sessionModal } from '../../actions/sessionModal';
-import { addSession } from '../../actions/addSession';
+import { sessionDetails } from '../../actions/sessionDetail';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { add_session_modal } from '../../constants/constants';
+import { session_details } from '../../constants/constants';
 
 // Styles
 import '../../styles/sessionDetails.scss';
@@ -25,6 +24,106 @@ import Sidebar from '../Sidebar/Sidebar';
 import Popup from './Popup';
 
 function SessionDetail() {
+
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatchSessionDetails();
+    }, []);
+
+    const dispatchSessionDetails=()=> {
+        dispatch(sessionDetails(session_details));
+    }
+
+    const sessionDetail = useSelector(state => state.sessionDetails);
+    
+    console.log("Session Detail: ", sessionDetail);
+
+    const getUpper=()=> {
+        if(sessionDetail.hasOwnProperty('data')) {
+            return(
+                <div>
+                    <Row>
+                        <Col sm="6">
+                            <h6>
+                                {sessionDetail.data.title}
+                            </h6>
+                        </Col>
+                        <Col sm="6">
+                            {getBtns()}
+                        </Col>
+                    </Row>
+                </div>           
+            )
+        }
+    }
+
+    const getBtns=()=> {
+        if(sessionDetail.hasOwnProperty('data')) {
+            let btns = sessionDetail.data.btns.map((data, index)=> {
+                return(
+                    <Button key={index} className="topbtn-style">
+                        {data.title}
+                    </Button>
+                );
+            });
+            return btns;
+        }
+    }
+
+    const getUpperCard=()=> {
+        if(sessionDetail.hasOwnProperty('data')) {
+            return(
+                <div className="top-borderless-card">
+                    <Row>
+                        <Col sm="6">
+                            <h6>
+                                {sessionDetail.data.detailTitle}
+                            </h6>
+                            <p>
+                                {sessionDetail.data.detailDate}
+                            </p>
+                            <p>
+                                {sessionDetail.data.detailDate}
+                            </p>
+                            <p>
+                                {sessionDetail.data.detailTime}
+                            </p>
+                            <p>
+                                {sessionDetail.data.booked}
+                            </p>
+                            <p>
+                                {sessionDetail.data.usersViewed}
+                            </p>
+                        </Col>
+                        <Col sm="6">
+                            <p>
+                                {sessionDetail.data.cancellationPolicy}
+                            </p>
+                        </Col>
+                    </Row>
+                </div>
+            )
+        }
+    }
+
+    const getBookedUsers=()=> {
+        if(sessionDetail.hasOwnProperty('data')) {
+            let users = sessionDetail.data.usersList.map((data, index) => {
+                return(
+                    <Col sm="2" key={index} style={{marginLeft: "10px"}}>
+                        <Card style={{backgroundColor: "#262744"}} className="card-style">
+                            <CardBody>
+                                {data.name}
+                            </CardBody>
+                        </Card>
+                    </Col>
+                )
+            });
+            return users;
+        }
+    }
+
     return (
         <div className="session-details">    
             <Row>
@@ -32,7 +131,11 @@ function SessionDetail() {
                     <Sidebar />
                 </Col>
                 <Col sm="10">
-                    
+                    {getUpper()}
+                    {getUpperCard()}
+                    <Row>
+                        {getBookedUsers()}
+                    </Row>
                 </Col>
             </Row>     
         </div>
