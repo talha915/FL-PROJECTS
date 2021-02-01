@@ -1,24 +1,38 @@
-import React from 'react';
-import { Form, FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import verify from '../../images/verify-email.png';
+import React, { useState, useEffect }  from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
 // Action
-import { updateModal } from '../../actions/updateModal';
+import { sessionModal } from '../../actions/sessionModal';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
-// Style
+// Constants
+import { close_modal, add_session_modal } from '../../constants/constants';
+
 
 function Popup(props) {
-    console.log("Props: ", props);
+
+    const dispatch = useDispatch();
+
+    
+
+    const modalOperate=(item)=> {
+        dispatch(sessionModal(close_modal));
+        if(props.action_type == add_session_modal) {
+            let routeTo = item.route;
+            props.history.push(routeTo);
+        }
+    }
+
+    const modalStates = useSelector(state => state);
 
     const getButton=(data)=> {
         let btn = data.btn.map((item, index)=> {
             return(
-                <Button key={index}>
+                <Button key={index} onClick={()=>modalOperate(item)}>
                     {item.title}
                 </Button>
             )
@@ -26,20 +40,23 @@ function Popup(props) {
         return btn;
     }
 
+
     return(
-        <Modal isOpen={true}>
+        <Modal isOpen={props.modalState.popUp}>
             <ModalHeader>
-                <h6>
-                    {props.modalState.title}
-                </h6>
+                <div>
+                    <h6>
+                        {props.modalState.modalState.title}
+                    </h6>
+                </div>          
             </ModalHeader>
             <ModalBody>
                 <p>
-                    {props.modalState.content}
+                    {props.modalState.modalState.content}
                 </p>
             </ModalBody>
             <ModalFooter>
-                {getButton(props.modalState)}
+                {getButton(props.modalState.modalState)}
             </ModalFooter>
         </Modal>
     )

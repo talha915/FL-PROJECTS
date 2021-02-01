@@ -137,7 +137,7 @@ function AddSession() {
     return (
         <div className="new-session">
             {popup.popUp ?            
-                <Popup modalState={popup.modalState} />
+                <Popup modalState={popup} action_type={add_session_modal} />
                 :
                 <Row>
                     <Col sm="2" className="left-container">
