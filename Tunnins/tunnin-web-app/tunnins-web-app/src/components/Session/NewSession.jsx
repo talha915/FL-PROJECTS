@@ -99,7 +99,7 @@ function AddSession() {
                                 {data.title}
                             </Label>
                             {data.type == "select" ?
-                                <select>
+                                <select className="form-control">
                                     {getOptions(data.options)}
                                 </select>
                                 : 

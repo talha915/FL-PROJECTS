@@ -369,5 +369,37 @@
                 "size": "5"
             }
         ]
+    },
+    "sessionModal": {
+        "addedSession": {
+            "title": "Session Added Sucessfully!",
+            "content": "Your session at 11:00 AM on July 27, 2020 has been added successfully",
+            "btn": [
+                {
+                    "title": "Ok"
+                }
+            ]
+        },
+        "cancelSession": {
+            "title": "Cancel Session",
+            "content": "Are you sure you want to cancel this session?",
+            "btn": [
+                {
+                    "title": "Yes"
+                },
+                {
+                    "title": "No"
+                }
+            ]
+        },
+        "cancelledSession": {
+            "title": "Session Cancelled",
+            "content": "Your session has been cancelled succesfullfy",
+            "btn": [
+                {
+                    "title": "Return to My Sessions"
+                }
+            ]
+        }
     }
 }
