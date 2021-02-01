@@ -230,15 +230,18 @@
         "btns": [
             {
                 "title": "Upcoming Session",
-                "sessionType": true
+                "sessionType": true,
+                "route": ""
             },
             {
                 "title": "Past Session",
-                "sessionType": true
+                "sessionType": true,
+                "route": ""
             },
             {
                 "title": "Add New Session",
-                "sessionType": false
+                "sessionType": false,
+                "route": "/add-new-session"
             }
         ],
         "cards": [

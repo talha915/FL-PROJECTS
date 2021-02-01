@@ -17,7 +17,10 @@ import { listed_notification } from '../../constants/constants';
 // Styles
 import '../../styles/notifications.scss';
 
-function Notification() {
+// Components
+import Sidebar from '../Sidebar/Sidebar';
+
+function Notification(props) {
 
     const dispatch = useDispatch();
     const getNotification = useSelector(state => state.notification);
@@ -69,7 +72,7 @@ function Notification() {
             let btns = btnList.map((data, index)=> {
                 return(
                     <Col sm="4" key={index} className="btn-padding">
-                        <Button className={data.sessionType ? "true-btn": "false-btn"}>
+                        <Button className={data.sessionType ? "true-btn": "false-btn"} onClick={()=>routeTo(data.route)}>
                             {data.title}
                         </Button>
                     </Col>
@@ -79,13 +82,15 @@ function Notification() {
         }
     }
 
+    const routeTo=(location)=> {
+        props.history.push(location);
+    }
+
     return(
         <div className="notifications">
             <Row>
                 <Col sm="2" className="left-container">
-                    <ul>
-                        {getSidebar()}
-                    </ul>
+                    <Sidebar />
                 </Col>
                 <Col sm="10">
                     <Row>
