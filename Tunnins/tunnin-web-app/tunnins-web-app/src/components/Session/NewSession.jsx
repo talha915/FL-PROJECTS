@@ -98,13 +98,30 @@ function AddSession() {
                             <Label className={data.title !="" ? "form-title": "form-empty-title"}>
                                 {data.title}
                             </Label>
-                            <Input placeholder={data.placeholder} type={data.type} />
+                            {data.type == "select" ?
+                                <select>
+                                    {getOptions(data.options)}
+                                </select>
+                                : 
+                                <Input placeholder={data.placeholder} type={data.type} />
+                            }                  
                         </FormGroup>
                     </Col>
                 );
             });
             return formList;
         }
+    }
+
+    const getOptions=(data)=> {
+        let options = data.map((data, index)=> {
+            return(
+                <option value={data.value}>
+                    {data.title}
+                </option>
+            );
+        });
+        return options;
     }
 
 
