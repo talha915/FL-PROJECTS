@@ -18,3 +18,25 @@
   padding-top: 45px;
   cursor: pointer;
 }
+
+.new-session .title {
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.new-session .addBtn {
+  text-align: right;
+}
+
+.new-session .upload-title {
+  text-align: left;
+  color: #FFFFFF;
+  padding-left: 30px;
+}
+
+.new-session .uploads {
+  height: 225px;
+  background: #262744 0% 0% no-repeat padding-box;
+  min-width: 250px;
+  margin-left: 5px;
+}

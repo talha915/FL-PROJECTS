@@ -6,7 +6,7 @@ import { add_session } from '../constants/constants';
 export const addSession=()=> {
     return {
         type: add_session,
-        payload: localData.sessionForm,
+        payload: localData.newSession,
     }
 }
 
