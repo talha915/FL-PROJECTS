@@ -12,15 +12,27 @@ import { ListNotification } from '../../actions/notification';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { listed_notification } from '../../constants/constants';
+import { add_session } from '../../constants/constants';
 
 // Styles
-import '../../styles/notifications.scss';
+import '../../styles/newsession.scss';
+
+// Components
+import Sidebar from '../Sidebar/Sidebar';
 
 function AddSession() {
     return(
-        <div>
-            Add Session
+        <div className="new-session">
+            <Row>
+                <Col sm="2" className="left-container">
+                    <Sidebar />
+                </Col>
+                <Col sm="10">
+                    <Row>
+                       
+                    </Row>
+                </Col>
+            </Row>
         </div>
     )
 }

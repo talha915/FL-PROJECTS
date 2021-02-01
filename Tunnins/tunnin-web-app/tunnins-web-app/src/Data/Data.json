@@ -274,5 +274,91 @@
                 "golive": "Go Live"
             }
         ]
+    },
+    "newSession": {
+        "title": "Add New Session",
+        "btnTitle": "Add",
+        "upload": "Upload Images",
+        "cardList": [
+            {
+                "icon": "icon"
+            }
+        ],
+        "sessionForm": [
+            {
+                "title": "Name Of the Class",
+                "placeholder": "Rolletser Fux",
+                "type": "text",
+                "size": "4"
+            },
+            {
+                "title": "Session Date",
+                "placeholder": "From",
+                "type": "date",
+                "size": "2"
+            },
+            {
+                "title": "",
+                "placeholder": "To",
+                "type": "date",
+                "size": "2"
+            },
+            {
+                "title": "What You Need",
+                "placeholder": "Lorem Ipsum",
+                "type": "text",
+                "size": "4"
+            },
+            {
+                "title": "Name of the Trainer",
+                "placeholder": "Brimbistram",
+                "type": "text",
+                "size": "4"
+            },
+            {
+                "title": "Session Time",
+                "placeholder": "Start",
+                "type": "date",
+                "size": "2"
+            },
+            {
+                "title": "",
+                "placeholder": "End",
+                "type": "date",
+                "size": "2"
+            },
+            {
+                "title": "Category",
+                "placeholder": "Zumba",
+                "type": "select",
+                "size": "5",
+                "options": [
+                    {
+                        "title": "Zumba",
+                        "value": "Zumba"
+                    },
+                    {
+                        "title": "Zumba A",
+                        "value": "Zumba A"
+                    },
+                    {
+                        "title": "Zumba B",
+                        "value": "Zumba B"
+                    }
+                ]
+            },
+            {
+                "title": "About",
+                "placeholder": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+                "type": "text",
+                "size": "5"
+            },
+            {
+                "title": "Session Price",
+                "placeholder": "CAD",
+                "type": "text",
+                "size": "5"
+            }
+        ]
     }
 }
