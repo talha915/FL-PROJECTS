@@ -88,6 +88,25 @@ function AddSession() {
         }
     }
 
+    const getForm=()=> {
+        if (newSession.hasOwnProperty('data')) {
+            let form = newSession.data.sessionForm;
+            let formList = form.map((data, index)=> {
+                return(
+                    <Col key={index} sm={data.size}>
+                        <FormGroup>
+                            <Label className="form-title">
+                                {data.title}
+                            </Label>
+                            <Input placeholder={data.placeholder} type={data.type} />
+                        </FormGroup>
+                    </Col>
+                );
+            });
+            return formList;
+        }
+    }
+
 
     return (
         <div className="new-session">
@@ -97,9 +116,12 @@ function AddSession() {
                 </Col>
                 <Col sm="10">
                     {getSessionTop()}
-                    
-                        {getImages()}
-                    
+                    {getImages()}
+                    <Form>
+                        <Row>
+                            {getForm()}
+                        </Row>
+                    </Form>
                 </Col>
             </Row>
         </div>
