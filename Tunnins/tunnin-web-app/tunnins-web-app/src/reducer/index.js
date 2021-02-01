@@ -13,6 +13,7 @@ import signupBank from './signupBank';
 import connectBank from './connectBank';
 import notification from './notification';
 import addSession from './addSession';
+import sessionModal from './sessionModal';
 
 const rootReducer = combineReducers({
     localData,
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
     signupBank,
     connectBank,
     notification,
-    addSession
+    addSession,
+    sessionModal
 })
 
 export default rootReducer;

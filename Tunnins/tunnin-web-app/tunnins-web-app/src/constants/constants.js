@@ -11,3 +11,4 @@ export const add_session = 'addNewSession';
 export const add_session_modal = 'addedSession';
 export const cancel_session_modal = 'cancelSession';
 export const cancelled_session_modal = 'cancelledSession';
+export const close_modal = 'closeModal';
