@@ -8,19 +8,21 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 // Action
+import { sessionModal } from '../../actions/sessionModal';
 import { addSession } from '../../actions/addSession';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { add_session } from '../../constants/constants';
+import { add_session, add_session_modal } from '../../constants/constants';
 
 // Styles
 import '../../styles/newsession.scss';
 
 // Components
 import Sidebar from '../Sidebar/Sidebar';
+import Popup from './Popup';
 
 function AddSession() {
 
@@ -46,7 +48,7 @@ function AddSession() {
                         </h6>
                     </Col>
                     <Col sm="6">
-                        <Button className="addBtn">
+                        <Button className="addBtn" onClick={()=>dispatchAction()}>
                             {newSession.data.btnTitle}
                         </Button>
                     </Col>
@@ -54,6 +56,13 @@ function AddSession() {
             );
         }
     }
+
+    const dispatchAction=()=> {
+        dispatch(sessionModal(add_session_modal));
+    }
+
+    const popup = useSelector(state => state.sessionModal);
+    console.log("Popup: ", popup);
 
     const getImages = () => {
         if (newSession.hasOwnProperty('data')) {
@@ -116,7 +125,7 @@ function AddSession() {
     const getOptions=(data)=> {
         let options = data.map((data, index)=> {
             return(
-                <option value={data.value}>
+                <option value={data.value} key={index}>
                     {data.title}
                 </option>
             );
@@ -127,20 +136,24 @@ function AddSession() {
 
     return (
         <div className="new-session">
-            <Row>
-                <Col sm="2" className="left-container">
-                    <Sidebar />
-                </Col>
-                <Col sm="10">
-                    {getSessionTop()}
-                    {getImages()}
-                    <Form className="form">
-                        <Row>
-                            {getForm()}
-                        </Row>
-                    </Form>
-                </Col>
-            </Row>
+            {popup.popUp ?            
+                <Popup modalState={popup.modalState} />
+                :
+                <Row>
+                    <Col sm="2" className="left-container">
+                        <Sidebar />
+                    </Col>
+                    <Col sm="10">
+                        {getSessionTop()}
+                        {getImages()}
+                        <Form className="form">
+                            <Row>
+                                {getForm()}
+                            </Row>
+                        </Form>
+                    </Col>
+                </Row>
+            } 
         </div>
     )
 }

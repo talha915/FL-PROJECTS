@@ -12,14 +12,37 @@ import { withRouter } from 'react-router-dom';
 
 // Style
 
-function Popup() {
+function Popup(props) {
+    console.log("Props: ", props);
+
+    const getButton=(data)=> {
+        let btn = data.btn.map((item, index)=> {
+            return(
+                <Button key={index}>
+                    {item.title}
+                </Button>
+            )
+        })
+        return btn;
+    }
+
     return(
         <Modal isOpen={true}>
             <ModalHeader>
-                
+                <h6>
+                    {props.modalState.title}
+                </h6>
             </ModalHeader>
+            <ModalBody>
+                <p>
+                    {props.modalState.content}
+                </p>
+            </ModalBody>
+            <ModalFooter>
+                {getButton(props.modalState)}
+            </ModalFooter>
         </Modal>
     )
 }
 
-export default Popup;
+export default withRouter(Popup);

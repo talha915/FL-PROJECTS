@@ -376,7 +376,8 @@
             "content": "Your session at 11:00 AM on July 27, 2020 has been added successfully",
             "btn": [
                 {
-                    "title": "Ok"
+                    "title": "Ok",
+                    "route": "/session-details"
                 }
             ]
         },
