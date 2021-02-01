@@ -27,8 +27,6 @@ function Popup(props) {
         }
     }
 
-    const modalStates = useSelector(state => state);
-
     const getButton=(data)=> {
         let btn = data.btn.map((item, index)=> {
             return(

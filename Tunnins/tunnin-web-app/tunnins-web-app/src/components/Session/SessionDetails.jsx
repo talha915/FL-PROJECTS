@@ -15,10 +15,10 @@ import { addSession } from '../../actions/addSession';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { add_session, add_session_modal } from '../../constants/constants';
+import { add_session_modal } from '../../constants/constants';
 
 // Styles
-import '../../styles/newsession.scss';
+import '../../styles/sessionDetails.scss';
 
 // Components
 import Sidebar from '../Sidebar/Sidebar';
@@ -26,10 +26,17 @@ import Popup from './Popup';
 
 function SessionDetail() {
     return (
-        <div>
-            Session Detail
+        <div className="session-details">    
+            <Row>
+                <Col sm="2" className="left-container">
+                    <Sidebar />
+                </Col>
+                <Col sm="10">
+                    
+                </Col>
+            </Row>     
         </div>
     )
 }
 
-export default SessionDetail;
+export default withRouter(SessionDetail);

@@ -402,5 +402,58 @@
                 }
             ]
         }
+    },
+    "sessionDetails": {
+        "title": "Session Details",
+        "btns": [
+            {
+                "title": "Edit Session"
+            },
+            {
+                "title": "Cancel Session"
+            }
+        ],
+        "detailTitle": "Rolletser Fux",
+        "detailDate": "June 12, 2020",
+        "detailTime": "5:00 AM - 6:00 AM",
+        "booked": "10 Users Booked",
+        "cancellationPolicy": "See Cancellation Policy",
+        "usersViewed": "Users who have booked",
+        "usersList": [
+            {
+                "name": "Jake Miller"
+            },
+            {
+                "name": "Zac Berge"
+            },
+            {
+                "name": "Joel Parisian Sr."
+            },
+            {
+                "name": "Maya Stewart"
+            },
+            {
+                "name": "Phoenix Parker"
+            },
+            {
+                "name": "Ava Hyatt"
+            },
+            {
+                "name": "Heidi Glover"
+            },
+            {
+                "name": "Zac Heaney"
+            },
+            {
+                "name": "Sam Hill"
+            },
+            {
+                "name": "Abigail Rodriguez"
+            }
+        ]
+    },
+    "cancellationPolicy": {
+        "title": "Cancellation Policy",
+        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
     }
 }
