@@ -1,0 +1,56 @@
+.notifications {
+  background-color: #1A1B2F;
+  min-height: 100vh;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.notifications .left-container {
+  background-color: #262744;
+  min-height: 100vh;
+}
+
+.notifications .left-container .list {
+  color: #FFFFFF;
+  text-decoration: none;
+  list-style: none;
+  padding-left: 0;
+  padding-top: 45px;
+  cursor: pointer;
+}
+
+.notifications .heading {
+  color: #D0A592;
+}
+
+.notifications .subheading {
+  color: #585B8F;
+}
+
+.notifications .label {
+  color: #ffffff;
+  padding-top: 50px;
+}
+
+.notifications .rightbody-padding {
+  padding-top: 30px;
+}
+
+.notifications .card-style {
+  margin-right: 30px;
+}
+
+.notifications .btn-padding {
+  padding-left: 150px;
+  padding-top: 30px;
+}
+
+.notifications .true-btn {
+  background-color: #D8A48F;
+  color: #000000;
+}
+
+.notifications .false-btn {
+  background-color: #262744;
+  color: #FFFFFF;
+}

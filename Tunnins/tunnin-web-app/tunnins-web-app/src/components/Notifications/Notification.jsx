@@ -49,8 +49,8 @@ function Notification() {
             let lists = getNotification.data.cards;
             let cards = lists.map((data, index)=> {
                 return(
-                    <Col sm="6" key={index}>
-                        <Card body>
+                    <Col sm="6" key={index} className="rightbody-padding">
+                        <Card body className="card-style">
                             <CardTitle tag="h5">{data.heading}</CardTitle>
                             <CardText>{data.date}</CardText>
                             <CardText>{data.time}</CardText>
@@ -63,7 +63,21 @@ function Notification() {
         }
     }
 
-    console.log("Notification", getNotification);
+    const getBtns =()=> {
+        if(getNotification.hasOwnProperty('data')) {
+            let btnList = getNotification.data.btns;
+            let btns = btnList.map((data, index)=> {
+                return(
+                    <Col sm="4" key={index} className="btn-padding">
+                        <Button className={data.sessionType ? "true-btn": "false-btn"}>
+                            {data.title}
+                        </Button>
+                    </Col>
+                )
+            });
+            return btns;
+        }
+    }
 
     return(
         <div className="notifications">
@@ -75,6 +89,7 @@ function Notification() {
                 </Col>
                 <Col sm="10">
                     <Row>
+                        {getBtns()}
                         {getCards()}
                     </Row>
                 </Col>

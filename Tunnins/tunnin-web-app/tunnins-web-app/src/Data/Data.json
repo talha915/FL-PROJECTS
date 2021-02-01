@@ -227,6 +227,20 @@
                 "name": "Settings"
             }
         ],
+        "btns": [
+            {
+                "title": "Upcoming Session",
+                "sessionType": true
+            },
+            {
+                "title": "Past Session",
+                "sessionType": true
+            },
+            {
+                "title": "Add New Session",
+                "sessionType": false
+            }
+        ],
         "cards": [
             {
                 "heading": "Rolletser Fux",
