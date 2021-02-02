@@ -13,3 +13,4 @@ export const cancel_session_modal = 'cancelSession';
 export const cancelled_session_modal = 'cancelledSession';
 export const close_modal = 'closeModal';
 export const session_details = 'sessionDetails';
+export const cancel_policy = 'cancelPolicy';
