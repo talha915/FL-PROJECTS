@@ -15,6 +15,7 @@ import notification from './notification';
 import addSession from './addSession';
 import sessionModal from './sessionModal';
 import sessionDetails from './sessionDetails';
+import cancelPolicy from './cancelPolicy';
 
 const rootReducer = combineReducers({
     localData,
@@ -30,7 +31,8 @@ const rootReducer = combineReducers({
     notification,
     addSession,
     sessionModal,
-    sessionDetails
+    sessionDetails,
+    cancelPolicy
 })
 
 export default rootReducer;
