@@ -141,22 +141,25 @@ function SessionDetail(props) {
 
     return (
         <div className="session-details">    
-            {detailType === "cancel" ?
-                <Popup modalState={popup} />  
-            :
-                <Row>
-                    <Col sm="2" className="left-container">
-                        <Sidebar />
-                    </Col>
-                    <Col sm="10">
-                        {getUpper()}
-                        {getUpperCard()}
-                        <Row>
-                            {getBookedUsers()}
-                        </Row>
-                    </Col>
-                </Row>    
-            } 
+            
+            <Row>
+                <Col sm="2" className="left-container">
+                    <Sidebar />
+                </Col>
+                <Col sm="10">
+                    {getUpper()}
+                    {getUpperCard()}
+                    <Row>
+                        {getBookedUsers()}
+                        {detailType === "cancel" ?
+                            <Popup modalState={popup} />  
+                            :
+                            ''
+                        }
+                    </Row>
+                </Col>
+            </Row>    
+       
         </div>
     )
 }
