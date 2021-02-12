@@ -227,6 +227,23 @@
                 "name": "Settings"
             }
         ],
+        "btns": [
+            {
+                "title": "Upcoming Session",
+                "sessionType": true,
+                "route": ""
+            },
+            {
+                "title": "Past Session",
+                "sessionType": true,
+                "route": ""
+            },
+            {
+                "title": "Add New Session",
+                "sessionType": false,
+                "route": "/add-new-session"
+            }
+        ],
         "cards": [
             {
                 "heading": "Rolletser Fux",
@@ -257,5 +274,189 @@
                 "golive": "Go Live"
             }
         ]
+    },
+    "newSession": {
+        "title": "Add New Session",
+        "btnTitle": "Add",
+        "upload": "Upload Images",
+        "cardList": [
+            {
+                "icon": "icon"
+            },
+            {
+                "icon": "icon"
+            },
+            {
+                "icon": "icon"
+            },
+            {
+                "icon": "icon"
+            }
+        ],
+        "sessionForm": [
+            {
+                "title": "Name Of the Class",
+                "placeholder": "Rolletser Fux",
+                "type": "text",
+                "size": "4"
+            },
+            {
+                "title": "Session Date",
+                "placeholder": "From",
+                "type": "date",
+                "size": "2"
+            },
+            {
+                "title": "",
+                "placeholder": "To",
+                "type": "date",
+                "size": "2"
+            },
+            {
+                "title": "What You Need",
+                "placeholder": "Lorem Ipsum",
+                "type": "text",
+                "size": "4"
+            },
+            {
+                "title": "Name of the Trainer",
+                "placeholder": "Brimbistram",
+                "type": "text",
+                "size": "4"
+            },
+            {
+                "title": "Session Time",
+                "placeholder": "Start",
+                "type": "date",
+                "size": "2"
+            },
+            {
+                "title": "",
+                "placeholder": "End",
+                "type": "date",
+                "size": "2"
+            },
+            {
+                "title": "Category",
+                "placeholder": "Zumba",
+                "type": "select",
+                "size": "5",
+                "options": [
+                    {
+                        "title": "Zumba",
+                        "value": "Zumba"
+                    },
+                    {
+                        "title": "Zumba A",
+                        "value": "Zumba A"
+                    },
+                    {
+                        "title": "Zumba B",
+                        "value": "Zumba B"
+                    }
+                ]
+            },
+            {
+                "title": "About",
+                "placeholder": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+                "type": "text",
+                "size": "5"
+            },
+            {
+                "title": "Session Price",
+                "placeholder": "CAD",
+                "type": "text",
+                "size": "5"
+            }
+        ]
+    },
+    "sessionModal": {
+        "addedSession": {
+            "title": "Session Added Sucessfully!",
+            "content": "Your session at 11:00 AM on July 27, 2020 has been added successfully",
+            "btn": [
+                {
+                    "title": "Ok",
+                    "route": "/session-details"
+                }
+            ]
+        },
+        "cancelSession": {
+            "title": "Cancel Session",
+            "content": "Are you sure you want to cancel this session?",
+            "btn": [
+                {
+                    "title": "Yes"
+                },
+                {
+                    "title": "No"
+                }
+            ]
+        },
+        "cancelledSession": {
+            "title": "Session Cancelled",
+            "content": "Your session has been cancelled succesfullfy",
+            "btn": [
+                {
+                    "title": "Return to My Sessions"
+                }
+            ]
+        }
+    },
+    "sessionDetails": {
+        "title": "Session Details",
+        "btns": [
+            {
+                "title": "Edit Session",
+                "action": "edit"
+            },
+            {
+                "title": "Cancel Session",
+                "action": "cancel"
+            }
+        ],
+        "detailTitle": "Rolletser Fux",
+        "detailDate": "June 12, 2020",
+        "detailTime": "5:00 AM - 6:00 AM",
+        "booked": "10 Users Booked",
+        "cancellationPolicy": "See Cancellation Policy",
+        "cancelroute": "/cancellation-policy",
+        "usersViewed": "Users who have booked",
+        "usersList": [
+            {
+                "name": "Jake Miller"
+            },
+            {
+                "name": "Zac Berge"
+            },
+            {
+                "name": "Joel Parisian Sr."
+            },
+            {
+                "name": "Maya Stewart"
+            },
+            {
+                "name": "Phoenix Parker"
+            },
+            {
+                "name": "Ava Hyatt"
+            },
+            {
+                "name": "Heidi Glover"
+            },
+            {
+                "name": "Zac Heaney"
+            },
+            {
+                "name": "Sam Hill"
+            },
+            {
+                "name": "Abigail Rodriguez"
+            }
+        ]
+    },
+    "cancellationPolicy": {
+        "title": "Cancellation Policy",
+        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
     }
 }

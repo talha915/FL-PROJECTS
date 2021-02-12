@@ -1,0 +1,55 @@
+.new-session {
+  background-color: #1A1B2F;
+  min-height: 100vh;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.new-session .left-container {
+  background-color: #262744;
+  min-height: 100vh;
+}
+
+.new-session .left-container .list {
+  color: #FFFFFF;
+  text-decoration: none;
+  list-style: none;
+  padding-left: 0;
+  padding-top: 45px;
+  cursor: pointer;
+}
+
+.new-session .title {
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.new-session .addBtn {
+  text-align: right;
+}
+
+.new-session .upload-title {
+  text-align: left;
+  color: #FFFFFF;
+  padding-left: 30px;
+}
+
+.new-session .uploads {
+  height: 225px;
+  background: #262744 0% 0% no-repeat padding-box;
+  min-width: 250px;
+  margin-left: 5px;
+}
+
+.new-session .form {
+  padding-top: 20px;
+}
+
+.new-session .form .form-title {
+  color: #FFFFFF;
+}
+
+.new-session .form .form-empty-title {
+  color: #FFFFFF;
+  margin-top: 16px;
+}
