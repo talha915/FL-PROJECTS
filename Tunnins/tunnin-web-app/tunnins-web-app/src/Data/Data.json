@@ -386,10 +386,12 @@
             "content": "Are you sure you want to cancel this session?",
             "btn": [
                 {
-                    "title": "Yes"
+                    "title": "Yes",
+                    "action": "yes"
                 },
                 {
-                    "title": "No"
+                    "title": "No",
+                    "action": "no"
                 }
             ]
         },
@@ -398,7 +400,8 @@
             "content": "Your session has been cancelled succesfullfy",
             "btn": [
                 {
-                    "title": "Return to My Sessions"
+                    "title": "Return to My Sessions",
+                    "route": "/add-new-session"
                 }
             ]
         }
