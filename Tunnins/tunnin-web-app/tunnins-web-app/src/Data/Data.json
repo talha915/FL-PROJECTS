@@ -327,13 +327,13 @@
             {
                 "title": "Session Time",
                 "placeholder": "Start",
-                "type": "date",
+                "type": "time",
                 "size": "2"
             },
             {
                 "title": "",
                 "placeholder": "End",
-                "type": "date",
+                "type": "time",
                 "size": "2"
             },
             {

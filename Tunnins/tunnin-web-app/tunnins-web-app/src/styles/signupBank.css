@@ -1,0 +1,50 @@
+.signup-bank {
+  background-color: #1A1B2F;
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-left: 100px;
+}
+
+.signup-bank .heading {
+  color: #D0A592;
+  font-weight: 400;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.signup-bank .heading img {
+  max-width: 137px;
+}
+
+.signup-bank .subheading {
+  color: #585B8F;
+  font-size: 30px;
+  margin-bottom: 80px;
+}
+
+.signup-bank .country-heading {
+  color: #ffffff;
+  padding-top: 50px;
+  font-size: 24px;
+  width: 50%;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.signup-bank .country-heading .form-control {
+  height: 45px;
+  max-width: 100%;
+  text-align: center;
+  padding-left: 175px;
+}
+
+.signup-bank .next-btn-wrapper {
+  text-align: center;
+  margin-top: 25%;
+}
+
+.signup-bank .next-btn-wrapper .btn-primary {
+  min-width: 280px !important;
+}

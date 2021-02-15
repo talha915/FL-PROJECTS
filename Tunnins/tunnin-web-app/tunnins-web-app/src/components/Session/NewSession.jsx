@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import {
-    Button, Form, FormGroup, Label, Input, Row, Col, Card, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle
+    Button, Form, FormGroup, Label, Input, Row, Col, Card
 } from 'reactstrap';
+
+import TimePicker from 'react-time-picker';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -27,6 +28,8 @@ import Popup from './Popup';
 function AddSession() {
 
     const dispatch = useDispatch();
+    const [value, onChange] = useState('10:00');
+
     const newSession = useSelector(state => state.addSession);
 
     useEffect(() => {
@@ -111,6 +114,13 @@ function AddSession() {
                                     {getOptions(data.options)}
                                 </select>
                                 : 
+                                data.type == "time" ?                       
+                                    <TimePicker
+                                        onChange={onChange}
+                                        value={value}
+                                        className="form-control"
+                                    />     
+                                :
                                 <Input placeholder={data.placeholder} type={data.type} />
                             }                  
                         </FormGroup>
