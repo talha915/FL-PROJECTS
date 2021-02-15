@@ -66,13 +66,15 @@ function LoginForm(props) {
                         {loginForm.loginNote}
                     </p>
                     <Form >
-                        <FormGroup>
+                        <FormGroup className="custom-input-wrapper">
                             <Label for="exampleEmail">{loginForm.email}</Label>
                             <Input type="email" name="email" id="exampleEmail" placeholder="dodgeui2020@gmail.com" />
+                            <span className="input-icons"><i className="icon-mail"></i></span>
                         </FormGroup>
-                        <FormGroup>
+                        <FormGroup className="custom-input-wrapper">
                             <Label for="examplePassword">{loginForm.password}</Label>
                             <Input type="password" name="password" id="examplePassword" placeholder="***************" />
+                            <span className="input-icons"><i className="icon-lock-unlock"></i></span>
                         </FormGroup>
                         <FormGroup className="d-flex justify-content-between align-items-center mb-5" check >
                             <Label class="tunnin-checkbox" check>

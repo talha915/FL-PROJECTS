@@ -5,13 +5,39 @@
     padding-left: 100px;
     .heading {
         color: #D0A592;
+        font-weight: 400;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img {
+            max-width: 137px;
+        }
     }
     .subheading {
         color: #585B8F;
+        font-size: 30px;
+        margin-bottom: 80px;
     }
     .country-heading {
         color: #ffffff;
         padding-top: 50px;
+        font-size: 24px;
+        width: 50%;
+        margin: 0 auto;
+        font-weight: 400;
+        .form-control {
+            height: 45px;
+            max-width: 100%;
+            text-align: center;
+            padding-left: 175px;        
+        }
+    }
+    .next-btn-wrapper {
         text-align: center;
+        margin-top: 25%;
+        .btn-primary {
+            min-width: 280px !important;
+        }
     }
 }

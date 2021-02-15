@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { Row, Col, Label, Input, Button } from 'reactstrap';
+import { Row, Col, Label, Input, Button, FormGroup } from 'reactstrap';
+
+import logo from '../../images/tunnin-logo.png';
 
 // Constants
 import { connect_bank } from '../../constants/constants';
@@ -42,17 +44,23 @@ function ConnectBank(props) {
                 <div className="container">
                     <h5 className="heading">
                         {connectbank.data.heading}
+                        <img src={logo} alt="Logo" />
                     </h5>
                     <h6 className="subheading">
                         {connectbank.data.subHeading}
                     </h6>
-                    <p className="label">
-                        {connectbank.data.label}
+                    <p >
+                        
                     </p>
-                    <Input type="text" />
-                    <Button onClick={()=>routeTo(connectbank.data.route)}>
-                        {connectbank.data.btnText}
-                    </Button>
+                    <FormGroup className="connect-input-wrapper">
+                        <Label className="label" for="connect-bank">{connectbank.data.label}</Label>
+                        <Input id="connect-bank" type="text" />
+                    </FormGroup>
+                    <div className="next-btn-wrapper">
+                        <Button color="primary" size="lg" onClick={()=>routeTo(connectbank.data.route)}>
+                            {connectbank.data.btnText}
+                        </Button>
+                    </div>
                 </div>
             )
         }

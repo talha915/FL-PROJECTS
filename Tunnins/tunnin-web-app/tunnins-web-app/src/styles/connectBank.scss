@@ -5,12 +5,36 @@
     padding-left: 100px;
     .heading {
         color: #D0A592;
+        font-weight: 400;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img {
+            max-width: 137px;
+        }
     }
     .subheading {
         color: #585B8F;
+        font-size: 30px;
+        margin-bottom: 80px;
     }
     .label {
         color: #ffffff;
         padding-top: 50px;
+        font-size: 24px;
+    }
+    .next-btn-wrapper {
+        text-align: center;
+        margin-top: 25%;
+        .btn-primary {
+            min-width: 280px !important;
+        }
+    }
+    .connect-input-wrapper {
+        .form-control {
+            max-width: 555px;
+            height: 45px;
+        }
     }
 }

@@ -3,7 +3,6 @@ import {
     Button, Form, FormGroup, Label, Input, Row, Col, Card
 } from 'reactstrap';
 
-import TimePicker from 'react-time-picker';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -113,13 +112,7 @@ function AddSession() {
                                 <select className="form-control">
                                     {getOptions(data.options)}
                                 </select>
-                                : 
-                                data.type == "time" ?                       
-                                    <TimePicker
-                                        onChange={onChange}
-                                        value={value}
-                                        className="form-control"
-                                    />     
+                                
                                 :
                                 <Input placeholder={data.placeholder} type={data.type} />
                             }                  

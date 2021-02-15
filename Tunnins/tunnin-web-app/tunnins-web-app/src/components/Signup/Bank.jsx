@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { Row, Col, Label, Input, Button } from 'reactstrap';
 
+import logo from '../../images/tunnin-logo.png';
+
 // Constants
 import { signup_bank } from '../../constants/constants';
 
@@ -37,21 +39,24 @@ function Bank(props) {
                 <div className="container">
                     <h5 className="heading">
                         {signupbank.data.heading}
+                        <img src={logo} alt="Logo" />
                     </h5>
                     <h6 className="subheading">
                         {signupbank.data.subHeading}
                     </h6>
                     <div>
-                        <p className="country-heading">
-                            {signupbank.data.country}
-                        </p>
-                        <select name="select" onChange={(event)=>selectedValue(event)}>
-                            {getSelection(signupbank.data)}
-                        </select>
+                        <div className="country-heading">
+                            <Label for="countries">{signupbank.data.country}</Label>
+                            <select className="form-control" name="select" id="countries" onChange={(event)=>selectedValue(event)}>
+                                {getSelection(signupbank.data)}
+                            </select>
+                        </div>
                     </div>
-                    <Button onClick={()=>routeTo(signupbank.data.route)}>
-                        {signupbank.data.btnText}
-                    </Button>
+                    <div className="next-btn-wrapper">
+                        <Button color="primary" size="lg" onClick={()=>routeTo(signupbank.data.route)}>
+                            {signupbank.data.btnText}
+                        </Button>
+                    </div>
                 </div>
             )
         }

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { Row, Col, Label, Input, Button } from 'reactstrap';
 
+import logo from '../../images/tunnin-logo.png';
+
 // Constants
 import { profile_face } from '../../constants/constants';
 
@@ -36,6 +38,7 @@ function Face(props) {
                 <div className="container">
                     <h5 className="heading">
                         {signUpFace.data.heading}
+                        <img src={logo} alt="Logo" />
                     </h5>
                     <h6 className="subheading">
                         {signUpFace.data.subHeading}
@@ -43,10 +46,14 @@ function Face(props) {
                     <h6 className="upload-heading">
                         {signUpFace.data.upload}
                     </h6>
-                    {uploads(signUpFace.data)}
-                    <Button onClick={()=>routeTo(signUpFace.data.route)}>
-                        {signUpFace.data.btnText}
-                    </Button>
+                    <div className="d-flex">
+                        {uploads(signUpFace.data)}
+                    </div>
+                    <div className="next-btn-wrapper">
+                        <Button color="primary" size="lg" onClick={()=>routeTo(signUpFace.data.route)}>
+                            {signUpFace.data.btnText}
+                        </Button>
+                    </div>
                 </div>
             )
         }
@@ -59,9 +66,10 @@ function Face(props) {
     const uploads=(data)=> {
         let uploads = data.imageList.map((item, index)=> {
             return(
-                <p className="uploads" key={index}>
-                    {item.label}
-                </p>
+                <div className="uploads" key={index}>
+                    <span className="upload-icon-wrapper"><i className="icon-cloud"></i></span>
+                    <p>{item.label}</p>
+                </div>
             )
         });
         return uploads;

@@ -61,10 +61,11 @@ function ModalPopup(props) {
                                     </p>
                                 </FormGroup>
                                 :
-                                <FormGroup>
+                                <FormGroup className="custom-input-wrapper">
                                     <p className="text-center mb-5">Please enter your email address</p>
                                     <Label for="exampleEmail">{data.email}</Label>
                                     <Input type="email" name="email" id="exampleEmail" placeholder="dodgeui2020@gmail.com" />
+                                    <span className="input-icons"><i className="icon-mail"></i></span>
                                 </FormGroup>
 
                             }
