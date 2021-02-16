@@ -1,18 +1,80 @@
 .notifications {
     background-color: #1A1B2F;
     min-height: 100vh;
-    margin-left: 15px;
-    margin-right: 15px;
-    .left-container {
-        background-color: #262744;
-        min-height: 100vh;
-        .list {
-            color: #FFFFFF;
-            text-decoration: none;
-            list-style: none;
-            padding-left: 0;
-            padding-top: 45px;
-            cursor: pointer;
+    
+    .session-btn-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0 40px;
+        align-items: center;
+        position: relative;
+        .btn-secondary {
+            &.true-btn {
+                background: transparent;
+                border: 2px solid #d0a592;
+                border-radius: 0;
+                padding: 15px 60px;
+                margin: 0 20px;
+                min-width: 270px;
+                &:hover {
+                    background-color: #D0A592;
+                    color: #000;
+                }
+            }
+            &.false-btn {
+                background-color: #262744;
+                padding: 10px 30px;
+                border: 0;
+                border-radius: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 15px;
+            }
+        }
+    }
+    .session-cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        .session-cards {
+            width: 50%;
+            padding: 20px 30px;
+            .card {
+                border: 1px solid #D8A48F;
+                border-radius: 0;
+                background-color: transparent;
+                color: #fff;
+                &.live-session {
+                    background-color: #D8A48F;
+                    color: #000;
+                }
+                .card-content {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .session-amount {
+                    height: 40px;
+                    width: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid #D0A592;
+                    border-radius: 5px;
+                    font-size: 20px;
+                    background-color: #262744;
+                    color: #fff;
+                }
+            }
+
+            .btn-secondary {
+                background-color: #262744;
+                padding: 10px 30px;
+                border: 0;
+                border-radius: 0;
+                max-width: 200px;
+                margin: 0 auto;
+            }
         }
     }
     .heading {

@@ -239,7 +239,7 @@
                 "route": ""
             },
             {
-                "title": "Add New Session",
+                "title": "+ Add New Session",
                 "sessionType": false,
                 "route": "/add-new-session"
             }

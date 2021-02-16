@@ -55,3 +55,98 @@
     color: #78787A;
     font-size: 14px;
 }
+.profile-actions {
+    background-color: #262744;
+    .user-notification-wrapper {
+        padding: 5px 20px;
+        border: 1px solid #E6E6E6;
+        border-top: 0;
+        border-bottom: 0;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .icon-Group-22380 {
+            font-size: 28px;
+            .path1,
+            .path2{
+                &:before {
+                    color: #fff;
+                }
+            }
+            .path3 {
+                &:before {
+                    color: #D0A592;
+                }
+            }
+        }
+    }
+    .user-profile {
+        display: flex;
+        align-items: center;
+        padding: 0 20px 0 10px;
+        .dp-wrapper {
+            display: inline-flex;
+            max-width: 50px;
+            margin-right: 10px;
+            img {
+                width: 100%;
+            }
+        }
+        .credentials {
+            display: inline-flex;
+            flex-direction: column;
+            span {
+                color: #fff;
+                &.name {
+                    font-size: 16px;
+                }
+                &.email {
+                    font-size: 12px;
+                }
+            }
+        }
+        
+    }
+}
+.left-container {
+    background-color: #262744;
+    min-height: 100vh;
+    max-width: 95px;
+    padding: 0;
+    ul{
+        margin: 0;
+        padding: 45px 0 0 0;
+    }
+    .list {
+        color: #FFFFFF;
+        text-decoration: none;
+        list-style: none;
+        padding: 20px 15px;
+        max-width: 95px;
+        text-align: center;
+        cursor: pointer;
+        margin: 0 auto;
+        font-size: 13px;
+
+        &:hover {
+            background-color: #D8A48F;
+            color: #000;
+            i{
+                &::before {
+                    color: #000;
+                }
+            }
+        }
+        i{
+            font-size: 24px;
+            &::before {
+                color: #fff;
+            }
+        }
+    }
+}
+.custom-offset {
+    margin-left: 9.333333%;
+}

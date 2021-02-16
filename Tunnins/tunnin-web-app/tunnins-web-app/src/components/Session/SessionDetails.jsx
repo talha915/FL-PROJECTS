@@ -23,7 +23,7 @@ import '../../styles/sessionDetails.scss';
 // Components
 import Sidebar from '../Sidebar/Sidebar';
 import Popup from './Popup';
-
+import dp from '../../images/dp.png';
 function SessionDetail(props) {
 
     const [detailType, detailTypeAction] = useState('');
@@ -141,24 +141,48 @@ function SessionDetail(props) {
 
     return (
         <div className="session-details">    
-            
-            <Row>
-                <Col sm="2" className="left-container">
-                    <Sidebar />
-                </Col>
-                <Col sm="10">
-                    {getUpper()}
-                    {getUpperCard()}
-                    <Row>
-                        {getBookedUsers()}
-                        {detailType === "cancel" ?
-                            <Popup modalState={popup} />  
-                            :
-                            ''
-                        }
-                    </Row>
-                </Col>
-            </Row>    
+            <div className="profile-actions d-flex align-items-center justify-content-end">
+                <div className="user-notification-wrapper">
+                    <span className="icon-Group-22380">
+                        <span className="path1"></span>
+                        <span className="path2"></span>
+                        <span className="path3"></span>
+
+                    </span>
+                </div>
+                <div className="user-profile">
+                    <span className="dp-wrapper">
+                    <img src={dp} alt="user-dp" />
+                    </span>
+                    <span className="credentials">
+                        <span className="name">
+                            Sanjay Singh
+                        </span>
+                        <span className="email">
+                            sanjay.singh@gmail.com
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div className="container-fluid">
+                <Row>
+                    <Col className="left-container">
+                        <Sidebar />
+                    </Col>
+                    <Col sm="10" className="mt-5">
+                        {getUpper()}
+                        {getUpperCard()}
+                        <Row>
+                            {getBookedUsers()}
+                            {detailType === "cancel" ?
+                                <Popup modalState={popup} />  
+                                :
+                                ''
+                            }
+                        </Row>
+                    </Col>
+                </Row> 
+            </div>   
        
         </div>
     )

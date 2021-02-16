@@ -36,7 +36,7 @@ function Sidebar(props) {
             let sidebar = lists.map((data, index)=> {
                 return(
                     <li key={index} className="list">
-                        {data.name}
+                        <i className="icon-lock-unlock d-block"></i>{data.name}
                     </li>
                 )
             })
