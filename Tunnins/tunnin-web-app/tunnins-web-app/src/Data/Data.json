@@ -298,42 +298,49 @@
                 "title": "Name Of the Class",
                 "placeholder": "Rolletser Fux",
                 "type": "text",
+                "name": "name_of_class",
                 "size": "4"
             },
             {
                 "title": "Session Date",
                 "placeholder": "From",
                 "type": "date",
+                "name": "start_date",
                 "size": "2"
             },
             {
                 "title": "",
                 "placeholder": "To",
                 "type": "date",
+                "name": "end_date",
                 "size": "2"
             },
             {
                 "title": "What You Need",
                 "placeholder": "Lorem Ipsum",
                 "type": "text",
+                "name": "what_you_need",
                 "size": "4"
             },
             {
                 "title": "Name of the Trainer",
                 "placeholder": "Brimbistram",
                 "type": "text",
+                "name": "name_of_trainer",
                 "size": "4"
             },
             {
                 "title": "Session Time",
                 "placeholder": "Start",
                 "type": "time",
+                "name": "start_time",
                 "size": "2"
             },
             {
                 "title": "",
                 "placeholder": "End",
                 "type": "time",
+                "name": "end_time",
                 "size": "2"
             },
             {
@@ -341,6 +348,7 @@
                 "placeholder": "Zumba",
                 "type": "select",
                 "size": "5",
+                "name": "category",
                 "options": [
                     {
                         "title": "Zumba",
@@ -360,12 +368,14 @@
                 "title": "About",
                 "placeholder": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
                 "type": "text",
+                "name": "about",
                 "size": "5"
             },
             {
                 "title": "Session Price",
                 "placeholder": "CAD",
                 "type": "text",
+                "name": "session_price",
                 "size": "5"
             }
         ]
