@@ -10,12 +10,12 @@ import { useDispatch, useSelector } from "react-redux";
 // Action
 import { sessionModal } from '../../actions/sessionModal';
 import { addSession } from '../../actions/addSession';
-
+import { addedSession } from '../../actions/addedSession';
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { add_session, add_session_modal, added_session } from '../../constants/constants';
+import { add_session, add_session_modal } from '../../constants/constants';
 
 // Styles
 import '../../styles/newsession.scss';
@@ -64,7 +64,7 @@ function AddSession() {
     }
 
     const dispatchAction=()=> {
-        dispat  ch(addedSession(added_session, sessionForm));
+        dispatch(addedSession(sessionForm));
         dispatch(sessionModal(add_session_modal));
     }
 

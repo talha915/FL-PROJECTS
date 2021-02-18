@@ -1,17 +1,17 @@
 // Constants
-import { add_session, added_session } from '../constants/constants';
+import { added_session } from '../constants/constants';
 
 const initialState = {
-    addNewSession: {
+    addedNewSession: {
 
-    }
+    } 
 }
 
 export default function(state=initialState, actions) {
     switch(actions.type) {
-        case add_session:
+        case added_session:
             return {
-                ...state.addNewSession,
+                ...state.addedNewSession,
                 data: actions.payload
             } 
         default:

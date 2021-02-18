@@ -13,6 +13,7 @@ import signupBank from './signupBank';
 import connectBank from './connectBank';
 import notification from './notification';
 import addSession from './addSession';
+import addedSession from './addedSession';
 import sessionModal from './sessionModal';
 import sessionDetails from './sessionDetails';
 import cancelPolicy from './cancelPolicy';
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
     connectBank,
     notification,
     addSession,
+    addedSession,
     sessionModal,
     sessionDetails,
     cancelPolicy
