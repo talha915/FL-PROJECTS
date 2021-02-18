@@ -1,12 +1,12 @@
 // Constants
-import { add_session } from '../constants/constants';
+import { add_session, added_session } from '../constants/constants';
 
 const initialState = {
     addNewSession: {
 
     },
     addedNewSession: {
-        
+
     } 
 }
 
@@ -16,7 +16,7 @@ export default function(state=initialState, actions) {
             return {
                 ...state.addNewSession,
                 data: actions.payload
-            }
+            } 
         default:
             return state;    
     }

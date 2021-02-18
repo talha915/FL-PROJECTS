@@ -64,7 +64,7 @@ function AddSession() {
     }
 
     const dispatchAction=()=> {
-        dispatch(addSession(added_session, sessionForm));
+        dispat  ch(addedSession(added_session, sessionForm));
         dispatch(sessionModal(add_session_modal));
     }
 
