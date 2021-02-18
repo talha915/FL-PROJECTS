@@ -12,7 +12,7 @@ export default function(state=initialState, actions) {
         case added_session:
             return {
                 ...state.addedNewSession,
-                data: actions.payload
+                addedNewSession: actions.payload
             } 
         default:
             return state;    

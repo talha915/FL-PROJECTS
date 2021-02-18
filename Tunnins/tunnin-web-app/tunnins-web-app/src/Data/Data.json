@@ -380,6 +380,10 @@
             }
         ]
     },
+    "editSesion": {
+        "title": "Edit Session",
+        "btnTitle": "Save"
+    },
     "sessionModal": {
         "addedSession": {
             "title": "Session Added Sucessfully!",

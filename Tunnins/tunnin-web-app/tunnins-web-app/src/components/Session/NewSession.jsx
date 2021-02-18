@@ -31,16 +31,27 @@ function AddSession() {
 
     const dispatch = useDispatch();
     const [form, setform] = useState({});
+    const [editForm, setEditForm] = useState({});
 
     const newSession = useSelector(state => state.addSession);
 
+    const editSession = useSelector(state => state.addedSession);
+
+
     useEffect(() => {
         dispatchNewSession();
+        dispatchEditSession();
     }, []);
 
 
     const dispatchNewSession = () => {
         dispatch(addSession(add_session));
+    }
+
+    const dispatchEditSession=()=> {
+        if(Object.keys(editSession).length > 0) {
+            setEditForm(editSession.addedNewSession);
+        }
     }
 
     const getSessionTop = () => {
@@ -119,11 +130,11 @@ function AddSession() {
                                 {data.title}
                             </Label>
                             {data.type == "select" ?
-                                <select className="form-control" name={data.name} onChange={(e)=>{getNewSession(data.name, e.target.value)}} >
+                                <select className="form-control" name={data.name} defaultValue={editSession.addedNewSession[data.name]} onChange={(e)=>{getNewSession(data.name, e.target.value)}} >
                                     {getOptions(data.options)}
                                 </select>                  
                                 :
-                                <Input placeholder={data.placeholder} type={data.type} name={data.name} onChange={(e)=>{getNewSession(data.name, e.target.value)}} />
+                                <Input placeholder={data.placeholder} type={data.type} name={data.name} defaultValue={editSession.addedNewSession[data.name]} onChange={(e)=>{getNewSession(data.name, e.target.value)}} />
                             }                  
                         </FormGroup>
                     </Col>
