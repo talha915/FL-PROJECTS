@@ -27,8 +27,10 @@ import dp from '../../images/dp.png';
 
 function AddSession() {
 
+    let sessionForm = {};
+
     const dispatch = useDispatch();
-    const [value, onChange] = useState('10:00');
+    const [form, setform] = useState({});
 
     const newSession = useSelector(state => state.addSession);
 
@@ -110,12 +112,11 @@ function AddSession() {
                                 {data.title}
                             </Label>
                             {data.type == "select" ?
-                                <select className="form-control">
+                                <select className="form-control" name={data.name} onChange={(e)=>{getNewSession(data.name, e.target.value)}} >
                                     {getOptions(data.options)}
-                                </select>
-                                
+                                </select>                  
                                 :
-                                <Input placeholder={data.placeholder} type={data.type} />
+                                <Input placeholder={data.placeholder} type={data.type} name={data.name} onChange={(e)=>{getNewSession(data.name, e.target.value)}} />
                             }                  
                         </FormGroup>
                     </Col>
@@ -123,6 +124,10 @@ function AddSession() {
             });
             return formList;
         }
+    }
+
+    const getNewSession=(key, value)=> {
+        sessionForm[key] = value;
     }
 
     const getOptions=(data)=> {
@@ -149,7 +154,6 @@ function AddSession() {
                                 <span className="path1"></span>
                                 <span className="path2"></span>
                                 <span className="path3"></span>
-
                             </span>
                         </div>
                         <div className="user-profile">
