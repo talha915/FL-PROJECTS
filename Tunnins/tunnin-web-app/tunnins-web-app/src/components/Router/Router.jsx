@@ -30,6 +30,7 @@ class Router extends Component {
                     <Route component={CreateAccount} path="/create-account" exact/>
                     <Route component={Notification} path="/notification" exact/>
                     <Route component={AddSession} path="/add-new-session" exact/>
+                    <Route component={AddSession} path="/edit-session" exact/>
                     <Route component={SessionDetail} path="/session-details" exact/>
                     <Route component={CancelledPolicy} path="/cancellation-policy" exact/>
                 </Switch>

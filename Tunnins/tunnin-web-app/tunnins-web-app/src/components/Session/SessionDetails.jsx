@@ -68,7 +68,7 @@ function SessionDetail(props) {
         if(sessionDetail.hasOwnProperty('data')) {
             let btns = sessionDetail.data.btns.map((data, index)=> {
                 return(
-                    <Button key={index} className="topbtn-style addBtn" onClick={()=>detailAction(data.action)}>
+                    <Button key={index} className="topbtn-style addBtn" onClick={()=>detailAction(data)}>
                         {data.title}
                     </Button>
                 );
@@ -77,11 +77,14 @@ function SessionDetail(props) {
         }
     }
 
-    const detailAction=(data)=> {
+    const detailAction=(type)=> {
+        let data = type.action;
         if(data == "cancel") {
-            console.log("Cancel");
             detailTypeAction(data);
             dispatch(sessionModal(cancel_session_modal));
+        }
+        else {
+            props.history.push(type.route);
         }   
     }
 

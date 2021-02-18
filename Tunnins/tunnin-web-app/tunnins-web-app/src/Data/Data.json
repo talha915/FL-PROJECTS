@@ -421,7 +421,8 @@
         "btns": [
             {
                 "title": "Edit Session",
-                "action": "edit"
+                "action": "edit",
+                "route": "/edit-session"
             },
             {
                 "title": "Cancel Session",
