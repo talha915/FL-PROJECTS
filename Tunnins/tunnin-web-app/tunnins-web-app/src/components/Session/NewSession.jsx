@@ -15,7 +15,7 @@ import { addSession } from '../../actions/addSession';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { add_session, add_session_modal } from '../../constants/constants';
+import { add_session, add_session_modal, added_session } from '../../constants/constants';
 
 // Styles
 import '../../styles/newsession.scss';
@@ -46,13 +46,14 @@ function AddSession() {
     const getSessionTop = () => {
         if (newSession.hasOwnProperty('data')) {
             return (
-                <Row>
-                    <Col sm="6">
-                        <h6 className="title">
+                <Row className="mb-3">
+                    <Col className="d-flex align-items-center col-sm-6">
+                        <h6 className="title m-0">
+                            <i className="icon-chevron-left"></i>
                             {newSession.data.title}
                         </h6>
                     </Col>
-                    <Col sm="6">
+                    <Col className="add-btn-wrapper col-sm-6">
                         <Button className="addBtn" onClick={()=>dispatchAction()}>
                             {newSession.data.btnTitle}
                         </Button>
@@ -63,6 +64,7 @@ function AddSession() {
     }
 
     const dispatchAction=()=> {
+        dispatch(addSession(added_session, sessionForm));
         dispatch(sessionModal(add_session_modal));
     }
 
@@ -72,14 +74,16 @@ function AddSession() {
         if (newSession.hasOwnProperty('data')) {
             return (
                 <Row>
-                    <Row>
+                    <Col sm="12">
                         <p className="upload-title">
                             {newSession.data.upload}
                         </p>
-                    </Row>
-                    <Row>
-                        {getuploads()}
-                    </Row>
+                    </Col>
+                    <Col sm="8">
+                        <Row>
+                            {getuploads()}
+                        </Row>
+                    </Col>
                 </Row>
             )
         }
@@ -92,7 +96,10 @@ function AddSession() {
                 return(
                     <Col sm="3" key={index}>
                         <Card className="uploads">
-                            {data.icon}
+                            <div className="d-none">
+                                {data.icon}
+                            </div>
+                            <i className="icon-cloud"></i>
                         </Card>
                     </Col>
                 );
@@ -175,14 +182,16 @@ function AddSession() {
                             <Col className="left-container">
                                 <Sidebar />
                             </Col>
-                            <Col sm="10" className="mt-5">
-                                {getSessionTop()}
-                                {getImages()}
-                                <Form className="form">
-                                    <Row>
-                                        {getForm()}
-                                    </Row>
-                                </Form>
+                            <Col  className="mt-3">
+                                <div className="add-session-right-container">
+                                    {getSessionTop()}
+                                    {getImages()}
+                                    <Form className="tunnin-form mt-5">
+                                        <Row>
+                                            {getForm()}
+                                        </Row>
+                                    </Form>
+                                </div>
                             </Col>
                         </Row>
                     </div>

@@ -5,23 +5,58 @@
         background-color: #262744;
         min-height: 100vh;
     }
+    .add-session-right-container {
+        padding: 10px 20px 10px 40px;
+    }
     .title {
         text-align: left;
         color: #FFFFFF;
+        font-size: 24px;
+        font-weight: 400;
+        position: relative;
+        i{
+            position: absolute;
+            left: -35px;
+            top: 1px;
+            &::before {
+                color: #fff;
+            }
+        }
+    }
+    .add-btn-wrapper {
+        text-align: right;
     }
     .addBtn {
-        text-align: right;
+        background-color: #D0A592;
+        border: 1px solid #d0a592;
+        border-radius: 0;
+        padding: 15px 60px;
+        margin: 0 20px;
+        min-width: 270px;
+        text-align: center;
+        color: #000;
+        font-size: 18px;
+        &:hover {
+            background-color: #262744;
+        }
     }
     .upload-title {
         text-align: left;
         color: #FFFFFF;
-        padding-left: 30px;
+        font-size: 22px;
     }
     .uploads{
-        height: 225px;
-        background: #262744 0% 0% no-repeat padding-box;
+        height: 180px;
+        background: #262744;
         min-width: 250px;
-        margin-left: 5px;
+        align-items: center;
+        justify-content: center;
+        i {
+            font-size: 32px;
+            &::before {
+                color: #fff;
+            }
+        }
     }
     .form {
         padding-top: 20px;

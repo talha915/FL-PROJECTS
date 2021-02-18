@@ -12,6 +12,8 @@ import { withRouter } from 'react-router-dom';
 // Constants
 import { close_modal, add_session_modal, cancelled_session_modal } from '../../constants/constants';
 
+import done from '../../images/done.png';
+
 
 function Popup(props) {
 
@@ -47,7 +49,7 @@ function Popup(props) {
     const getButton=(data)=> {
         let btn = data.btn.map((item, index)=> {
             return(
-                <Button key={index} onClick={()=>modalOperate(item)}>
+                <Button color="primary" key={index} onClick={()=>modalOperate(item)}>
                     {item.title}
                 </Button>
             )
@@ -59,20 +61,19 @@ function Popup(props) {
 
     const getModal=()=> {  
         return(
-            <Modal isOpen={popup.hasOwnProperty("popUp") ? popup.popUp : props.modalState.popUp}>
-                <ModalHeader>
-                    <div>
-                        <h6>
-                            {popup.hasOwnProperty("title") ? popup.title : props.modalState.modalState.title}
-                        </h6>
-                    </div>
+            <Modal className="tunnin-popup modal-dialog-centered" isOpen={popup.hasOwnProperty("popUp") ? popup.popUp : props.modalState.popUp}>
+                <div className="text-center">
+                    <img src={done} alt="Reset Password" />
+                </div>
+                <ModalHeader className="border-0 justify-content-center pb-0">
+                    {popup.hasOwnProperty("title") ? popup.title : props.modalState.modalState.title}
                 </ModalHeader>
-                <ModalBody>
-                    <p>
+                <ModalBody className="justify-content-center" >
+                    <p className="text-center opacity-69">
                         {popup.hasOwnProperty("content") ? popup.content : props.modalState.modalState.content}
                     </p>
                 </ModalBody>
-                <ModalFooter>
+                <ModalFooter className="border-0 justify-content-center">
                     {getButton(popup.hasOwnProperty("btn") ? popup.btn : props.modalState.modalState)}
                 </ModalFooter>
             </Modal>

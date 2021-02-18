@@ -8,6 +8,7 @@ export const signup_bank = 'signupBank';
 export const connect_bank = 'connectBank';
 export const listed_notification = 'listedNotification';
 export const add_session = 'addNewSession';
+export const added_session = 'addedNewSession';
 export const add_session_modal = 'addedSession';
 export const cancel_session_modal = 'cancelSession';
 export const cancelled_session_modal = 'cancelledSession';

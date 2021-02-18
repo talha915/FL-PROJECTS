@@ -4,6 +4,9 @@ import { add_session } from '../constants/constants';
 const initialState = {
     addNewSession: {
 
+    },
+    addedNewSession: {
+        
     } 
 }
 

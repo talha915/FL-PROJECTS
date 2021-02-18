@@ -24,6 +24,8 @@ import '../../styles/sessionDetails.scss';
 import Sidebar from '../Sidebar/Sidebar';
 import Popup from './Popup';
 import dp from '../../images/dp.png';
+import suser from '../../images/session-user.png';
+
 function SessionDetail(props) {
 
     const [detailType, detailTypeAction] = useState('');
@@ -46,13 +48,14 @@ function SessionDetail(props) {
         if(sessionDetail.hasOwnProperty('data')) {
             return(
                 <div>
-                    <Row>
-                        <Col sm="6">
-                            <h6>
+                    <Row className="mb-3">
+                        <Col className="d-flex align-items-center col-sm-6">
+                            <h6 className="title m-0">
+                                <i className="icon-chevron-left"></i>
                                 {sessionDetail.data.title}
                             </h6>
                         </Col>
-                        <Col sm="6">
+                        <Col className="add-btn-wrapper col-sm-6">
                             {getBtns()}
                         </Col>
                     </Row>
@@ -65,7 +68,7 @@ function SessionDetail(props) {
         if(sessionDetail.hasOwnProperty('data')) {
             let btns = sessionDetail.data.btns.map((data, index)=> {
                 return(
-                    <Button key={index} className="topbtn-style" onClick={()=>detailAction(data.action)}>
+                    <Button key={index} className="topbtn-style addBtn" onClick={()=>detailAction(data.action)}>
                         {data.title}
                     </Button>
                 );
@@ -85,34 +88,38 @@ function SessionDetail(props) {
     const getUpperCard=()=> {
         if(sessionDetail.hasOwnProperty('data')) {
             return(
-                <div className="top-borderless-card">
-                    <Row>
-                        <Col sm="6">
-                            <h6>
-                                {sessionDetail.data.detailTitle}
-                            </h6>
-                            <p>
-                                {sessionDetail.data.detailDate}
-                            </p>
-                            <p>
-                                {sessionDetail.data.detailDate}
-                            </p>
-                            <p>
-                                {sessionDetail.data.detailTime}
-                            </p>
-                            <p>
-                                {sessionDetail.data.booked}
-                            </p>
-                            <p>
-                                {sessionDetail.data.usersViewed}
-                            </p>
-                        </Col>
-                        <Col sm="6" onClick={()=>cancelPolicy(sessionDetail.data.cancelroute)}>
-                            <p>
-                                {sessionDetail.data.cancellationPolicy}
-                            </p>
-                        </Col>
-                    </Row>
+                <div>
+                    <div className="top-borderless-card">
+                        <Row>
+                            <Col sm="6">
+                                <Card body className="card-style session-info-card">
+                                    <div className="card-content">
+                                        <div>
+                                            <CardTitle tag="h5">{sessionDetail.data.detailTitle}</CardTitle>
+                                            <CardText>{sessionDetail.data.detailDate}</CardText>
+                                            <CardText>{sessionDetail.data.detailTime}</CardText>
+                                        </div>
+                                        <div>
+                                            <CardText className="session-amount">$21</CardText>
+                                            <CardText>{sessionDetail.data.booked}</CardText>
+                                        </div>
+                                    </div>
+                                </Card>
+                            </Col>
+                            <Col sm="6" className="d-flex justify-content-end align-items-end">
+                                <p className="cancel-policy-text" onClick={()=>cancelPolicy(sessionDetail.data.cancelroute)}>
+                                    {sessionDetail.data.cancellationPolicy}
+                                </p>
+                            </Col>
+                        </Row>
+                    </div>
+                    <div>
+                        <Row>
+                            <Col sm="12">
+                                <h5 className="users-booked-title">{sessionDetail.data.usersViewed}</h5>
+                            </Col>
+                        </Row>
+                    </div>
                 </div>
             )
         }
@@ -126,10 +133,11 @@ function SessionDetail(props) {
         if(sessionDetail.hasOwnProperty('data')) {
             let users = sessionDetail.data.usersList.map((data, index) => {
                 return(
-                    <Col sm="2" key={index} style={{marginLeft: "10px"}}>
-                        <Card style={{backgroundColor: "#262744"}} className="card-style">
+                    <Col key={index}>
+                        <Card className="card-style session-user-card">
                             <CardBody>
-                                {data.name}
+                            <img src={suser} alt="user-dp" />
+                                <span className="session-user-name">{data.name}</span>
                             </CardBody>
                         </Card>
                     </Col>
@@ -169,17 +177,19 @@ function SessionDetail(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="10" className="mt-5">
-                        {getUpper()}
-                        {getUpperCard()}
-                        <Row>
-                            {getBookedUsers()}
-                            {detailType === "cancel" ?
-                                <Popup modalState={popup} />  
-                                :
-                                ''
-                            }
-                        </Row>
+                    <Col className="mt-5">
+                        <div className="session-details-right-container">
+                            {getUpper()}
+                            {getUpperCard()}
+                            <Row>
+                                {getBookedUsers()}
+                                {detailType === "cancel" ?
+                                    <Popup modalState={popup} />  
+                                    :
+                                    ''
+                                }
+                            </Row>
+                        </div>
                     </Col>
                 </Row> 
             </div>   

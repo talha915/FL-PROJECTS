@@ -2,6 +2,14 @@
 //     font-family: $base-font-family;
 //     font-size: $base-font-size;
 // }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300 !important;
+}
 .custom-input-wrapper {
     position: relative;
     .form-control {
@@ -141,6 +149,7 @@
         }
         i{
             font-size: 24px;
+            margin-bottom: 10px;
             &::before {
                 color: #fff;
             }
@@ -149,4 +158,62 @@
 }
 .custom-offset {
     margin-left: 9.333333%;
+}
+.tunnin-form {
+    label {
+        color: #FFFFFF;
+        font-size: 18px;
+        &.form-empty-title {
+            min-height: 20px;
+        }
+    }
+    .form-control {
+        border-radius: 0 !important;
+        background: #1a1b2f;
+        border: 0;
+        border-bottom: 1px solid rgba(225, 255, 255 , 0.65);
+        border-radius: 0;
+    }
+}
+ 
+.tunnin-popup {
+    width: 90%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+
+    .modal-content {
+        background-color: #262744;
+        border: 0;
+        padding: 60px 0;
+    }
+    .modal-body {
+        padding: 4px 45px 16px;
+    }
+
+    h5 {
+        color: #fff;
+        font-size: 26px;
+        font-weight: 300;
+    }
+    p,
+    label {
+        color: #fff;
+        font-size: 16px;
+        line-height: 27px;
+        font-weight: 400;
+    }
+    .btn-primary {
+        max-width: 300px !important;
+        min-width: inherit !important;
+        width: 35%;
+        padding: 12px 0 !important;
+        font-size: 18px;
+    }
+    .verify-text {
+        font-size: 14px;
+    }
+}
+.opacity-69 {
+    opacity: 69%;
 }

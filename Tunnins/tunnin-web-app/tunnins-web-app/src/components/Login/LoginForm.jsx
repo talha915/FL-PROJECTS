@@ -77,16 +77,16 @@ function LoginForm(props) {
                             <span className="input-icons"><i className="icon-lock-unlock"></i></span>
                         </FormGroup>
                         <FormGroup className="d-flex justify-content-between align-items-center mb-5" check >
-                            <Label class="tunnin-checkbox" check>
+                            <Label className="tunnin-checkbox" check>
                                 <Input type="checkbox" /> {loginForm.remember}
                             </Label>
                             <Label check>
-                                <a class="tunnin-link" href="#" onClick={toggle}>{loginForm.forgot}</a>
+                                <a className="tunnin-link" href="#" onClick={toggle}>{loginForm.forgot}</a>
                             </Label>
                         </FormGroup>
                         <FormGroup className="text-center">
                             <Button color="primary" size="lg" >{loginForm.loginBtn}</Button>
-                            <p className="text-grey mt-3">Don’t have an account? <a class="tunnin-link" onClick={routeSignUp}>SIGNUP</a></p>
+                            <p className="text-grey mt-3">Don’t have an account? <a className="tunnin-link" onClick={routeSignUp}>SIGNUP</a></p>
                         </FormGroup>
                     </Form>
                     <ModalPopup isOpen={modal} loginData={modalState} sendData={getDataFromChild} />

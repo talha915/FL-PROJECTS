@@ -41,22 +41,23 @@ function CancelledPolicy() {
     const getCancelPolicyData=()=> {
         if(cancelationPolicy.hasOwnProperty('data')) {
             return(
-                <Col sm="10">
+                <div>
                     <div className="cancel">
-                        <h6>
+                        <h6 className="title m-0">
+                            <i className="icon-chevron-left"></i>
                             {cancelationPolicy.data.title}
                         </h6>
-                        <p>
+                        <p className="cancel-policy-text">
                             {cancelationPolicy.data.content}
                         </p>
                     </div>
-                </Col>
+                </div>
             )
         }
     }
 
     return(
-        <div className="session-details">
+        <div className="cancel-policy">
             <div className="profile-actions d-flex align-items-center justify-content-end">
                         <div className="user-notification-wrapper">
                             <span className="icon-Group-22380">
@@ -85,8 +86,10 @@ function CancelledPolicy() {
                             <Col className="left-container">
                                 <Sidebar />
                             </Col>
-                            <Col sm="10" className="mt-5">
+                            <Col className="mt-5">
+                                <div className="cancel-policy-right-container">
                                 {getCancelPolicyData()}
+                                </div>
                             </Col>
                         </Row>
                     </div>
