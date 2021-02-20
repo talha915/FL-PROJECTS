@@ -5,6 +5,7 @@ import { added_session } from '../constants/constants';
 export const addedSession=(data)=> {
     return {
         type: added_session,
-        payload: data
+        payload: data,
+        editpayload: localData.editSesion
     }
 }

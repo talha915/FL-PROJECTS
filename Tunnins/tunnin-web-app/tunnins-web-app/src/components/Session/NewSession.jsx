@@ -51,6 +51,7 @@ function AddSession() {
     const dispatchEditSession=()=> {
         if(Object.keys(editSession).length > 0) {
             setEditForm(editSession.addedNewSession);
+            console.log("Edit Session: ", editSession);
         }
     }
 
@@ -61,12 +62,12 @@ function AddSession() {
                     <Col className="d-flex align-items-center col-sm-6">
                         <h6 className="title m-0">
                             <i className="icon-chevron-left"></i>
-                            {newSession.data.title}
+                            {editSession.hasOwnProperty('editSession') ? editSession.editSession.title : newSession.data.title}
                         </h6>
                     </Col>
                     <Col className="add-btn-wrapper col-sm-6">
                         <Button className="addBtn" onClick={()=>dispatchAction()}>
-                            {newSession.data.btnTitle}
+                            {editSession.hasOwnProperty('editSession') ? editSession.editSession.btnTitle : newSession.data.btnTitle}
                         </Button>
                     </Col>
                 </Row>
