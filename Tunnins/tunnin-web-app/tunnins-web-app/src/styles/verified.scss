@@ -1,12 +1,13 @@
+@import 'variables';
 .verify {
-    background-color: #1A1B2F;
+    background-color: $primary;
     min-height: 100vh;
     padding-top: 50px;
     padding-left: 50px;
     .heading {
         font-weight: 400;
         margin-bottom: 30px;
-        color: #D0A592;
+        color: $enury;
     }
     .page-logo-wrapper {
         display: flex;
@@ -22,7 +23,7 @@
         margin-bottom: 40px;
     }
     .text {
-        color: #585B8F;
+        color: $waikawa-gray;
         font-size: 28px;
         max-width: 530px;    
     }

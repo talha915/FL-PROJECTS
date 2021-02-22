@@ -1,3 +1,4 @@
+@import 'variables';
 .login-container {
     height: 100vh;  
     margin-left: 15px;
@@ -5,7 +6,7 @@
 }
 
 .left-login {
-    background-color: #1A1B2F;
+    background-color: $primary;
     height: 100vh;
 }
 .right-login {
@@ -26,11 +27,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #D0A592;
+    color: $enury;
 }
 
 .login-form-heading {
-    color: #D0A592;
+    color: $enury;
     padding-top: 90px;
     font-weight: 400;
 }
@@ -42,7 +43,7 @@
 }
 
 .login-form-note {
-    color: #585B8F;
+    color: $waikawa-gray;
     font-size: 20px;
     padding-bottom: 50px;
 }
@@ -50,12 +51,12 @@
 
 .forgot-password-popup {
     width: 90%;
-    color: #fff;
+    color: $white;
     display: flex;
     align-items: center;
 
     .modal-content {
-        background-color: #262744;
+        background-color: $ebony-clay;
         border: 0;
         padding: 60px 0;
     }
@@ -64,13 +65,13 @@
     }
 
     h5 {
-        color: #fff;
+        color: $white;
         font-size: 22px;
         font-weight: 400;
     }
     p,
     label {
-        color: #fff;
+        color: $white;
         font-size: 16px;
         line-height: 27px;
         font-weight: 400;

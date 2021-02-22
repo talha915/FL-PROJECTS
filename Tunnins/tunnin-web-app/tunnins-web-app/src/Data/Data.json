@@ -212,19 +212,24 @@
     "notification": {
         "sideList": [
             {
-                "name": "My Sessions"
+                "name": "My Sessions",
+                "icon": "icon-lock-unlock d-block"
             },
             {
-                "name": "My Earnings"
+                "name": "My Earnings",
+                "icon": "icon-lock-unlock d-block"
             },
             {
-                "name": "Payouts"
+                "name": "Payouts",
+                "icon": "icon-lock-unlock d-block"
             },
             {
-                "name": "Ratings & Reviews"
+                "name": "Ratings & Reviews",
+                "icon": "icon-lock-unlock d-block"
             },
             {
-                "name": "Settings"
+                "name": "Settings",
+                "icon": "icon-lock-unlock d-block"
             }
         ],
         "btns": [

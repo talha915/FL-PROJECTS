@@ -1,5 +1,6 @@
+@import 'variables';
 .profile {
-    background-color: #1A1B2F;
+    background-color: $primary;
     min-height: 100vh;
     padding-top: 100px;
     padding-left: 100px;
@@ -12,7 +13,7 @@
         }
     }
     .heading {
-        color: #D0A592;
+        color: $enury;
         font-weight: 400;
         font-size: 30px;
         display: flex;
@@ -23,12 +24,12 @@
         }
     }
     .subheading {
-        color: #585B8F;
+        color: $waikawa-gray;
         font-size: 30px;
         margin-bottom: 80px;
     }
     .formheading {
-        color: #FFFFFF;
+        color: $white;
         display: block;
         font-size: 18px;
     }

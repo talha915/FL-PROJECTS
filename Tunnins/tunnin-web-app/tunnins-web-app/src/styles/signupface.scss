@@ -1,10 +1,11 @@
+@import 'variables';
 .signup-face {
-    background-color: #1A1B2F;
+    background-color: $primary;
     min-height: 100vh;
     padding-top: 100px;
     padding-left: 100px;
     .heading {
-        color: #D0A592;
+        color: $enury;
         font-weight: 400;
         font-size: 30px;
         display: flex;
@@ -15,12 +16,12 @@
         }
     }
     .subheading {
-        color: #585B8F;
+        color: $waikawa-gray;
         font-size: 30px;
         margin-bottom: 80px;
     }
     .upload-heading {
-        color: #FFFFFF;
+        color: $white;
         padding-top: 50px;
         font-size: 24px;
         font-weight: 400;
@@ -28,11 +29,11 @@
     .uploads {
         padding-top: 20px;
         padding-right: 20px;
-        color: #fff;
+        color: $white;
         text-align: center;
         font-size: 18px;
         .upload-icon-wrapper {
-            background-color: #D0A592;
+            background-color: $enury;
             border-radius: 27px;
             height: 70px;
             width: 200px;
@@ -43,7 +44,7 @@
             margin-bottom: 10px;
             i {
                 &:before {
-                    color: #fff;
+                    color: $white;
                 }
             }
         }

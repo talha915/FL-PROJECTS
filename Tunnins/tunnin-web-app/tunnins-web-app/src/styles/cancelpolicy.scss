@@ -1,11 +1,12 @@
+@import 'variables';
 .cancel-policy {
-    background-color: #1A1B2F;
+    background-color: $mirage;
     min-height: 100vh;
-    color: #FFFFFF;
+    color: $white;
 
     .title {
         text-align: left;
-        color: #FFFFFF;
+        color: $white;
         font-size: 24px;
         font-weight: 400;
         position: relative;
@@ -14,7 +15,7 @@
             left: -35px;
             top: 1px;
             &::before {
-                color: #fff;
+                color: $white;
             }
         }
     }

@@ -1,7 +1,8 @@
+@import 'variables';
 .session-details {
-    background-color: #1A1B2F;
+    background-color: $primary;
     min-height: 100vh;
-    color: #FFFFFF;
+    color: $white;
 
     .topbtn-style {
         margin-left: 100px;
@@ -10,11 +11,11 @@
         padding-top: 25px;
         padding-bottom: 10px;
         margin-bottom: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid rgba($white, 0.3);
         cursor: pointer;
     }
     .left-container {
-        background-color: #262744;
+        background-color: $ebony-clay;
         min-height: 100vh;
     }
     .session-details-right-container {
@@ -22,7 +23,7 @@
     }
     .title {
         text-align: left;
-        color: #FFFFFF;
+        color: $white;
         font-size: 24px;
         font-weight: 400;
         position: relative;
@@ -31,7 +32,7 @@
             left: -35px;
             top: 1px;
             &::before {
-                color: #fff;
+                color: $white;
             }
         }
     }
@@ -39,17 +40,17 @@
         text-align: right;
     }
     .addBtn {
-        background-color: #D0A592;
-        border: 1px solid #d0a592;
+        background-color: $enury;
+        border: 1px solid $enury;
         border-radius: 0;
         padding: 15px 60px;
         margin: 0 20px;
         min-width: 270px;
         text-align: center;
-        color: #000;
+        color: $black;
         font-size: 18px;
         &:hover {
-            background-color: #262744;
+            background-color: $ebony-clay;
         }
     }
     .card-style {
@@ -58,7 +59,7 @@
         min-height: 225px;
         background-color: transparent;
         border: 0;
-        background-color: #262744;
+        background-color: $ebony-clay;
 
         &.session-info-card{
             min-width: inherit;
@@ -83,10 +84,10 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 1px solid #D0A592;
+                border: 1px solid $enury;
                 font-size: 20px;
                 font-weight: 400;
-                color: #fff;
+                color: $white;
             }
         }
     }

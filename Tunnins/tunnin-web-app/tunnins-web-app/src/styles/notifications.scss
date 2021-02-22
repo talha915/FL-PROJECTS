@@ -1,5 +1,6 @@
+@import 'variables';
 .notifications {
-    background-color: #1A1B2F;
+    background-color: $primary;
     min-height: 100vh;
     
     .session-btn-wrapper {
@@ -11,18 +12,18 @@
         .btn-secondary {
             &.true-btn {
                 background: transparent;
-                border: 2px solid #d0a592;
+                border: 2px solid $enury;
                 border-radius: 0;
                 padding: 15px 60px;
                 margin: 0 20px;
                 min-width: 270px;
                 &:hover {
-                    background-color: #D0A592;
-                    color: #000;
+                    background-color: $enury;
+                    color: $black;
                 }
             }
             &.false-btn {
-                background-color: #262744;
+                background-color: $ebony-clay;
                 padding: 10px 30px;
                 border: 0;
                 border-radius: 0;
@@ -41,13 +42,13 @@
             width: 50%;
             padding: 20px 30px;
             .card {
-                border: 1px solid #D8A48F;
+                border: 1px solid $petite-orchid;
                 border-radius: 0;
                 background-color: transparent;
-                color: #fff;
+                color: $white;
                 &.live-session {
-                    background-color: #D8A48F;
-                    color: #000;
+                    background-color: $petite-orchid;
+                    color: $black;
                 }
                 .card-content {
                     display: flex;
@@ -59,16 +60,16 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    border: 1px solid #D0A592;
+                    border: 1px solid $enury;
                     border-radius: 5px;
                     font-size: 20px;
-                    background-color: #262744;
-                    color: #fff;
+                    background-color: $ebony-clay;
+                    color: $white;
                 }
             }
 
             .btn-secondary {
-                background-color: #262744;
+                background-color: $ebony-clay;
                 padding: 10px 30px;
                 border: 0;
                 border-radius: 0;
@@ -78,13 +79,13 @@
         }
     }
     .heading {
-        color: #D0A592;
+        color: $enury;
     }
     .subheading {
-        color: #585B8F;
+        color: $waikawa-gray;
     }
     .label {
-        color: #ffffff;
+        color: $white;
         padding-top: 50px;
     }
 }

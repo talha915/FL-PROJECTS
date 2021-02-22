@@ -1,8 +1,9 @@
+@import 'variables';
 .new-session {
-    background-color: #1A1B2F;
+    background-color: $primary;
     min-height: 100vh;
     .left-container {
-        background-color: #262744;
+        background-color: $ebony-clay;
         min-height: 100vh;
     }
     .add-session-right-container {
@@ -10,7 +11,7 @@
     }
     .title {
         text-align: left;
-        color: #FFFFFF;
+        color: $white;
         font-size: 24px;
         font-weight: 400;
         position: relative;
@@ -19,7 +20,7 @@
             left: -35px;
             top: 1px;
             &::before {
-                color: #fff;
+                color: $white;
             }
         }
     }
@@ -27,44 +28,44 @@
         text-align: right;
     }
     .addBtn {
-        background-color: #D0A592;
-        border: 1px solid #d0a592;
+        background-color: $enury;
+        border: 1px solid $enury;
         border-radius: 0;
         padding: 15px 60px;
         margin: 0 20px;
         min-width: 270px;
         text-align: center;
-        color: #000;
+        color: $black;
         font-size: 18px;
         &:hover {
-            background-color: #262744;
+            background-color: $ebony-clay;
         }
     }
     .upload-title {
         text-align: left;
-        color: #FFFFFF;
+        color: $white;
         font-size: 22px;
     }
     .uploads{
         height: 180px;
-        background: #262744;
+        background: $ebony-clay;
         min-width: 250px;
         align-items: center;
         justify-content: center;
         i {
             font-size: 32px;
             &::before {
-                color: #fff;
+                color: $white;
             }
         }
     }
     .form {
         padding-top: 20px;
         .form-title {
-            color: #FFFFFF;
+            color: $white;
         }
         .form-empty-title {
-            color: #FFFFFF;
+            color: $white;
             margin-top: 16px;
         }
     }
