@@ -25,9 +25,11 @@ import Sidebar from '../Sidebar/Sidebar';
 import Popup from './Popup';
 import dp from '../../images/dp.png';
 
-function AddSession() {
+function AddSession(props) {
 
     let sessionForm = {};
+
+    console.log("LOcation: ", props.history.location.pathname);
 
     const dispatch = useDispatch();
     const [form, setform] = useState({});
@@ -76,8 +78,13 @@ function AddSession() {
     }
 
     const dispatchAction=()=> {
-        dispatch(addedSession(sessionForm));
-        dispatch(sessionModal(add_session_modal));
+        dispatch(addedSession(sessionForm));   
+        if(props.history.location.pathname === "/edit-session") {
+            props.history.push('/home-past');
+        }
+        else {
+            dispatch(sessionModal(add_session_modal));
+        }
     }
 
     const popup = useSelector(state => state.sessionModal);

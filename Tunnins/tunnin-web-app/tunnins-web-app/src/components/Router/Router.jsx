@@ -29,6 +29,7 @@ class Router extends Component {
                     <Route component={ConnectBank} path="/connect-bank" exact/>
                     <Route component={CreateAccount} path="/create-account" exact/>
                     <Route component={Notification} path="/notification" exact/>
+                    <Route component={Notification} path="/home-past" exact/>
                     <Route component={AddSession} path="/add-new-session" exact/>
                     <Route component={AddSession} path="/edit-session" exact/>
                     <Route component={SessionDetail} path="/session-details" exact/>
