@@ -247,7 +247,7 @@
             {
                 "name": "Payouts",
                 "icon": "icon-lock-unlock d-block",
-                "route": "/"
+                "route": "/payouts"
             },
             {
                 "name": "Ratings & Reviews",
@@ -758,6 +758,94 @@
                 "name": "Rajan Singh",
                 "card": "xxx-xxx-xxx-xxxx",
                 "date": "June 12, 2020"
+            }
+        ]
+    },
+    "payouts": {
+        "heading": "Payouts",
+        "inputs": [
+            {
+                "type": "date",
+                "placeholder": "From DD/MM/YYY"
+            },
+            {
+                "type": "date",
+                "placeholder": "To DD/MM/YYY"
+            }
+        ],
+        "tableHeader": [
+            {
+                "title": "Payout Date"
+            },
+            {
+                "title": "Pay Period"
+            },
+            {
+                "title": "Earnings"
+            },
+            {
+                "title": "Fees"
+            },
+            {
+                "title": "Total Payouts"
+            }
+        ],
+        "tableValues": [
+            {
+                "date": "June 12, 2020",
+                "period": "Aug 22-Aug 29 2020",
+                "earnings": "$500",
+                "fees": "$50",
+                "totalpayouts": "$500"
+            },
+            {
+                "date": "June 12, 2020",
+                "period": "Aug 22-Aug 29 2020",
+                "earnings": "$500",
+                "fees": "$50",
+                "totalpayouts": "$500"
+            },
+            {
+                "date": "June 12, 2020",
+                "period": "Aug 22-Aug 29 2020",
+                "earnings": "$500",
+                "fees": "$50",
+                "totalpayouts": "$500"
+            },
+            {
+                "date": "June 12, 2020",
+                "period": "Aug 22-Aug 29 2020",
+                "earnings": "$500",
+                "fees": "$50",
+                "totalpayouts": "$500"
+            },
+            {
+                "date": "June 12, 2020",
+                "period": "Aug 22-Aug 29 2020",
+                "earnings": "$500",
+                "fees": "$50",
+                "totalpayouts": "$500"
+            },
+            {
+                "date": "June 12, 2020",
+                "period": "Aug 22-Aug 29 2020",
+                "earnings": "$500",
+                "fees": "$50",
+                "totalpayouts": "$500"
+            },
+            {
+                "date": "June 12, 2020",
+                "period": "Aug 22-Aug 29 2020",
+                "earnings": "$500",
+                "fees": "$50",
+                "totalpayouts": "$500"
+            },
+            {
+                "date": "June 12, 2020",
+                "period": "Aug 22-Aug 29 2020",
+                "earnings": "$500",
+                "fees": "$50",
+                "totalpayouts": "$500"
             }
         ]
     }

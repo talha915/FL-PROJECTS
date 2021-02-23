@@ -1,70 +1,63 @@
 import React, { useEffect } from 'react';
-import { Table, Row, Col, Card, CardText, 
+import { Table, Row, Col, Card, CardText,  Input,
     CardTitle} from 'reactstrap';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
 // Action
-import { fetchEarning } from '../../actions/earnings';
+import { fetchPayout } from '../../actions/payouts';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { getEarnings } from '../../constants/constants';
+import { getPayouts } from '../../constants/constants';
 
 // Styles
-import '../../styles/earnings.scss';
+import '../../styles/payout.scss';
 
 // Components
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
-function Earnings(props) {
+function Payouts(props) {
 
     const dispatch = useDispatch();
 
     useEffect(()=> {
-        dispatchEarnings();
+        dispatchPayouts();
     }, []);
 
-    const dispatchEarnings=()=> {
-        dispatch(fetchEarning(getEarnings));
+    const dispatchPayouts=()=> {
+        dispatch(fetchPayout(getPayouts));
     }
 
-    const getEarn = useSelector(state => state.earnings);
+    const payouts = useSelector(state => state.payouts);
 
     const getUpperPart=()=> {
-        if(getEarn.hasOwnProperty('data')) {
-            let earnings = getEarn.data;
+        if(payouts.hasOwnProperty('data')) {
+            let pays = payouts.data;
             return(
-                <Row>
-                    <Col>
-                        {earnings.heading}
-                    </Col>
-                    {getUpperCards(earnings.upperCards)}
-                </Row>
+                <div>
+                    <Row>
+                        <Col>
+                            {pays.heading}
+                        </Col>
+                    </Row>
+                    <Row>
+                        {getInputs(pays.inputs)}
+                    </Row>
+                </div>
             )
         }
     }
 
-    const routeTo=(location)=> {
-        props.history.push(location);
-    }
-
-    const getUpperCards=(data)=> {
+    const getInputs=(data)=> {
         let cards = data.map((items, index)=> {
             return(
                 <Col key={index}>
-                    <Card body className="card-style" onClick={()=>routeTo(items.route)}>
-                        <div className="card-content">
-                            <div>
-                                <CardTitle tag="h5">{items.price}</CardTitle>
-                                <CardText>{items.title}</CardText>
-                            </div>
-                        </div>
-                    </Card>
+                    <Input type={items.type} placeholder={items.placeholder} />
                 </Col>
             )
         });
@@ -72,8 +65,8 @@ function Earnings(props) {
     }
 
     const getTableHeaders=()=> {
-        if(getEarn.hasOwnProperty('data')) {
-            let tableHeaders = getEarn.data.tableHeader.map((data, index)=> {
+        if(payouts.hasOwnProperty('data')) {
+            let tableHeaders = payouts.data.tableHeader.map((data, index)=> {
                 return (
                     <th key={index}>
                         {data.title}
@@ -85,24 +78,24 @@ function Earnings(props) {
     }
 
     const getTableValues=()=> {
-        if(getEarn.hasOwnProperty('data')) {
-            let getValues = getEarn.data.tableValues.map((data, index)=>{
+        if(payouts.hasOwnProperty('data')) {
+            let getValues = payouts.data.tableValues.map((data, index)=>{
                 return (
                     <tr key={index}>
-                        <th>
-                            {data.nameofSession}
-                        </th>
                         <th>
                             {data.date}
                         </th>
                         <th>
-                            {data.time}
-                        </th>
-                        <th>
-                            {data.users}
+                            {data.period}
                         </th>
                         <th>
                             {data.earnings}
+                        </th>
+                        <th>
+                            {data.fees}
+                        </th>
+                        <th>
+                            {data.totalpayouts}
                         </th>
                     </tr>
                 )
@@ -112,7 +105,7 @@ function Earnings(props) {
     }
 
     return(
-        <div className="earning">
+        <div className="payouts">
             <Header />
             <div className="container-fluid">
                 <Row>
@@ -142,4 +135,4 @@ function Earnings(props) {
     )
 }
 
-export default withRouter(Earnings);
+export default withRouter(Payouts);

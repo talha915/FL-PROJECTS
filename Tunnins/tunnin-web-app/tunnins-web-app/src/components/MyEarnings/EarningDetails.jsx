@@ -23,7 +23,7 @@ import '../../styles/earnings.scss';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
-function Earnings(props) {
+function EarningDetails(props) {
 
     const dispatch = useDispatch();
 
@@ -36,7 +36,6 @@ function Earnings(props) {
     }
 
     const getEarn = useSelector(state => state.earningDetails);
-    console.log("Earn Details: ", getEarn);
 
     const getUpperPart = () => {
         if (getEarn.hasOwnProperty('data')) {
@@ -154,4 +153,4 @@ function Earnings(props) {
     )
 }
 
-export default withRouter(Earnings);
+export default withRouter(EarningDetails);
