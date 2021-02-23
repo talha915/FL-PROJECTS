@@ -18,10 +18,12 @@ import sessionModal from './sessionModal';
 import sessionDetails from './sessionDetails';
 import cancelPolicy from './cancelPolicy';
 import ratingReview from './ratingReview';
+import header from './header'; 
 
 const rootReducer = combineReducers({
     localData,
     updateModal,
+    header,
     signup,
     signedup,
     verify,

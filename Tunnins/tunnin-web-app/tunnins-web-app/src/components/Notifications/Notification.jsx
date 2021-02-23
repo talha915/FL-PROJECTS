@@ -18,6 +18,7 @@ import { listed_notification } from '../../constants/constants';
 import '../../styles/notifications.scss';
 
 // Components
+import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
 import dp from '../../images/dp.png';
@@ -105,7 +106,8 @@ function Notification(props) {
 
     return(
         <div className="notifications">
-            <div className="profile-actions d-flex align-items-center justify-content-end">
+            <Header />
+            {/* <div className="profile-actions d-flex align-items-center justify-content-end">
                 <div className="user-notification-wrapper">
                     <span className="icon-Group-22380">
                         <span className="path1"></span>
@@ -127,7 +129,7 @@ function Notification(props) {
                         </span>
                     </span>
                 </div>
-            </div>
+            </div> */}
             <div className="container-fluid">
                 <Row>
                     <Col className="left-container">

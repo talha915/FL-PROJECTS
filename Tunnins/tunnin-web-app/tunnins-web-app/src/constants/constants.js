@@ -16,3 +16,4 @@ export const close_modal = 'closeModal';
 export const session_details = 'sessionDetails';
 export const cancel_policy = 'cancelPolicy';
 export const ratingReviews = 'Rating&Reviews';
+export const getHeader = 'header';
