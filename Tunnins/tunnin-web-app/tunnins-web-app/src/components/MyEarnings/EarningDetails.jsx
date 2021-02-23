@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
-import { Table, Row, Col, Card, CardText, 
-    CardTitle} from 'reactstrap';
+import {
+    Table, Row, Col, Card, CardText,
+    CardTitle
+} from 'reactstrap';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
 // Action
-import { fetchEarning } from '../../actions/earnings';
+import { fetchEarningDetail } from '../../actions/earningDetails';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { getEarnings } from '../../constants/constants';
+import { getEarningDetail } from '../../constants/constants';
 
 // Styles
 import '../../styles/earnings.scss';
@@ -25,41 +27,55 @@ function Earnings(props) {
 
     const dispatch = useDispatch();
 
-    useEffect(()=> {
-        dispatchEarnings();
+    useEffect(() => {
+        dispatchEarningDetail();
     }, []);
 
-    const dispatchEarnings=()=> {
-        dispatch(fetchEarning(getEarnings));
+    const dispatchEarningDetail = () => {
+        dispatch(fetchEarningDetail(getEarningDetail));
     }
 
-    const getEarn = useSelector(state => state.earnings);
+    const getEarn = useSelector(state => state.earningDetails);
+    console.log("Earn Details: ", getEarn);
 
-    console.log("Earn: ", getEarn);
-
-    const getUpperPart=()=> {
-        if(getEarn.hasOwnProperty('data')) {
+    const getUpperPart = () => {
+        if (getEarn.hasOwnProperty('data')) {
             let earnings = getEarn.data;
-            return(
-                <Row>
-                    <Col>
-                        {earnings.heading}
-                    </Col>
-                    {getUpperCards(earnings.upperCards)}
-                </Row>
+            return (
+                <div>
+                    <Row>
+                        <div>
+                            {earnings.heading}
+                        </div>
+                    </Row>
+                    <Row>
+                        <Col sm="6">
+                            <Card body className="card-style">
+                                <div className="card-content">
+                                    <div>
+                                        <CardTitle tag="h5">{earnings.leftSection.name}</CardTitle>
+                                        <CardText>{earnings.leftSection.date}</CardText>
+                                        <CardText>{earnings.leftSection.time}</CardText>
+                                    </div>
+                                    <div>
+                                        <CardText className="session-amount">{earnings.leftSection.price}</CardText>
+                                        <CardText>{earnings.leftSection.booked}</CardText>
+                                    </div>
+                                </div>
+                            </Card>
+                        </Col>
+                        {getUpperCards(earnings.upperCards)}
+                    </Row>
+                </div>
             )
         }
     }
 
-    const routeTo=(location)=> {
-        props.history.push(location);
-    }
-
-    const getUpperCards=(data)=> {
-        let cards = data.map((items, index)=> {
-            return(
-                <Col key={index}>
-                    <Card body className="card-style" onClick={()=>routeTo(items.route)}>
+    const getUpperCards = (data) => {
+        let cards = data.map((items, index) => {
+            return (
+                <Col key={index} sm="2">
+                    <Card body className="card-style">
                         <div className="card-content">
                             <div>
                                 <CardTitle tag="h5">{items.price}</CardTitle>
@@ -73,9 +89,9 @@ function Earnings(props) {
         return cards;
     }
 
-    const getTableHeaders=()=> {
-        if(getEarn.hasOwnProperty('data')) {
-            let tableHeaders = getEarn.data.tableHeader.map((data, index)=> {
+    const getTableHeaders = () => {
+        if (getEarn.hasOwnProperty('data')) {
+            let tableHeaders = getEarn.data.tableHeader.map((data, index) => {
                 return (
                     <th key={index}>
                         {data.title}
@@ -86,25 +102,19 @@ function Earnings(props) {
         }
     }
 
-    const getTableValues=()=> {
-        if(getEarn.hasOwnProperty('data')) {
-            let getValues = getEarn.data.tableValues.map((data, index)=>{
+    const getTableValues = () => {
+        if (getEarn.hasOwnProperty('data')) {
+            let getValues = getEarn.data.tableValues.map((data, index) => {
                 return (
                     <tr key={index}>
                         <th>
-                            {data.nameofSession}
+                            {data.name}
+                        </th>
+                        <th>
+                            {data.card}
                         </th>
                         <th>
                             {data.date}
-                        </th>
-                        <th>
-                            {data.time}
-                        </th>
-                        <th>
-                            {data.users}
-                        </th>
-                        <th>
-                            {data.earnings}
                         </th>
                     </tr>
                 )
@@ -113,7 +123,7 @@ function Earnings(props) {
         }
     }
 
-    return(
+    return (
         <div className="earning">
             <Header />
             <div className="container-fluid">
@@ -136,7 +146,7 @@ function Earnings(props) {
                                     {getTableValues()}
                                 </tbody>
                             </Table>
-                        </div>      
+                        </div>
                     </Col>
                 </Row>
             </div>

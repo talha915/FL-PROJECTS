@@ -18,3 +18,4 @@ export const cancel_policy = 'cancelPolicy';
 export const ratingReviews = 'Rating&Reviews';
 export const getHeader = 'header';
 export const getEarnings = 'earnings';
+export const getEarningDetail = 'earningDetails';

@@ -20,6 +20,7 @@ import cancelPolicy from './cancelPolicy';
 import ratingReview from './ratingReview';
 import header from './header'; 
 import earnings from './earnings';
+import earningDetails from './earningDetails';
 
 const rootReducer = combineReducers({
     localData,
@@ -40,7 +41,8 @@ const rootReducer = combineReducers({
     sessionDetails,
     cancelPolicy,
     ratingReview,
-    earnings
+    earnings,
+    earningDetails
 })
 
 export default rootReducer;
