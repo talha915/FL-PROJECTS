@@ -252,7 +252,7 @@
             {
                 "name": "Ratings & Reviews",
                 "icon": "icon-lock-unlock d-block",
-                "route": "/"
+                "route": "/ratings"
             },
             {
                 "name": "Settings",
