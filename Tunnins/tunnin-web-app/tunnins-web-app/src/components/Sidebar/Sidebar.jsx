@@ -30,12 +30,16 @@ function Sidebar(props) {
         dispatch(ListNotification(listed_notification));
     }
 
+    const routeTo=(location)=> {
+        props.history.push(location);
+    }
+
     const getSidebar=()=> {
         if(getNotification.hasOwnProperty('data')) {
             let lists = getNotification.data.sideList;
             let sidebar = lists.map((data, index)=> {
                 return(
-                    <li key={index} className="list">
+                    <li key={index} className="list" onClick={()=>routeTo(data.route)}>
                         <i className={data.icon}></i>{data.name}
                     </li>
                 )
@@ -52,4 +56,4 @@ function Sidebar(props) {
 
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);

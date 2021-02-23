@@ -236,23 +236,28 @@
         "sideList": [
             {
                 "name": "My Sessions",
-                "icon": "icon-lock-unlock d-block"
+                "icon": "icon-lock-unlock d-block",
+                "route": "/"
             },
             {
                 "name": "My Earnings",
-                "icon": "icon-lock-unlock d-block"
+                "icon": "icon-lock-unlock d-block",
+                "route": "/my-earnings"
             },
             {
                 "name": "Payouts",
-                "icon": "icon-lock-unlock d-block"
+                "icon": "icon-lock-unlock d-block",
+                "route": "/"
             },
             {
                 "name": "Ratings & Reviews",
-                "icon": "icon-lock-unlock d-block"
+                "icon": "icon-lock-unlock d-block",
+                "route": "/"
             },
             {
                 "name": "Settings",
-                "icon": "icon-lock-unlock d-block"
+                "icon": "icon-lock-unlock d-block",
+                "route": "/"
             }
         ],
         "btns": [
@@ -577,6 +582,108 @@
                 "date": "15-Aug-2020",
                 "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                 "rating": "5"
+            }
+        ]
+    },
+    "myearnings": {
+        "heading": "Total Earnings",
+        "upperCards": [
+            {
+                "price": "$500.50",
+                "title": "GROSS"
+            },
+            {
+                "price": "$500.50",
+                "title": "NET"
+            }
+        ],
+        "tableHeader": [
+            {
+                "title": "Name of Session"
+            },
+            {
+                "title": "Date"
+            },
+            {
+                "title": "Time"
+            },
+            {
+                "title": "Total Users Booked"
+            },
+            {
+                "title": "Gross Earnings"
+            }
+        ],
+        "tableValues": [
+            {
+                "nameofSession": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "users": "50",
+                "earnings": "$500"
+            },
+            {
+                "nameofSession": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "users": "50",
+                "earnings": "$500"
+            },
+            {
+                "nameofSession": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "users": "50",
+                "earnings": "$500"
+            },
+            {
+                "nameofSession": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "users": "50",
+                "earnings": "$500"
+            },
+            {
+                "nameofSession": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "users": "50",
+                "earnings": "$500"
+            },
+            {
+                "nameofSession": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "users": "50",
+                "earnings": "$500"
+            },
+            {
+                "nameofSession": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "users": "50",
+                "earnings": "$500"
+            },
+            {
+                "nameofSession": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "users": "50",
+                "earnings": "$500"
+            },
+            {
+                "nameofSession": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "users": "50",
+                "earnings": "$500"
+            },
+            {
+                "nameofSession": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "users": "50",
+                "earnings": "$500"
             }
         ]
     }
