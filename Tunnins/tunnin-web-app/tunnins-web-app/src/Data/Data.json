@@ -590,11 +590,13 @@
         "upperCards": [
             {
                 "price": "$500.50",
-                "title": "GROSS"
+                "title": "GROSS",
+                "route": "/earning-details"
             },
             {
                 "price": "$500.50",
-                "title": "NET"
+                "title": "NET",
+                "route": "/earning-details"
             }
         ],
         "tableHeader": [
@@ -684,6 +686,78 @@
                 "time": "5:00 AM - 6:00 AM",
                 "users": "50",
                 "earnings": "$500"
+            }
+        ]
+    },
+    "earningDetails": {
+        "heading": "Earning Details",
+        "leftSection": {
+            "name": "Rolletser Fux",
+            "date": "June 12, 2020",
+            "time": "5:00 AM - 6:00 AM",
+            "price": "$21",
+            "booked": "10 Users Booked"
+        },
+        "upperCards": [
+            {
+                "price": "100",
+                "title": "Total Bookings"
+            },
+            {
+                "price": "$500.50",
+                "title": "GROSS"
+            },
+            {
+                "price": "$500.50",
+                "title": "NET"
+            }
+        ],
+        "tableHeader": [
+            {
+                "title": "User"
+            },
+            {
+                "title": "Card Used"
+            },
+            {
+                "title": "Receiving Date"
+            }
+        ],
+        "tableValues": [
+            {
+                "name": "Rajan Singh",
+                "card": "xxx-xxx-xxx-xxxx",
+                "date": "June 12, 2020"
+            },
+            {
+                "name": "Samira Sehgal",
+                "card": "xxx-xxx-xxx-xxxx",
+                "date": "June 12, 2020"
+            },
+            {
+                "name": "Rajwinder Khurana",
+                "card": "xxx-xxx-xxx-xxxx",
+                "date": "June 12, 2020"
+            },
+            {
+                "name": "Sanjay Singh",
+                "card": "xxx-xxx-xxx-xxxx",
+                "date": "June 12, 2020"
+            },
+            {
+                "name": "Rahul Saini",
+                "card": "xxx-xxx-xxx-xxxx",
+                "date": "June 12, 2020"
+            },
+            {
+                "name": "Rajan Singh",
+                "card": "xxx-xxx-xxx-xxxx",
+                "date": "June 12, 2020"
+            },
+            {
+                "name": "Rajan Singh",
+                "card": "xxx-xxx-xxx-xxxx",
+                "date": "June 12, 2020"
             }
         ]
     }

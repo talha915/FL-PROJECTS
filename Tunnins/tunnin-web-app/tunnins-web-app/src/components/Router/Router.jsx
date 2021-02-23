@@ -16,6 +16,7 @@ import SessionDetail from '../Session/SessionDetails';
 import CancelledPolicy from '../Session/CancelPolicy';
 import Ratings from '../Ratings/Ratings';
 import Earnings from '../MyEarnings/Earnings';
+import EarningDetails from '../MyEarnings/EarningDetails';
 
 class Router extends Component {
     render() {
@@ -39,6 +40,7 @@ class Router extends Component {
                     <Route component={CancelledPolicy} path="/cancellation-policy" exact/>
                     <Route component={Ratings} path="/ratings" exact/>
                     <Route component={Earnings} path="/my-earnings" exact/>
+                    <Route component={EarningDetails} path="/earning-details" exact/>
                 </Switch>
             </div>
         )
