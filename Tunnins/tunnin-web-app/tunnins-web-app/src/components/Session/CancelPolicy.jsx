@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
 // ReactStrap
 import { Row, Col } from 'reactstrap';
@@ -16,6 +16,7 @@ import { withRouter } from 'react-router-dom';
 import { cancel_policy } from '../../constants/constants';
 
 // Components
+import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
 // Styles
@@ -27,20 +28,20 @@ function CancelledPolicy() {
 
     const dispatch = useDispatch();
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatchSessionPolicy();
     }, []);
 
-    const dispatchSessionPolicy=()=> {
+    const dispatchSessionPolicy = () => {
         dispatch(cancelPolicy(cancel_policy));
     }
 
     const cancelationPolicy = useSelector(state => state.cancelPolicy);
     console.log("Cons, ", cancelationPolicy);
 
-    const getCancelPolicyData=()=> {
-        if(cancelationPolicy.hasOwnProperty('data')) {
-            return(
+    const getCancelPolicyData = () => {
+        if (cancelationPolicy.hasOwnProperty('data')) {
+            return (
                 <div>
                     <div className="cancel">
                         <h6 className="title m-0">
@@ -56,43 +57,21 @@ function CancelledPolicy() {
         }
     }
 
-    return(
+    return (
         <div className="cancel-policy">
-            <div className="profile-actions d-flex align-items-center justify-content-end">
-                        <div className="user-notification-wrapper">
-                            <span className="icon-Group-22380">
-                                <span className="path1"></span>
-                                <span className="path2"></span>
-                                <span className="path3"></span>
-
-                            </span>
+            <Header />
+            <div className="container-fluid">
+                <Row>
+                    <Col className="left-container">
+                        <Sidebar />
+                    </Col>
+                    <Col className="mt-5">
+                        <div className="cancel-policy-right-container">
+                            {getCancelPolicyData()}
                         </div>
-                        <div className="user-profile">
-                            <span className="dp-wrapper">
-                            <img src={dp} alt="user-dp" />
-                            </span>
-                            <span className="credentials">
-                                <span className="name">
-                                    Sanjay Singh
-                                </span>
-                                <span className="email">
-                                    sanjay.singh@gmail.com
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="container-fluid">
-                        <Row>
-                            <Col className="left-container">
-                                <Sidebar />
-                            </Col>
-                            <Col className="mt-5">
-                                <div className="cancel-policy-right-container">
-                                {getCancelPolicyData()}
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
+                    </Col>
+                </Row>
+            </div>
         </div>
     )
 }

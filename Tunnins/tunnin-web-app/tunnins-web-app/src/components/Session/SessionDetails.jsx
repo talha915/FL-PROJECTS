@@ -21,6 +21,7 @@ import { session_details, cancel_session_modal, cancelled_session_modal } from '
 import '../../styles/sessionDetails.scss';
 
 // Components
+import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 import Popup from './Popup';
 import dp from '../../images/dp.png';
@@ -162,29 +163,7 @@ function SessionDetail(props) {
 
     return (
         <div className="session-details">    
-            <div className="profile-actions d-flex align-items-center justify-content-end">
-                <div className="user-notification-wrapper">
-                    <span className="icon-Group-22380">
-                        <span className="path1"></span>
-                        <span className="path2"></span>
-                        <span className="path3"></span>
-
-                    </span>
-                </div>
-                <div className="user-profile">
-                    <span className="dp-wrapper">
-                    <img src={dp} alt="user-dp" />
-                    </span>
-                    <span className="credentials">
-                        <span className="name">
-                            Sanjay Singh
-                        </span>
-                        <span className="email">
-                            sanjay.singh@gmail.com
-                        </span>
-                    </span>
-                </div>
-            </div>
+            <Header />
             <div className="container-fluid">
                 <Row>
                     <Col className="left-container">

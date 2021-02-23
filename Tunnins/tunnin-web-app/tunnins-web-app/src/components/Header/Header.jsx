@@ -30,7 +30,6 @@ function Header() {
     }
 
     const getHead = useSelector(state => state.header);
-    console.log("Head: ", getHead);
 
     const getPaths=()=> {
         if(getHead.hasOwnProperty('data')) {
@@ -40,6 +39,19 @@ function Header() {
                 )
             });
             return paths;
+        }
+    }
+
+    const getCredentials=()=> {
+        if(getHead.hasOwnProperty('data')) {
+            let credentials = getHead.data.credentials.map((data, index)=> {
+                return(
+                    <span className={data.class} key={index}>
+                        {data.title}
+                    </span>
+                )
+            });
+            return credentials;
         }
     }
 
@@ -55,12 +67,7 @@ function Header() {
                     <img src={dp} alt="user-dp" />
                 </span>
                 <span className="credentials">
-                    <span className="name">
-                        Sanjay Singh
-                    </span>
-                    <span className="email">
-                        sanjay.singh@gmail.com
-                    </span>
+                    {getCredentials()}
                 </span>
             </div>
         </div>
