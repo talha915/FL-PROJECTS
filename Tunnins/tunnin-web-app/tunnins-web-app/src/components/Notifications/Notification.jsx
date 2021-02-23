@@ -82,7 +82,7 @@ function Notification(props) {
             let btns = btnList.map((data, index)=> {
                 return(
                     <div key={index} className="session-btns">
-                        <Button className={data.sessionType ? "true-btn": "false-btn"} onClick={()=>routeTo(data.route)}>
+                        <Button className={data.sessionType ? "true-btn": "false-btn"} onClick={()=>routeTo(data, index)}>
                             {data.title}
                         </Button>
                     </div>
@@ -92,8 +92,15 @@ function Notification(props) {
         }
     }
 
-    const routeTo=(location)=> {
-        props.history.push(location);
+    const routeTo=(data, index)=> {
+        if(index == 1) {
+            let location = data.routeTo;
+            props.history.push(location);
+        }
+        else {
+            let location = data.route;
+            props.history.push(location);
+        }
     }
 
     return(

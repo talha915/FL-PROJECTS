@@ -14,6 +14,7 @@ import Notification from '../Notifications/Notification';
 import AddSession from '../Session/NewSession';
 import SessionDetail from '../Session/SessionDetails';
 import CancelledPolicy from '../Session/CancelPolicy';
+import Ratings from '../Ratings/Ratings';
 
 class Router extends Component {
     render() {
@@ -33,7 +34,9 @@ class Router extends Component {
                     <Route component={AddSession} path="/add-new-session" exact/>
                     <Route component={AddSession} path="/edit-session" exact/>
                     <Route component={SessionDetail} path="/session-details" exact/>
+                    <Route component={SessionDetail} path="/session-details-past" exact/>
                     <Route component={CancelledPolicy} path="/cancellation-policy" exact/>
+                    <Route component={Ratings} path="/ratings" exact/>
                 </Switch>
             </div>
         )

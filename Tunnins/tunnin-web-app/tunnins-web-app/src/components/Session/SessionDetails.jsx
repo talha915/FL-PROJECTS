@@ -68,9 +68,19 @@ function SessionDetail(props) {
         if(sessionDetail.hasOwnProperty('data')) {
             let btns = sessionDetail.data.btns.map((data, index)=> {
                 return(
-                    <Button key={index} className="topbtn-style addBtn" onClick={()=>detailAction(data)}>
-                        {data.title}
-                    </Button>
+                    <span key={index}>
+                        {props.history.location.pathname === "session-details-past" && index > 1 ?
+                            <Button  className="topbtn-style addBtn" onClick={() => detailAction(data)}>
+                                {data.title}
+                            </Button>
+                            :
+                            <Button  className="topbtn-style addBtn" onClick={() => detailAction(data)}>
+                                {data.title}
+                            </Button>
+                        }
+
+                    </span>
+
                 );
             });
             return btns;
