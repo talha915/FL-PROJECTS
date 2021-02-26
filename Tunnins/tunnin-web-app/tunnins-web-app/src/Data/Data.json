@@ -52,6 +52,16 @@
                 "class": "email",
                 "title": "sanjay.singh@gmail.com"
             }
+        ],
+        "dropdown": [
+            {
+                "title": "View Profile",
+                "route": "/user-profile"
+            },
+            {
+                "title": "Log out",
+                "route": "/"
+            }
         ]
     },
     "createAccount": {
@@ -236,27 +246,27 @@
         "sideList": [
             {
                 "name": "My Sessions",
-                "icon": "icon-lock-unlock d-block",
+                "icon": "icon-frame-4 d-block",
                 "route": "/"
             },
             {
                 "name": "My Earnings",
-                "icon": "icon-lock-unlock d-block",
+                "icon": "icon-earnings d-block",
                 "route": "/my-earnings"
             },
             {
                 "name": "Payouts",
-                "icon": "icon-lock-unlock d-block",
+                "icon": "icon-pay d-block",
                 "route": "/payouts"
             },
             {
                 "name": "Ratings & Reviews",
-                "icon": "icon-lock-unlock d-block",
+                "icon": "icon-review d-block",
                 "route": "/ratings"
             },
             {
                 "name": "Settings",
-                "icon": "icon-lock-unlock d-block",
+                "icon": "icon-settings d-block",
                 "route": "/"
             }
         ],
@@ -381,7 +391,7 @@
                 "title": "Category",
                 "placeholder": "Zumba",
                 "type": "select",
-                "size": "5",
+                "size": "4",
                 "name": "category",
                 "options": [
                     {
@@ -403,14 +413,14 @@
                 "placeholder": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
                 "type": "text",
                 "name": "about",
-                "size": "5"
+                "size": "4"
             },
             {
                 "title": "Session Price",
                 "placeholder": "CAD",
                 "type": "text",
                 "name": "session_price",
-                "size": "5"
+                "size": "4"
             }
         ]
     },
@@ -701,15 +711,21 @@
         "upperCards": [
             {
                 "price": "100",
-                "title": "Total Bookings"
+                "title": "Total Bookings",
+                "iconClass": "bookings",
+                "textClass": "text-right"
             },
             {
                 "price": "$500.50",
-                "title": "GROSS"
+                "title": "GROSS",
+                "iconClass": "stocks",
+                "textClass": "text-left"
             },
             {
                 "price": "$500.50",
-                "title": "NET"
+                "title": "NET",
+                "iconClass": "stocks",
+                "textClass": "text-left"
             }
         ],
         "tableHeader": [
@@ -766,11 +782,13 @@
         "inputs": [
             {
                 "type": "date",
-                "placeholder": "From DD/MM/YYY"
+                "placeholder": "From DD/MM/YYY",
+                "label":"From"
             },
             {
                 "type": "date",
-                "placeholder": "To DD/MM/YYY"
+                "placeholder": "To DD/MM/YYY",
+                "label":"To"
             }
         ],
         "tableHeader": [

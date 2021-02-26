@@ -58,6 +58,13 @@
                 color: $white;
             }
         }
+        .delete-img-wrapper {
+            i {
+                &::before {
+                    color: $black;
+                }
+            }
+        }
     }
     .form {
         padding-top: 20px;

@@ -42,11 +42,17 @@ function Payouts(props) {
                 <div>
                     <Row>
                         <Col>
+                        <h1 className="payouts-heading">
                             {pays.heading}
+                        </h1>
                         </Col>
                     </Row>
                     <Row>
-                        {getInputs(pays.inputs)}
+                        <Col>
+                            <div className="payout-date-wrapper">
+                                {getInputs(pays.inputs)}
+                            </div>
+                        </Col>
                     </Row>
                 </div>
             )
@@ -56,9 +62,9 @@ function Payouts(props) {
     const getInputs=(data)=> {
         let cards = data.map((items, index)=> {
             return(
-                <Col key={index}>
-                    <Input type={items.type} placeholder={items.placeholder} />
-                </Col>
+                <div className="payout-date-feilds"  key={index}>
+                    <span className="date-label">{items.label}</span> <Input type={items.type}  placeholder={items.placeholder} />
+                </div>
             )
         });
         return cards;
@@ -82,21 +88,21 @@ function Payouts(props) {
             let getValues = payouts.data.tableValues.map((data, index)=>{
                 return (
                     <tr key={index}>
-                        <th>
+                        <td>
                             {data.date}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {data.period}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {data.earnings}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {data.fees}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {data.totalpayouts}
-                        </th>
+                        </td>
                     </tr>
                 )
             });
@@ -112,21 +118,23 @@ function Payouts(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9" className="custom-offset">
-                        <div className="session-btn-wrapper">
-                            {getUpperPart()}
-                        </div>
-                        <div className="session-cards-wrapper">
-                            <Table>
-                                <thead>
-                                    <tr>
-                                        {getTableHeaders()}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {getTableValues()}
-                                </tbody>
-                            </Table>
+                    <Col>
+                        <div className="payouts-right-container">
+                            <div>
+                                {getUpperPart()}
+                            </div>
+                            <div>
+                                <Table>
+                                    <thead>
+                                        <tr>
+                                            {getTableHeaders()}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {getTableValues()}
+                                    </tbody>
+                                </Table>
+                            </div>
                         </div>      
                     </Col>
                 </Row>

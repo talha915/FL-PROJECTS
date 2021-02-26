@@ -2,90 +2,174 @@
 .earning {
     background-color: $primary;
     min-height: 100vh;
-    
-    .session-btn-wrapper {
-        display: flex;
-        justify-content: center;
-        margin: 30px 0 40px;
-        align-items: center;
-        position: relative;
-        .btn-secondary {
-            &.true-btn {
-                background: transparent;
-                border: 2px solid $enury;
-                border-radius: 0;
-                padding: 15px 60px;
-                margin: 0 20px;
-                min-width: 270px;
-                &:hover {
-                    background-color: $enury;
-                    color: $black;
-                }
-            }
-            &.false-btn {
-                background-color: $ebony-clay;
-                padding: 10px 30px;
-                border: 0;
-                border-radius: 0;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 15px;
-            }
-        }
+
+    .earnings-right-container {
+        padding: 40px 140px 10px 40px;
     }
-    .session-cards-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-        .session-cards {
-            width: 50%;
-            padding: 20px 30px;
-            .card {
-                border: 1px solid $petite-orchid;
-                border-radius: 0;
-                background-color: transparent;
-                color: $white;
-                &.live-session {
-                    background-color: $petite-orchid;
-                    color: $black;
-                }
-                .card-content {
-                    display: flex;
-                    justify-content: space-between;
-                }
-                .session-amount {
-                    height: 40px;
-                    width: 60px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 1px solid $enury;
-                    border-radius: 5px;
-                    font-size: 20px;
-                    background-color: $ebony-clay;
+    .earning-heading {
+        font-size: 26px;
+        color: $white;
+        margin: 0;
+    }
+    .earning-stats-wrapper {
+        margin-left: 100px;
+        .stock-icon-wrapper {
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 1px solid $white;
+            margin-right: 10px;
+            i {
+                font-size: 50px;
+                &::before {
                     color: $white;
                 }
             }
-
-            .btn-secondary {
-                background-color: $ebony-clay;
-                padding: 10px 30px;
-                border: 0;
-                border-radius: 0;
-                max-width: 200px;
-                margin: 0 auto;
+        }
+        .card {
+            height: 150px;
+            width: 260px;
+            border-radius: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $ebony-clay;
+            color: $white;
+            &:hover {
+                background-color: $secondary;
+                color: $black;
+                .stock-icon-wrapper {
+                    border: 1px solid $black;
+                    color: $white;
+                    i {
+                        &::before {
+                            color: $black;
+                        }
+                    }
+                }
+            }
+        }
+        .card-content {
+            display: flex;
+            align-items: center;
+        }
+        .card-title {
+            font-size: 36px;
+            font-weight: 400 !important;
+        }
+        .card-text {
+            font-size: 20px;
+        }
+        
+    }
+    table {
+        th,
+        td {
+            font-size: 24px;
+            color: $white;
+            font-weight: 300;
+        }
+        thead {
+            th {
+                border-bottom: 0;
+                border-top: 0;
+            }
+        }
+       
+        td {
+            border-top: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+    .session-details-table-wrapper{
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 30px;
+        table {
+            max-width: 60%;
+        }
+        .cc-img {
+            max-width: 35px;
+            margin-right: 10px;
+        }
+        .dp-img{
+            max-width: 25px;
+            margin-right: 10px;
+        }
+    }
+    .earning-info-card{
+        min-width: inherit;
+        margin-top: 0;
+        padding-left: 0;
+        min-height: inherit;
+        background-color: transparent;
+        color: $white;
+        border: 0;
+        .card-title {
+            font-size: 26px;
+        }
+        .card-content {
+            display: flex;
+            justify-content: space-between;
+            p {
+                font-size: 22px;
+                font-weight: 300;
+                &.time,
+                &.date {
+                    opacity: 0.8;
+                }
+            }
+        }
+        .session-amount {
+            height: 45px;
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $enury;
+            font-size: 20px;
+            font-weight: 400;
+            color: $white;
+            margin-left: auto;
+        }
+    }
+    .title {
+        text-align: left;
+        color: $white;
+        font-size: 24px;
+        font-weight: 400;
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 40px;
+        i{
+            position: absolute;
+            left: 0;
+            top: 1px;
+            &::before {
+                color: $white;
             }
         }
     }
-    .heading {
-        color: $enury;
-    }
-    .subheading {
-        color: $waikawa-gray;
-    }
-    .label {
+    .earning-stats {
+        background-color: transparent;
+        border-radius: 0;
+        border: 1px solid $secondary;
         color: $white;
-        padding-top: 50px;
+        .card-content {
+            display: flex;
+            align-items: center;
+            img {
+                max-width: 40px;
+            }
+        }
+        .card-title {
+            font-size: 24px;
+        }
+        .card-text {
+            font-weight: 300;
+            font-size: 18px;
+        }
     }
 }

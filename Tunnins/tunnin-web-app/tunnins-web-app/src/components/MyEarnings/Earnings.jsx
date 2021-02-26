@@ -41,9 +41,15 @@ function Earnings(props) {
             return(
                 <Row>
                     <Col>
-                        {earnings.heading}
+                        <div className="d-flex align-items-center">
+                            <h1 className="earning-heading">
+                                {earnings.heading}
+                            </h1>
+                           <div className="d-flex align-items-center earning-stats-wrapper">
+                                {getUpperCards(earnings.upperCards)}
+                           </div>
+                        </div>
                     </Col>
-                    {getUpperCards(earnings.upperCards)}
                 </Row>
             )
         }
@@ -59,6 +65,9 @@ function Earnings(props) {
                 <Col key={index}>
                     <Card body className="card-style" onClick={()=>routeTo(items.route)}>
                         <div className="card-content">
+                            <div className="stock-icon-wrapper">
+                                <i className="icon-stocks"></i>
+                            </div>
                             <div>
                                 <CardTitle tag="h5">{items.price}</CardTitle>
                                 <CardText>{items.title}</CardText>
@@ -89,21 +98,21 @@ function Earnings(props) {
             let getValues = getEarn.data.tableValues.map((data, index)=>{
                 return (
                     <tr key={index}>
-                        <th>
+                        <td>
                             {data.nameofSession}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {data.date}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {data.time}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {data.users}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {data.earnings}
-                        </th>
+                        </td>
                     </tr>
                 )
             });
@@ -119,22 +128,24 @@ function Earnings(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9" className="custom-offset">
-                        <div className="session-btn-wrapper">
-                            {getUpperPart()}
-                        </div>
-                        <div className="session-cards-wrapper">
-                            <Table>
-                                <thead>
-                                    <tr>
-                                        {getTableHeaders()}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {getTableValues()}
-                                </tbody>
-                            </Table>
-                        </div>      
+                    <Col>
+                        <div className="earnings-right-container">
+                            <div className="mb-5">
+                                {getUpperPart()}
+                            </div>
+                            <div>
+                                <Table>
+                                    <thead>
+                                        <tr>
+                                            {getTableHeaders()}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {getTableValues()}
+                                    </tbody>
+                                </Table>
+                            </div> 
+                        </div>     
                     </Col>
                 </Row>
             </div>

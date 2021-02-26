@@ -81,7 +81,7 @@ function Notification(props) {
             let btns = btnList.map((data, index)=> {
                 return(
                     <div key={index} className="session-btns">
-                        <Button className={data.sessionType ? "true-btn": "false-btn"} onClick={()=>routeTo(data, index)}>
+                        <Button color="outline-secondary" className={data.sessionType ? "true-btn": "false-btn"} onClick={()=>routeTo(data, index)}>
                             {data.title}
                         </Button>
                     </div>

@@ -217,3 +217,23 @@ h6 {
 .opacity-69 {
     opacity: 69%;
 }
+.btn-secondary {
+    &:hover {
+        color: $white;
+    }
+}
+.delete-img-wrapper {
+    background-color: $secondary;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        font-size: 20px;
+        &::before {
+            color: $black;;
+        }
+    }
+}

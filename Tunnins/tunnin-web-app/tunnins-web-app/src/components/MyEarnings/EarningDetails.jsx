@@ -19,6 +19,11 @@ import { getEarningDetail } from '../../constants/constants';
 // Styles
 import '../../styles/earnings.scss';
 
+import tdp from '../../images/table-dp.png';
+import cc from '../../images/credit-card.png';
+import bookings from '../../images/bookings.png';
+import stocks from '../../images/stocks.png';
+
 // Components
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
@@ -43,18 +48,21 @@ function EarningDetails(props) {
             return (
                 <div>
                     <Row>
-                        <div>
-                            {earnings.heading}
-                        </div>
+                        <Col>
+                            <h6 className="title">
+                                <i className="icon-chevron-left"></i>
+                                {earnings.heading}
+                            </h6>
+                        </Col>
                     </Row>
                     <Row>
                         <Col sm="6">
-                            <Card body className="card-style">
+                            <Card body className="card-style earning-info-card">
                                 <div className="card-content">
                                     <div>
                                         <CardTitle tag="h5">{earnings.leftSection.name}</CardTitle>
-                                        <CardText>{earnings.leftSection.date}</CardText>
-                                        <CardText>{earnings.leftSection.time}</CardText>
+                                        <CardText className="date">{earnings.leftSection.date}</CardText>
+                                        <CardText className="time">{earnings.leftSection.time}</CardText>
                                     </div>
                                     <div>
                                         <CardText className="session-amount">{earnings.leftSection.price}</CardText>
@@ -74,10 +82,13 @@ function EarningDetails(props) {
         let cards = data.map((items, index) => {
             return (
                 <Col key={index} sm="2">
-                    <Card body className="card-style">
-                        <div className="card-content">
+                    <Card body className="card-style earning-stats">
+                        <div className="card-content ">
                             <div>
-                                <CardTitle tag="h5">{items.price}</CardTitle>
+                                <img src={stocks} alt="icons"/>
+                            </div>
+                            <div className="ml-4">
+                                <CardTitle className={items.textClass} tag="h5">{items.price}</CardTitle>
                                 <CardText>{items.title}</CardText>
                             </div>
                         </div>
@@ -106,15 +117,17 @@ function EarningDetails(props) {
             let getValues = getEarn.data.tableValues.map((data, index) => {
                 return (
                     <tr key={index}>
-                        <th>
+                        <td>
+                        <img className="dp-img" src={tdp} alt="credit-card-picture"/>
                             {data.name}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
+                            <img className="cc-img" src={cc} alt="credit-card-picture"/>
                             {data.card}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {data.date}
-                        </th>
+                        </td>
                     </tr>
                 )
             });
@@ -130,11 +143,12 @@ function EarningDetails(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9" className="custom-offset">
+                    <Col>
+                    <div className="earnings-right-container">
                         <div className="session-btn-wrapper">
                             {getUpperPart()}
                         </div>
-                        <div className="session-cards-wrapper">
+                        <div className="session-details-table-wrapper">
                             <Table>
                                 <thead>
                                     <tr>
@@ -146,6 +160,7 @@ function EarningDetails(props) {
                                 </tbody>
                             </Table>
                         </div>
+                    </div>
                     </Col>
                 </Row>
             </div>

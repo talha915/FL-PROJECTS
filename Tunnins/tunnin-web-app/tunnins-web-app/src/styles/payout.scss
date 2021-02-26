@@ -2,90 +2,63 @@
 .payouts {
     background-color: $primary;
     min-height: 100vh;
-    
-    .session-btn-wrapper {
-        display: flex;
-        justify-content: center;
-        margin: 30px 0 40px;
-        align-items: center;
-        position: relative;
-        .btn-secondary {
-            &.true-btn {
-                background: transparent;
-                border: 2px solid $enury;
-                border-radius: 0;
-                padding: 15px 60px;
-                margin: 0 20px;
-                min-width: 270px;
-                &:hover {
-                    background-color: $enury;
-                    color: $black;
-                }
-            }
-            &.false-btn {
-                background-color: $ebony-clay;
-                padding: 10px 30px;
-                border: 0;
-                border-radius: 0;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 15px;
-            }
-        }
-    }
-    .session-cards-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-        .session-cards {
-            width: 50%;
-            padding: 20px 30px;
-            .card {
-                border: 1px solid $petite-orchid;
-                border-radius: 0;
-                background-color: transparent;
-                color: $white;
-                &.live-session {
-                    background-color: $petite-orchid;
-                    color: $black;
-                }
-                .card-content {
-                    display: flex;
-                    justify-content: space-between;
-                }
-                .session-amount {
-                    height: 40px;
-                    width: 60px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 1px solid $enury;
-                    border-radius: 5px;
-                    font-size: 20px;
-                    background-color: $ebony-clay;
-                    color: $white;
-                }
-            }
 
-            .btn-secondary {
-                background-color: $ebony-clay;
-                padding: 10px 30px;
+    .payouts-right-container {
+        padding: 40px 140px 10px 40px;
+    }
+    .payouts-heading {
+        font-size: 26px;
+        color: $white;
+        margin-bottom: 25px;
+    }
+    .payout-date-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        .payout-date-feilds {
+            max-width: 464px;
+            width: 18%;
+            padding: 15px 10px;
+            border: 1px solid $secondary;
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            .date-label {
+                color: $white;
+                font-size: 18px;
+                font-weight: 300;
+                margin-right: 10px;
+                text-transform: capitalize;
+            }
+            input {
+                background-color: transparent;
                 border: 0;
-                border-radius: 0;
-                max-width: 200px;
-                margin: 0 auto;
+                outline: 0;
+                box-shadow: 0;
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.5);
+                    text-transform: uppercase;
+                }
             }
         }
     }
-    .heading {
-        color: $enury;
-    }
-    .subheading {
-        color: $waikawa-gray;
-    }
-    .label {
-        color: $white;
-        padding-top: 50px;
+    table {
+        th,
+        td {
+            font-size: 24px;
+            color: $white;
+            font-weight: 300;
+        }
+        thead {
+            th {
+                border-bottom: 0;
+                border-top: 0;
+            }
+        }
+       
+        td {
+            border-top: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
     }
 }

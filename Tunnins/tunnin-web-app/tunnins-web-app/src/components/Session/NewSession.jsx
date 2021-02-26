@@ -118,7 +118,11 @@ function AddSession(props) {
                             <div className="d-none">
                                 {data.icon}
                             </div>
-                            <i className="icon-cloud"></i>
+                            {/* <i className="icon-cloud"></i> */}
+                            <span className="delete-img-wrapper">
+                            <i className="icon-delete"></i>
+                            </span>
+                            
                         </Card>
                     </Col>
                 );

@@ -9,28 +9,27 @@
         margin: 30px 0 40px;
         align-items: center;
         position: relative;
-        .btn-secondary {
-            &.true-btn {
-                background: transparent;
-                border: 2px solid $enury;
-                border-radius: 0;
-                padding: 15px 60px;
-                margin: 0 20px;
-                min-width: 270px;
-                &:hover {
-                    background-color: $enury;
-                    color: $black;
-                }
-            }
+        .btn-outline-secondary {
             &.false-btn {
                 background-color: $ebony-clay;
                 padding: 10px 30px;
+                color: $white;
                 border: 0;
                 border-radius: 0;
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
                 right: 15px;
+            }
+        }
+        .btn-outline-secondary{
+            &.true-btn {
+                border: 2px solid $enury;
+                color: $white;
+                border-radius: 0;
+                padding: 15px 60px;
+                margin: 0 20px;
+                min-width: 270px;
             }
         }
     }
@@ -70,6 +69,7 @@
 
             .btn-secondary {
                 background-color: $ebony-clay;
+                color: $white;
                 padding: 10px 30px;
                 border: 0;
                 border-radius: 0;

@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
 // Styles
 import '../../styles/ratings.scss';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 // Action
 import { fetchHeader } from '../../actions/header';
@@ -17,7 +18,10 @@ import { withRouter } from 'react-router-dom';
 
 import dp from '../../images/dp.png';
 
-function Header() {
+function Header(props) {
+
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggle = () => setDropdownOpen(prevState => !prevState);
 
     const dispatch = useDispatch();
 
@@ -55,6 +59,23 @@ function Header() {
         }
     }
 
+    const getDropDownItems=()=> {
+        if(getHead.hasOwnProperty('data')) {
+            let drops = getHead.data.dropdown.map((data, index)=> {
+                return(
+                    <DropdownItem key={index} onClick={()=>routeTo(data.route)}>
+                        {data.title}
+                    </DropdownItem>
+                )
+            });
+            return drops;
+        }
+    }
+
+    const routeTo=(location)=> {
+        props.history.push(location);
+    }
+
     return (
         <div className="profile-actions d-flex align-items-center justify-content-end">
             <div className="user-notification-wrapper">
@@ -63,15 +84,22 @@ function Header() {
                 </span>
             </div>
             <div className="user-profile">
-                <span className="dp-wrapper">
-                    <img src={dp} alt="user-dp" />
-                </span>
-                <span className="credentials">
-                    {getCredentials()}
-                </span>
+                <Dropdown isOpen={dropdownOpen} size="sm" toggle={toggle}>
+                    <DropdownToggle caret>
+                        <span className="dp-wrapper">
+                            <img src={dp} alt="user-dp" />
+                        </span>
+                        <span className="credentials">
+                            {getCredentials()}
+                        </span>
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        {getDropDownItems()}
+                    </DropdownMenu>
+                </Dropdown>
             </div>
         </div>
     )
 }
 
-export default Header;
+export default withRouter(Header);
