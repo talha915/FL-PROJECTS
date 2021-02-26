@@ -866,5 +866,70 @@
                 "totalpayouts": "$500"
             }
         ]
-    }
+    },
+    "user-profile": {
+        "title": "Profile",
+        "editBtn": "Edit",
+        "saveBtn": "Save",
+        "userDetails": {
+            "name": "Stephen Paul",
+            "id": "@Stephen97",
+            "img": "",
+            "coverImages": [
+                {
+                    "img": "",
+                    "alt": "cover"
+                },
+                {
+                    "img": "",
+                    "alt": "cover"
+                },
+                {
+                    "img": "",
+                    "alt": "cover"
+                },
+                {
+                    "img": "",
+                    "alt": "cover"
+                }
+            ],
+            "userform": [
+                {
+                    "title": "About",
+                    "type": "textarea",
+                    "size": "4"
+                },
+                {
+                    "title": "Category",
+                    "type": "text",
+                    "size": "2"
+                },
+                {
+                    "title": "DOB",
+                    "type": "date",
+                    "size": "2"
+                },
+                {
+                    "title": "Gender",
+                    "type": "text",
+                    "size": "2"
+                },
+                {
+                    "title": "Business Name",
+                    "type": "text",
+                    "size": "3"
+                },
+                {
+                    "title": "Location",
+                    "type": "text",
+                    "size": "3"
+                },
+                {
+                    "title": "Instagram Profile URL",
+                    "type": "text",
+                    "size": "3"
+                }
+            ]
+        }
+    } 
 }
