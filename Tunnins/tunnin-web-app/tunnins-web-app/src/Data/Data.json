@@ -867,7 +867,7 @@
             }
         ]
     },
-    "user-profile": {
+    "userprofile": {
         "title": "Profile",
         "editBtn": "Edit",
         "saveBtn": "Save",

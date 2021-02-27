@@ -22,6 +22,7 @@ import header from './header';
 import earnings from './earnings';
 import earningDetails from './earningDetails';
 import payouts from './payouts';
+import userProfile from './userProfile';
 
 const rootReducer = combineReducers({
     localData,
@@ -44,7 +45,8 @@ const rootReducer = combineReducers({
     ratingReview,
     earnings,
     earningDetails,
-    payouts
+    payouts,
+    userProfile
 })
 
 export default rootReducer;
