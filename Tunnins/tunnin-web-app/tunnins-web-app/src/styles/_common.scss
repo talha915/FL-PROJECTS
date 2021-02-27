@@ -2,3 +2,238 @@
 //     font-family: $base-font-family;
 //     font-size: $base-font-size;
 // }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300 !important;
+}
+.custom-input-wrapper {
+    position: relative;
+    .form-control {
+        padding-left: 50px;
+        height: 45px;
+    }
+}
+
+.input-icons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $ebony-clay;
+    height: 45px;
+    width: 45px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+        &::before {
+            color: $white;
+        }
+    }
+    &.secondary {
+        background-color: $enury;
+    }
+}
+
+.form-control {
+    border-radius: 7px !important;
+    outline: transparent !important;
+    box-shadow: none !important;
+}
+
+.btn-primary {
+    color: $ebony-clay;
+    background-color: $enury;
+    min-width: 340px;
+    border: 1px solid $enury;
+    border-radius: 0;
+}
+.tunnin-link {
+    color: $ebony-clay !important;
+    text-decoration: underline;
+}
+.tunnin-checkbox {
+    color: $ebony-clay !important;
+}
+.text-grey {
+    color: $jumbo;
+    font-size: 14px;
+}
+.profile-actions {
+    background-color: $ebony-clay;
+    .user-notification-wrapper {
+        padding: 5px 20px;
+        border: 1px solid $mercury;
+        border-top: 0;
+        border-bottom: 0;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .icon-Group-22380 {
+            font-size: 28px;
+            .path1,
+            .path2{
+                &:before {
+                    color: $white;
+                }
+            }
+            .path3 {
+                &:before {
+                    color: $enury;
+                }
+            }
+        }
+    }
+    .user-profile {
+        display: flex;
+        align-items: center;
+        padding: 0 20px 0 10px;
+        .dp-wrapper {
+            display: inline-flex;
+            max-width: 50px;
+            margin-right: 10px;
+            img {
+                width: 100%;
+            }
+        }
+        .credentials {
+            display: inline-flex;
+            flex-direction: column;
+            span {
+                color: $white;
+                &.name {
+                    font-size: 16px;
+                }
+                &.email {
+                    font-size: 12px;
+                }
+            }
+        }
+        
+    }
+}
+.left-container {
+    background-color: $ebony-clay;
+    min-height: 100vh;
+    max-width: 95px;
+    padding: 0;
+    ul{
+        margin: 0;
+        padding: 45px 0 0 0;
+    }
+    .list {
+        color: $white;
+        text-decoration: none;
+        list-style: none;
+        padding: 20px 15px;
+        max-width: 95px;
+        text-align: center;
+        cursor: pointer;
+        margin: 0 auto;
+        font-size: 13px;
+
+        &:hover {
+            background-color: $petite-orchid;
+            color: $black;
+            i{
+                &::before {
+                    color: $black;
+                }
+            }
+        }
+        i{
+            font-size: 24px;
+            margin-bottom: 10px;
+            &::before {
+                color: $white;
+            }
+        }
+    }
+}
+.custom-offset {
+    margin-left: 9.333333%;
+}
+.tunnin-form {
+    label {
+        color: $white;
+        font-size: 18px;
+        &.form-empty-title {
+            min-height: 20px;
+        }
+    }
+    .form-control {
+        border-radius: 0 !important;
+        background: $primary;
+        border: 0;
+        border-bottom: 1px solid rgba($white , 0.65);
+        border-radius: 0;
+    }
+}
+ 
+.tunnin-popup {
+    width: 90%;
+    color: $white;
+    display: flex;
+    align-items: center;
+
+    .modal-content {
+        background-color: $ebony-clay;
+        border: 0;
+        padding: 60px 0;
+    }
+    .modal-body {
+        padding: 4px 45px 16px;
+    }
+
+    h5 {
+        color: $white;
+        font-size: 26px;
+        font-weight: 300;
+    }
+    p,
+    label {
+        color: $white;
+        font-size: 16px;
+        line-height: 27px;
+        font-weight: 400;
+    }
+    .btn-primary {
+        max-width: 300px !important;
+        min-width: inherit !important;
+        width: 35%;
+        padding: 12px 0 !important;
+        font-size: 18px;
+    }
+    .verify-text {
+        font-size: 14px;
+    }
+}
+.opacity-69 {
+    opacity: 69%;
+}
+.btn-secondary {
+    &:hover {
+        color: $white;
+    }
+}
+.delete-img-wrapper {
+    background-color: $secondary;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        font-size: 20px;
+        &::before {
+            color: $black;;
+        }
+    }
+}

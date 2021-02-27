@@ -1,0 +1,37 @@
+@import 'variables';
+.verify {
+    background-color: $primary;
+    min-height: 100vh;
+    padding-top: 50px;
+    padding-left: 50px;
+    .heading {
+        font-weight: 400;
+        margin-bottom: 30px;
+        color: $enury;
+    }
+    .page-logo-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 70px;
+        margin-bottom: 80px;
+        img {
+            max-width: 137px;
+        }
+    }
+    .verify-img {
+        margin-bottom: 40px;
+    }
+    .text {
+        color: $waikawa-gray;
+        font-size: 28px;
+        max-width: 530px;    
+    }
+    .next-btn-wrapper {
+        text-align: center;
+        margin-top: 100px;
+        .btn-primary {
+            min-width: 280px !important;
+        }
+    }
+}

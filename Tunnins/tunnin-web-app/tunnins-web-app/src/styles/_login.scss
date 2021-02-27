@@ -5,7 +5,7 @@
 }
 
 .left-login {
-    background-color: #1A1B2F;
+    background-color: $primary;
     height: 100vh;
 }
 
@@ -15,11 +15,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #D0A592;
+    color: $enury;
 }
 
 .login-form-heading {
-    color: #D0A592;
+    color: $enury;
     padding-top: 90px;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .login-form-note {
-    color: #585B8F;
+    color: $waikawa-gray;
     font-size: 20px;
     padding-bottom: 50px;
 }

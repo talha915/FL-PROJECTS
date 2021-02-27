@@ -1,0 +1,91 @@
+@import 'variables';
+.profiles {
+    background-color: $primary;
+    min-height: 100vh;
+    
+    .session-btn-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0 40px;
+        align-items: center;
+        position: relative;
+        .btn-secondary {
+            &.true-btn {
+                background: transparent;
+                border: 2px solid $enury;
+                border-radius: 0;
+                padding: 15px 60px;
+                margin: 0 20px;
+                min-width: 270px;
+                &:hover {
+                    background-color: $enury;
+                    color: $black;
+                }
+            }
+            &.false-btn {
+                background-color: $ebony-clay;
+                padding: 10px 30px;
+                border: 0;
+                border-radius: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 15px;
+            }
+        }
+    }
+    .session-cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        .session-cards {
+            width: 50%;
+            padding: 20px 30px;
+            .card {
+                border: 1px solid $petite-orchid;
+                border-radius: 0;
+                background-color: transparent;
+                color: $white;
+                &.live-session {
+                    background-color: $petite-orchid;
+                    color: $black;
+                }
+                .card-content {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .session-amount {
+                    height: 40px;
+                    width: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid $enury;
+                    border-radius: 5px;
+                    font-size: 20px;
+                    background-color: $ebony-clay;
+                    color: $white;
+                }
+            }
+
+            .btn-secondary {
+                background-color: $ebony-clay;
+                padding: 10px 30px;
+                border: 0;
+                border-radius: 0;
+                max-width: 200px;
+                margin: 0 auto;
+            }
+        }
+    }
+    .heading {
+        color: $enury;
+    }
+    .subheading {
+        color: $waikawa-gray;
+    }
+    .label {
+        color: $white;
+        padding-top: 50px;
+    }
+}

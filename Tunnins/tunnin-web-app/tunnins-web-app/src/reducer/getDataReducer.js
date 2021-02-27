@@ -6,7 +6,7 @@ export default function(state=initialState, actions) {
     switch(actions.type) {
         case 'fetchLocalData':
             return {
-                ...state,
+                ...state.dataState,
                 dataState: actions.payload
             }
         default:

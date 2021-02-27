@@ -10,12 +10,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateModal } from '../../actions/updateModal';
 
 // Router
-import { Route , withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 // Style
 import '../../styles/login.scss';
-
-let dataNew;
 
 function LoginForm(props) {
 
@@ -50,44 +48,15 @@ function LoginForm(props) {
     }
 
     const callAgain = (data) => {
-        //getFormData(data);
         setDataCall(data);
     }
 
-    const route=(data)=> {
-        props.history.push(data);
+    const routeSignUp=()=> {
+        props.history.push('/signup');
     }
 
     const getFormData = () => {
-
-        if (datacall.hasOwnProperty('modalState')) {
-            return (
-                <div className="login-form">
-                    <h2 className="login-form-heading">
-                        {datacall.modalState.welcomeText}
-                    </h2>
-                    <p className="login-form-note">
-                        {datacall.modalState.heading}
-                    </p>
-                    <Form >
-                        <FormGroup>
-                            <Button color="info" size="lg">
-                                {datacall.modalState.btnText}
-                            </Button>
-                        </FormGroup>
-                        <FormGroup>
-                            <div style={{display: "inline-block"}}>
-                                <p style={{display: "inline-block"}}>{datacall.modalState.question}</p>
-                                <p style={{display: "inline-block", cursor: "pointer"}} onClick={()=>route(datacall.modalState.route)}>{datacall.modalState.signIn}</p>
-                            </div>
-                        </FormGroup>
-                    </Form>
-                </div>
-            )
-        }
-
-        else if (Object.keys(loginForm).length > 0) {
-
+        if (Object.keys(loginForm).length > 0) {
             return (
                 <div className="login-form">
                     <h2 className="login-form-heading">
@@ -97,26 +66,27 @@ function LoginForm(props) {
                         {loginForm.loginNote}
                     </p>
                     <Form >
-                        <FormGroup>
+                        <FormGroup className="custom-input-wrapper">
                             <Label for="exampleEmail">{loginForm.email}</Label>
                             <Input type="email" name="email" id="exampleEmail" placeholder="dodgeui2020@gmail.com" />
+                            <span className="input-icons"><i className="icon-mail"></i></span>
                         </FormGroup>
-                        <FormGroup>
+                        <FormGroup className="custom-input-wrapper">
                             <Label for="examplePassword">{loginForm.password}</Label>
                             <Input type="password" name="password" id="examplePassword" placeholder="***************" />
+                            <span className="input-icons"><i className="icon-lock-unlock"></i></span>
                         </FormGroup>
-                        <FormGroup check inline>
-                            <Label check>
+                        <FormGroup className="d-flex justify-content-between align-items-center mb-5" check >
+                            <Label className="tunnin-checkbox" check>
                                 <Input type="checkbox" /> {loginForm.remember}
                             </Label>
-                        </FormGroup>
-                        <FormGroup check inline style={{ textAlign: "right" }}>
                             <Label check>
-                                <a href="#" onClick={toggle}>{loginForm.forgot}</a>
+                                <a className="tunnin-link" href="#" onClick={toggle}>{loginForm.forgot}</a>
                             </Label>
                         </FormGroup>
-                        <FormGroup>
-                            <Button color="info" size="lg" >{loginForm.loginBtn}</Button>
+                        <FormGroup className="text-center">
+                            <Button color="primary" size="lg" >{loginForm.loginBtn}</Button>
+                            <p className="text-grey mt-3">Don’t have an account? <a className="tunnin-link" onClick={routeSignUp}>SIGNUP</a></p>
                         </FormGroup>
                     </Form>
                     <ModalPopup isOpen={modal} loginData={modalState} sendData={getDataFromChild} />

@@ -1,6 +1,18 @@
 $base-font-size: 18px;
-$primary: #1A1B2F;
-$secondary: #D8A48F;
+$primary:       #1A1B2F;
+$secondary:     #D8A48F;
+$ebony-clay:    #24253c;
+$ebony-clay:    #262744;
+$enury:         #D0A592;
+$jumbo:         #78787A;
+$mercury:       #E6E6E6;
+$white:         #fff;
+$petite-orchid: #D8A48F;
+$black:         #000;
+$mirage:        $primary;
+$waikawa-gray:  #585B8F;
+$martinique:       #363758;
+
 
 $font-primary: 'Poppins', sans-serif;
 
@@ -9,13 +21,7 @@ $theme-colors: ();
 $theme-colors: map-merge(
   (
     "primary":    $primary,
-    "secondary":  $secondary,
-    // "success":    $success,
-    // "info":       $info,
-    // "warning":    $warning,
-    // "danger":     $danger,
-    // "light":      $light,
-    // "dark":       $dark
+    "secondary":  $secondary
   ),
   $theme-colors
 );

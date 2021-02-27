@@ -1,0 +1,113 @@
+@import 'variables';
+.session-details {
+    background-color: $primary;
+    min-height: 100vh;
+    color: $white;
+
+    .topbtn-style {
+        margin-left: 100px;
+    }
+    .top-borderless-card {
+        padding-top: 25px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba($white, 0.3);
+        cursor: pointer;
+    }
+    .left-container {
+        background-color: $ebony-clay;
+        min-height: 100vh;
+    }
+    .session-details-right-container {
+        padding: 10px 20px 10px 40px;
+    }
+    .title {
+        text-align: left;
+        color: $white;
+        font-size: 24px;
+        font-weight: 400;
+        position: relative;
+        i{
+            position: absolute;
+            left: -35px;
+            top: 1px;
+            &::before {
+                color: $white;
+            }
+        }
+    }
+    .add-btn-wrapper {
+        text-align: right;
+    }
+    .addBtn {
+        background-color: $enury;
+        border: 1px solid $enury;
+        border-radius: 0;
+        padding: 15px 60px;
+        margin: 0 20px;
+        min-width: 270px;
+        text-align: center;
+        color: $black;
+        font-size: 18px;
+        &:hover {
+            background-color: $ebony-clay;
+        }
+    }
+    .card-style {
+        min-width: 287px;
+        margin-top: 20px;
+        min-height: 225px;
+        background-color: transparent;
+        border: 0;
+        background-color: $ebony-clay;
+
+        &.session-info-card{
+            min-width: inherit;
+            margin-top: 0;
+            padding-left: 0;
+            min-height: inherit;
+            background-color: transparent;
+            .card-title {
+                font-size: 22px;
+            }
+            .card-content {
+                display: flex;
+                justify-content: space-between;
+                p {
+                    font-size: 19px;
+                    font-weight: 300;
+                }
+            }
+            .session-amount {
+                height: 40px;
+                width: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid $enury;
+                font-size: 20px;
+                font-weight: 400;
+                color: $white;
+            }
+        }
+    }
+    .cancel-policy-text {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .users-booked-title {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .session-user-card {
+        text-align: center;
+        img {
+            display: block;
+            margin: 10px auto;
+        }
+        .session-user-name {
+            font-size: 20px;
+            font-weight: 300;
+        }
+    }
+}

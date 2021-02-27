@@ -1,0 +1,38 @@
+@import 'variables';
+.signup {
+    background-color: $primary;
+    min-height: 100vh;
+    padding-top: 70px;
+    .heading {
+        color: $enury;
+        font-weight: 400;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img {
+            max-width: 137px;
+        }
+    }
+    .subheading {
+        color: $waikawa-gray;
+        font-size: 30px;
+        margin-bottom: 80px;
+    }
+    .formheading {
+        color: $white;
+        display: block;
+        font-size: 18px;
+    }
+    .signup-first-form-wrapper {
+        justify-content: space-between;
+        .btn-primary {
+            min-width: 280px !important;
+            margin-top: 100px;
+        }
+    }
+    .subscription-checkbox-wrapper {
+        position: relative;
+        top: -35px;
+    }
+}

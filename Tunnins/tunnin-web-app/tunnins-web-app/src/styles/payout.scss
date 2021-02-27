@@ -1,0 +1,64 @@
+@import 'variables';
+.payouts {
+    background-color: $primary;
+    min-height: 100vh;
+
+    .payouts-right-container {
+        padding: 40px 140px 10px 40px;
+    }
+    .payouts-heading {
+        font-size: 26px;
+        color: $white;
+        margin-bottom: 25px;
+    }
+    .payout-date-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        .payout-date-feilds {
+            max-width: 464px;
+            width: 18%;
+            padding: 15px 10px;
+            border: 1px solid $secondary;
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            .date-label {
+                color: $white;
+                font-size: 18px;
+                font-weight: 300;
+                margin-right: 10px;
+                text-transform: capitalize;
+            }
+            input {
+                background-color: transparent;
+                border: 0;
+                outline: 0;
+                box-shadow: 0;
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.5);
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    table {
+        th,
+        td {
+            font-size: 24px;
+            color: $white;
+            font-weight: 300;
+        }
+        thead {
+            th {
+                border-bottom: 0;
+                border-top: 0;
+            }
+        }
+       
+        td {
+            border-top: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+}

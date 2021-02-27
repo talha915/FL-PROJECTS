@@ -1,0 +1,79 @@
+@import 'variables';
+.new-session {
+    background-color: $primary;
+    min-height: 100vh;
+    .left-container {
+        background-color: $ebony-clay;
+        min-height: 100vh;
+    }
+    .add-session-right-container {
+        padding: 10px 20px 10px 40px;
+    }
+    .title {
+        text-align: left;
+        color: $white;
+        font-size: 24px;
+        font-weight: 400;
+        position: relative;
+        i{
+            position: absolute;
+            left: -35px;
+            top: 1px;
+            &::before {
+                color: $white;
+            }
+        }
+    }
+    .add-btn-wrapper {
+        text-align: right;
+    }
+    .addBtn {
+        background-color: $enury;
+        border: 1px solid $enury;
+        border-radius: 0;
+        padding: 15px 60px;
+        margin: 0 20px;
+        min-width: 270px;
+        text-align: center;
+        color: $black;
+        font-size: 18px;
+        &:hover {
+            background-color: $ebony-clay;
+        }
+    }
+    .upload-title {
+        text-align: left;
+        color: $white;
+        font-size: 22px;
+    }
+    .uploads{
+        height: 180px;
+        background: $ebony-clay;
+        min-width: 250px;
+        align-items: center;
+        justify-content: center;
+        i {
+            font-size: 32px;
+            &::before {
+                color: $white;
+            }
+        }
+        .delete-img-wrapper {
+            i {
+                &::before {
+                    color: $black;
+                }
+            }
+        }
+    }
+    .form {
+        padding-top: 20px;
+        .form-title {
+            color: $white;
+        }
+        .form-empty-title {
+            color: $white;
+            margin-top: 16px;
+        }
+    }
+}
