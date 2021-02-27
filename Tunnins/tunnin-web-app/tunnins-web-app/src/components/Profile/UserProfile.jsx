@@ -123,9 +123,11 @@ function UserProfile() {
                         <Row>
                             {getProfileImages()}
                         </Row>
-                        <Row>
-                            {getUserForm()}
-                        </Row>
+                        <Form className="tunnin-form mt-5">
+                            <Row>
+                                {getUserForm()}
+                            </Row>
+                        </Form>
                     </Col>
                 </Row>
             </div>

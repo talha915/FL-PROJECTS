@@ -480,7 +480,7 @@
                 "title": "Ratings & Reviews",
                 "action": "ratings",
                 "type": "ratings",
-                "route": "/ratings"
+                "route": "/session-ratings"
             }
         ],
         "detailTitle": "Rolletser Fux",

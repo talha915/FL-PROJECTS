@@ -41,6 +41,7 @@ class Router extends Component {
                     <Route component={SessionDetail} path="/session-details-past" exact/>
                     <Route component={CancelledPolicy} path="/cancellation-policy" exact/>
                     <Route component={Ratings} path="/ratings" exact/>
+                    <Route component={Ratings} path="/session-ratings" exact/>
                     <Route component={Earnings} path="/my-earnings" exact/>
                     <Route component={EarningDetails} path="/earning-details" exact/>
                     <Route component={Payouts} path="/payouts" exact/>

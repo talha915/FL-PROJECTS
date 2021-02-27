@@ -38,6 +38,8 @@ function Ratings(props) {
         dispatch(ratingReview(ratingReviews));
     }
 
+    console.log("Props: ", props.history.location);
+
     const getRatings = useSelector(state => state.ratingReview);
 
     const getRating=()=> {
@@ -119,6 +121,43 @@ function Ratings(props) {
         }
     }
 
+    const getpagePoint=()=> {
+        return(
+            <div className="rating-detail-page-points">
+                <div className="rating-points-container">
+                    <div className="rating-points">
+                        <div>
+                            <div className="d-flex align-items-center">
+                                <span className="rating" >4.7</span>
+                                <i className="icon-Star"></i>
+                            </div>
+                            <p className="out-of-five">Out of 5</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span className="rating-count">500 Ratings & Reviews</span>
+                </div>
+            </div>
+        )
+    }
+
+    const getSessionRating=()=> {
+        return(
+            <div className="rating-points-container">
+                <div className="rating-points">
+                    <div>
+                        <div className="d-flex align-items-center">
+                            <span className="rating" >4.7</span>
+                            <i className="icon-Star"></i>
+                        </div>
+                        <p className="out-of-five">Out of 5</p>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="ratings">
            <Header />
@@ -130,39 +169,25 @@ function Ratings(props) {
                     <Col className="mt-3">
                         <div className="ratings-right-container">
                             <div className="d-flex align-items-center rating-header-block">
-                                {getUpperCard()}
                                 {/* display this section for session details*/}
-                                <div className="rating-detail-page-points">
-                                    <div className="rating-points-container">
-                                        <div className="rating-points">
-                                            <div>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="rating" >4.7</span>
-                                                    <i className="icon-Star"></i>
-                                                </div>
-                                                <p className="out-of-five">Out of 5</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span className="rating-count">500 Ratings & Reviews</span>
-                                    </div>
-                                </div>
+                                
+                                {props.history.location.pathname != "/session-ratings" ?
+                                    getpagePoint()
+                                    :
+                                    getUpperCard()    
+                                }
+                                
                                 {/* display this secton for session details*/}
 
 
                                {/* display this section for session ratings*/}
-                                <div className="rating-points-container">
-                                    <div className="rating-points">
-                                        <div>
-                                            <div className="d-flex align-items-center">
-                                                <span className="rating" >4.7</span>
-                                                <i className="icon-Star"></i>
-                                            </div>
-                                            <p className="out-of-five">Out of 5</p>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                {props.history.location.pathname == "/session-ratings" ?
+                                    getSessionRating()
+                                    :
+                                    ''
+                                }
+                                
                                 {/* display this secton for session ratings*/}
                             </div>
                             <div className="mt-4 mb-4">
