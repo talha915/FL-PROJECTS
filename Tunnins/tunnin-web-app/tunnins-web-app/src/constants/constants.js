@@ -22,3 +22,4 @@ export const getEarnings = 'earnings';
 export const getEarningDetail = 'earningDetails';
 export const getPayouts = 'payouts';
 export const user_profile = 'userProfile';
+export const user_edit_profile = 'userEditProfile';

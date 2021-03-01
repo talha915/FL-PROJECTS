@@ -872,8 +872,21 @@
     },
     "userprofile": {
         "title": "Profile",
+        "editTitle": "Edit Profile",
         "editBtn": "Edit",
         "saveBtn": "Save",
+        "btns": [
+            {
+                "title": "Edit",
+                "route": "/edit-user-profile",
+                "flag": true
+            },
+            {
+                "title": "Save",
+                "route": "/user-profile",
+                "flag": false
+            }
+        ],
         "userDetails": {
             "name": "Stephen Paul",
             "id": "@Stephen97",

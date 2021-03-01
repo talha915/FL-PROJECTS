@@ -14,7 +14,7 @@ import { userProfile } from '../../actions/userProfile';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { user_profile } from '../../constants/constants';
+import { user_profile, user_edit_profile } from '../../constants/constants';
 
 // Styles
 import '../../styles/profile.scss';
@@ -23,20 +23,24 @@ import '../../styles/profile.scss';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
-function UserProfile() {
+function UserProfile(props) {
 
     const dispatch = useDispatch();
 
     useEffect(()=> {
         dispatchUserProfile();
-    }, []);
+    });
 
     const dispatchUserProfile=()=> {
-        dispatch(userProfile(user_profile));
+        if(props.history.location.pathname === "/edit-user-profile") {
+            dispatch(userProfile(user_edit_profile));
+        }
+        else {
+            dispatch(userProfile(user_profile));
+        }
     }
 
     const users = useSelector(state => state.userProfile);
-    console.log("Users: ", users);
 
     const getUpperPart=()=> {
         if(users.hasOwnProperty('data')) {
@@ -50,13 +54,33 @@ function UserProfile() {
                         </h6>
                     </Col>
                     <Col className="add-btn-wrapper col-sm-1">
-                        <Button className="addBtn">
-                            {upper.editBtn}
-                        </Button>
+                        {getBtns(upper.btns)}
                     </Col>
                 </Row>
             )
         }
+    }
+
+    const routeTo=(location)=> {
+        props.history.push(location);
+    }
+
+    const getBtns=(data)=> {
+        let btns = data.map((items, index)=> {
+            return(
+                <Col className="add-btn-wrapper col-sm-1" key={index}>
+                    {
+                        items.flag ?
+                        <Button className="addBtn" onClick={()=>routeTo(items.route)}>
+                            {items.title}
+                        </Button>
+                        :
+                        ''
+                    }
+                </Col>
+            );
+        });
+        return btns;
     }
 
     const getProfile=()=> {
@@ -135,4 +159,4 @@ function UserProfile() {
     )
 }
 
-export default UserProfile;
+export default withRouter(UserProfile);

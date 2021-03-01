@@ -46,6 +46,7 @@ class Router extends Component {
                     <Route component={EarningDetails} path="/earning-details" exact/>
                     <Route component={Payouts} path="/payouts" exact/>
                     <Route component={UserProfile} path="/user-profile" exact/>
+                    <Route component={UserProfile} path="/edit-user-profile" exact/>
                 </Switch>
             </div>
         )
