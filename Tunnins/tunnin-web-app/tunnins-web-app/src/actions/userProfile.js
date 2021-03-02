@@ -13,6 +13,7 @@ export const userProfile=(type)=> {
     else {
         let editUserProfile = JSON.parse(JSON.stringify(localData.userprofile));
         editUserProfile.title = editUserProfile.editTitle;
+        editUserProfile.userDetails.userform = editUserProfile.userDetails.userformEdit;
         let btns = editUserProfile.btns;
         for(let i=0; i<btns.length; i++) {
             btns[i].flag = !btns[i].flag;

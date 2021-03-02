@@ -94,13 +94,17 @@ function UserProfile(props) {
                 <div className="d-flex align-items-center">
                     <span className="profile-img-wrapper position-relative">
                         <img src={profileDp} />
-                        {/* make this part contitional for edit profile */}
-                        <span className="delete-overlay">
-                            <span className="delete-img-wrapper">
-                                <i className="icon-delete"></i>
+                        
+                        {props.history.location.pathname === "/edit-user-profile"
+                        ?
+                            <span className="delete-overlay">
+                                <span className="delete-img-wrapper">
+                                    <i className="icon-delete"></i>
+                                </span>
                             </span>
-                        </span>
-                        {/* make this part contitional for edit profile */}
+                        :
+                            ''
+                        } 
                     </span>
                     <span className="profile-name-wrapper">
                         <span className="profile-name">
@@ -125,13 +129,16 @@ function UserProfile(props) {
                     <Col className="cover-images" key={index}>
                         <div className="position-relative">
                             <img src={profileCover} alt={data.alt}/>
-                            {/* make this part contitional for edit profile */}
-                            <span className="delete-overlay">
-                                <span className="delete-img-wrapper">
-                                    <i className="icon-delete"></i>
+                            {props.history.location.pathname === "/edit-user-profile"
+                            ?
+                                <span className="delete-overlay">
+                                    <span className="delete-img-wrapper">
+                                        <i className="icon-delete"></i>
+                                    </span>
                                 </span>
-                            </span>
-                            {/* make this part contitional for edit profile */}
+                            :
+                                ''
+                            }
                         </div>
                     </Col>
                 );
@@ -145,23 +152,6 @@ function UserProfile(props) {
             let form = users.data.userDetails.userform.map((data, index)=> {
                 return(
                     <Col key={index}>
-                        <FormGroup>
-                            <Label className={data.title !="" ? "form-title": "form-empty-title"}>
-                                {data.title}
-                            </Label>
-                            <Input placeholder={data.placeholder} type={data.type} name={data.name} disabled />                
-                        </FormGroup>
-                    </Col>
-                )
-            });
-            return form;
-        }
-    }
-    const getUserFormEdit=()=> {
-        if(users.hasOwnProperty('data')) {
-            let form = users.data.userDetails.userformEdit.map((data, index)=> {
-                return(
-                    <Col className={data.paddingClass} sm="4" key={index}>
                         <FormGroup>
                             <Label className={data.title !="" ? "form-title": "form-empty-title"}>
                                 {data.title}
@@ -195,12 +185,9 @@ function UserProfile(props) {
                                 {getProfileImages()}
                             </Row>
                             <Form className="tunnin-form">
-                                <Row className="user-profile-form-read-only d-none">
+                                <Row className="user-profile-form-read-only ">
                                     {getUserForm()}
-                                </Row>
-                                <Row className="user-profile-form-edit">
-                                    {getUserFormEdit()}
-                                </Row>
+                                </Row>                            
                             </Form>
                         </div>
                     </Col>
