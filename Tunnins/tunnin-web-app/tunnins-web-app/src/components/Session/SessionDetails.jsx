@@ -123,11 +123,14 @@ function SessionDetail(props) {
                                     </div>
                                 </Card>
                             </Col>
-                            <Col sm="6" className="d-flex justify-content-end align-items-end">
-                                <p className="cancel-policy-text" onClick={()=>cancelPolicy(sessionDetail.data.cancelroute)}>
-                                    {sessionDetail.data.cancellationPolicy}
-                                </p>
-                            </Col>
+                            {props.history.location.pathname === "/session-details" ?
+                                <Col sm="6" className="d-flex justify-content-end align-items-end">
+                                    <p className="cancel-policy-text" onClick={() => cancelPolicy(sessionDetail.data.cancelroute)}>
+                                        {sessionDetail.data.cancellationPolicy}
+                                    </p>
+                                </Col>
+                                :
+                                ''}
                         </Row>
                     </div>
                     <div>
