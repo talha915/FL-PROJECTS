@@ -51,7 +51,7 @@ function UserProfile(props) {
                 <Row className="mb-3">
                     <Col className="d-flex align-items-center col-6">
                         <h6 className="title m-0">
-                            <i className="icon-chevron-left"></i>
+                            <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
                             {upper.title}
                         </h6>
                     </Col>

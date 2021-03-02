@@ -29,8 +29,6 @@ function AddSession(props) {
 
     let sessionForm = {};
 
-    console.log("LOcation: ", props.history.location.pathname);
-
     const dispatch = useDispatch();
     const [form, setform] = useState({});
     const [editForm, setEditForm] = useState({});
@@ -53,7 +51,6 @@ function AddSession(props) {
     const dispatchEditSession=()=> {
         if(Object.keys(editSession).length > 0) {
             setEditForm(editSession.addedNewSession);
-            console.log("Edit Session: ", editSession);
         }
     }
 
@@ -63,7 +60,7 @@ function AddSession(props) {
                 <Row className="mb-3">
                     <Col className="d-flex align-items-center col-sm-6">
                         <h6 className="title m-0">
-                            <i className="icon-chevron-left"></i>
+                            <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
                             {editSession.hasOwnProperty('editSession') ? editSession.editSession.title : newSession.data.title}
                         </h6>
                     </Col>
@@ -118,11 +115,14 @@ function AddSession(props) {
                             <div className="d-none">
                                 {data.icon}
                             </div>
-                            {/* <i className="icon-cloud"></i> */}
-                            <span className="delete-img-wrapper">
-                            <i className="icon-delete"></i>
-                            </span>
-                            
+                            {props.history.location.pathname === "/add-new-session"
+                            ?
+                                <i className="icon-cloud"></i>
+                            :
+                                <span className="delete-img-wrapper">
+                                    <i className="icon-delete"></i>
+                                </span>
+                            }           
                         </Card>
                     </Col>
                 );

@@ -50,7 +50,7 @@ function EarningDetails(props) {
                     <Row>
                         <Col>
                             <h6 className="title">
-                                <i className="icon-chevron-left"></i>
+                                <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
                                 {earnings.heading}
                             </h6>
                         </Col>

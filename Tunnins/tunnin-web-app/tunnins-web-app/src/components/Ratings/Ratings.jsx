@@ -66,7 +66,7 @@ function Ratings(props) {
             let upperCards = getRatings.data.upperCard.map((data, index)=> {
                 return(
                     <div className="ratings-main-card" key={index}>
-                        <i className="icon-chevron-left"></i>
+                        <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
                         <Card body className="card-style">
                             <div className="card-content">
                                 <div>
@@ -205,4 +205,4 @@ function Ratings(props) {
 
 }
 
-export default Ratings;
+export default withRouter(Ratings);
