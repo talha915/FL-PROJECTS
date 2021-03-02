@@ -886,12 +886,14 @@
             {
                 "title": "Edit Profile",
                 "route": "/edit-user-profile",
-                "flag": true
+                "flag": true,
+                "iconClass": "icon-edit"
             },
             {
                 "title": "Save",
                 "route": "/user-profile",
-                "flag": false
+                "flag": false,
+                "iconClass": ""
             }
         ],
         "userDetails": {

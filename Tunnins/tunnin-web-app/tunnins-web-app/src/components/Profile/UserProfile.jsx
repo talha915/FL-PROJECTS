@@ -74,7 +74,7 @@ function UserProfile(props) {
                     {
                         items.flag ?
                         <Button className="addBtn" onClick={()=>routeTo(items.route)}>
-                            <i className="icon-edit"></i>
+                            <i className={items.iconClass}></i>
                             {items.title}
                         </Button>
                         :
@@ -185,7 +185,7 @@ function UserProfile(props) {
                                 {getProfileImages()}
                             </Row>
                             <Form className="tunnin-form">
-                                <Row className="user-profile-form-read-only ">
+                                <Row className={props.history.location.pathname==="/user-profile" ? "user-profile-form-read-only" : "user-profile-form-edit"}>
                                     {getUserForm()}
                                 </Row>                            
                             </Form>

@@ -9,6 +9,9 @@
     .profile-header {
         .add-btn-wrapper {
             text-align: right;
+            &:empty {
+                display: none;
+            }
         }
         .addBtn {
             background-color: $enury;
@@ -115,6 +118,10 @@
         flex-direction: column;
         max-height: 370px;
 
+        .col {
+            flex: 0 0 33.33%;
+            max-width: 33.33%;
+        }
         textarea {
             min-height: 135px;
         }
