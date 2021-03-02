@@ -2,90 +2,137 @@
 .profiles {
     background-color: $primary;
     min-height: 100vh;
-    
-    .session-btn-wrapper {
-        display: flex;
-        justify-content: center;
-        margin: 30px 0 40px;
-        align-items: center;
-        position: relative;
-        .btn-secondary {
-            &.true-btn {
-                background: transparent;
-                border: 2px solid $enury;
-                border-radius: 0;
-                padding: 15px 60px;
-                margin: 0 20px;
-                min-width: 270px;
-                &:hover {
-                    background-color: $enury;
-                    color: $black;
-                }
-            }
-            &.false-btn {
-                background-color: $ebony-clay;
-                padding: 10px 30px;
-                border: 0;
-                border-radius: 0;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 15px;
-            }
-        }
-    }
-    .session-cards-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-        .session-cards {
-            width: 50%;
-            padding: 20px 30px;
-            .card {
-                border: 1px solid $petite-orchid;
-                border-radius: 0;
-                background-color: transparent;
-                color: $white;
-                &.live-session {
-                    background-color: $petite-orchid;
-                    color: $black;
-                }
-                .card-content {
-                    display: flex;
-                    justify-content: space-between;
-                }
-                .session-amount {
-                    height: 40px;
-                    width: 60px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 1px solid $enury;
-                    border-radius: 5px;
-                    font-size: 20px;
-                    background-color: $ebony-clay;
-                    color: $white;
-                }
-            }
 
-            .btn-secondary {
+    .profile-right-container {
+        padding: 10px 20px 10px 40px;
+    }
+    .profile-header {
+        .add-btn-wrapper {
+            text-align: right;
+        }
+        .addBtn {
+            background-color: $enury;
+            border: 1px solid $enury;
+            border-radius: 0;
+            padding: 15px 60px;
+            margin: 0 20px;
+            min-width: 140px;
+            text-align: center;
+            color: $black;
+            font-size: 24px;
+            &:hover {
                 background-color: $ebony-clay;
-                padding: 10px 30px;
-                border: 0;
-                border-radius: 0;
-                max-width: 200px;
-                margin: 0 auto;
+                color: $white;
+            }
+            i{
+                font-size: 20px;
+                margin-right: 10px;
             }
         }
     }
-    .heading {
-        color: $enury;
-    }
-    .subheading {
-        color: $waikawa-gray;
-    }
-    .label {
+    .title {
+        text-align: left;
         color: $white;
-        padding-top: 50px;
+        font-size: 24px;
+        font-weight: 400;
+        position: relative;
+        i{
+            position: absolute;
+            left: -35px;
+            top: 1px;
+            &::before {
+                color: $white;
+            }
+        }
+    }
+    .profile-img-wrapper {
+        height: 165px;
+        width: 165px;
+        display: inline-block;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .user-profile-wrapper,
+    .profile-cover-wrapper,
+    .tunnin-form {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        .col {
+            &:first-child{
+                padding-left: 0;
+            }
+            &:last-child{
+                padding-right: 0;
+            }
+        }
+    }
+    .profile-name-wrapper {
+        display: flex;
+        flex-direction: column;
+        font-weight: 300;
+        padding-left: 20px;
+        .profile-name {
+            color: $white;
+            font-size: 30px;
+        }
+        .username {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+    .cover-images {
+        img {
+            max-width: 100%;
+        }
+    }
+    .user-profile-form-read-only {
+        flex-direction: column;
+        max-height: 190px;
+        .col {
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+        textarea {
+            min-height: 135px;
+        }
+        label {
+            font-weight: 300;
+            font-size: 20px;
+        }
+        .form-control {
+            padding-left: 0;
+            border: 0;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 18px;
+                font-weight: 300;
+            }
+        }
+    }
+    .user-profile-form-edit {
+        flex-direction: column;
+        max-height: 370px;
+
+        textarea {
+            min-height: 135px;
+        }
+        label {
+            font-weight: 300;
+            font-size: 20px;
+        }
+        .form-control {
+            padding-left: 0;
+            border: 0;
+            padding-bottom: 15px;
+            border-bottom:1px solid rgba(255, 255, 255, 0.3); ;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 18px;
+                font-weight: 300;
+            }
+        }
     }
 }

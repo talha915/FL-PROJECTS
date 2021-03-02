@@ -64,6 +64,7 @@ function Header(props) {
             let drops = getHead.data.dropdown.map((data, index)=> {
                 return(
                     <DropdownItem key={index} onClick={()=>routeTo(data.route)}>
+                        <i className={data.iconClass}></i>
                         {data.title}
                     </DropdownItem>
                 )
@@ -83,21 +84,22 @@ function Header(props) {
                    {getPaths()}
                 </span>
             </div>
-            <div className="user-profile">
-                <Dropdown isOpen={dropdownOpen} size="sm" toggle={toggle}>
-                    <DropdownToggle caret>
-                        <span className="dp-wrapper">
-                            <img src={dp} alt="user-dp" />
-                        </span>
-                        <span className="credentials">
-                            {getCredentials()}
-                        </span>
+            <Dropdown className="profile-dropdown" isOpen={dropdownOpen} size="sm" toggle={toggle}>
+                    <DropdownToggle>
+                        <div className="user-profile">
+                            <span className="dp-wrapper">
+                                <img src={dp} alt="user-dp" />
+                            </span>
+                            <span className="credentials">
+                                {getCredentials()}
+                            </span>
+                            <i className="icon-chevron-down"></i>
+                        </div>
                     </DropdownToggle>
                     <DropdownMenu>
                         {getDropDownItems()}
                     </DropdownMenu>
-                </Dropdown>
-            </div>
+            </Dropdown>
         </div>
     )
 }

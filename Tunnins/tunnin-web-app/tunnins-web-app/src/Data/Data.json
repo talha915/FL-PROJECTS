@@ -56,11 +56,13 @@
         "dropdown": [
             {
                 "title": "View Profile",
-                "route": "/user-profile"
+                "route": "/user-profile",
+                "iconClass": "icon-avatar"
             },
             {
                 "title": "Log out",
-                "route": "/"
+                "route": "/",
+                "iconClass": "icon-logout"
             }
         ]
     },
@@ -72,31 +74,36 @@
                 "name": "Full Name",
                 "placeholder": "Elias Manik",
                 "type": "text",
-                "field": "f_name"
+                "field": "f_name",
+                "fieldIcon": "icon-person"
             },
             {
                 "name": "Password",
                 "placeholder": "***************",
                 "type": "password",
-                "field": "pass"
+                "field": "pass",
+                "fieldIcon": "icon-lock-unlock"
             },
             {
                 "name": "Email Address",
                 "placeholder": "dodgeui2020@gmail.com",
                 "type": "email",
-                "field": "email"
+                "field": "email",
+                "fieldIcon": "icon-mail"
             },
             {
                 "name": "Confirm Password",
                 "placeholder": "***************",
                 "type": "password",
-                "field": "c_pass"
+                "field": "c_pass",
+                "fieldIcon": "icon-lock-unlock"
             },
             {
                 "name": "Date of Birth",
                 "placeholder": "15-July-1996",
                 "type": "date",
-                "field": "dob"
+                "field": "dob",
+                "fieldIcon": "icon-calender"
             }
         ],
         "subscribe": "Subscribe to our newsletter",
@@ -877,7 +884,7 @@
         "saveBtn": "Save",
         "btns": [
             {
-                "title": "Edit",
+                "title": "Edit Profile",
                 "route": "/edit-user-profile",
                 "flag": true
             },
@@ -913,37 +920,123 @@
                 {
                     "title": "About",
                     "type": "textarea",
-                    "size": "4"
+                    "size": "4",
+                    "placeholder": "If you’re offered a seat on a rocket ship, don’t ask what seat! Just get on board & move the sail towards the destination."
                 },
                 {
                     "title": "Category",
                     "type": "text",
-                    "size": "2"
-                },
-                {
-                    "title": "DOB",
-                    "type": "date",
-                    "size": "2"
-                },
-                {
-                    "title": "Gender",
-                    "type": "text",
-                    "size": "2"
+                    "size": "2",
+                    "placeholder": "Zumba,Full Body"
                 },
                 {
                     "title": "Business Name",
                     "type": "text",
-                    "size": "3"
+                    "size": "3",
+                    "placeholder": "Some private Ltd."
+                },
+                {
+                    "title": "DOB",
+                    "type": "text",
+                    "size": "2",
+                    "placeholder": "June 27, 1991"
                 },
                 {
                     "title": "Location",
                     "type": "text",
-                    "size": "3"
+                    "size": "3",
+                    "placeholder": "Eleven Junks, Street 11, USA"
+                },
+                {
+                    "title": "Gender",
+                    "type": "text",
+                    "size": "2",
+                    "placeholder": "Male"
+                },
+               
+                {
+                    "title": "Instagram Profile URL",
+                    "type": "text",
+                    "size": "3",
+                    "placeholder": "www.instagram.com/drabhinav"
+                },
+                {
+                    "title": "Email Address",
+                    "type": "mail",
+                    "size": "3",
+                    "placeholder": "abcd@egf.com"
+                }
+            ],
+            "userformEdit": [
+                {
+                    "title": "Name",
+                    "type": "text",
+                    "size": "4",
+                    "paddingClass":"pl-0",
+                    "placeholder": "Stephen Paul"
+                },
+                {
+                    "title": "Email Address",
+                    "type": "mail",
+                    "size": "3",
+                    "paddingClass":"pl-0",
+                    "placeholder": "abcd@egf.com"
+                },
+                {
+                    "title": "Category",
+                    "type": "text",
+                    "size": "2",
+                    "paddingClass":"pl-0",
+                    "placeholder": "Zumba,Full Body"
                 },
                 {
                     "title": "Instagram Profile URL",
                     "type": "text",
-                    "size": "3"
+                    "size": "3",
+                    "paddingClass":"pl-0",
+                    "placeholder": "www.instagram.com/drabhinav"
+                },
+                {
+                    "title": "User Name",
+                    "type": "text",
+                    "size": "4",
+                    "paddingClass":"",
+                    "placeholder": "@stephen97"
+                },
+                {
+                    "title": "Gender",
+                    "type": "text",
+                    "size": "2",
+                    "paddingClass":"",
+                    "placeholder": "Male"
+                },
+                {
+                    "title": "Location",
+                    "type": "text",
+                    "size": "3",
+                    "paddingClass":"",
+                    "placeholder": "Eleven Junks, Street 11, USA"
+                },
+                {
+                    "title": "DOB",
+                    "type": "text",
+                    "size": "2",
+                    "placeholder": "June 27, 1991"
+                },
+                {
+                    "title": "About",
+                    "type": "textarea",
+                    "size": "4",
+                    "paddingClass":"",
+                    "placeholder": "If you’re offered a seat on a rocket ship, don’t ask what seat! Just get on board & move the sail towards the destination."
+                },
+                
+                {
+                    "title": "Business Name",
+                    "type": "text",
+                    "size": "3",
+                    "paddingClass":"",
+                    "placeholder": "Some private Ltd."
                 }
             ]
         }

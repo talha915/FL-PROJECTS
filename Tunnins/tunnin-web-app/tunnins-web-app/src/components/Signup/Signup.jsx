@@ -102,7 +102,7 @@ function SignUp(props) {
                     <FormGroup className="custom-input-wrapper mb-5">
                         <Label className="formheading"><p>{item.name}</p></Label>                      
                         <input type={item.type} placeholder={item.placeholder} className="form-control" onChange={(e)=>handleChange(item.field, e.target.value)}/> 
-                        <span className="input-icons secondary"><i className="icon-mail"></i></span>    
+                        <span className="input-icons secondary"><i className={item.fieldIcon}></i></span>    
                     </FormGroup>     
                 </Col>
             )

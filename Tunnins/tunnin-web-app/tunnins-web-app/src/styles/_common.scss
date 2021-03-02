@@ -105,6 +105,8 @@ h6 {
         .credentials {
             display: inline-flex;
             flex-direction: column;
+            align-items: flex-start;
+            padding-right: 22px;
             span {
                 color: $white;
                 &.name {
@@ -112,6 +114,7 @@ h6 {
                 }
                 &.email {
                     font-size: 12px;
+                    opacity: 0.6;
                 }
             }
         }
@@ -222,6 +225,18 @@ h6 {
         color: $white;
     }
 }
+.delete-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
 .delete-img-wrapper {
     background-color: $secondary;
     height: 50px;
@@ -234,6 +249,62 @@ h6 {
         font-size: 20px;
         &::before {
             color: $black;;
+        }
+    }
+}
+.profile-dropdown {
+    .btn-secondary {
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        box-shadow: none;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: transparent !important;
+            border: 0 !important;
+            outline: 0 !important;
+            box-shadow: none !important;
+        }
+    }
+    i {
+        &::before {
+            color: $white;
+        }
+    }
+    .dropdown-menu {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: none;
+        top: 30px !important;
+        left: 15px !important;
+        background-color: transparent;
+        &:before {
+            content: " ";
+            border: 17px solid transparent;
+            border-bottom: 30px solid $ebony-clay;
+            right: 20px;
+            position: absolute;
+            top: -40px;
+        }
+        .dropdown-item {
+            background-color: $ebony-clay;
+            font-size: 22px;
+            font-weight: 300;
+            color: $white;
+            padding: 15px 85px 15px 30px;
+            outline: 0;
+            border: 0;
+            box-shadow: none;
+            text-align: left;
+            &:first-child{
+                border-bottom: 1px solid $primary;
+            }
+            i{
+                margin-right: 10px;
+            }
         }
     }
 }

@@ -23,6 +23,8 @@ import '../../styles/profile.scss';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
+import profileCover from '../../images/profile-cover.png';
+import profileDp from '../../images/profile-dp.png';
 function UserProfile(props) {
 
     const dispatch = useDispatch();
@@ -47,15 +49,15 @@ function UserProfile(props) {
             let upper = users.data;
             return(
                 <Row className="mb-3">
-                    <Col className="d-flex align-items-center col-sm-11">
+                    <Col className="d-flex align-items-center col-6">
                         <h6 className="title m-0">
                             <i className="icon-chevron-left"></i>
                             {upper.title}
                         </h6>
                     </Col>
-                    <Col className="add-btn-wrapper col-sm-1">
-                        {getBtns(upper.btns)}
-                    </Col>
+
+                    {getBtns(upper.btns)}
+
                 </Row>
             )
         }
@@ -68,10 +70,11 @@ function UserProfile(props) {
     const getBtns=(data)=> {
         let btns = data.map((items, index)=> {
             return(
-                <Col className="add-btn-wrapper col-sm-1" key={index}>
+                <Col className="add-btn-wrapper col-6" key={index}>
                     {
                         items.flag ?
                         <Button className="addBtn" onClick={()=>routeTo(items.route)}>
+                            <i className="icon-edit"></i>
                             {items.title}
                         </Button>
                         :
@@ -87,17 +90,30 @@ function UserProfile(props) {
         if(users.hasOwnProperty('data')) {
             let profile = users.data.userDetails;
             return(
-                <Row>
-                    <Col>
-                        <span>
-                            <img src={profile.img} />
+                <Col>
+                <div className="d-flex align-items-center">
+                    <span className="profile-img-wrapper position-relative">
+                        <img src={profileDp} />
+                        {/* make this part contitional for edit profile */}
+                        <span className="delete-overlay">
+                            <span className="delete-img-wrapper">
+                                <i className="icon-delete"></i>
+                            </span>
                         </span>
-                        <span>
+                        {/* make this part contitional for edit profile */}
+                    </span>
+                    <span className="profile-name-wrapper">
+                        <span className="profile-name">
                             {profile.name}
+                        </span>
+                        <span className="username">
                             {profile.id}
                         </span>
-                    </Col>
-                </Row>
+                    </span>
+                </div>
+                    
+                    
+                </Col>
             ); 
         }
     }
@@ -106,8 +122,17 @@ function UserProfile(props) {
         if(users.hasOwnProperty('data')) {
             let profileDetail = users.data.userDetails.coverImages.map((data, index)=> {
                 return(
-                    <Col key={index}>
-                        <img src={data.img} alt={data.alt}/>
+                    <Col className="cover-images" key={index}>
+                        <div className="position-relative">
+                            <img src={profileCover} alt={data.alt}/>
+                            {/* make this part contitional for edit profile */}
+                            <span className="delete-overlay">
+                                <span className="delete-img-wrapper">
+                                    <i className="icon-delete"></i>
+                                </span>
+                            </span>
+                            {/* make this part contitional for edit profile */}
+                        </div>
                     </Col>
                 );
             })
@@ -119,7 +144,24 @@ function UserProfile(props) {
         if(users.hasOwnProperty('data')) {
             let form = users.data.userDetails.userform.map((data, index)=> {
                 return(
-                    <Col key={index} sm={data.size}>
+                    <Col key={index}>
+                        <FormGroup>
+                            <Label className={data.title !="" ? "form-title": "form-empty-title"}>
+                                {data.title}
+                            </Label>
+                            <Input placeholder={data.placeholder} type={data.type} name={data.name} disabled />                
+                        </FormGroup>
+                    </Col>
+                )
+            });
+            return form;
+        }
+    }
+    const getUserFormEdit=()=> {
+        if(users.hasOwnProperty('data')) {
+            let form = users.data.userDetails.userformEdit.map((data, index)=> {
+                return(
+                    <Col className={data.paddingClass} sm="4" key={index}>
                         <FormGroup>
                             <Label className={data.title !="" ? "form-title": "form-empty-title"}>
                                 {data.title}
@@ -141,17 +183,26 @@ function UserProfile(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9" className="custom-offset">
-                        {getUpperPart()}
-                        {getProfile()}
-                        <Row>
-                            {getProfileImages()}
-                        </Row>
-                        <Form className="tunnin-form mt-5">
-                            <Row>
-                                {getUserForm()}
+                    <Col>
+                        <div className="profile-right-container">
+                            <div className="profile-header mt-4">
+                                {getUpperPart()}
+                            </div>
+                            <Row  className="user-profile-wrapper">
+                                {getProfile()}
+                            </Row >
+                            <Row className="profile-cover-wrapper">
+                                {getProfileImages()}
                             </Row>
-                        </Form>
+                            <Form className="tunnin-form">
+                                <Row className="user-profile-form-read-only d-none">
+                                    {getUserForm()}
+                                </Row>
+                                <Row className="user-profile-form-edit">
+                                    {getUserFormEdit()}
+                                </Row>
+                            </Form>
+                        </div>
                     </Col>
                 </Row>
             </div>
