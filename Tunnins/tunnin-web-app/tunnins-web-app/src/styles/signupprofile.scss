@@ -2,8 +2,10 @@
 .profile {
     background-color: $primary;
     min-height: 100vh;
-    padding-top: 100px;
-    padding-left: 100px;
+    padding-top: 5.5vh;
+    .container-fluid {
+        max-width: 77vw;
+    }
     
     .signup-second-form-wrapper {
         justify-content: space-between;

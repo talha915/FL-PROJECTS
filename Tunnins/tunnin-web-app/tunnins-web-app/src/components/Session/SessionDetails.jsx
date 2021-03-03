@@ -55,13 +55,13 @@ function SessionDetail(props) {
             return(
                 <div>
                     <Row className="mb-3">
-                        <Col className="d-flex align-items-center col-sm-6">
+                        <Col className="d-flex align-items-center col-sm-3">
                             <h6 className="title m-0">
                                 <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
                                 {sessionDetail.data.title}
                             </h6>
                         </Col>
-                        <Col className="add-btn-wrapper col-sm-6">
+                        <Col className="add-btn-wrapper col-sm-9">
                             <span>
                                 {getBtns()}
                             </span>

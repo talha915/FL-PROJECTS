@@ -3,10 +3,13 @@
     background-color: $primary;
     min-height: 100vh;
     padding-top: 70px;
+    .container-fluid {
+        max-width: 77vw;
+    }
     .heading {
         color: $enury;
         font-weight: 400;
-        font-size: 30px;
+        font-size: 1.9vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -16,23 +19,28 @@
     }
     .subheading {
         color: $waikawa-gray;
-        font-size: 30px;
-        margin-bottom: 80px;
+        font-size: 1.9vw;
+        font-weight: 300;
+        margin-bottom: 8vh;
     }
     .formheading {
         color: $white;
         display: block;
-        font-size: 18px;
+        font-size: 1.465vw;
+        font-weight: 300;
     }
     .signup-first-form-wrapper {
         justify-content: space-between;
         .btn-primary {
-            min-width: 280px !important;
-            margin-top: 100px;
+            min-width: 16.6vw !important;
+            margin-top: 12.5vh;
+        }
+        .form-group {
+            margin-bottom: 4.1vh;
         }
     }
     .subscription-checkbox-wrapper {
         position: relative;
-        top: -35px;
+        font-size: 0.68vw;
     }
 }

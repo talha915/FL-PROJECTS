@@ -43,7 +43,7 @@ function SignUp(props) {
     const getSignUp = () => {
         if (signupState.hasOwnProperty('data')) {
             return (
-                <div className="container">
+                <div className="container-fluid">
                     <h2 className="heading">
                         {signupState.data.heading}
                         <img src={logo} alt="Logo" />
@@ -99,7 +99,7 @@ function SignUp(props) {
         let formDetails = data.details.map((item, index) => {
             return (
                 <Col xs="12" sm="5" md="5" lg="5" key={index}>
-                    <FormGroup className="custom-input-wrapper mb-5">
+                    <FormGroup className="custom-input-wrapper">
                         <Label className="formheading"><p>{item.name}</p></Label>                      
                         <input type={item.type} placeholder={item.placeholder} className="form-control" onChange={(e)=>handleChange(item.field, e.target.value)}/> 
                         <span className="input-icons secondary"><i className={item.fieldIcon}></i></span>    

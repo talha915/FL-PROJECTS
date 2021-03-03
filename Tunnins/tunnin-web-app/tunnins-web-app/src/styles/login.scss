@@ -28,61 +28,71 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: $enury;
+    img {
+        max-width: 16vw;
+    }
 }
 
 .login-form-heading {
     color: $enury;
     padding-top: 90px;
-    font-weight: 400;
+    font-weight: 300;
+    font-size: 1.855vw;
 }
 
 .login-form {
-    padding-left: 30px;
-    max-width: 550px;
-    margin: 0 auto;
+    max-width: 26.88vw;
+    margin-left: 5.3vw;
 }
 
 .login-form-note {
     color: $waikawa-gray;
-    font-size: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 13.1vh;
+    font-size: 1.465vw;
 }
 
 
 .forgot-password-popup {
-    width: 90%;
-    color: $white;
-    display: flex;
-    align-items: center;
+    &.modal-dialog {
+        width: 90%;
+        color: $white;
+        display: flex;
+        align-items: center;
+        max-width: 30.95vw;
+    }
 
     .modal-content {
         background-color: $ebony-clay;
         border: 0;
-        padding: 60px 0;
+        padding: 70px 0;
+        min-height: 59.9vh;
     }
     .modal-body {
-        padding: 4px 45px 16px;
+        padding: 4px 45px 7.2vh;
+        flex: 0;
     }
 
     h5 {
         color: $white;
-        font-size: 22px;
-        font-weight: 400;
+        font-size: 1.565vw;
     }
     p,
     label {
         color: $white;
-        font-size: 16px;
+        font-size: 1.08vw;
         line-height: 27px;
         font-weight: 400;
     }
+    .input-icons {
+        background-color: $blue-marguerite;
+    }
     .btn-primary {
-        max-width: 300px !important;
+        max-width: 19.9vw !important;
         min-width: inherit !important;
         width: 90%;
         padding: 12px 0!important;
     }
     .verify-text {
-        font-size: 14px;
+        font-size: 1.08vw;
     }
 }

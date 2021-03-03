@@ -12,9 +12,13 @@ h6 {
 }
 .custom-input-wrapper {
     position: relative;
+    label {
+        font-size: 0.98vw;
+    }
     .form-control {
-        padding-left: 50px;
-        height: 45px;
+        padding-left: 3.23vw;
+        height: 6.1vh;
+        font-size: 0.89vw;
     }
 }
 
@@ -23,12 +27,13 @@ h6 {
     bottom: 0;
     left: 0;
     background-color: $ebony-clay;
-    height: 45px;
-    width: 45px;
+    height: 6.1vh;
+    width: 2.95vw;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 0.9vw;
     i {
         &::before {
             color: $white;
@@ -43,25 +48,30 @@ h6 {
     border-radius: 7px !important;
     outline: transparent !important;
     box-shadow: none !important;
+    height: 6.1vh;
+    font-size: 0.89vw;
 }
 
 .btn-primary {
     color: $ebony-clay;
     background-color: $enury;
-    min-width: 340px;
+    min-width: 16.6vw;
     border: 1px solid $enury;
     border-radius: 0;
+    font-size: 1.23vw;
 }
 .tunnin-link {
     color: $ebony-clay !important;
     text-decoration: underline;
+    font-size: 0.89vw;
 }
 .tunnin-checkbox {
     color: $ebony-clay !important;
+    font-size: 0.89vw;
 }
 .text-grey {
     color: $jumbo;
-    font-size: 14px;
+    font-size: 0.89vw;
 }
 .profile-actions {
     background-color: $ebony-clay;

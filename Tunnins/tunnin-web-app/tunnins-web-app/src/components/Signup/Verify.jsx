@@ -51,7 +51,7 @@ function Verify(props) {
     const getVerified=()=> {
         if(verifiedData.hasOwnProperty('data')) {
             return(
-                <div className="container">
+                <div className="container-fluid">
                     <div className="page-logo-wrapper">
                     <img src={logo} alt="Logo" />
                     </div>

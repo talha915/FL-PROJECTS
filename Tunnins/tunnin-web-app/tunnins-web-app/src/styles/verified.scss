@@ -2,9 +2,12 @@
 .verify {
     background-color: $primary;
     min-height: 100vh;
-    padding-top: 50px;
-    padding-left: 50px;
+    padding-top: 2.5vh;
+    .container-fluid {
+        max-width: 77vw;
+    }
     .heading {
+        font-size: 1.9vw;
         font-weight: 400;
         margin-bottom: 30px;
         color: $enury;
@@ -21,17 +24,20 @@
     }
     .verify-img {
         margin-bottom: 40px;
+        img {
+            max-width: 7.15vw;
+        }
     }
     .text {
         color: $waikawa-gray;
-        font-size: 28px;
-        max-width: 530px;    
+        font-size: 1.9vw;
+        max-width: 37vw;    
     }
     .next-btn-wrapper {
         text-align: center;
-        margin-top: 100px;
+        margin-top: 18.5vh;
         .btn-primary {
-            min-width: 280px !important;
+            min-width: 16.6vw !important;
         }
     }
 }

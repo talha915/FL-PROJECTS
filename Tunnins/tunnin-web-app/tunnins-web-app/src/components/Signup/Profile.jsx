@@ -36,7 +36,7 @@ function Profile(props) {
     const getProfile=()=> {
         if(profile.hasOwnProperty('data')) {
             return(
-                <div className="container">
+                <div className="container-fluid">
                     <h3 className="heading">
                         {profile.data.heading}
                         <img src={logo} alt="Logo" />
