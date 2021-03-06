@@ -8,13 +8,13 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 // Action
-import { ListNotification } from '../../actions/notification';
+import { settings } from '../../actions/settings';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { listed_notification } from '../../constants/constants';
+import { setting_contact } from '../../constants/constants';
 
 // Styles
 import '../../styles/notifications.scss';
@@ -26,8 +26,37 @@ import Sidebar from '../Sidebar/Sidebar';
 
 function Contacts(props) {
 
-    const getSettingSidebar=()=> {
-        return(
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatchContact();
+    }, []);
+
+    const dispatchContact = () => {
+        dispatch(settings(setting_contact));
+    }
+
+    const getSettings = useSelector(state => state.settings);
+    console.log("get settings: ", getSettings)
+
+    const getContacts = () => {
+        if (getSettings.hasOwnProperty('contact')) {
+            let contacts = getSettings.contact;
+            return (
+                <div className="contacts">
+                    <h5>
+                        {contacts.title}
+                    </h5>
+                    <p>
+                        {contacts.description}
+                    </p>
+                </div>
+            );
+        }
+    }
+
+    const getSettingSidebar = () => {
+        return (
             <SettingSidebar />
         );
     }
@@ -46,7 +75,7 @@ function Contacts(props) {
                                 {getSettingSidebar()}
                             </Col>
                             <Col sm="8">
-                            
+                                {getContacts()}
                             </Col>
                         </Row>
                     </Col>
