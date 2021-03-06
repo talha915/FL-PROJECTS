@@ -91,7 +91,8 @@
     }
     .user-profile-form-read-only {
         flex-direction: column;
-        max-height: 190px;
+        max-height: 240px;
+        overflow: hidden;
         .col {
             flex: 0 0 20%;
             max-width: 20%;
@@ -116,8 +117,8 @@
     }
     .user-profile-form-edit {
         flex-direction: column;
-        max-height: 370px;
-
+        max-height: 460px;
+        overflow: hidden;
         .col {
             flex: 0 0 33.33%;
             max-width: 33.33%;

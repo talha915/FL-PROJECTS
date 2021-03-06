@@ -151,7 +151,7 @@ function UserProfile(props) {
         if(users.hasOwnProperty('data')) {
             let form = users.data.userDetails.userform.map((data, index)=> {
                 return(
-                    <Col key={index}>
+                    <Col className={data.paddingClass} key={index}>
                         <FormGroup>
                             <Label className={data.title !="" ? "form-title": "form-empty-title"}>
                                 {data.title}

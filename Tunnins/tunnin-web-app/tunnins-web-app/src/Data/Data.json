@@ -254,7 +254,7 @@
             {
                 "name": "My Sessions",
                 "icon": "icon-frame-4 d-block",
-                "route": "/"
+                "route": "/notification"
             },
             {
                 "name": "My Earnings",
@@ -923,36 +923,42 @@
                     "title": "About",
                     "type": "textarea",
                     "size": "4",
+                    "paddingClass":"",
                     "placeholder": "If you’re offered a seat on a rocket ship, don’t ask what seat! Just get on board & move the sail towards the destination."
                 },
                 {
                     "title": "Category",
                     "type": "text",
                     "size": "2",
+                    "paddingClass":"",
                     "placeholder": "Zumba,Full Body"
                 },
                 {
                     "title": "Business Name",
                     "type": "text",
                     "size": "3",
+                    "paddingClass":"",
                     "placeholder": "Some private Ltd."
                 },
                 {
                     "title": "DOB",
                     "type": "text",
                     "size": "2",
+                    "paddingClass":"",
                     "placeholder": "June 27, 1991"
                 },
                 {
                     "title": "Location",
                     "type": "text",
                     "size": "3",
+                    "paddingClass":"",
                     "placeholder": "Eleven Junks, Street 11, USA"
                 },
                 {
                     "title": "Gender",
                     "type": "text",
                     "size": "2",
+                    "paddingClass":"",
                     "placeholder": "Male"
                 },
                
@@ -960,12 +966,14 @@
                     "title": "Instagram Profile URL",
                     "type": "text",
                     "size": "3",
+                    "paddingClass":"",
                     "placeholder": "www.instagram.com/drabhinav"
                 },
                 {
                     "title": "Email Address",
                     "type": "mail",
                     "size": "3",
+                    "paddingClass":"",
                     "placeholder": "abcd@egf.com"
                 }
             ],
