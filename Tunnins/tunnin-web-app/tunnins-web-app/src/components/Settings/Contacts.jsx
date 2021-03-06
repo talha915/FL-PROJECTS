@@ -26,6 +26,12 @@ import Sidebar from '../Sidebar/Sidebar';
 
 function Contacts(props) {
 
+    const getSettingSidebar=()=> {
+        return(
+            <SettingSidebar />
+        );
+    }
+
     return (
         <div className="notifications">
             <Header />
@@ -34,8 +40,8 @@ function Contacts(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col>
-                        Contacts
+                    <Col sm="9" >
+                        {getSettingSidebar()}
                     </Col>
                 </Row>
             </div>

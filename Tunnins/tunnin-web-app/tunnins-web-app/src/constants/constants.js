@@ -23,3 +23,4 @@ export const getEarningDetail = 'earningDetails';
 export const getPayouts = 'payouts';
 export const user_profile = 'userProfile';
 export const user_edit_profile = 'userEditProfile';
+export const setting_sidebar = 'SettingsSidebar';
