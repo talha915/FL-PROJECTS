@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
-    Button, Row, Col
+    Button, Form, FormGroup, Label, Input, Row, Col, Card, CardText, CardBody, CardLink,
+    CardTitle, CardSubtitle
 } from 'reactstrap';
 
 // Redux
@@ -13,7 +14,7 @@ import { settings } from '../../actions/settings';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { setting_contact } from '../../constants/constants';
+import { setting_bank } from '../../constants/constants';
 
 // Styles
 import '../../styles/notifications.scss';
@@ -23,7 +24,7 @@ import SettingSidebar from './Sidebar';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
-function Contacts(props) {
+function BankDetails(props) {
 
     const dispatch = useDispatch();
 
@@ -32,27 +33,42 @@ function Contacts(props) {
     }, []);
 
     const dispatchContact = () => {
-        dispatch(settings(setting_contact));
+        dispatch(settings(setting_bank));
     }
 
     const getSettings = useSelector(state => state.settings);
 
-    const getContacts = () => {
-        if (getSettings.hasOwnProperty('contact')) {
-            let contacts = getSettings.contact;
+    const getBankDetails = () => {
+        if (getSettings.hasOwnProperty('bank')) {
+            let bankDetail = getSettings.bank;
             return (
-                <div className="contacts">
+                <div className="banks">
                     <h5>
-                        {contacts.title}
+                        {bankDetail.title}
                     </h5>
-                    <p>
-                        {contacts.description}
-                    </p>
-                    <Button>
-                        {contacts.btn}
-                    </Button>
+                    <Form>
+                        <Row>
+                            {getBankForm()}
+                        </Row>
+                    </Form>
                 </div>
             );
+        }
+    }
+
+    const getBankForm=()=> {
+        if (getSettings.hasOwnProperty('bank')) {
+            let form = getSettings.bank.bankform.map((data, index)=> {
+                return (
+                    <Col sm="6" key={index}>
+                        <FormGroup className="text-center">
+                        <Label className="formheading"><p>{data.title}</p></Label>
+                        <Input type={data.type} size={data.size} />
+                    </FormGroup>
+                    </Col>
+                )
+            });
+            return form;
         }
     }
 
@@ -76,7 +92,7 @@ function Contacts(props) {
                                 {getSettingSidebar()}
                             </Col>
                             <Col sm="8">
-                                {getContacts()}
+                                {getBankDetails()}
                             </Col>
                         </Row>
                     </Col>
@@ -87,4 +103,4 @@ function Contacts(props) {
 
 }
 
-export default withRouter(Contacts);
+export default withRouter(BankDetails);
