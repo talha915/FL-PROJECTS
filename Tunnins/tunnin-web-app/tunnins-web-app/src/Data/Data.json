@@ -1091,69 +1091,69 @@
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "Address Line 1",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "Account Holder Name",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "Address Line 2",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "Account Number",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "City",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "Routing Number",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "State",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "SSN (Last Four Digits)",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "Gender",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "Postal Code",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "Email",
+                    "size": "6",
+                    "type": "email"
+                },
+                {
+                    "title": "Country",
                     "size": "6",
                     "type": "text"
                 },
                 {
-                    "title": "Bank Name",
+                    "title": "Date Of Birth",
                     "size": "6",
-                    "type": "text"
-                },
-                {
-                    "title": "Bank Name",
-                    "size": "6",
-                    "type": "text"
+                    "type": "date"
                 }
             ]
         }
