@@ -6,22 +6,52 @@ import { Button, Form, FormGroup, Label, Input, Row, Col, Card, CardText, CardBo
 import { useDispatch, useSelector } from "react-redux";
 
 // Action
-import { ListNotification } from '../../actions/notification';
+import { settingsSidebar } from '../../actions/settingSidebar';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { listed_notification } from '../../constants/constants';
+import { setting_sidebar } from '../../constants/constants';
 
 // Styles
 import '../../styles/notifications.scss';
 
 function SettingSidebar(props) {
 
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatchSidebar();
+    }, []);
+
+
+    const dispatchSidebar = () => {
+        dispatch(settingsSidebar(setting_sidebar));
+    }
+
+    const getSideList = useSelector(state => state.SettingsSidebar);
+    
+    const getList=()=> {
+        if(getSideList.hasOwnProperty('sidebar')) {
+            let sideList = getSideList.sidebar.map((data, index)=> {
+                return(
+                    <li key={index} className="list" onClick={()=>routeTo(data.route)}>
+                        <i></i>{data.title}
+                    </li>
+                )
+            });
+            return sideList;
+        }
+    }
+
+    const routeTo=(location)=> {
+        props.history.push(location);
+    }
+
     return(
-        <ul>
-            Sidebar
+        <ul className="left-container">
+            {getList()}
         </ul>
     )
 
