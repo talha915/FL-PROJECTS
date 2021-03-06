@@ -27,4 +27,4 @@ function SettingSidebar(props) {
 
 }
 
-export default withRouter(Sidebar);
+export default withRouter(SettingSidebar);
