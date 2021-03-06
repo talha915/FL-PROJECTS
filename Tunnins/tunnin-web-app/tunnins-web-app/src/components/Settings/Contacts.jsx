@@ -40,8 +40,15 @@ function Contacts(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9" >
-                        {getSettingSidebar()}
+                    <Col sm="9">
+                        <Row>
+                            <Col sm="4">
+                                {getSettingSidebar()}
+                            </Col>
+                            <Col sm="8">
+                            
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </div>

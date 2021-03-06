@@ -38,8 +38,6 @@ function Ratings(props) {
         dispatch(ratingReview(ratingReviews));
     }
 
-    console.log("Props: ", props.history.location);
-
     const getRatings = useSelector(state => state.ratingReview);
 
     const getRating=()=> {
