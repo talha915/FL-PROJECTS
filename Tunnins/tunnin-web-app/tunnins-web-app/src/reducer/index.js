@@ -24,6 +24,7 @@ import earningDetails from './earningDetails';
 import payouts from './payouts';
 import userProfile from './userProfile';
 import SettingsSidebar from './settingsSidebar';
+import settings from './settings';
 
 const rootReducer = combineReducers({
     localData,
@@ -48,7 +49,8 @@ const rootReducer = combineReducers({
     earningDetails,
     payouts,
     userProfile,
-    SettingsSidebar
+    SettingsSidebar,
+    settings
 })
 
 export default rootReducer;
