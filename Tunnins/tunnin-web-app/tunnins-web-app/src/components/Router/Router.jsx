@@ -24,6 +24,7 @@ import BankDetails from '../Settings/BankDetails';
 import Terms from '../Settings/Terms';
 import About from '../Settings/About';
 import Privacy from '../Settings/Privacy';
+import Faqs from '../Settings/Faqs';
 
 class Router extends Component {
     render() {
@@ -57,6 +58,7 @@ class Router extends Component {
                     <Route component={Terms} path="/settings-terms-condition" exact/>
                     <Route component={About} path="/settings-about-us" exact/>
                     <Route component={Privacy} path="/settings-privacy-policy" exact/>
+                    <Route component={Faqs} path="/settings-faqs" exact/>
                 </Switch>
             </div>
         )
