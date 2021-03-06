@@ -1050,5 +1050,112 @@
                 }
             ]
         }
+    },
+    "settings": {
+        "sidebar": [
+            {
+                "title": "Contact Admin",
+                "route": "/settings-contact"
+            },
+            {
+                "title": "Bank Details",
+                "route": "/settings-bank-details"
+            },
+            {
+                "title": "Terms & Conditions",
+                "route": "/settings-terms-condition"
+            },
+            {
+                "title": "About Us",
+                "route": "/settings-about-us"
+            },
+            {
+                "title": "Privacy Policy",
+                "route": "/settings-privacy-policy"
+            },
+            {
+                "title": "FAQ’s",
+                "route": "/settings-faqs"
+            }
+        ],
+        "contacts": {
+            "title": "Contact Admin",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        },
+        "bankDetails": {
+            "title": "Bank Details",
+            "bankform": [
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                },
+                {
+                    "title": "Bank Name",
+                    "size": "6",
+                    "type": "text"
+                }
+            ]
+        }
     } 
 }
