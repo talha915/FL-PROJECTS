@@ -19,6 +19,7 @@ import Earnings from '../MyEarnings/Earnings';
 import EarningDetails from '../MyEarnings/EarningDetails';
 import Payouts from '../Payouts/Payouts';
 import UserProfile from '../Profile/UserProfile';
+import Contacts from '../Settings/Contacts';
 
 class Router extends Component {
     render() {
@@ -47,6 +48,7 @@ class Router extends Component {
                     <Route component={Payouts} path="/payouts" exact/>
                     <Route component={UserProfile} path="/user-profile" exact/>
                     <Route component={UserProfile} path="/edit-user-profile" exact/>
+                    <Route component={Contacts} path="/settings-contact" exact/>
                 </Switch>
             </div>
         )
