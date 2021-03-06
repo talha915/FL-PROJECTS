@@ -274,7 +274,7 @@
             {
                 "name": "Settings",
                 "icon": "icon-settings d-block",
-                "route": "/"
+                "route": "/settings-contact"
             }
         ],
         "btns": [
@@ -793,12 +793,12 @@
             {
                 "type": "date",
                 "placeholder": "From DD/MM/YYY",
-                "label":"From"
+                "label": "From"
             },
             {
                 "type": "date",
                 "placeholder": "To DD/MM/YYY",
-                "label":"To"
+                "label": "To"
             }
         ],
         "tableHeader": [
@@ -923,57 +923,56 @@
                     "title": "About",
                     "type": "textarea",
                     "size": "4",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "If you’re offered a seat on a rocket ship, don’t ask what seat! Just get on board & move the sail towards the destination."
                 },
                 {
                     "title": "Category",
                     "type": "text",
                     "size": "2",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "Zumba,Full Body"
                 },
                 {
                     "title": "Business Name",
                     "type": "text",
                     "size": "3",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "Some private Ltd."
                 },
                 {
                     "title": "DOB",
                     "type": "text",
                     "size": "2",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "June 27, 1991"
                 },
                 {
                     "title": "Location",
                     "type": "text",
                     "size": "3",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "Eleven Junks, Street 11, USA"
                 },
                 {
                     "title": "Gender",
                     "type": "text",
                     "size": "2",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "Male"
                 },
-               
                 {
                     "title": "Instagram Profile URL",
                     "type": "text",
                     "size": "3",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "www.instagram.com/drabhinav"
                 },
                 {
                     "title": "Email Address",
                     "type": "mail",
                     "size": "3",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "abcd@egf.com"
                 }
             ],
@@ -982,49 +981,49 @@
                     "title": "Name",
                     "type": "text",
                     "size": "4",
-                    "paddingClass":"pl-0",
+                    "paddingClass": "pl-0",
                     "placeholder": "Stephen Paul"
                 },
                 {
                     "title": "Email Address",
                     "type": "mail",
                     "size": "3",
-                    "paddingClass":"pl-0",
+                    "paddingClass": "pl-0",
                     "placeholder": "abcd@egf.com"
                 },
                 {
                     "title": "Category",
                     "type": "text",
                     "size": "2",
-                    "paddingClass":"pl-0",
+                    "paddingClass": "pl-0",
                     "placeholder": "Zumba,Full Body"
                 },
                 {
                     "title": "Instagram Profile URL",
                     "type": "text",
                     "size": "3",
-                    "paddingClass":"pl-0",
+                    "paddingClass": "pl-0",
                     "placeholder": "www.instagram.com/drabhinav"
                 },
                 {
                     "title": "User Name",
                     "type": "text",
                     "size": "4",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "@stephen97"
                 },
                 {
                     "title": "Gender",
                     "type": "text",
                     "size": "2",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "Male"
                 },
                 {
                     "title": "Location",
                     "type": "text",
                     "size": "3",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "Eleven Junks, Street 11, USA"
                 },
                 {
@@ -1037,15 +1036,14 @@
                     "title": "About",
                     "type": "textarea",
                     "size": "4",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "If you’re offered a seat on a rocket ship, don’t ask what seat! Just get on board & move the sail towards the destination."
                 },
-                
                 {
                     "title": "Business Name",
                     "type": "text",
                     "size": "3",
-                    "paddingClass":"",
+                    "paddingClass": "",
                     "placeholder": "Some private Ltd."
                 }
             ]
@@ -1196,5 +1194,5 @@
                 }
             ]
         }
-    } 
+    }
 }

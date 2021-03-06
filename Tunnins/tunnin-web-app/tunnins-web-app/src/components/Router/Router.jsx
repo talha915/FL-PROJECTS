@@ -22,6 +22,7 @@ import UserProfile from '../Profile/UserProfile';
 import Contacts from '../Settings/Contacts';
 import BankDetails from '../Settings/BankDetails';
 import Terms from '../Settings/Terms';
+import About from '../Settings/About';
 
 class Router extends Component {
     render() {
@@ -53,6 +54,7 @@ class Router extends Component {
                     <Route component={Contacts} path="/settings-contact" exact/>
                     <Route component={BankDetails} path="/settings-bank-details" exact/>
                     <Route component={Terms} path="/settings-terms-condition" exact/>
+                    <Route component={About} path="/settings-about-us" exact/>
                 </Switch>
             </div>
         )
