@@ -37,7 +37,6 @@ function Contacts(props) {
     }
 
     const getSettings = useSelector(state => state.settings);
-    console.log("get settings: ", getSettings)
 
     const getContacts = () => {
         if (getSettings.hasOwnProperty('contact')) {
@@ -50,6 +49,9 @@ function Contacts(props) {
                     <p>
                         {contacts.description}
                     </p>
+                    <Button>
+                        {contacts.btn}
+                    </Button>
                 </div>
             );
         }
