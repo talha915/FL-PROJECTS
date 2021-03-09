@@ -5,7 +5,8 @@ import {
     setting_terms,
     setting_about,
     setting_privacy,
-    setting_faqs
+    setting_faqs,
+    setting_update_faqs
 } from '../constants/constants';
 
 const initialState = {
@@ -46,6 +47,11 @@ export default function (state = initialState, actions) {
                 ...state.settings,
                 faqs: actions.payload
             }
+        case setting_update_faqs: 
+            return {
+                ...state.settings,
+                faqs: actions.payload
+            }    
         default:
             return state;
     }

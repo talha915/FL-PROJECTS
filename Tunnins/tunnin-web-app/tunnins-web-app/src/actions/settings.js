@@ -7,7 +7,8 @@ import {
     setting_terms,
     setting_about,
     setting_privacy,
-    setting_faqs
+    setting_faqs,
+    setting_update_faqs
 } from '../constants/constants';
 
 export const settings=(type)=> {
@@ -45,10 +46,27 @@ export const settings=(type)=> {
                 payload: localData.settings.privacy
             }
         }
-    else {
+    else 
+        if(type === setting_faqs) {
         return {
             type: setting_faqs,
             payload: localData.settings.faqs
+        }
+    }
+    else {
+        let faqs = JSON.parse(JSON.stringify(localData.settings.faqs));
+        let data = faqs.quesList;
+        for(let i=0; i<data.length; i++) {
+            if(data[i].flag === true) {
+                data[i].flag = false;
+            }
+            if(type.title === data[i].title) {
+                data[i].flag = !data[i].flag;
+            }
+        }
+        return {
+            type: setting_update_faqs,
+            payload: faqs
         }
     }                
 }

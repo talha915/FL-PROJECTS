@@ -30,3 +30,5 @@ export const setting_terms = 'SettingsTerms';
 export const setting_about = 'SettingsAbout';
 export const setting_privacy = 'SettingsPrivacy';
 export const setting_faqs = 'SettingsFaqs';
+export const setting_update_faqs = 'SettingsUpdateFaqs';
+

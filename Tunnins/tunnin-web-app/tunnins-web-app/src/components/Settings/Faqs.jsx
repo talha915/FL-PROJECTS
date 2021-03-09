@@ -25,9 +25,9 @@ import Sidebar from '../Sidebar/Sidebar';
 
 function Faqs(props) {
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggle = () => setIsOpen(!isOpen);
+    const toggle=(data, index)=>{
+        dispatch(settings(data));
+    }
 
     const dispatch = useDispatch();
 
@@ -57,13 +57,15 @@ function Faqs(props) {
 
     const getQuestions=()=> {
         if(getSettings.hasOwnProperty('faqs')) {
-            let ques = getSettings.faqs.quesList.map((data, index)=> {
+            let quesLists = getSettings.faqs.quesList;
+            console.log("quesList", getSettings.faqs);
+            let ques = quesLists.map((data, index)=> {
                 return(
-                    <Card key={index} onClick={toggle}>
+                    <Card key={index} onClick={()=>toggle(data, index)}>
                         <CardHeader>
                             {data.title}
                         </CardHeader>
-                        <Collapse isOpen={isOpen}>
+                        <Collapse isOpen={data.flag}>
                             <CardBody>
                                 {data.description}
                             </CardBody>
