@@ -16,7 +16,7 @@ import { withRouter } from 'react-router-dom';
 import { setting_faqs } from '../../constants/constants';
 
 // Styles
-import '../../styles/notifications.scss';
+import '../../styles/settings.scss';
 
 // Components
 import SettingSidebar from './Sidebar';
@@ -46,10 +46,15 @@ function Faqs(props) {
             let faqs = getSettings.faqs;
             return (
                 <div className="faqs">
-                    <h5>
-                        {faqs.title}
-                    </h5>
-                    {getQuestions()}
+                    <div className="settings-container">
+                        <h5 className="settings-heading">
+                            <i className="icon-communications"></i>
+                            {faqs.title}
+                        </h5>
+                        <div className="faq-accordion">
+                            {getQuestions()}
+                        </div>
+                    </div>
                 </div>
             );
         }
@@ -64,6 +69,7 @@ function Faqs(props) {
                     <Card key={index} onClick={()=>toggle(data, index)}>
                         <CardHeader>
                             {data.title}
+                            <i className="icon-chevron-down"></i>
                         </CardHeader>
                         <Collapse isOpen={data.flag}>
                             <CardBody>
@@ -91,12 +97,12 @@ function Faqs(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9">
-                        <Row>
-                            <Col sm="4">
+                    <Col>
+                        <Row className="h-100">
+                            <Col className="p-0 settings-sidebar-wrapper">
                                 {getSettingSidebar()}
                             </Col>
-                            <Col sm="8">
+                            <Col sm="9">
                                 {getFaqs()}
                             </Col>
                         </Row>

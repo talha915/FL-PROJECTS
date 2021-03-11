@@ -1053,27 +1053,33 @@
         "sidebar": [
             {
                 "title": "Contact Admin",
-                "route": "/settings-contact"
+                "route": "/settings-contact",
+                "iconClass": "icon-avatar"
             },
             {
                 "title": "Bank Details",
-                "route": "/settings-bank-details"
+                "route": "/settings-bank-details",
+                "iconClass": "icon-wallet-1"
             },
             {
                 "title": "Terms & Conditions",
-                "route": "/settings-terms-condition"
+                "route": "/settings-terms-condition",
+                "iconClass": "icon-portable-document-format"
             },
             {
                 "title": "About Us",
-                "route": "/settings-about-us"
+                "route": "/settings-about-us",
+                "iconClass": "icon-info"
             },
             {
                 "title": "Privacy Policy",
-                "route": "/settings-privacy-policy"
+                "route": "/settings-privacy-policy",
+                "iconClass": "icon-shield"
             },
             {
                 "title": "FAQ’s",
-                "route": "/settings-faqs"
+                "route": "/settings-faqs",
+                "iconClass": "icon-communications"
             }
         ],
         "contacts": {

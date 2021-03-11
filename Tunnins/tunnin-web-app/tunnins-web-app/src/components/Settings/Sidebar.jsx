@@ -37,7 +37,7 @@ function SettingSidebar(props) {
             let sideList = getSideList.sidebar.map((data, index)=> {
                 return(
                     <li key={index} className="list" onClick={()=>routeTo(data.route)}>
-                        <i></i>{data.title}
+                        <i className={data.iconClass}></i>{data.title}
                     </li>
                 )
             });
@@ -50,9 +50,11 @@ function SettingSidebar(props) {
     }
 
     return(
-        <ul className="left-container">
-            {getList()}
-        </ul>
+        <div className="settings-left-container">
+            <ul>
+                {getList()}
+            </ul>
+        </div>
     )
 
 }

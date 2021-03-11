@@ -16,7 +16,7 @@ import { withRouter } from 'react-router-dom';
 import { setting_about } from '../../constants/constants';
 
 // Styles
-import '../../styles/notifications.scss';
+import '../../styles/settings.scss';
 
 // Components
 import SettingSidebar from './Sidebar';
@@ -42,12 +42,15 @@ function About(props) {
             let about = getSettings.about;
             return (
                 <div className="about">
-                    <h5>
-                        {about.title}
-                    </h5>
-                    <p>
-                        {about.description}
-                    </p>
+                    <div className="settings-container">
+                        <h5 className="settings-heading">
+                            <i className="icon-info"></i>
+                            {about.title}
+                        </h5>
+                        <p>
+                            {about.description}
+                        </p>
+                    </div>
                 </div>
             );
         }
@@ -67,12 +70,12 @@ function About(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9">
-                        <Row>
-                            <Col sm="4">
+                    <Col>
+                        <Row className="h-100">
+                            <Col className="p-0 settings-sidebar-wrapper">
                                 {getSettingSidebar()}
                             </Col>
-                            <Col sm="8">
+                            <Col sm="9">
                                 {getAbout()}
                             </Col>
                         </Row>

@@ -17,7 +17,7 @@ import { withRouter } from 'react-router-dom';
 import { setting_bank } from '../../constants/constants';
 
 // Styles
-import '../../styles/notifications.scss';
+import '../../styles/settings.scss';
 
 // Components
 import SettingSidebar from './Sidebar';
@@ -43,14 +43,33 @@ function BankDetails(props) {
             let bankDetail = getSettings.bank;
             return (
                 <div className="banks">
-                    <h5>
-                        {bankDetail.title}
-                    </h5>
-                    <Form>
-                        <Row>
-                            {getBankForm()}
-                        </Row>
-                    </Form>
+                    <div className="settings-container">
+                        <h5 className="settings-heading">
+                            <i className="icon-info"></i>
+                            {bankDetail.title}
+                        </h5>
+                        <Form className="tunnin-form">
+                            <Row>
+                                {getBankForm()}
+                            </Row>
+                            <div>
+                            <label> Verification Images</label>
+                            <div className="uploads-btn-wrapper">
+                                <span className="uploads-btn">
+                                    <i className="icon-cloud"></i>
+                                </span>
+                                <span className="uploads-btn">
+                                    <i className="icon-cloud"></i>
+                                </span>
+                            </div>
+                            </div>
+                        </Form>
+                        <div className="text-center">
+                            <Button color="primary" className="action-btn">
+                                Save
+                            </Button>
+                        </div>
+                    </div>
                 </div>
             );
         }
@@ -61,10 +80,10 @@ function BankDetails(props) {
             let form = getSettings.bank.bankform.map((data, index)=> {
                 return (
                     <Col sm="6" key={index}>
-                        <FormGroup className="text-center">
-                        <Label className="formheading"><p>{data.title}</p></Label>
-                        <Input type={data.type} size={data.size} />
-                    </FormGroup>
+                        <FormGroup>
+                            <Label className="formheading">{data.title}</Label>
+                            <Input type={data.type} size={data.size} />
+                        </FormGroup>
                     </Col>
                 )
             });
@@ -86,12 +105,12 @@ function BankDetails(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9">
-                        <Row>
-                            <Col sm="4">
+                    <Col>
+                        <Row className="h-100">
+                            <Col className="p-0 settings-sidebar-wrapper">
                                 {getSettingSidebar()}
                             </Col>
-                            <Col sm="8">
+                            <Col sm="9">
                                 {getBankDetails()}
                             </Col>
                         </Row>

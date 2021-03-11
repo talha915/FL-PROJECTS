@@ -16,7 +16,7 @@ import { withRouter } from 'react-router-dom';
 import { setting_contact } from '../../constants/constants';
 
 // Styles
-import '../../styles/notifications.scss';
+import '../../styles/settings.scss';
 
 // Components
 import SettingSidebar from './Sidebar';
@@ -42,15 +42,18 @@ function Contacts(props) {
             let contacts = getSettings.contact;
             return (
                 <div className="contacts">
-                    <h5>
-                        {contacts.title}
-                    </h5>
-                    <p>
-                        {contacts.description}
-                    </p>
-                    <Button>
-                        {contacts.btn}
-                    </Button>
+                   <div className="settings-container">
+                        <h5 className="settings-heading">
+                            <i className="icon-avatar"></i>
+                            {contacts.title}
+                        </h5>
+                        <textarea className="contact-admin-textarea" name="contact" id="contactAdmin" cols="30" rows="10" placeholder={contacts.description}></textarea>
+                        <div className="text-center">
+                            <Button color="primary" className="action-btn">
+                                {contacts.btn}
+                            </Button>
+                        </div>
+                   </div>
                 </div>
             );
         }
@@ -70,12 +73,12 @@ function Contacts(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9">
-                        <Row>
-                            <Col sm="4">
+                    <Col>
+                        <Row className="h-100">
+                            <Col className="p-0 settings-sidebar-wrapper">
                                 {getSettingSidebar()}
                             </Col>
-                            <Col sm="8">
+                            <Col sm="9">
                                 {getContacts()}
                             </Col>
                         </Row>

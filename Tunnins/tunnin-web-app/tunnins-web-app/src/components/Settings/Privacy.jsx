@@ -16,7 +16,7 @@ import { withRouter } from 'react-router-dom';
 import { setting_privacy } from '../../constants/constants';
 
 // Styles
-import '../../styles/notifications.scss';
+import '../../styles/settings.scss';
 
 // Components
 import SettingSidebar from './Sidebar';
@@ -42,12 +42,15 @@ function Privacy(props) {
             let privacy = getSettings.privacy;
             return (
                 <div className="privacy">
-                    <h5>
-                        {privacy.title}
-                    </h5>
-                    <p>
-                        {privacy.description}
-                    </p>
+                    <div className="settings-container">
+                        <h5 className="settings-heading">
+                        <i className="icon-shield"></i>
+                            {privacy.title}
+                        </h5>
+                        <p>
+                            {privacy.description}
+                        </p>
+                    </div>
                 </div>
             );
         }
@@ -67,12 +70,12 @@ function Privacy(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9">
-                        <Row>
-                            <Col sm="4">
+                    <Col>
+                        <Row className="h-100">
+                            <Col className="p-0 settings-sidebar-wrapper">
                                 {getSettingSidebar()}
                             </Col>
-                            <Col sm="8">
+                            <Col sm="9">
                                 {getPrivacy()}
                             </Col>
                         </Row>

@@ -16,7 +16,7 @@ import { withRouter } from 'react-router-dom';
 import { setting_terms } from '../../constants/constants';
 
 // Styles
-import '../../styles/notifications.scss';
+import '../../styles/settings.scss';
 
 // Components
 import SettingSidebar from './Sidebar';
@@ -42,15 +42,18 @@ function Terms(props) {
             let settingTerms = getSettings.terms;
             return (
                 <div className="terms">
-                    <h5>
-                        {settingTerms.title}
-                    </h5>
-                    <p>
-                        {settingTerms.description}
-                    </p>
-                    <p>
-                        {settingTerms.descriptionFooter}
-                    </p>
+                    <div className="settings-container">
+                        <h5 className="settings-heading">
+                            <i className="icon-portable-document-format"></i>
+                            {settingTerms.title}
+                        </h5>
+                        <p>
+                            {settingTerms.description}
+                        </p>
+                        <p>
+                            {settingTerms.descriptionFooter}
+                        </p>
+                    </div>
                 </div>
             );
         }
@@ -70,12 +73,12 @@ function Terms(props) {
                     <Col className="left-container">
                         <Sidebar />
                     </Col>
-                    <Col sm="9">
-                        <Row>
-                            <Col sm="4">
+                    <Col>
+                        <Row className="h-100">
+                            <Col className="p-0 settings-sidebar-wrapper">
                                 {getSettingSidebar()}
                             </Col>
-                            <Col sm="8">
+                            <Col sm="9">
                                 {getTerms()}
                             </Col>
                         </Row>

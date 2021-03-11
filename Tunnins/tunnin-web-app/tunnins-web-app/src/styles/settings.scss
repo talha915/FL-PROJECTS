@@ -1,0 +1,98 @@
+@import 'variables';
+.settings-container {
+    padding: 8vh 30px 5vh;
+
+    .settings-heading {
+        font-size: 2.48vw;
+        color: $white;
+        margin-bottom: 5vh;
+        i {
+            padding-right: 10px;
+            &::before {
+                color: $white;
+            }
+        }
+    }
+    .contact-admin-textarea {
+        width: 100%;
+        min-height: 400px;
+        background: $bright-gray;
+        border: 0;
+        outline: 0;
+        box-shadow: none;
+        padding: 30px 40px 0 30px;
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1vw;
+        }
+    }
+    p {
+        color: $white;
+        font-size: 1.23vw;
+        font-weight: 300;
+        line-height: 58px;
+        margin-bottom: 4vh;
+    }
+    .action-btn {
+        margin-top: 8vh;
+    }
+    label {
+        font-weight: 300;
+        font-size: 20px;
+    }
+    .form-control {
+        padding-left: 0;
+        border: 0;
+        padding-bottom: 15px;
+        border-bottom:1px solid rgba(255, 255, 255, 0.3); ;
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 18px;
+            font-weight: 300;
+        }
+    }
+    .uploads-btn-wrapper {
+        display: flex;
+        .uploads-btn {
+            height: 11.1vh;
+            width: 12.2vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $secondary;
+            margin-right: 30px;
+            i {
+                font-size: 30px;
+            }
+        }
+    }
+    .faq-accordion {
+
+        .card {
+            border: 0;
+            margin-bottom: 20px;
+        }
+        .card-header,
+        .card-body {
+            border-radius: 0;
+            background-color: $bright-gray;
+            color: $white;
+            border: 0;
+            font-size: 1vw;
+        }
+        .card-header {
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            i{
+                font-size: 10px;
+                &::before {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

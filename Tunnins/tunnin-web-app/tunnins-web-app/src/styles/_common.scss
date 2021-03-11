@@ -318,3 +318,39 @@ h6 {
         }
     }
 }
+.settings-sidebar-wrapper {
+    max-width: 16.4vw;
+}
+.settings-left-container {
+    background-color: $martinique-2;
+    height: 100%;
+    ul {
+        padding: 0;
+        padding-top: 45px;
+        list-style: none;
+    }
+    li {
+        font-size: 0.9vw;
+        line-height: 24px;
+        color: $white;
+        padding: 28px 15px;
+        display: flex;
+        align-items: center;
+        
+        i{
+            font-size: 16px;
+            padding-right: 5px;
+            &::before {
+                color: $white;
+            }
+        }
+        &:hover {
+            background-color: $secondary;
+            i{
+                &::before {
+                    color: $black;
+                }
+            }
+        }
+    }
+}
