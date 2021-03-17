@@ -7,8 +7,10 @@ export const ListNotification=(type)=> {
     if(type == "past") {
         let data = JSON.parse(JSON.stringify(localData.notification));
         let cards = data.cards;
+        console.log("DATA", data);
         for(let i=0; i<cards.length; i++) {
             cards[i].golive = cards[i].past;
+            cards[i].routeTo = "/session-details-past";
         }
         return {
             type: listed_notification,

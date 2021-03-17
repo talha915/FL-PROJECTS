@@ -68,13 +68,17 @@ function Notification(props) {
                                     <CardText>10 users booked</CardText>
                                 </div>
                             </div>
-                            <Button>{data.golive}</Button>
+                            <Button onClick={()=>{cardRoute(data, index)}}>{data.golive}</Button>
                         </Card>
                     </div>
                 )
             })
             return cards;
         }
+    }
+
+    const cardRoute=(data, index)=> {
+        props.history.push(data.routeTo);
     }
 
     const getBtns = () => {
