@@ -281,13 +281,13 @@
             {
                 "title": "Upcoming Session",
                 "sessionType": true,
-                "route": ""
+                "route": "upcoming"
             },
             {
                 "title": "Past Session",
                 "sessionType": true,
-                "route": "/session-details",
-                "routeTo": "/session-details-past"
+                "route": "past",            
+                "routeTo": "/session-details-past"             
             },
             {
                 "title": "+ Add New Session",
@@ -301,28 +301,32 @@
                 "date": "June 12, 2020",
                 "time": "5:00 AM - 6:00 AM",
                 "booked": "10 Users Booked",
-                "golive": "Go Live"
+                "golive": "Go Live",
+                "past": "View Details"
             },
             {
                 "heading": "Rolletser Fux",
                 "date": "June 12, 2020",
                 "time": "5:00 AM - 6:00 AM",
                 "booked": "10 Users Booked",
-                "golive": "Go Live"
+                "golive": "Go Live",
+                "past": "View Details"
             },
             {
                 "heading": "Rolletser Fux",
                 "date": "June 12, 2020",
                 "time": "5:00 AM - 6:00 AM",
                 "booked": "10 Users Booked",
-                "golive": "Go Live"
+                "golive": "Go Live",
+                "past": "View Details"
             },
             {
                 "heading": "Rolletser Fux",
                 "date": "June 12, 2020",
                 "time": "5:00 AM - 6:00 AM",
                 "booked": "10 Users Booked",
-                "golive": "Go Live"
+                "golive": "Go Live",
+                "past": "View Details"
             }
         ]
     },

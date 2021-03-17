@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input, Row, Col, Card, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle } from 'reactstrap';
+import {
+    Button, Form, FormGroup, Label, Input, Row, Col, Card, CardText, CardBody, CardLink,
+    CardTitle, CardSubtitle
+} from 'reactstrap';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -30,29 +32,29 @@ function Notification(props) {
         dispatchNotification();
     }, []);
 
-    const dispatchNotification=()=> {
+    const dispatchNotification = () => {
         dispatch(ListNotification(listed_notification));
     }
 
-    const getSidebar=()=> {
-        if(getNotification.hasOwnProperty('data')) {
+    const getSidebar = () => {
+        if (getNotification.hasOwnProperty('data')) {
             let lists = getNotification.data.sideList;
-            let sidebar = lists.map((data, index)=> {
-                return(
+            let sidebar = lists.map((data, index) => {
+                return (
                     <li key={index} className="list">
                         {data.name}
                     </li>
                 )
             })
             return sidebar;
-        }       
+        }
     }
 
-    const getCards=()=> {
-        if(getNotification.hasOwnProperty('data')) {
+    const getCards = () => {
+        if (getNotification.hasOwnProperty('data')) {
             let lists = getNotification.data.cards;
-            let cards = lists.map((data, index)=> {
-                return(
+            let cards = lists.map((data, index) => {
+                return (
                     <div key={index} className="session-cards">
                         <Card body className="card-style">
                             <div className="card-content">
@@ -75,13 +77,13 @@ function Notification(props) {
         }
     }
 
-    const getBtns =()=> {
-        if(getNotification.hasOwnProperty('data')) {
+    const getBtns = () => {
+        if (getNotification.hasOwnProperty('data')) {
             let btnList = getNotification.data.btns;
-            let btns = btnList.map((data, index)=> {
-                return(
+            let btns = btnList.map((data, index) => {
+                return (
                     <div key={index} className="session-btns">
-                        <Button color="outline-secondary" className={data.sessionType ? "true-btn": "false-btn"} onClick={()=>routeTo(data, index)}>
+                        <Button color="outline-secondary" className={data.sessionType ? "true-btn" : "false-btn"} onClick={() => routeTo(data, index)}>
                             {data.title}
                         </Button>
                     </div>
@@ -91,27 +93,17 @@ function Notification(props) {
         }
     }
 
-    const routeTo=(data, index)=> {
+    const routeTo = (data, index) => {
         console.log("Data: ", data);
-        if(data.sessionType) {
-            console.log("Don't route");
+        if (data.sessionType) {
+            dispatch(ListNotification(data.route));
         }
         else {
-            console.log("route");
             props.history.push(data.route);
         }
-
-        // if(index == 1) {
-        //     let location = data.routeTo;
-        //     props.history.push(location);
-        // }
-        // else {
-        //     let location = data.route;
-        //     props.history.push(location);
-        // }
     }
 
-    return(
+    return (
         <div className="notifications">
             <Header />
             <div className="container-fluid">
@@ -125,7 +117,7 @@ function Notification(props) {
                         </div>
                         <div className="session-cards-wrapper">
                             {getCards()}
-                        </div>      
+                        </div>
                     </Col>
                 </Row>
             </div>
