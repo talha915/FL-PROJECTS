@@ -32,3 +32,7 @@ export const setting_privacy = 'SettingsPrivacy';
 export const setting_faqs = 'SettingsFaqs';
 export const setting_update_faqs = 'SettingsUpdateFaqs';
 
+
+
+// APIS
+export const categories_list = "categories/list";

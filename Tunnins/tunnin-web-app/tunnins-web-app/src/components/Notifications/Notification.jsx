@@ -92,14 +92,23 @@ function Notification(props) {
     }
 
     const routeTo=(data, index)=> {
-        if(index == 1) {
-            let location = data.routeTo;
-            props.history.push(location);
+        console.log("Data: ", data);
+        if(data.sessionType) {
+            console.log("Don't route");
         }
         else {
-            let location = data.route;
-            props.history.push(location);
+            console.log("route");
+            props.history.push(data.route);
         }
+
+        // if(index == 1) {
+        //     let location = data.routeTo;
+        //     props.history.push(location);
+        // }
+        // else {
+        //     let location = data.route;
+        //     props.history.push(location);
+        // }
     }
 
     return(
