@@ -6,7 +6,7 @@ import Checkbox from "react-custom-checkbox";
 
 import logo from '../../images/tunnin-logo.png';
 // Constants
-import { signup_profile } from '../../constants/constants';
+import { signup_profile, categories_list } from '../../constants/constants';
 
 // Style
 import '../../styles/signupprofile.scss';
@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { signUpProfile } from '../../actions/signupProfile';
+import { fetchProfileCategories } from '../../actions/signUpProfileCategories';
 
 // Router
 import { withRouter } from 'react-router-dom';
@@ -24,14 +25,22 @@ function Profile(props) {
 
     useEffect(() => {
         dispatchSignUpProfile();
+        dispatchCategories();
     }, [])
 
     const dispatchSignUpProfile = () => {
         dispatch(signUpProfile(signup_profile));
     }
 
+    const dispatchCategories=()=> {
+        dispatch(fetchProfileCategories(categories_list));
+    }
+
     const dispatch = useDispatch();
     const profile = useSelector(state => state.signupProfile);
+    const categories = useSelector(state => state.signupCategories);
+
+    console.log("Categories: ", categories);
 
     const getProfile=()=> {
         if(profile.hasOwnProperty('data')) {
@@ -49,7 +58,7 @@ function Profile(props) {
                         <Col className="offset-md-7" xs="12" sm="5" md="5" lg="5">
                             <Label className="formheading"><p>{profile.data.categories}</p></Label>
                             <div className="checkbox-wrapper">
-                            {formChecks(profile.data)}   
+                                {formChecks(categories.data)}   
                             </div>
                         </Col>
                         <Col className="d-flex justify-content-center" xs="12">
@@ -58,7 +67,6 @@ function Profile(props) {
                         </Button>
                         </Col>
                     </Row>
-                    
                 </div>
             )
         }
@@ -69,24 +77,24 @@ function Profile(props) {
     }
 
     const formChecks=(data)=> {
-        let checks = data.catFields.map((item, index)=> {
-            return (
-                <div  className="checkboxes" key={index}>
+        let checks = data.map((items, index)=> {
+            return(
+                <div className="checkboxes" key={index}>
                     <Checkbox
-                        value={item.value}
-                        key={index} 
+                        value={items._id}
+                        key={items._id}
                         name="subscription-checkbox"
                         checked={false}
                         borderColor="#fff"
                         borderWidth={3}
                         borderRadius={3}
-                        style={{cursor: "pointer",}}
+                        style={{ cursor: "pointer" }}
                         labelStyle={{ marginLeft: 5, userSelect: "none", color: "#fff" }}
-                        label={item.name} 
+                        label={items.categoryName}
                     />
                 </div>
             )
-        })
+        });
         return checks;
     }
 

@@ -7,6 +7,7 @@ import signup from './signup';
 import signedup from './signedup';
 import verify from './verify';
 import signupProfile from './signUpProfle';
+import signupCategories from './signupCategories';
 import profileForm from './profileForm';
 import profileFace from './profileFace';
 import signupBank from './signupBank';
@@ -34,6 +35,7 @@ const rootReducer = combineReducers({
     signedup,
     verify,
     signupProfile,
+    signupCategories,
     profileForm,
     profileFace,
     signupBank,

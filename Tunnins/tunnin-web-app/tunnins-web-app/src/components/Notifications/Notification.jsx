@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
-    Button, Form, FormGroup, Label, Input, Row, Col, Card, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle
+    Button, Row, Col, Card, CardText, CardTitle
 } from 'reactstrap';
 
 // Redux
@@ -34,20 +33,6 @@ function Notification(props) {
 
     const dispatchNotification = () => {
         dispatch(ListNotification(listed_notification));
-    }
-
-    const getSidebar = () => {
-        if (getNotification.hasOwnProperty('data')) {
-            let lists = getNotification.data.sideList;
-            let sidebar = lists.map((data, index) => {
-                return (
-                    <li key={index} className="list">
-                        {data.name}
-                    </li>
-                )
-            })
-            return sidebar;
-        }
     }
 
     const getCards = () => {
@@ -98,7 +83,6 @@ function Notification(props) {
     }
 
     const routeTo = (data, index) => {
-        console.log("Data: ", data);
         if (data.sessionType) {
             dispatch(ListNotification(data.route));
         }
