@@ -1,13 +1,21 @@
 import localData from '../Data/Data.json';
 
 // Constants
-import { signup_profile } from '../constants/constants';
+import { signup_profile, signedup_profile } from '../constants/constants';
 
 
-export const signUpProfile=()=> {
-    return {
-        type: signup_profile,
-        payload: localData.profile,
+export const signUpProfile=(typeData, data)=> {
+    if(typeData === signup_profile) {
+        return {
+            type: signup_profile,
+            payload: localData.profile,
+        }
+    }
+    else if(typeData === signedup_profile) {
+        return {
+            type: signedup_profile,
+            payload: data
+        }
     }
 }
 

@@ -6,7 +6,7 @@ import Checkbox from "react-custom-checkbox";
 
 import logo from '../../images/tunnin-logo.png';
 // Constants
-import { signup_profile, categories_list } from '../../constants/constants';
+import { signup_profile, categories_list, signedup_profile } from '../../constants/constants';
 
 // Style
 import '../../styles/signupprofile.scss';
@@ -29,7 +29,7 @@ function Profile(props) {
     }, [])
 
     const dispatchSignUpProfile = () => {
-        dispatch(signUpProfile(signup_profile));
+        dispatch(signUpProfile(signup_profile, null));
     }
 
     const dispatchCategories = () => {
@@ -71,7 +71,7 @@ function Profile(props) {
     }
 
     const routeTo = (data) => {
-        console.log("Form", form);
+        dispatch(signUpProfile(signedup_profile, form));
         props.history.push(data);
     }
 

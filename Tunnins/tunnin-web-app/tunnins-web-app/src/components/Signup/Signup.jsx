@@ -7,11 +7,11 @@ import Checkbox from "react-custom-checkbox";
 import logo from '../../images/tunnin-logo.png';
 
 // Constants
-import { sign_up } from '../../constants/constants';
-import signed_up from '../../constants/constants';
+import { sign_up, signed_up } from '../../constants/constants';
 
 // Actions
 import { Signup } from '../../actions/Signup';
+import { SignedUp } from '../../actions/signedUp';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -87,12 +87,8 @@ function SignUp(props) {
 
     const formValue=(data)=> {
         setForm(form);
-        if(Object.keys(form).length > 0) {
-            props.history.push({
-                pathname: data.route,
-                routeData: form
-            });
-        }
+        dispatch(SignedUp(signed_up, form));
+        props.history.push(data.route);    
     }
     
     const formDetail = (data) => {

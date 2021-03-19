@@ -1,10 +1,13 @@
 // Constants
-import { signup_profile } from '../constants/constants';
+import { signup_profile, signedup_profile } from '../constants/constants';
 
 const initialState = {
     signUpProfile: {
 
-    } 
+    },
+    signedUpProfile: {
+
+    }
 }
 
 export default function(state=initialState, actions) {
@@ -14,6 +17,11 @@ export default function(state=initialState, actions) {
                 ...state.signUpProfile,
                 data: actions.payload
             }
+        case signedup_profile: 
+            return {
+                ...state,
+                signedUpProfile: actions.payload
+            }    
         default:
             return state;    
     }
