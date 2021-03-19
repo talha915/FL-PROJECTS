@@ -123,31 +123,37 @@
             {
                 "labelName": "Username",
                 "type": "text",
+                "key": "username",
                 "placeholder": "We recommend using the same username as your Instagram"
             },
             {
                 "labelName": "About",
                 "type": "textarea",
+                "key": "about",
                 "placeholder": "Describe your fitness practice here (500 characters max)"
             },
             {
                 "labelName": "Business Name",
                 "type": "text",
+                "key": "business_name",
                 "placeholder": "Enter your business name here"
             },
             {
                 "labelName": "Location",
                 "type": "text",
+                "key": "location",
                 "placeholder": "Where are you located?"
             },
             {
                 "labelName": "Instagram Profile URL",
                 "type": "text",
+                "key": "insta_url",
                 "placeholder": "www.instagram.com/yourprofile"
             },
             {
                 "labelName": "Phone Number",
                 "type": "text",
+                "key": "phone_num",
                 "placeholder": "Area Code + Telephone Number"
             }
         ],
