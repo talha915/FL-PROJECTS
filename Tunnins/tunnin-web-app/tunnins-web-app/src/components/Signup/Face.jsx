@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { profileFace } from '../../actions/profileFace';
+import { uploadFile } from '../../actions/uploadedFile';
 
 // Router
 import { withRouter } from 'react-router-dom';
@@ -60,6 +61,7 @@ function Face(props) {
     }
 
     const routeTo=(data)=> {
+        dispatch(uploadFile(uploaded_image));
         props.history.push(data);
     }
 

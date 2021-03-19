@@ -26,6 +26,7 @@ import payouts from './payouts';
 import userProfile from './userProfile';
 import SettingsSidebar from './settingsSidebar';
 import settings from './settings';
+import uploadFile from './uploadFile';
 
 const rootReducer = combineReducers({
     localData,
@@ -52,7 +53,8 @@ const rootReducer = combineReducers({
     payouts,
     userProfile,
     SettingsSidebar,
-    settings
+    settings,
+    uploadFile
 })
 
 export default rootReducer;
