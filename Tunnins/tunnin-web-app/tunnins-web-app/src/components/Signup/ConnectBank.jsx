@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-import { Row, Col, Label, Input, Button, FormGroup } from 'reactstrap';
+import { Label, Input, Button, FormGroup } from 'reactstrap';
 
 import logo from '../../images/tunnin-logo.png';
 
 // Constants
-import { connect_bank } from '../../constants/constants';
+import { connect_bank, account_number } from '../../constants/constants';
 
 // Style
 import '../../styles/connectBank.scss';
@@ -28,7 +28,7 @@ function ConnectBank(props) {
     }, [])
 
     const dispatchConnectBank=()=> {
-        dispatch(connectBank(connect_bank));
+        dispatch(connectBank(connect_bank, null));
     }
 
     const connectbank = useSelector(state => state.connectBank);
@@ -48,12 +48,11 @@ function ConnectBank(props) {
                     <h6 className="subheading">
                         {connectbank.data.subHeading}
                     </h6>
-                    <p >
-                        
+                    <p>                        
                     </p>
                     <FormGroup className="connect-input-wrapper">
                         <Label className="label" for="connect-bank">{connectbank.data.label}</Label>
-                        <Input id="connect-bank" type="text" />
+                        <Input id="connect-bank" type="text" onChange={(event)=>selectedValue(account_number, event.target.value)} />
                     </FormGroup>
                     <div className="next-btn-wrapper">
                         <Button color="primary" size="lg" onClick={()=>routeTo(connectbank.data.route)}>
@@ -63,6 +62,10 @@ function ConnectBank(props) {
                 </div>
             )
         }
+    }
+
+    const selectedValue=(field, data)=> {
+        dispatch(connectBank(field, data));
     }
 
     return(

@@ -33,6 +33,7 @@ export const setting_faqs = 'SettingsFaqs';
 export const setting_update_faqs = 'SettingsUpdateFaqs';
 export const uploaded_file = 'uploadFile';
 export const signed_bank = 'signedUpBank';
+export const account_number = 'accountNumber';
 
 
 
