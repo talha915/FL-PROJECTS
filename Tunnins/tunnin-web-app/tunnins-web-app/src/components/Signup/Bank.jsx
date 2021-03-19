@@ -5,7 +5,7 @@ import { Row, Col, Label, Input, Button } from 'reactstrap';
 import logo from '../../images/tunnin-logo.png';
 
 // Constants
-import { signup_bank } from '../../constants/constants';
+import { signup_bank, signed_bank } from '../../constants/constants';
 
 // Style
 import '../../styles/signupBank.scss';
@@ -28,7 +28,7 @@ function Bank(props) {
     }, [])
 
     const dispatchSignupBank=()=> {
-        dispatch(signUpBank(signup_bank));
+        dispatch(signUpBank(signup_bank, null));
     }
 
     const signupbank = useSelector(state => state.signupBank);
@@ -63,11 +63,14 @@ function Bank(props) {
     }
 
     const routeTo=(data)=> {
+        dispatch(signUpBank(signed_bank, country));
         props.history.push(data);
     }
 
+    let country;
+
     const selectedValue=(event)=> {
-        console.log("Select Value: ", event.target.value)
+        country = event.target.value;
     }
 
     const getSelection=(data)=> {
