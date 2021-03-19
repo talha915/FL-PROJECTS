@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { Row, Col, Label, Input, Button, FormGroup } from 'reactstrap';
 
@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { signUpProfile } from '../../actions/signupProfile';
-import { fetchProfileCategories } from '../../actions/signUpProfileCategories';
+import { getFetch } from '../../actions/getFetch';
 
 // Router
 import { withRouter } from 'react-router-dom';
@@ -33,7 +33,7 @@ function Profile(props) {
     }
 
     const dispatchCategories = () => {
-        dispatch(fetchProfileCategories(categories_list));
+        dispatch(getFetch(categories_list));
     }
 
     const dispatch = useDispatch();
@@ -105,11 +105,12 @@ function Profile(props) {
     const handleChangeCheck=(event, value, name)=> {
         if(event) {      
             selected_categories.push(value);
-            form['trainer_cat'] = selected_categories;
         }
         else {
             selected_categories.pop(value);
         }
+        form['trainer_cat'] = selected_categories;
+        console.log("Form", form);
     }
 
     const formList = (data) => {

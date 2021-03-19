@@ -32,7 +32,6 @@ function ConnectBank(props) {
     }
 
     const connectbank = useSelector(state => state.connectBank);
-    console.log("Connect ank: ", connectbank);
 
     const routeTo=(location)=>{
         props.history.push(location);

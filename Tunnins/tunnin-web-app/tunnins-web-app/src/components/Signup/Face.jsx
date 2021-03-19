@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-import { Row, Col, Label, Input, Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 import logo from '../../images/tunnin-logo.png';
 
@@ -20,7 +20,7 @@ import { profileFace } from '../../actions/profileFace';
 import { withRouter } from 'react-router-dom';
 
 function Face(props) {
-
+   
     const dispatch = useDispatch();
     const signUpFace = useSelector(state => state.profileFace);
 
@@ -67,12 +67,23 @@ function Face(props) {
         let uploads = data.imageList.map((item, index)=> {
             return(
                 <div className="uploads" key={index}>
-                    <span className="upload-icon-wrapper"><i className="icon-cloud"></i></span>
-                    <p>{item.label}</p>
+                    <label htmlFor="fileUpload">
+                        <span className="upload-icon-wrapper" >
+                            <i className="icon-cloud"></i>
+                        </span>
+                        <p>{item.label}</p>
+                    </label>
+                    <input hidden id="fileUpload" type="file" onChange={(e)=>uploadedFile(e)} />
                 </div>
             )
         });
         return uploads;
+    }
+
+    let uploaded_image;
+
+    const uploadedFile=(event)=> {
+        uploaded_image = event.target.files[0];
     }
 
     return (
