@@ -27,6 +27,14 @@ function Notification(props) {
     const dispatch = useDispatch();
     const getNotification = useSelector(state => state.notification);
 
+    const userInfo = useSelector(state => state.postFetch);
+
+    let userType;
+
+    if(userInfo.hasOwnProperty('userLogged')) {
+        userType = userInfo.userLogged.userType;
+    }
+
     useEffect(() => {
         dispatchNotification();
     }, []);
@@ -96,9 +104,12 @@ function Notification(props) {
             <Header />
             <div className="container-fluid">
                 <Row>
-                    <Col className="left-container">
-                        <Sidebar />
-                    </Col>
+                    {userType === "user" ?
+                        '' :
+                        <Col className="left-container">
+                            <Sidebar />
+                        </Col>
+                    }
                     <Col sm="9" className="custom-offset">
                         <div className="session-btn-wrapper">
                             {getBtns()}

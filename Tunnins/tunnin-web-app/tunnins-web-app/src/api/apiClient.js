@@ -11,4 +11,6 @@ const apiClient = create({
     }
 });
 
+console.log("API: ", apiClient);
+
 export default apiClient;

@@ -35,9 +35,11 @@ export const uploaded_file = 'uploadFile';
 export const signed_bank = 'signedUpBank';
 export const account_number = 'accountNumber';
 export const signedup_profile = 'signedupProfile';
-
+export const user_logged_in = 'userLoggedIn';
+export const notification_route = '/notification';
 
 
 // APIS
 export const categories_list = "categories/list";
 export const create_user = "users";
+export const get_auth = "users/auth";

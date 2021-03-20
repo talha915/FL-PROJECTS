@@ -8,6 +8,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { updateModal } from '../../actions/updateModal';
+import { postFetch } from '../../actions/postFetch';
+
+// Constants
+import { get_auth, notification_route } from '../../constants/constants';
 
 // Router
 import { withRouter } from 'react-router-dom';
@@ -36,7 +40,7 @@ function LoginForm(props) {
     const dispatch = useDispatch();
 
     const toggle = () => {
-        //setModal(!modal);
+        setModal(!modal);
         dispatch(updateModal('forgot'));
     }
 
@@ -68,12 +72,12 @@ function LoginForm(props) {
                     <Form >
                         <FormGroup className="custom-input-wrapper">
                             <Label for="exampleEmail">{loginForm.email}</Label>
-                            <Input type="email" name="email" id="exampleEmail" placeholder="dodgeui2020@gmail.com" />
+                            <Input type="email" name="email" id="exampleEmail" placeholder="dodgeui2020@gmail.com" onChange={(e)=>handleChange('username', e.target.value)}/>
                             <span className="input-icons"><i className="icon-mail"></i></span>
                         </FormGroup>
                         <FormGroup className="custom-input-wrapper">
                             <Label for="examplePassword">{loginForm.password}</Label>
-                            <Input type="password" name="password" id="examplePassword" placeholder="***************" />
+                            <Input type="password" name="password" id="examplePassword" placeholder="***************" onChange={(e)=>handleChange('password', e.target.value)} />
                             <span className="input-icons"><i className="icon-lock-unlock"></i></span>
                         </FormGroup>
                         <FormGroup className="d-flex justify-content-between align-items-center mb-5" check >
@@ -85,7 +89,7 @@ function LoginForm(props) {
                             </Label>
                         </FormGroup>
                         <FormGroup className="text-center">
-                            <Button color="primary" size="lg" >{loginForm.loginBtn}</Button>
+                            <Button color="primary" size="lg" onClick={()=>userLogin()}>{loginForm.loginBtn}</Button>
                             <p className="text-grey mt-3">Don’t have an account? <a className="tunnin-link" onClick={routeSignUp}>SIGNUP</a></p>
                         </FormGroup>
                     </Form>
@@ -93,6 +97,25 @@ function LoginForm(props) {
                 </div>
             )
         }
+    }
+
+    let form = {};
+
+    const handleChange=(field, data)=> {
+        form[field] = data;
+    }
+
+    const userLogin=()=> {
+        if(Object.keys(form).length == 2) {
+            console.log("login", form);
+            dispatch(postFetch(get_auth, form));
+        }    
+    }
+
+    const userInfo = useSelector(state => state.postFetch);
+    
+    if(userInfo.hasOwnProperty('userLogged')) {
+        props.history.push(notification_route);
     }
 
     return (
