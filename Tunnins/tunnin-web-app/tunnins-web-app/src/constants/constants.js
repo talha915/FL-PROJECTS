@@ -40,3 +40,4 @@ export const signedup_profile = 'signedupProfile';
 
 // APIS
 export const categories_list = "categories/list";
+export const create_user = "users";

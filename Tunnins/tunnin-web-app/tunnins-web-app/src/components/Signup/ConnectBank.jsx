@@ -5,7 +5,7 @@ import { Label, Input, Button, FormGroup } from 'reactstrap';
 import logo from '../../images/tunnin-logo.png';
 
 // Constants
-import { connect_bank, account_number } from '../../constants/constants';
+import { connect_bank, account_number, create_user } from '../../constants/constants';
 
 // Style
 import '../../styles/connectBank.scss';
@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { connectBank } from '../../actions/connectBank';
+import { postFetch } from '../../actions/postFetch';
 
 // Router
 import { withRouter } from 'react-router-dom';
@@ -37,6 +38,17 @@ function ConnectBank(props) {
 
     const routeTo=(location)=>{
         console.log("State: ", allStates);
+        let createUser = {
+            "fullName": allStates.signedup.f_name,
+            "username": allStates.signupProfile.signedUpProfile.username,
+            "email": allStates.signedup.email,
+            "password": allStates.signedup.pass,
+            "userType": "trainer",
+            "dob": allStates.signedup.dob,
+            "trainer_Cat": allStates.signupProfile.signedUpProfile.trainer_cat,
+            "profilePic": allStates.uploadFile.data
+        }
+        dispatch(postFetch(create_user, createUser));
         //props.history.push(location);
     }
 
