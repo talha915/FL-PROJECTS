@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Button, Row, Col, Card, CardText, CardTitle
 } from 'reactstrap';
@@ -13,7 +13,7 @@ import { ListNotification } from '../../actions/notification';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { listed_notification } from '../../constants/constants';
+import { listed_notification, trainer_user_type } from '../../constants/constants';
 
 // Styles
 import '../../styles/notifications.scss';
@@ -24,23 +24,30 @@ import Sidebar from '../Sidebar/Sidebar';
 
 function Notification(props) {
 
+    const [userType, setUserType] = useState('');
+
     const dispatch = useDispatch();
     const getNotification = useSelector(state => state.notification);
 
     const userInfo = useSelector(state => state.postFetch);
 
-    let userType;
-
-    if(userInfo.hasOwnProperty('userLogged')) {
-        userType = userInfo.userLogged.userType;
+    const dispatchCheckUser=()=> {
+        if(userInfo.hasOwnProperty('userLogged')) {
+            setUserType(userInfo.userLogged.userType);  
+            dispatch(ListNotification(listed_notification, userInfo.userLogged.userType)); 
+        }
+        else {
+            setUserType(trainer_user_type);
+        }
     }
 
     useEffect(() => {
         dispatchNotification();
+        dispatchCheckUser();
     }, []);
 
     const dispatchNotification = () => {
-        dispatch(ListNotification(listed_notification));
+        dispatch(ListNotification(listed_notification, userType));
     }
 
     const getCards = () => {
@@ -56,10 +63,12 @@ function Notification(props) {
                                     <CardText>{data.date}</CardText>
                                     <CardText>{data.time}</CardText>
                                 </div>
-                                <div>
-                                    <CardText className="session-amount">$21</CardText>
-                                    <CardText>10 users booked</CardText>
-                                </div>
+                                {userType && userType === "user" ? '' :
+                                    <div>
+                                        <CardText className="session-amount">$21</CardText>
+                                        <CardText>10 users booked</CardText>
+                                    </div>
+                                }
                             </div>
                             <Button onClick={()=>{cardRoute(data, index)}}>{data.golive}</Button>
                         </Card>
@@ -92,7 +101,7 @@ function Notification(props) {
 
     const routeTo = (data, index) => {
         if (data.sessionType) {
-            dispatch(ListNotification(data.route));
+            dispatch(ListNotification(data.route, userType));
         }
         else {
             props.history.push(data.route);

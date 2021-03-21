@@ -37,6 +37,7 @@ export const account_number = 'accountNumber';
 export const signedup_profile = 'signedupProfile';
 export const user_logged_in = 'userLoggedIn';
 export const notification_route = '/notification';
+export const trainer_user_type = 'trainer';
 
 
 // APIS

@@ -1,5 +1,5 @@
 // Constants
-import { categories_list, user_logged_in } from '../constants/constants';
+import { user_logged_in } from '../constants/constants';
 
 const initialState = {
     

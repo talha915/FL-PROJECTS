@@ -107,7 +107,6 @@ function LoginForm(props) {
 
     const userLogin=()=> {
         if(Object.keys(form).length == 2) {
-            console.log("login", form);
             dispatch(postFetch(get_auth, form));
         }    
     }

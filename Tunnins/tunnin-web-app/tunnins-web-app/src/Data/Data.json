@@ -308,7 +308,8 @@
                 "time": "5:00 AM - 6:00 AM",
                 "booked": "10 Users Booked",
                 "golive": "Go Live",
-                "past": "View Details"
+                "past": "View Details",
+                "routeTo": "/session-details-past"
             },
             {
                 "heading": "Rolletser Fux",
@@ -316,7 +317,8 @@
                 "time": "5:00 AM - 6:00 AM",
                 "booked": "10 Users Booked",
                 "golive": "Go Live",
-                "past": "View Details"
+                "past": "View Details",
+                "routeTo": "/session-details-past"
             },
             {
                 "heading": "Rolletser Fux",
@@ -324,7 +326,8 @@
                 "time": "5:00 AM - 6:00 AM",
                 "booked": "10 Users Booked",
                 "golive": "Go Live",
-                "past": "View Details"
+                "past": "View Details",
+                "routeTo": "/session-details-past"
             },
             {
                 "heading": "Rolletser Fux",
@@ -332,7 +335,86 @@
                 "time": "5:00 AM - 6:00 AM",
                 "booked": "10 Users Booked",
                 "golive": "Go Live",
-                "past": "View Details"
+                "past": "View Details",
+                "routeTo": "/session-details-past"
+            }
+        ],
+        "userCards": [
+            {
+                "heading": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "booked": "10 Users Booked",
+                "golive": "Go Live",
+                "past": "View Details",
+                "status": "Status: Completed",
+                "statusDetail": "Completed",
+                "amount": "$40",
+                "cancelPolicy": "See Cancellation Policy",
+                "personName": "Rollester fux",
+                "need": "What You Need",
+                "about": "About",
+                "cName": "Zumba",
+                "needContent": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                "routeTo": "/session-details-user",
+                "aboutContent": "If you're offered a seat on a rocket ship. don't ask what seat! just get on board & move the sail towards the destination."
+            },
+            {
+                "heading": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "booked": "10 Users Booked",
+                "golive": "Go Live",
+                "past": "View Details",
+                "status": "Status: Cancelled",
+                "statusDetail": "Cancelled",
+                "amount": "$40",
+                "cancelPolicy": "See Cancellation Policy",
+                "personName": "Rollester fux",
+                "need": "What You Need",
+                "about": "About",
+                "cName": "Zumba",
+                "needContent": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                "routeTo": "/session-details-user",
+                "aboutContent": "If you're offered a seat on a rocket ship. don't ask what seat! just get on board & move the sail towards the destination."
+            },
+            {
+                "heading": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "booked": "10 Users Booked",
+                "golive": "Go Live",
+                "past": "View Details",
+                "status": "Status: Cancelled",
+                "statusDetail": "Cancelled",
+                "amount": "$40",
+                "cancelPolicy": "See Cancellation Policy",
+                "personName": "Rollester fux",
+                "need": "What You Need",
+                "about": "About",
+                "cName": "Zumba",
+                "needContent": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                "routeTo": "/session-details-user",
+                "aboutContent": "If you're offered a seat on a rocket ship. don't ask what seat! just get on board & move the sail towards the destination."
+            },
+            {
+                "heading": "Rolletser Fux",
+                "date": "June 12, 2020",
+                "time": "5:00 AM - 6:00 AM",
+                "booked": "10 Users Booked",
+                "golive": "Go Live",
+                "past": "View Details",
+                "status": "Status: Booked",
+                "statusDetail": "Booked",
+                "amount": "$40",
+                "cancelPolicy": "See Cancellation Policy",
+                "personName": "Rollester fux",
+                "need": "What You Need",
+                "about": "About",
+                "cName": "Zumba",
+                "needContent": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                "routeTo": "/session-details-user",
+                "aboutContent": "If you're offered a seat on a rocket ship. don't ask what seat! just get on board & move the sail towards the destination."
             }
         ]
     },
