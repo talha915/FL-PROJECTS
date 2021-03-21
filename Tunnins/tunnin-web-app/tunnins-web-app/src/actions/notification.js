@@ -4,8 +4,6 @@ import localData from '../Data/Data.json';
 import { listed_notification, trainer_user_type } from '../constants/constants';
 
 export const ListNotification=(type, userType)=> {
-    console.log("Type: ", type);
-    console.log("User type: ", userType);
     if(type == "past") {
         let cards;
         let data = JSON.parse(JSON.stringify(localData.notification));

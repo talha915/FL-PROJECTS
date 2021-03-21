@@ -53,6 +53,7 @@ function Notification(props) {
     const getCards = () => {
         if (getNotification.hasOwnProperty('data')) {
             let lists = getNotification.data.cards;
+            console.log("Cards: ", lists);
             let cards = lists.map((data, index) => {
                 return (
                     <div key={index} className="session-cards">
@@ -63,14 +64,22 @@ function Notification(props) {
                                     <CardText>{data.date}</CardText>
                                     <CardText>{data.time}</CardText>
                                 </div>
-                                {userType && userType === "user" ? '' :
+                                {userType && userType === "user" ? 
+                                    <div>
+                                        <CardText>{data.status}</CardText>
+                                        <Button onClick={()=>{cardRoute(data, index)}}>{data.golive}</Button>
+                                    </div>
+                                :
                                     <div>
                                         <CardText className="session-amount">$21</CardText>
                                         <CardText>10 users booked</CardText>
                                     </div>
                                 }
                             </div>
-                            <Button onClick={()=>{cardRoute(data, index)}}>{data.golive}</Button>
+                            {userType && userType === trainer_user_type ? 
+                                <Button onClick={()=>{cardRoute(data, index)}}>{data.golive}</Button> :
+                                ''
+                            }
                         </Card>
                     </div>
                 )
