@@ -67,7 +67,7 @@ function Notification(props) {
                                 {userType && userType === "user" ? 
                                     <div>
                                         <CardText>{data.status}</CardText>
-                                        <Button onClick={()=>{cardRoute(data, index)}}>{data.golive}</Button>
+                                        <Button onClick={()=>{cardRouteUser(data, index)}}>{data.golive}</Button>
                                     </div>
                                 :
                                     <div>
@@ -90,6 +90,13 @@ function Notification(props) {
 
     const cardRoute=(data, index)=> {
         props.history.push(data.routeTo);
+    }
+
+    const cardRouteUser=(data, index)=> {
+        props.history.push({
+            pathname: data.routeTo,
+            state: data
+        })
     }
 
     const getBtns = () => {
