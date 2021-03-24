@@ -27,41 +27,36 @@ function SessionDetailUser(props) {
     
     const getDetails=()=> {
         return(
-            <Row>
-                <Col>
-                    <h6>
+            <Row className="session-detail-wrapper">
+                <Col sm="3">
+                    <p className="session-heading">
                         {data.heading}
-                    </h6>
-                </Col>
-                <Col>
-                    <p>
-                        {data.need}
                     </p>
-                </Col>
-                <Col>
-                    <p>
-                        {data.about}
-                    </p>
-                </Col>
-            </Row>
-        )
-    }
-
-    const getDetailValue=()=> {
-        return(
-            <Row>
-                <Col>
-                    <p>
+                    <p className="session-type">
                         {data.cName}
                     </p>
+                    <p className="session-date-time">
+                    <i className="icon-ic_clock pr-2"></i>
+                        {data.time}
+                    </p>
+                    <p className="session-date-time">
+                        <i className="icon-ic_calendar  pr-2"></i>
+                        {data.date}
+                    </p>
                 </Col>
-                <Col>
-                    <p>
+                <Col  sm="3">
+                    <p className="session-info-heading">
+                        {data.need}
+                    </p>
+                    <p className="session-info-content">
                         {data.needContent}
                     </p>
                 </Col>
-                <Col>
-                    <p>
+                <Col  sm="3">
+                    <p className="session-info-heading">
+                        {data.about}
+                    </p>
+                    <p className="session-info-content">
                         {data.aboutContent}
                     </p>
                 </Col>
@@ -77,33 +72,46 @@ function SessionDetailUser(props) {
         <div className="notifications">
             <Header />
             <div className="container-fluid">
-                <Row>
-                   <Sliders />
-                </Row>
-                <Row>
-                    <Col>
-                        <h1>
-                            {data.statusDetail}
-                        </h1>
-                    </Col>
-                    <Col>
-                        <p>
-                            {data.amount}
-                        </p>
-                    </Col>
-                    <Col>
-                        <p onClick={()=>seeCancelPolicy()}>
-                            {data.cancelPolicy}
-                        </p>
-                    </Col>
-                </Row>
-                {getDetails()}
-                {getDetailValue()}             
-                <div>
-                    {data.time}
-                </div>
-                <div>
-                    {data.date}
+                <div className="session-user-right-container">
+                    <Row className="mb-5">
+                        <Col className="d-flex align-items-center col-sm-3 pl-5">
+                            <h6 className="title m-0">
+                                <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
+                                Sessions Details
+                            </h6>
+                        </Col>
+                        <Col className="add-btn-wrapper col-sm-9">
+                            <span>
+                            <Button className="addBtn">
+                                Cancel Session
+                            </Button>
+                            </span>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Sliders />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <div className="session-info">
+                                <span className="session-status">
+                                   <span className={data.statusDetail}>
+                                    <i className={data.statusIcon}></i>
+                                   </span>
+                                    {data.statusDetail}
+                                </span>
+                                <span className="session-amount">
+                                    {data.amount}
+                                </span>
+                                <span className="cancel-policy-link" onClick={()=>seeCancelPolicy()}>
+                                    {data.cancelPolicy}
+                                </span>
+                            </div>
+                        </Col>
+                    </Row>
+                    {getDetails()}
                 </div>
             </div>
         </div>

@@ -88,4 +88,126 @@
         color: $white;
         padding-top: 50px;
     }
+    .session-user-right-container {
+        padding: 5vh 3.5vw 0 3.5vw;
+
+        .title {
+            text-align: left;
+            color: $white;
+            font-size: 1.6vw;
+            font-weight: 400;
+            position: relative;
+            i{
+                position: absolute;
+                left: -35px;
+                top: 1px;
+                &::before {
+                    color: $white;
+                }
+            }
+        }
+        .add-btn-wrapper {
+            text-align: right;
+        }
+        .addBtn {
+            background-color: transparent;
+            border: 1px solid $enury;
+            border-radius: 0;
+            padding: 2.3vh 3.125vw;
+            min-width:14.4vw;
+            text-align: center;
+            color: $white;
+            font-size: 18px;
+            &:hover {
+                background-color: $ebony-clay;
+            }
+        }
+        .carousel-root {
+            .thumbs-wrapper {
+                display: none;
+            }
+            .carousel {
+                .control-dots {
+                    .dot {
+                        opacity: 0.5;
+                        box-shadow: none;
+                        width: 15px;
+                        height: 15px;
+                        outline: none;
+                        &.selected {
+                            opacity: 1;
+                        }
+                    }
+                }
+                img {
+                    opacity: 0.9;
+                }
+            }
+        }
+        .session-info {
+            display: flex;
+            align-items: center;
+            color: $white;
+            font-weight: 300;
+            padding-top: 6vh;
+            padding-bottom: 4vh;
+            .session-status {
+                font-size: 1.45vw;
+                .Cancelled,
+                .Completed,
+                .Booked{
+                    width: 3.17vw;
+                    height: 6.5vh;
+                    border-radius: 50%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 5px;
+                }
+                .Cancelled {
+                    background-color: $milano-red;
+                }
+                .Completed,
+                .Booked {
+                    background-color: $secondary;
+                }
+            }
+            .session-amount {
+                font-size: 1.45vw;
+                color: $black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 6.9vw;
+                height: 5.7vh;
+                background-color: $secondary;
+                margin: 0 1.56vw 0 3.02vw;
+            }
+            .cancel-policy-link {
+                font-size: 1.12vw;
+            }
+        }
+        .session-detail-wrapper {
+            color: $white;
+            font-weight: 300;
+            .session-heading {
+                font-size: 1.52vw;
+            }
+            .session-type {
+                font-size: 1.05vw;
+                opacity: 0.68;
+            }
+            .session-date-time {
+                font-size: 1.1vw;
+                margin-bottom: 0;
+            }
+            .session-info-heading,
+            .session-info-content {
+                font-size: 1.1vw;
+            }
+            .session-info-content { 
+                opacity: 0.7;
+            }
+        }
+    }
 }
