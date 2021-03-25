@@ -80,13 +80,13 @@ function SessionDetailUser(props) {
                                 Sessions Details
                             </h6>
                         </Col>
-                        {/* <Col className="add-btn-wrapper col-sm-9">
+                        <Col className="add-btn-wrapper col-sm-9">
                             <span>
                             <Button className="addBtn">
                                 Cancel Session
                             </Button>
                             </span>
-                        </Col> */}
+                        </Col>
                     </Row>
                     <Row>
                         <Col>

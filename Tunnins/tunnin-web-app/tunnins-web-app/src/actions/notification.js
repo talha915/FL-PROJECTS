@@ -26,9 +26,17 @@ export const ListNotification=(type, userType)=> {
         }
     }
     else {
+        let cards;
+        let data = JSON.parse(JSON.stringify(localData.notification));
+        if(userType !== trainer_user_type) {
+            cards = data.cards;
+            for(let i=0; i<cards.length; i++) {
+                cards[i].golive = cards[i].past;
+            }
+        }
         return {
             type: listed_notification,
-            payload: localData.notification,
+            payload: data,
         }
     }
 }
