@@ -38,13 +38,15 @@ function Notification(props) {
         }
         else {
             setUserType(trainer_user_type);
+            dispatchNotification();
         }
     }
 
+
     useEffect(() => {
-        dispatchNotification();
         dispatchCheckUser();
-    }, []);
+        dispatchNotification();
+    },[]);
 
     const dispatchNotification = () => {
         dispatch(ListNotification(listed_notification, userType));
@@ -53,7 +55,6 @@ function Notification(props) {
     const getCards = () => {
         if (getNotification.hasOwnProperty('data')) {
             let lists = getNotification.data.cards;
-            console.log("Cards: ", lists);
             let cards = lists.map((data, index) => {
                 return (
                     <div key={index} className="session-cards">
@@ -89,10 +90,13 @@ function Notification(props) {
     }
 
     const cardRoute=(data, index)=> {
-        props.history.push(data.routeTo);
+        if(data.golive === data.past) {
+            props.history.push(data.routeTo);
+        }
     }
 
     const cardRouteUser=(data, index)=> {
+        console.log("Data: ",data)
         props.history.push({
             pathname: data.routeTo,
             state: data
@@ -102,12 +106,19 @@ function Notification(props) {
     const getBtns = () => {
         if (getNotification.hasOwnProperty('data')) {
             let btnList = getNotification.data.btns;
+            if(userType !== trainer_user_type) {
+                btnList = JSON.parse(JSON.stringify(getNotification.data.btns));
+                for(let i=0; i<btnList.length; i++) {
+                    btnList[i].flag = btnList[i].sessionType;
+                }
+            }            
             let btns = btnList.map((data, index) => {
                 return (
                     <div key={index} className="session-btns">
+                        {data.flag ?                   
                         <Button color="outline-secondary" className={data.sessionType ? "true-btn" : "false-btn"} onClick={() => routeTo(data, index)}>
                             {data.title}
-                        </Button>
+                        </Button>: ''}     
                     </div>
                 )
             });

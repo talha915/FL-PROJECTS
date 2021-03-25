@@ -287,18 +287,21 @@
             {
                 "title": "Upcoming Session",
                 "sessionType": true,
-                "route": "upcoming"
+                "route": "upcoming",
+                "flag": true
             },
             {
                 "title": "Past Session",
                 "sessionType": true,
                 "route": "past",            
-                "routeTo": "/session-details-past"             
+                "routeTo": "/session-details-past",
+                "flag": true             
             },
             {
                 "title": "+ Add New Session",
                 "sessionType": false,
-                "route": "/add-new-session"
+                "route": "/add-new-session",
+                "flag": true
             }
         ],
         "cards": [
@@ -411,8 +414,8 @@
                 "booked": "10 Users Booked",
                 "golive": "Go Live",
                 "past": "View Details",
-                "status": "Status: Booked",
-                "statusDetail": "Booked",
+                "status": "Status: Completed",
+                "statusDetail": "Completed",
                 "statusIcon": "icon-ic_booked",
                 "amount": "$40",
                 "cancelPolicy": "See Cancellation Policy",

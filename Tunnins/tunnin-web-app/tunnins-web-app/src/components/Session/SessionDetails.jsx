@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
-    Button, Form, FormGroup, Label, Input, Row, Col, Card, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle
+    Button, Row, Col, Card, CardText, CardBody,
+    CardTitle
 } from 'reactstrap';
 
 // Redux
