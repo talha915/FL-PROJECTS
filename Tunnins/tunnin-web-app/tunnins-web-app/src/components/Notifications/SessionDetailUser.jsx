@@ -7,13 +7,16 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 // Action
-import { ListNotification } from '../../actions/notification';
+import { sessionPopup } from '../../actions/sessionDetailUserPop';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Styles
 import '../../styles/notifications.scss';
+
+// Constants
+import { cancel_session } from '../../constants/constants';
 
 // Components
 import Header from '../Header/Header';
@@ -25,6 +28,10 @@ function SessionDetailUser(props) {
 
     let data = props.location.state;
     const [cancelPop, setCancelPop] = useState(false);
+
+    const dispatch = useDispatch();
+    const [popUpData, setPopupData] = useState({});
+
     
     const getDetails=()=> {
         return(
@@ -118,7 +125,7 @@ function SessionDetailUser(props) {
                         </Col>
                     </Row>
                     {getDetails()}
-                    {cancelPop ? <Popup/> : ''}
+                    {cancelPop ? <Popup modalState={cancelPop} action_type={cancel_session} /> : ''}
                 </div>
             </div>
         </div>
