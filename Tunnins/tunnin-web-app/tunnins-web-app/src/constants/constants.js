@@ -38,7 +38,8 @@ export const signedup_profile = 'signedupProfile';
 export const user_logged_in = 'userLoggedIn';
 export const notification_route = '/notification';
 export const trainer_user_type = 'trainer';
-
+export const cancel_session = 'cancelSession';
+export const cancelled_session = 'cancelledSession';
 
 // APIS
 export const categories_list = "categories/list";
