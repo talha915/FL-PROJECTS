@@ -19,11 +19,12 @@ import '../../styles/notifications.scss';
 import Header from '../Header/Header';
 import Sliders from './Sliders';
 import CancelledPolicy from '../Session/CancelPolicy';
+import Popup from './Popup';
 
 function SessionDetailUser(props) {
 
     let data = props.location.state;
-    console.log("Data: ", data);
+    const [cancelPop, setCancelPop] = useState(false);
     
     const getDetails=()=> {
         return(
@@ -68,6 +69,10 @@ function SessionDetailUser(props) {
         props.history.push('/cancellation-policy');
     }
 
+    const cancelSession=()=> {
+        setCancelPop(!cancelPop);
+    }
+
     return (
         <div className="notifications">
             <Header />
@@ -83,7 +88,7 @@ function SessionDetailUser(props) {
                         {data.statusDetail === "Booked" ?
                         <Col className="add-btn-wrapper col-sm-9">
                             <span>
-                                <Button className="addBtn">
+                                <Button className="addBtn" onClick={()=>{cancelSession()}}>
                                     Cancel Session
                                 </Button>
                             </span>
@@ -113,6 +118,7 @@ function SessionDetailUser(props) {
                         </Col>
                     </Row>
                     {getDetails()}
+                    {cancelPop ? <Popup/> : ''}
                 </div>
             </div>
         </div>
