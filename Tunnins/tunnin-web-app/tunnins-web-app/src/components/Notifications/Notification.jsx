@@ -96,7 +96,6 @@ function Notification(props) {
     }
 
     const cardRouteUser=(data, index)=> {
-        console.log("Data: ",data);
         props.history.push({
             pathname: data.routeTo,
             state: data

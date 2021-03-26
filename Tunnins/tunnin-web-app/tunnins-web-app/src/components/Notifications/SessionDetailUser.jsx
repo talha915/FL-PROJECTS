@@ -77,16 +77,17 @@ function SessionDetailUser(props) {
                         <Col className="d-flex align-items-center col-sm-3 pl-5">
                             <h6 className="title m-0">
                                 <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
-                                Sessions Details
+                                    Sessions Details
                             </h6>
                         </Col>
+                        {data.statusDetail === "Booked" ?
                         <Col className="add-btn-wrapper col-sm-9">
                             <span>
-                            <Button className="addBtn">
-                                Cancel Session
-                            </Button>
+                                <Button className="addBtn">
+                                    Cancel Session
+                                </Button>
                             </span>
-                        </Col>
+                        </Col>: '' }
                     </Row>
                     <Row>
                         <Col>
