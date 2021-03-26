@@ -34,7 +34,7 @@ const Popup = (props) => {
     const getBtns = (btns) => {
         let btn = btns.map((data, index) => {
             return (
-                <Button color="primary" key={index} onClick={()=>getAction(data, index)}>
+                <Button className={data.btnClass} color="primary" key={index} onClick={()=>getAction(data, index)}>
                     {data.title}
                 </Button>
             )

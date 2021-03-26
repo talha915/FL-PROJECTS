@@ -5,13 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Styles
 import '../../styles/ratings.scss';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 // Action
 import { fetchHeader } from '../../actions/header';
+import { getFetch } from '../../actions/getFetch';
 
 // Constants
-import { getHeader, trainer_user_type } from '../../constants/constants';
+import { getHeader, trainer_user_type, user_logout } from '../../constants/constants';
+import { fine_res } from '../../constants/api_env';
 
 // Router
 import { withRouter } from 'react-router-dom';
@@ -90,6 +92,18 @@ function Header(props) {
         props.history.push(location);
     }
 
+    const logout=()=> {
+        dispatch(getFetch(user_logout));
+    }
+
+    const logUser = useSelector(state => state.getApi);
+
+    if(logUser.hasOwnProperty('logout')) {
+        if(logUser.logout.status === fine_res) {
+            props.history.push("/signup");
+        }
+    }
+
     return (
         <div className="profile-actions d-flex align-items-center justify-content-end">
             {userType === trainer_user_type ?  
@@ -119,7 +133,7 @@ function Header(props) {
             </Dropdown>
             {userType === trainer_user_type ? ''
                 : 
-                <span className="name user-logout" style={{color: "#fff"}} >
+                <span className="name user-logout" style={{color: "#fff"}} onClick={()=>logout()}>
                     <i className="icon-logout name"></i>LogOut
                 </span>
             }

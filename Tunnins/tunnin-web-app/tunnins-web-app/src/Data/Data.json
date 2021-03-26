@@ -1317,11 +1317,13 @@
             "btns": [
                 {
                     "title": "Go Back",
-                    "action": "close"
+                    "action": "close",
+                    "btnClass":""
                 },
                 {
                     "title": "Cancel",
-                    "action": "cancel"
+                    "action": "cancel",
+                    "btnClass":""
                 }
             ]
         },
@@ -1331,7 +1333,8 @@
             "btns": [
                 {
                     "title": "Ok",
-                    "action": "close"
+                    "action": "close",
+                    "btnClass":"ok-btn"
                 }
             ]
         }

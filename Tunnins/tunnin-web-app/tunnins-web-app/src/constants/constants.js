@@ -45,3 +45,4 @@ export const cancelled_session = 'cancelledSession';
 export const categories_list = "categories/list";
 export const create_user = "users";
 export const get_auth = "users/auth";
+export const user_logout = "users/logout";

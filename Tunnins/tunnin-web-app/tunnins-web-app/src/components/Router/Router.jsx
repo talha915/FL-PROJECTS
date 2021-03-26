@@ -32,6 +32,7 @@ class Router extends Component {
         return (
             <div>
                 <Switch>
+                    <Route component={Main} path="/main" exact />
                     <Route component={Main} path="/" exact />
                     <Route component={SignUp} path="/signup" exact/>
                     <Route component={Verify} path="/verify" exact/>

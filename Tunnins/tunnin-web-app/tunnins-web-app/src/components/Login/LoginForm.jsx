@@ -29,7 +29,7 @@ function LoginForm(props) {
     }, []);
 
 
-    const setFormData = () => {
+    const setFormData=()=> {
         setForm(props.formData);
     }
 

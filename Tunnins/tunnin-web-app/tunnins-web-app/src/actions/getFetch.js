@@ -6,7 +6,14 @@ import axios from 'axios';
 export const getFetch=(dataType)=> {
     return async (dispatch) => {
         let res = await axios.get(url+dataType);
-        let { data } = res.data;
+        let data;
+        if(res.data.hasOwnProperty('status')) {
+            data = res.data.data;
+        }
+        else {
+            data = res;
+        }
+        //let { data } = res.data;
         dispatch({
             type: dataType,
             payload: data,

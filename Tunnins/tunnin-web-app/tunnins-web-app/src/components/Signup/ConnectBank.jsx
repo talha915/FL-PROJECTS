@@ -57,8 +57,8 @@ function ConnectBank(props) {
             'trainer_Cat': '60179ea9423e662bb0ed0e6e',
             // 'profilePic': './logo192.png'
         }
-        dispatch(postFetch(create_user, createUser));
-        //props.history.push(location);
+        //dispatch(postFetch(create_user, createUser));
+        props.history.push(location);
     }
 
     const getConnectBank=()=> {
