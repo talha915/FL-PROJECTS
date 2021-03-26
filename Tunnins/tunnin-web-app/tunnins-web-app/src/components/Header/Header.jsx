@@ -119,7 +119,7 @@ function Header(props) {
             </Dropdown>
             {userType === trainer_user_type ? ''
                 : 
-                <span className="name" style={{color: "#fff"}} >
+                <span className="name user-logout" style={{color: "#fff"}} >
                     <i className="icon-logout name"></i>LogOut
                 </span>
             }

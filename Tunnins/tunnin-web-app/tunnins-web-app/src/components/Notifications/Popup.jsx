@@ -53,9 +53,10 @@ const Popup = (props) => {
 
     const getModal = () => {
         let state = sessionClose.modalState;
+        console.log("Session CLose: ", sessionClose);
         if (state.hasOwnProperty('content')) {
             return (
-                <Modal className="tunnin-popup modal-dialog-centered" isOpen={sessionClose.popUp}>
+                <Modal className={sessionClose.modalState.popupClass+" tunnin-popup modal-dialog-centered"} isOpen={sessionClose.popUp}>
                     <ModalBody className="justify-content-center" >
                         <p className="text-center opacity-69">
                             {state.content}

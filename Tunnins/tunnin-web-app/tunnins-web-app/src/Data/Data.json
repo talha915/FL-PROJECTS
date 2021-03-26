@@ -1312,6 +1312,7 @@
     },
     "sessionNotificationPop": {
         "cancelSession": {
+            "popupClass":"user-popups",
             "content": "Are you sure you want to cancel the session?",
             "btns": [
                 {
@@ -1325,6 +1326,7 @@
             ]
         },
         "cancelled": {
+            "popupClass":"user-popups",
             "content": "Your session has been cancelled. A refund will be processed to your credit card.",
             "btns": [
                 {

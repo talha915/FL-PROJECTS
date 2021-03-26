@@ -188,7 +188,6 @@ h6 {
         border-radius: 0;
     }
 }
- 
 .tunnin-popup {
     width: 90%;
     color: $white;
@@ -352,5 +351,24 @@ h6 {
                 }
             }
         }
+    }
+}
+.user-logout {
+    padding-right: 20px;
+    position: relative;
+    cursor: pointer;
+
+    i {
+        padding-right: 10px;
+    }
+    &::before {
+        content: " ";
+        position: absolute;
+        top: -17px;
+        bottom: 0;
+        left: -20px;
+        width: 1px;
+        height: 58px;
+        background-color: $white;
     }
 }
