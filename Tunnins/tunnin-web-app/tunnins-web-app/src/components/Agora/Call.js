@@ -18,6 +18,18 @@ export default class Call extends Component {
         this.initLocalStream();
     }
 
+    initClient = () => {
+        client.init(
+            "2aded76d082d42acb12eb2918e3c1e74",
+            function () {
+                console.log("AgoraRTC client initialized");
+            },
+            function (err) {
+                console.log("AgoraRTC client init failed", err);
+            }
+        );
+    };
+
     initLocalStream = () => {
         let me = this;
         me.localStream.init(
