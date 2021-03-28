@@ -21,13 +21,13 @@ import '../../styles/notifications.scss';
 // Components
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
-import Channel from '../Agora/Channel';
-import Call from '../Agora/Call';
+
+import App from '../Agora/App';
 
 function Notification(props) {
 
     const [userType, setUserType] = useState('');
-    const [channel, setChannel] = useEffect('');
+    const [callAgora, setAgora] = useState(false);
 
     const dispatch = useDispatch();
     const getNotification = useSelector(state => state.notification);
@@ -92,22 +92,12 @@ function Notification(props) {
         }
     }
 
-    const selectChannel=(channel)=>{
-        setChannel(channel);
-    };
-
     const cardRoute=(data, index)=> {
         if(data.golive === data.past) {
             props.history.push(data.routeTo);
         }
         else {
-            console.log("Working");
-            return(
-                <div>
-                    <Channel selectChannel={channel}/>
-                    <Call channel={channel} />
-                </div>
-            )
+            setAgora(true);
         }
     }
 
@@ -168,6 +158,7 @@ function Notification(props) {
                         <div className="session-cards-wrapper">
                             {getCards()}
                         </div>
+                        {callAgora ? <App/> : ''}
                     </Col>
                 </Row>
             </div>

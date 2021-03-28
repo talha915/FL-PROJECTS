@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-class Channel extends Component {
-
+export default class ChannelForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,6 +26,7 @@ class Channel extends Component {
                         placeholder="Channel Name"
                         name="channel"
                         value={this.state.channel}
+                        onChange={this.onChange}
                     />
                     <input type="submit" value="Join Channel" />
                 </form>
@@ -34,5 +34,3 @@ class Channel extends Component {
         );
     }
 }
-
-export default Channel;
