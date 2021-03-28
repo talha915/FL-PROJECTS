@@ -16,6 +16,7 @@ export default class Call extends Component {
 
     componentDidMount() {
         this.initLocalStream();
+        this.initClient();
     }
 
     initClient = () => {
