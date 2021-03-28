@@ -56,7 +56,7 @@ function LoginForm(props) {
     }
 
     const routeSignUp=()=> {
-        props.history.push('/signup');
+        props.history.push('/');
     }
 
     const getFormData = () => {
@@ -85,7 +85,7 @@ function LoginForm(props) {
                                 <Input type="checkbox" /> {loginForm.remember}
                             </Label>
                             <Label check>
-                                <a className="tunnin-link" href="#" onClick={toggle}>{loginForm.forgot}</a>
+                                <a className="tunnin-link" href="#" onClick={()=>toggle}>{loginForm.forgot}</a>
                             </Label>
                         </FormGroup>
                         <FormGroup className="text-center">

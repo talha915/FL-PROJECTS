@@ -22,6 +22,7 @@ import '../../styles/notifications.scss';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
+
 function Notification(props) {
 
     const [userType, setUserType] = useState('');
