@@ -97,7 +97,8 @@ function Notification(props) {
             props.history.push(data.routeTo);
         }
         else {
-            setAgora(true);
+            //setAgora(true);
+            props.history.push(data.routeToTest);
         }
     }
 

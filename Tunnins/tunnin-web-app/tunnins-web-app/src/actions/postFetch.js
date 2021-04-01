@@ -8,6 +8,7 @@ export const postFetch=(dataType, params)=> {
     return async (dispatch) => {     
         try {
             let res = await axios.post((url+dataType), params);     
+            console.log("Res: ", res);
             if(res.status === fine_res) {
                 let { data } = res.data;
                 dispatch({
@@ -17,7 +18,8 @@ export const postFetch=(dataType, params)=> {
             }
         }
         catch(error) {
-            console.log(error.response.data.message); 
+            console.log("Complete Err: ", error.response);
+            //console.log(error.response.data.message); 
         }
     }
 }

@@ -39,26 +39,26 @@ function ConnectBank(props) {
     const routeTo=(location)=>{
         console.log("State: ", allStates);
         let bodyFormData = new FormData();
-        bodyFormData.append("fullName", "abc xyz");
-        bodyFormData.append("username", "abc123");
-        bodyFormData.append("email", "a@a.com");
-        bodyFormData.append("password", "12345");
-        bodyFormData.append("userType", "trainer");
+        bodyFormData.append("fullName", "abcn xyz");
+        bodyFormData.append("username", "abcn123");
+        bodyFormData.append("email", "an@a.com");
+        bodyFormData.append("password", "12345678");
+        bodyFormData.append("userType", "user");
         bodyFormData.append("dob", "31/02/2018");
-        bodyFormData.append("trainer_Cat", "60179ea9423e662bb0ed0e6e");
-        bodyFormData.append("profilePic", "abc xyz");
+        bodyFormData.append("trainer_Cat", ['60179ea9423e662bb0ed0e6e']);
+        //bodyFormData.append("profilePic", "abc xyz");
         let createUser = {
             'fullName': 'abc xyz',
             'username':'abc123',
             'email': 'a@a.com',
             'password': '12345',
             'userType': 'user',
-            // 'dob': '31/02/2018',
-            'trainer_Cat': '60179ea9423e662bb0ed0e6e',
-            // 'profilePic': './logo192.png'
+            'dob': '31/02/2018',
+            'trainer_Cat': ['60179ea9423e662bb0ed0e6e'],
+            //'profilePic': './logo192.png'
         }
-        //dispatch(postFetch(create_user, createUser));
-        props.history.push(location);
+        dispatch(postFetch(create_user, bodyFormData));
+        //props.history.push(location);
     }
 
     const getConnectBank=()=> {

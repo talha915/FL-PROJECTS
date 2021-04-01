@@ -1,4 +1,4 @@
-export const url = 'http://54.225.0.46:8052/';
+export const url = 'https://api.tunnin.io/';
 
 
 
