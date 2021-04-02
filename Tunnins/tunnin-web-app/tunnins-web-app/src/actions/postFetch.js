@@ -4,22 +4,29 @@ import { user_logged_in } from '../constants/constants';
 // axios
 import axios from 'axios';
 
-export const postFetch=(dataType, params)=> {
-    return async (dispatch) => {     
+export const postFetch = (dataType, params) => {
+    return async (dispatch) => {
         try {
-            let res = await axios.post((url+dataType), params);     
+            console.log("Api Type: ", url+dataType);
+            console.log("Params: ", params);
+            let res = await axios.post((url+dataType), params);
             console.log("Res: ", res);
-            if(res.status === fine_res) {
+            if (res.status === fine_res) {
                 let { data } = res.data;
+                console.log("Data: ", data);
                 dispatch({
-                    type: user_logged_in,
+                    type: dataType,
                     payload: data,
+                    status: res.status
                 });
             }
         }
-        catch(error) {
+        catch (error) {
             console.log("Complete Err: ", error.response);
-            //console.log(error.response.data.message); 
+            dispatch({
+                type: dataType,
+                payload: error.response,
+            });
         }
     }
 }

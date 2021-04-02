@@ -36,6 +36,7 @@ function Notification(props) {
 
     const dispatchCheckUser=()=> {
         if(userInfo.hasOwnProperty('userLogged')) {
+            console.log("User Ifo: ", userInfo.userLogged.userType);
             setUserType(userInfo.userLogged.userType);  
             dispatch(ListNotification(listed_notification, userInfo.userLogged.userType)); 
         }

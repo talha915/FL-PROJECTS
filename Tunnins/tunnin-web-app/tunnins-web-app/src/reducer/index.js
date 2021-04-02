@@ -30,6 +30,7 @@ import uploadFile from './uploadFile';
 import postFetch from './postFetch';
 import sessionDetailUserPop from './sessionDetailUserPop';
 import getApi from './getApi';
+import patchApi from './patchApi';
 
 const rootReducer = combineReducers({
     localData,
@@ -60,7 +61,8 @@ const rootReducer = combineReducers({
     uploadFile,
     postFetch,
     sessionDetailUserPop,
-    getApi
+    getApi,
+    patchApi
 })
 
 export default rootReducer;

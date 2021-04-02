@@ -26,6 +26,7 @@ import About from '../Settings/About';
 import Privacy from '../Settings/Privacy';
 import Faqs from '../Settings/Faqs';
 import SessionDetailUser from '../Notifications/SessionDetailUser.jsx';
+import AudioVideo from '../Agora/AudioVideo';
 
 class Router extends Component {
     render() {
@@ -61,6 +62,7 @@ class Router extends Component {
                     <Route component={Privacy} path="/settings-privacy-policy" exact/>
                     <Route component={Faqs} path="/settings-faqs" exact/>
                     <Route component={SessionDetailUser} path="/session-details-user" exact/>
+                    <Route component={AudioVideo} path="/test-audio-video" exact/>
                 </Switch>
             </div>
         )

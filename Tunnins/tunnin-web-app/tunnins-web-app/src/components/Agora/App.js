@@ -1,28 +1,52 @@
-import React, { Component } from "react";
-import ChannelForm from "./Channel";
+import React, { useEffect, useState } from 'react';
+
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+
+// Action
+import { patchFetch } from '../../actions/patchApi';
+
+// Constant
+import { agora_key } from '../../constants/constants';
+
 import Call from "./Call";
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            channel: ""
-        };
+function App(props) {
+
+    const [status, setStatus] = useState(false);
+
+    const dispatch = useDispatch();
+    const channel = useSelector(state => state);
+
+    console.log("Channel", channel);
+
+    useEffect(() => {
+        selectChannel();
+    });
+
+    const selectChannel = () => {
+        setStatus(props.status);
+        if (status) {
+            callChannel(status);
+        }
     }
 
-    selectChannel = channel => {
-        this.setState({ channel });
-    };
-
-    render() {
-        console.log("Agora App");
-        return (
-            <div className="App">
-                <ChannelForm selectChannel={this.selectChannel} />
-                <Call channel={this.state.channel} />
-            </div>
-        );
+    const callChannel=(status)=> {
+        if(status) {
+            let keyObj = {
+                "channelName" : "TrainingSession",
+                "sessionId" : "601aaf9e88f63a1e64e6aa75"
+            };
+            dispatch(patchFetch(agora_key, keyObj));
+        }
     }
+
+    return (
+        <div className="App">
+            <Call channel="status" />
+        </div>
+    );
+
 }
 
 export default App;

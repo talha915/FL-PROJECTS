@@ -110,7 +110,6 @@ function Profile(props) {
             selected_categories.pop(value);
         }
         form['trainer_cat'] = selected_categories;
-        console.log("Form", form);
     }
 
     const formList = (data) => {

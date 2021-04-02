@@ -11,14 +11,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { sessionModal } from '../../actions/sessionModal';
 import { addSession } from '../../actions/addSession';
 import { addedSession } from '../../actions/addedSession';
+import { getFetch } from '../../actions/getFetch';
+
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { add_session, add_session_modal } from '../../constants/constants';
+import { add_session, add_session_modal, categories_list, create_session } from '../../constants/constants';
 
 // Styles
 import '../../styles/newsession.scss';
+
+// Action
+import { postFetch } from '../../actions/postFetch';
 
 // Components
 import Header from '../Header/Header';
@@ -37,10 +42,19 @@ function AddSession(props) {
 
     const editSession = useSelector(state => state.addedSession);
 
+    const categories = useSelector(state => state.signupCategories);
+
+    const userFetch = useSelector(state => state.postFetch);
+
+    const dispatchCategories = () => {
+        dispatch(getFetch(categories_list));
+    }
+
 
     useEffect(() => {
         dispatchNewSession();
         dispatchEditSession();
+        dispatchCategories();
     }, []);
 
 
@@ -81,7 +95,28 @@ function AddSession(props) {
         }
         else {
             dispatch(sessionModal(add_session_modal));
+            dispatchCreateSession();
         }
+    }
+
+    const dispatchCreateSession=()=> {
+        let bodyFormData = new FormData();
+        if(userFetch.hasOwnProperty('userLogged')) {
+            bodyFormData.append("trainerId", userFetch.userLogged._id);
+            bodyFormData.append("catId", sessionForm.category);
+            bodyFormData.append("title", sessionForm.name_of_class);
+            bodyFormData.append("fromDate", Date.parse(sessionForm.start_date));
+            bodyFormData.append("toDate", Date.parse(sessionForm.end_date));
+            bodyFormData.append("fromTime", sessionForm.start_time);
+            bodyFormData.append("toTime", sessionForm.end_time);
+            bodyFormData.append("price", sessionForm.session_price);
+            bodyFormData.append("userLimit", userFetch.userLogged._id);
+            bodyFormData.append("requirements", sessionForm.what_you_need);
+            bodyFormData.append("detail", sessionForm.about);
+            bodyFormData.append("images", uploaded_image);
+        }
+        console.log("Body Form Data: ", bodyFormData);
+        dispatch(postFetch(create_session, bodyFormData));
     }
 
     const popup = useSelector(state => state.sessionModal);
@@ -112,23 +147,32 @@ function AddSession(props) {
                 return(
                     <Col sm="3" key={index}>
                         <Card className="uploads">
-                            <div className="d-none">
-                                {data.icon}
-                            </div>
-                            {props.history.location.pathname === "/add-new-session"
-                            ?
-                                <i className="icon-cloud"></i>
-                            :
-                                <span className="delete-img-wrapper">
-                                    <i className="icon-delete"></i>
-                                </span>
-                            }           
+                            <label htmlFor="fileUpload">
+                                <div className="d-none upload-icon-wrapper">
+                                    {data.icon}
+                                </div>
+                                {props.history.location.pathname === "/add-new-session"
+                                    ?
+                                    <i className="icon-cloud"></i>
+                                    :
+                                    <span className="delete-img-wrapper">
+                                        <i className="icon-delete"></i>
+                                    </span>
+                                }
+                            </label>
+                            <input hidden id="fileUpload" type="file" onChange={(e)=>uploadedFile(e)} />
                         </Card>
                     </Col>
                 );
             });
             return cardList;
         }
+    }
+
+    let uploaded_image;
+
+    const uploadedFile=(event)=> {
+        uploaded_image = event.target.files[0];
     }
 
     const getForm=()=> {
@@ -142,9 +186,12 @@ function AddSession(props) {
                                 {data.title}
                             </Label>
                             {data.type == "select" ?
-                                <select className="form-control" name={data.name} defaultValue={editSession.addedNewSession[data.name]} onChange={(e)=>{getNewSession(data.name, e.target.value)}} >
-                                    {getOptions(data.options)}
-                                </select>                  
+                                // <select className="form-control" name={data.name} defaultValue={editSession.addedNewSession[data.name]} onChange={(e)=>{getNewSession(data.name, e.target.value)}} >
+                                //     {getOptions(data.options)}
+                                // </select>
+                                <select className="form-control" name={data.name} onChange={(e)=>{getNewSession(data.name, e.target.value)}}>
+                                    {getOptions(categories.data)}
+                                </select>                   
                                 :
                                 <Input placeholder={data.placeholder} type={data.type} name={data.name} defaultValue={editSession.addedNewSession[data.name]} onChange={(e)=>{getNewSession(data.name, e.target.value)}} />
                             }                  
@@ -158,17 +205,20 @@ function AddSession(props) {
 
     const getNewSession=(key, value)=> {
         sessionForm[key] = value;
+        console.log("SessionForm : ", sessionForm);
     }
 
     const getOptions=(data)=> {
-        let options = data.map((data, index)=> {
-            return(
-                <option value={data.value} key={index}>
-                    {data.title}
-                </option>
-            );
-        });
-        return options;
+        if(categories.hasOwnProperty('data')) {
+            let options = data.map((data, index)=> {
+                return(
+                    <option value={data._id} key={index}>
+                        {data.categoryName}
+                    </option>
+                );
+            });
+            return options;
+        }
     }
 
 
