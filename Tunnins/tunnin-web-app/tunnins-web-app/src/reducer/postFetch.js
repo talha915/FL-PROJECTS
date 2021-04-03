@@ -21,7 +21,8 @@ export default function(state=initialState, actions) {
         case create_session:
             return {
                 ...state,
-                createdSession: actions.payload
+                createdSession: actions.payload,
+                createdSessionStatus: actions.status
             }    
         default:
             return state;    

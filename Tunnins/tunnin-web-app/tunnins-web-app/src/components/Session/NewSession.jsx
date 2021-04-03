@@ -114,6 +114,7 @@ function AddSession(props) {
             bodyFormData.append("requirements", sessionForm.what_you_need);
             bodyFormData.append("detail", sessionForm.about);
             bodyFormData.append("images", uploaded_image);
+            bodyFormData.append("competencylevel", "Beginner");
         }
         console.log("Body Form Data: ", bodyFormData);
         dispatch(postFetch(create_session, bodyFormData));

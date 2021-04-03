@@ -3,7 +3,9 @@ import AgoraRTC from "agora-rtc-sdk";
 let client = AgoraRTC.createClient({ mode: "live", codec: "h264" });
 
 const USER_ID = Math.floor(Math.random() * 1000000001);
-const APP_ID = "2aded76d082d42acb12eb2918e3c1e74";
+//const APP_ID = "2aded76d082d42acb12eb2918e3c1e74";
+
+const APP_ID = "c3aa8a838d14cd99bd626ab94291542";
 
 export default class Call extends Component {
     localStream = AgoraRTC.createStream({
@@ -156,7 +158,8 @@ export default class Call extends Component {
                 <div id="agora_local" style={{ width: "400px", height: "400px" }} />
                 {Object.keys(this.state.remoteStreams).map(key => {
                     let stream = this.state.remoteStreams[key];
-                    let streamId = stream.getId();
+                    //let streamId = stream.getId();
+                    let streamId = "0061c3aa8a838d14cd99bd626ab94291542IACP66wCBtKScftiDPTVJjwl85q+wUM3vwwQ5XYIu8bNpg5g9dIAAAAAIgDnqtWtQc5oYAQAAQDRimdgAgDRimdgAwDRimdgBADRimdg";
                     return (
                         <div
                             key={streamId}

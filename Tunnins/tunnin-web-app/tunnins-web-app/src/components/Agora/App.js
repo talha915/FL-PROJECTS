@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { patchFetch } from '../../actions/patchApi';
+import { getFetchParam } from '../../actions/getFetchParam';
 
 // Constant
-import { agora_key } from '../../constants/constants';
+import { agora_key, upcoming_session } from '../../constants/constants';
 
 import Call from "./Call";
 
@@ -16,7 +17,7 @@ function App(props) {
     const [status, setStatus] = useState(false);
 
     const dispatch = useDispatch();
-    const channel = useSelector(state => state);
+    const channel = useSelector(state => state.postFetch);
 
     console.log("Channel", channel);
 
@@ -24,10 +25,14 @@ function App(props) {
         selectChannel();
     });
 
-    const selectChannel = () => {
-        setStatus(props.status);
-        if (status) {
-            callChannel(status);
+    const selectChannel=()=> {
+        if(channel.hasOwnProperty('userLogged')) {
+            let id = channel.userLogged._id;
+            dispatch(getFetchParam(upcoming_session+id));
+            setStatus(props.status);
+            if (status) {
+                callChannel(status);
+            }
         }
     }
 
@@ -43,7 +48,7 @@ function App(props) {
 
     return (
         <div className="App">
-            <Call channel="status" />
+            <Call channel="TestSession2" />
         </div>
     );
 
