@@ -1,174 +1,146 @@
-import React, { Component } from "react";
+import React from 'react';
 import AgoraRTC from "agora-rtc-sdk";
-let client = AgoraRTC.createClient({ mode: "live", codec: "h264" });
 
-const USER_ID = Math.floor(Math.random() * 1000000001);
-//const APP_ID = "2aded76d082d42acb12eb2918e3c1e74";
+var rtc = {
+  client: null,
+  joined: false,
+  published: false,
+  localStream: null,
+  remoteStreams: [],
+  params: {}
+};
 
-const APP_ID = "c3aa8a838d14cd99bd626ab94291542";
-
-export default class Call extends Component {
-    localStream = AgoraRTC.createStream({
-        streamID: USER_ID,
-        audio: true,
-        video: true,
-        screen: false
-    });
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            remoteStreams: []
-        };
-    }
-
-    componentDidMount() {
-        this.initLocalStream();
-        this.initClient();
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.channel !== this.props.channel && this.props.channel !== "") {
-            this.joinChannel();
-        }
-    }
-
-    initLocalStream = () => {
-        let me = this;
-        me.localStream.init(
-            function () {
-                console.log("getUserMedia successfully");
-                me.localStream.play("agora_local");
-            },
-            function (err) {
-                console.log("getUserMedia failed", err);
-            }
-        );
-    };
-
-    initClient = () => {
-        client.init(
-            APP_ID,
-            function () {
-                console.log("AgoraRTC client initialized");
-            },
-            function (err) {
-                console.log("AgoraRTC client init failed", err);
-            }
-        );
-        this.subscribeToClient();
-    };
-
-    subscribeToClient = () => {
-        let me = this;
-        client.on("stream-added", me.onStreamAdded);
-        client.on("stream-subscribed", me.onRemoteClientAdded);
-
-        client.on("stream-removed", me.onStreamRemoved);
-
-        client.on("peer-leave", me.onPeerLeave);
-    };
-
-    onStreamAdded = evt => {
-        let me = this;
-        let stream = evt.stream;
-        console.log("New stream added: " + stream.getId());
-        me.setState(
-            {
-                remoteStreams: {
-                    ...me.state.remoteStream,
-                    [stream.getId()]: stream
-                }
-            },
-            () => {
-                // Subscribe after new remoteStreams state set to make sure
-                // new stream dom el has been rendered for agora.io sdk to pick up
-                client.subscribe(stream, function (err) {
-                    console.log("Subscribe stream failed", err);
-                });
-            }
-        );
-    };
-
-    joinChannel = () => {
-        let me = this;
-        client.join(
-            null,
-            me.props.channel,
-            USER_ID,
-            function (uid) {
-                console.log("User " + uid + " join channel successfully");
-                client.publish(me.localStream, function (err) {
-                    console.log("Publish local stream error: " + err);
-                });
-
-                client.on("stream-published", function (evt) {
-                    console.log("Publish local stream successfully");
-                });
-            },
-            function (err) {
-                console.log("Join channel failed", err);
-            }
-        );
-    };
-
-    onRemoteClientAdded = evt => {
-        let me = this;
-        let remoteStream = evt.stream;
-        me.state.remoteStreams[remoteStream.getId()].play(
-            "agora_remote " + remoteStream.getId()
-        );
-    };
-
-    onStreamRemoved = evt => {
-        let me = this;
-        let stream = evt.stream;
-        if (stream) {
-            let streamId = stream.getId();
-            let { remoteStreams } = me.state;
-
-            stream.stop();
-            delete remoteStreams[streamId];
-
-            me.setState({ remoteStreams });
-
-            console.log("Remote stream is removed " + stream.getId());
-        }
-    };
-
-    onPeerLeave = evt => {
-        let me = this;
-        let stream = evt.stream;
-        if (stream) {
-            let streamId = stream.getId();
-            let { remoteStreams } = me.state;
-
-            stream.stop();
-            delete remoteStreams[streamId];
-
-            me.setState({ remoteStreams });
-
-            console.log(evt.uid + " leaved from this channel");
-        }
-    };
-
-    render() {
-        return (
-            <div>
-                <div id="agora_local" style={{ width: "400px", height: "400px" }} />
-                {Object.keys(this.state.remoteStreams).map(key => {
-                    let stream = this.state.remoteStreams[key];
-                    //let streamId = stream.getId();
-                    let streamId = "0061c3aa8a838d14cd99bd626ab94291542IACP66wCBtKScftiDPTVJjwl85q+wUM3vwwQ5XYIu8bNpg5g9dIAAAAAIgDnqtWtQc5oYAQAAQDRimdgAgDRimdgAwDRimdgBADRimdg";
-                    return (
-                        <div
-                            key={streamId}
-                            id={`agora_remote ${streamId}`}
-                            style={{ width: "400px", height: "400px" }}
-                        />
-                    );
-                })}
-            </div>
-        );
-    }
+// Options for joining a channel
+var option = {
+  appID: "2aded76d082d42acb12eb2918e3c1e74",
+  channel: "test",
+  uid: null,
+  token: "0062aded76d082d42acb12eb2918e3c1e74IAAOA5c5BYWXYPtNBhUNVTMtmMWcFsNdJXIkMiSb5rneUQx+f9gAAAAAEAAeXT+ce3ZrYAEAAQB9dmtg",
+  key: "0061c3aa8a838d14cd99bd626ab94291542IACP66wCBtKScftiDPTVJjwl85q+wUM3vwwQ5XYIu8bNpg5g9dIAAAAAIgDnqtWtQc5oYAQAAQDRimdgAgDRimdgAwDRimdgBADRimdg",
+  secret: "65af3512430e4ae795ef022d2459aff1"
 }
+
+function joinChannel(role) {
+  // Create a client
+  rtc.client = AgoraRTC.createClient({ mode: "live", codec: "h264" });
+  // Initialize the client
+  rtc.client.init(option.appID, function () {
+      console.log("init success");
+
+      // Join a channel
+      rtc.client.join(option.token ?
+          option.token : null,
+          option.channel, option.uid ? +option.uid : null, function (uid) {
+              console.log("join channel: " + option.channel + " success, uid: " + uid);
+              rtc.params.uid = uid;
+              if (role === "host") {
+                  rtc.client.setClientRole("host");
+                  // Create a local stream
+                  rtc.localStream = AgoraRTC.createStream({
+                      streamID: rtc.params.uid,
+                      audio: true,
+                      video: true,
+                      screen: false,
+                  })
+
+                  // Initialize the local stream
+                  rtc.localStream.init(function () {
+                      console.log("init local stream success");
+                      rtc.localStream.play("local_stream");
+                      rtc.client.publish(rtc.localStream, function (err) {
+                          console.log("publish failed");
+                          console.error(err);
+                      })
+                  }, function (err) {
+                      console.error("init local stream failed ", err);
+                  });
+
+                  rtc.client.on("connection-state-change", function (evt) {
+                      console.log("audience", evt)
+                  })
+
+
+              }
+              if (role === "audience") {
+                  rtc.client.on("connection-state-change", function (evt) {
+                      console.log("audience", evt)
+                  })
+
+                  rtc.client.on("stream-added", function (evt) {
+                      var remoteStream = evt.stream;
+                      var id = remoteStream.getId();
+                      if (id !== rtc.params.uid) {
+                          rtc.client.subscribe(remoteStream, function (err) {
+                              console.log("stream subscribe failed", err);
+                          })
+                      }
+                      console.log('stream-added remote-uid: ', id);
+                  });
+
+                  rtc.client.on("stream-removed", function (evt) {
+                      var remoteStream = evt.stream;
+                      var id = remoteStream.getId();
+                      console.log('stream-removed remote-uid: ', id);
+                  });
+
+                  rtc.client.on("stream-subscribed", function (evt) {
+                      var remoteStream = evt.stream;
+                      var id = remoteStream.getId();
+                      remoteStream.play("remote_video_");
+                      console.log('stream-subscribed remote-uid: ', id);
+                  })
+
+                  rtc.client.on("stream-unsubscribed", function (evt) {
+                      var remoteStream = evt.stream;
+                      var id = remoteStream.getId();
+                      remoteStream.pause("remote_video_");
+                      console.log('stream-unsubscribed remote-uid: ', id);
+                  })
+              }
+          }, function (err) {
+              console.error("client join failed", err)
+          })
+
+  }, (err) => {
+      console.error(err);
+  });
+}
+
+function leaveEventHost(params) {
+  rtc.client.unpublish(rtc.localStream, function (err) {
+      console.log("publish failed");
+      console.error(err);
+  })
+  rtc.client.leave(function (ev) {
+      console.log(ev)
+  })
+}
+
+function leaveEventAudience(params) {
+  rtc.client.leave(function () {
+      console.log("client leaves channel");
+      //……
+  }, function (err) {
+      console.log("client leave failed ", err);
+      //error handling
+  })
+}
+
+
+function Call(props) {
+  return (
+      <div>
+          <button onClick={() => joinChannel('host')}>Join Channel as Host</button>
+          <button onClick={() => joinChannel('audience')}>Join Channel as Audience</button>
+          <button onClick={() => leaveEventHost('host')}>Leave Event Host</button>
+          <button onClick={() => leaveEventAudience('audience')}>Leave Event Audience</button>
+          <div id="local_stream" className="local_stream" style={{ width: "400px", height: "400px" }}></div>
+          <div
+              id="remote_video_"
+              style={{ width: "400px", height: "400px" }}
+          />
+      </div>
+  );
+}
+
+export default Call;

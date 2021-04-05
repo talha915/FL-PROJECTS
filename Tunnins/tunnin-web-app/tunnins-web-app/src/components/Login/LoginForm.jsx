@@ -18,6 +18,7 @@ import { withRouter } from 'react-router-dom';
 
 // Style
 import '../../styles/login.scss';
+import { fine_res } from '../../constants/api_env';
 
 function LoginForm(props) {
 
@@ -113,8 +114,10 @@ function LoginForm(props) {
 
     const userInfo = useSelector(state => state.postFetch);
     
-    if(userInfo.hasOwnProperty('userLogged')) {
-        props.history.push(notification_route);
+    if (userInfo.hasOwnProperty('userLogged')) {
+        if (userInfo.userLogged.status === "200") {
+            props.history.push(notification_route);
+        }
     }
 
     return (
