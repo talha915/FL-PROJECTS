@@ -25,6 +25,8 @@ function AudioVideo(props) {
         setStatus(true);
     }
 
+    let sessionId = props.location.sessionRes._id;
+
     return (
         <div className="notifications">
             <Header />
@@ -35,7 +37,7 @@ function AudioVideo(props) {
                             <i className="icon-chevron-left"></i>
                             Test Audio & Video
                         </p>
-                        <App status={status}/>
+                        <App sessionId={sessionId}/>
                         <div className="start-session-btn-wrapper">
                             {status ? 
                                 <Button className="start-session-btn">

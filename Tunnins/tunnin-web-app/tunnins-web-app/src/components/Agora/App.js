@@ -21,30 +21,20 @@ function App(props) {
 
     console.log("Channel", channel);
 
+    let sessionId = props.sessionId;
+
     useEffect(() => {
-        selectChannel();
+        getChannel();
     });
 
-    const selectChannel=()=> {
-        if(channel.hasOwnProperty('userLogged')) {
-            let id = channel.userLogged._id;
-            dispatch(getFetchParam(upcoming_session+id));
-            setStatus(props.status);
-            if (status) {
-                callChannel(status);
-            }
-        }
+    const getChannel=()=> {   
+        let keyObj = {
+            "sessionId": sessionId
+        };
+        dispatch(patchFetch(agora_key, keyObj));      
     }
 
-    const callChannel=(status)=> {
-        if(status) {
-            let keyObj = {
-                "channelName" : "TrainingSession",
-                "sessionId" : "601aaf9e88f63a1e64e6aa75"
-            };
-            dispatch(patchFetch(agora_key, keyObj));
-        }
-    }
+    console.log("Props: ", props);
 
     return (
         <div className="App">
