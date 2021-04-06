@@ -16,8 +16,8 @@ var option = {
   channel: "test",
   uid: null,
   token: "0062aded76d082d42acb12eb2918e3c1e74IAAOA5c5BYWXYPtNBhUNVTMtmMWcFsNdJXIkMiSb5rneUQx+f9gAAAAAEAAeXT+ce3ZrYAEAAQB9dmtg",
-  key: "0061c3aa8a838d14cd99bd626ab94291542IACP66wCBtKScftiDPTVJjwl85q+wUM3vwwQ5XYIu8bNpg5g9dIAAAAAIgDnqtWtQc5oYAQAAQDRimdgAgDRimdgAwDRimdgBADRimdg",
-  secret: "65af3512430e4ae795ef022d2459aff1"
+  //key: "0061c3aa8a838d14cd99bd626ab94291542IACP66wCBtKScftiDPTVJjwl85q+wUM3vwwQ5XYIu8bNpg5g9dIAAAAAIgDnqtWtQc5oYAQAAQDRimdgAgDRimdgAwDRimdgBADRimdg",
+  //secret: "65af3512430e4ae795ef022d2459aff1"
 }
 
 function joinChannel(role) {

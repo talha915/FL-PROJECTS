@@ -115,7 +115,7 @@ function LoginForm(props) {
     const userInfo = useSelector(state => state.postFetch);
     
     if (userInfo.hasOwnProperty('userLogged')) {
-        if (userInfo.userLogged.status === "200") {
+        if (userInfo.userLoginStatus === fine_res) {
             props.history.push(notification_route);
         }
     }

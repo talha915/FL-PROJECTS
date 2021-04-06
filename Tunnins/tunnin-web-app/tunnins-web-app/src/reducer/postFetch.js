@@ -10,7 +10,8 @@ export default function(state=initialState, actions) {
         case get_auth:
             return {
                 ...state,
-                userLogged: actions.payload
+                userLogged: actions.payload,
+                userLoginStatus: actions.status
             }
         case create_user:
             return {

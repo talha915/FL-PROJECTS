@@ -14,6 +14,8 @@ export const getFetch=(dataType)=> {
             data = res;
         }
         //let { data } = res.data;
+        console.log("Data: ", data);
+        console.log("Data Type: ", dataType);
         dispatch({
             type: dataType,
             payload: data,
