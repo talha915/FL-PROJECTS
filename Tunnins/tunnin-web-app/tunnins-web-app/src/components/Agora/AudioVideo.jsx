@@ -22,7 +22,7 @@ function AudioVideo(props) {
     const [status, setStatus] = useState(false);
 
     const startSession=()=> {
-        setStatus(true);
+        setStatus(!status);
     }
 
     let sessionId = props.location.sessionRes._id;
@@ -37,11 +37,13 @@ function AudioVideo(props) {
                             <i className="icon-chevron-left"></i>
                             Test Audio & Video
                         </p>
+                        {status ? 
                         <App sessionId={sessionId}/>
+                         : ''}
                         <div className="start-session-btn-wrapper">
                             {status ? 
-                                <Button className="start-session-btn">
-                                    Close Session
+                                <Button className="start-session-btn" onClick={()=>startSession()}>
+                                    End Session
                                 </Button>
                                 :
                                 <Button className="start-session-btn" onClick={()=>startSession()}>

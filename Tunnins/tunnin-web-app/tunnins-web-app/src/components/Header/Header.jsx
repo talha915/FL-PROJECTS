@@ -24,6 +24,7 @@ function Header(props) {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [userType, setUserType] = useState({});
+    const [userLoggedDetails, setUserLogged] = useState({});
     const toggle = () => setDropdownOpen(prevState => !prevState);
 
     const dispatch = useDispatch();
@@ -32,6 +33,7 @@ function Header(props) {
 
     const dispatchCheckUser=()=> {
         if(userInfo.hasOwnProperty('userLogged')) {
+            setUserLogged(userInfo.userLogged);
             setUserType(userInfo.userLogged.userType);  
         }
         else {
@@ -62,15 +64,18 @@ function Header(props) {
     }
 
     const getCredentials=()=> {
-        if(getHead.hasOwnProperty('data')) {
-            let credentials = getHead.data.credentials.map((data, index)=> {
-                return(
-                    <span className={data.class} key={index}>
-                        {data.title}
+        console.log("User Logged Details: ", userLoggedDetails);
+        if(userLoggedDetails) {      
+            return(
+                <span>
+                    <span className="name">
+                        {userLoggedDetails.fullName}
                     </span>
-                )
-            });
-            return credentials;
+                    <span className="email">
+                        {userLoggedDetails.email}
+                    </span>
+                </span>
+            )       
         }
     }
 
