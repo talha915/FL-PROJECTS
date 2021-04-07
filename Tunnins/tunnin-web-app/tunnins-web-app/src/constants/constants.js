@@ -38,8 +38,14 @@ export const signedup_profile = 'signedupProfile';
 export const user_logged_in = 'userLoggedIn';
 export const notification_route = '/notification';
 export const trainer_user_type = 'trainer';
+export const client_user_type = 'user';
 export const cancel_session = 'cancelSession';
 export const cancelled_session = 'cancelledSession';
+export const host_type = 'host';
+export const audience_type = 'audience';
+
+
+export const agora_app_id = '1c3aa8a838d14cd99bd626ab94291542';
 
 // Routes
 export const routeAgora = "/test-audio-video";
@@ -49,6 +55,6 @@ export const categories_list = "categories/list";
 export const create_user = "users/";
 export const get_auth = "users/auth";
 export const user_logout = "users/logout";
-export const agora_key = "session/agoraTokenbySessionID";
+export const agora_key = "session/agoraTokenbySessionID/";
 export const create_session = "session/";
 export const upcoming_session = "session/upcoming_session/";

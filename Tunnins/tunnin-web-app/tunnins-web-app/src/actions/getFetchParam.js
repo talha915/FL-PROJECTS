@@ -6,6 +6,7 @@ import axios from 'axios';
 export const getFetchParam=(apiType, param)=> {
     return async (dispatch) => {
         let res = await axios.get((url+apiType+param));
+        console.log("Res: ", res);
         let data;
         if(res.data.hasOwnProperty('status')) {
             data = res.data.data;

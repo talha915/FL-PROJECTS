@@ -1,5 +1,5 @@
 // Constants
-import { user_logout, upcoming_session } from '../constants/constants';
+import { user_logout, upcoming_session, agora_key } from '../constants/constants';
 
 const initialState = {
 
@@ -16,7 +16,12 @@ export default function(state=initialState, actions) {
             return {
                 ...state,
                 upcomingSession: actions.payload
-            }        
+            }
+        case agora_key:
+            return {
+                ...state,
+                agoraObj: actions.payload
+            }            
         default:
             return state;    
     }

@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 
 // Action
-import { patchFetch } from '../../actions/patchApi';
 import { getFetchParam } from '../../actions/getFetchParam';
 
 // Constant
@@ -28,17 +27,14 @@ function App(props) {
     });
 
     const getChannel=()=> {   
-        let keyObj = {
-            "sessionId": sessionId
-        };
-        dispatch(patchFetch(agora_key, keyObj));      
+        dispatch(getFetchParam(agora_key, sessionId));      
     }
 
     console.log("Props: ", props);
 
     return (
         <div className="App">
-            <Call channel="TestSession2" />
+            <Call />
         </div>
     );
 
