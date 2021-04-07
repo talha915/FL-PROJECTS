@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
-    Button, Row, Col, Card, CardText, CardTitle
+    Button, Row, Col
 } from 'reactstrap';
 
 // Redux
@@ -16,6 +16,9 @@ import '../../styles/notifications.scss';
 import Header from '../Header/Header';
 
 import App from '../Agora/App';
+
+// image
+import start_session_img from '../../images/start-session-img.png';
 
 function AudioVideo(props) { 
 
@@ -39,7 +42,7 @@ function AudioVideo(props) {
                         </p>
                         {status ? 
                         <App sessionId={sessionId}/>
-                         : ''}
+                         : <img src={start_session_img} alt={start_session_img} style={{display: "block", margin: "0 auto"}} />}
                         <div className="start-session-btn-wrapper">
                             {status ? 
                                 <Button className="start-session-btn" onClick={()=>startSession()}>
