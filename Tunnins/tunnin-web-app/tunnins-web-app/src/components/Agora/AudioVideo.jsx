@@ -37,7 +37,7 @@ function AudioVideo(props) {
                 <Row>
                     <Col sm="12" className={status ? "session-user-right-container audio-video-container session-started" : "session-user-right-container audio-video-container"}>
                         <p className="title">
-                            <i className="icon-chevron-left"></i>
+                            <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
                             Test Audio & Video
                         </p>
                         {status ? 
