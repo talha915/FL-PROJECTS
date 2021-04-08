@@ -14,17 +14,18 @@ import '../../styles/notifications.scss';
 
 // Components
 import WebcamComponent from './WebCam';
+import Mic from './Mic';
 import Header from '../Header/Header';
 import App from '../Agora/App';
 
 // image
 import start_session_img from '../../images/start-session-img.png';
 
-function AudioVideo(props) { 
+function AudioVideo(props) {
 
     const [status, setStatus] = useState(false);
 
-    const startSession=()=> {
+    const startSession = () => {
         setStatus(!status);
     }
 
@@ -37,23 +38,28 @@ function AudioVideo(props) {
                 <Row>
                     <Col sm="12" className={status ? "session-user-right-container audio-video-container session-started" : "session-user-right-container audio-video-container"}>
                         <p className="title">
-                            <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
+                            <i className="icon-chevron-left" onClick={() => props.history.goBack()}></i>
                             Test Audio & Video
                         </p>
-                        {status ? 
-                        <App sessionId={sessionId}/>
-                         : <WebcamComponent />}
+                        {status ?
+                            <App sessionId={sessionId} />
+                            :
+                            <div>
+                                <WebcamComponent />
+                                <Mic />
+                            </div>
+                        }
                         <div className="start-session-btn-wrapper">
-                            {status ? 
-                                <Button className="start-session-btn" onClick={()=>startSession()}>
+                            {status ?
+                                <Button className="start-session-btn" onClick={() => startSession()}>
                                     End Session
                                 </Button>
                                 :
-                                <Button className="start-session-btn" onClick={()=>startSession()}>
+                                <Button className="start-session-btn" onClick={() => startSession()}>
                                     Start Session
                                 </Button>
                             }
-                        </div>                     
+                        </div>
                     </Col>
                 </Row>
             </div>

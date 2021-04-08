@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactMic } from 'react-mic';
 
 function Mic() {
@@ -9,6 +9,10 @@ function Mic() {
         setRecord(true);
     }
 
+    useEffect(() => {
+        startRecording();
+    }, []);
+
     const onData = (recordedBlob) => {
         console.log('chunk of real-time data is: ', recordedBlob);
     }
@@ -18,8 +22,8 @@ function Mic() {
             record={record}
             className="sound-wave"
             onData={onData}
-            strokeColor="#000000"
-            backgroundColor="#FF4081" 
+            strokeColor="#fff"
+            backgroundColor="#D0A592"
         />
     );
 
