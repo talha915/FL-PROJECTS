@@ -19,6 +19,7 @@
     "react-responsive-carousel": "^3.2.15",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-webcam": "^5.2.3",
     "reactstrap": "^8.8.1",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",

@@ -13,8 +13,8 @@ import { withRouter } from 'react-router-dom';
 import '../../styles/notifications.scss';
 
 // Components
+import WebcamComponent from './WebCam';
 import Header from '../Header/Header';
-
 import App from '../Agora/App';
 
 // image
@@ -42,7 +42,7 @@ function AudioVideo(props) {
                         </p>
                         {status ? 
                         <App sessionId={sessionId}/>
-                         : <img src={start_session_img} alt={start_session_img} style={{display: "block", margin: "0 auto"}} />}
+                         : <WebcamComponent />}
                         <div className="start-session-btn-wrapper">
                             {status ? 
                                 <Button className="start-session-btn" onClick={()=>startSession()}>
