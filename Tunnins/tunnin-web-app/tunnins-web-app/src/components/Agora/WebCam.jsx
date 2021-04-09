@@ -10,11 +10,11 @@ const videoConstraints = {
 
 function WebcamComponent() {
     return (
-        <Webcam
+        <Webcam className="video-check-wrapper"
             audio={false}
-            height={500}
+            height={300}
             screenshotFormat="image/jpeg"
-            width={500}
+            width={300}
             videoConstraints={videoConstraints}
         />
     )

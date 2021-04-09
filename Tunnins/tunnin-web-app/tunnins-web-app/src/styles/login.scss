@@ -19,6 +19,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding-top: 40px;
+    .already {
+        font-size: 0.89vw;
+        color: $jumbo;
+    }
+    .signin {
+        cursor: pointer;
+        font-size: 0.89vw;
+        text-transform: uppercase;
+        text-decoration: underline;
+        color: $ebony-clay;
+    }
 }
 
 .login-logo {

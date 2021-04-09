@@ -75,35 +75,40 @@
                 "placeholder": "Elias Manik",
                 "type": "text",
                 "field": "f_name",
-                "fieldIcon": "icon-person"
+                "fieldIcon": "icon-person",
+                "fieldIconPas": ""
             },
             {
                 "name": "Password",
                 "placeholder": "***************",
                 "type": "password",
                 "field": "pass",
-                "fieldIcon": "icon-lock-unlock"
+                "fieldIcon": "icon-lock-unlock",
+                "fieldIconPas": "icon-outline-visibility_off-24px"
             },
             {
                 "name": "Email Address",
                 "placeholder": "dodgeui2020@gmail.com",
                 "type": "email",
                 "field": "email",
-                "fieldIcon": "icon-mail"
+                "fieldIcon": "icon-mail",
+                "fieldIconPas": ""
             },
             {
                 "name": "Confirm Password",
                 "placeholder": "***************",
                 "type": "password",
                 "field": "c_pass",
-                "fieldIcon": "icon-lock-unlock"
+                "fieldIcon": "icon-lock-unlock",
+                "fieldIconPas": "icon-outline-visibility_off-24px"
             },
             {
                 "name": "Date of Birth",
                 "placeholder": "15-July-1996",
                 "type": "date",
                 "field": "dob",
-                "fieldIcon": "icon-calender"
+                "fieldIcon": "icon-calender",
+                "fieldIconPas": ""
             }
         ],
         "subscribe": "Subscribe to our newsletter",
@@ -127,12 +132,6 @@
                 "placeholder": "We recommend using the same username as your Instagram"
             },
             {
-                "labelName": "About",
-                "type": "textarea",
-                "key": "about",
-                "placeholder": "Describe your fitness practice here (500 characters max)"
-            },
-            {
                 "labelName": "Business Name",
                 "type": "text",
                 "key": "business_name",
@@ -145,17 +144,24 @@
                 "placeholder": "Where are you located?"
             },
             {
-                "labelName": "Instagram Profile URL",
-                "type": "text",
-                "key": "insta_url",
-                "placeholder": "www.instagram.com/yourprofile"
-            },
-            {
                 "labelName": "Phone Number",
                 "type": "text",
                 "key": "phone_num",
                 "placeholder": "Area Code + Telephone Number"
+            },
+            {
+                "labelName": "About",
+                "type": "textarea",
+                "key": "about",
+                "placeholder": "Describe your fitness practice here (500 characters max)"
+            },
+            {
+                "labelName": "Instagram Profile URL",
+                "type": "text",
+                "key": "insta_url",
+                "placeholder": "www.instagram.com/yourprofile"
             }
+            
         ],
         "categories": "Select Categories",
         "catFields": [

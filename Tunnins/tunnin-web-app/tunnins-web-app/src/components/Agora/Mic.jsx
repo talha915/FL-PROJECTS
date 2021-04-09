@@ -18,6 +18,7 @@ function Mic() {
     }
 
     return (
+        <div className="audio-check-wrapper">
         <ReactMic
             record={record}
             className="sound-wave"
@@ -25,6 +26,7 @@ function Mic() {
             strokeColor="#fff"
             backgroundColor="#D0A592"
         />
+        </div>
     );
 
 }

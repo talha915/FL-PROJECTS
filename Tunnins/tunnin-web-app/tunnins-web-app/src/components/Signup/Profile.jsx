@@ -53,17 +53,19 @@ function Profile(props) {
                     </h5>
                     <Row className="signup-second-form-wrapper">
                         {formList(profile.data)}
-                        <Col className="offset-md-7" xs="12" sm="5" md="5" lg="5">
-                            <Label className="formheading"><p>{profile.data.categories}</p></Label>
+                        <Col className="pt-1" xs="12" sm="5" md="6" lg="6">
+                            <Label className="formheading"><p className="d-flex justify-content-between align-items-center"><span>{profile.data.categories}</span><span className="select-all">(select all that apply to your practice)</span></p></Label>
                             <div className="checkbox-wrapper">
                                 {formChecks(categories)}
                             </div>
                         </Col>
-                        <Col className="d-flex justify-content-center" xs="12">
-                            <Button color="primary" size="lg" onClick={() => routeTo(profile.data.route)}>
-                                {profile.data.btnText}
-                            </Button>
-                        </Col>
+                    </Row>
+                    <Row>
+                    <Col className="d-flex justify-content-center mb-5 mt-2" xs="12">
+                        <Button color="primary" size="lg" onClick={() => routeTo(profile.data.route)}>
+                            {profile.data.btnText}
+                        </Button>
+                    </Col>
                     </Row>
                 </div>
             )
@@ -86,8 +88,8 @@ function Profile(props) {
                             name="subscription-checkbox"
                             checked={false}
                             borderColor="#fff"
-                            borderWidth={3}
-                            borderRadius={3}
+                            borderWidth={2}
+                            borderRadius={2}
                             style={{ cursor: "pointer" }}
                             labelStyle={{ marginLeft: 5, userSelect: "none", color: "#fff" }}
                             label={items.categoryName}

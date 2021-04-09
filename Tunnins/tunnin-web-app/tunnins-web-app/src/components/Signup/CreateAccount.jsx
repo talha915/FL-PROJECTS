@@ -56,9 +56,9 @@ function CreateAccount(props) {
                             </Button>
                         </FormGroup>
                         <FormGroup>
-                            <div className="text-center" style={{ display: "inline-block" }}>
-                                <p style={{ display: "inline-block" }}>{loginForm.question}</p>
-                                <p style={{ display: "inline-block", cursor: "pointer" }} onClick={() => route(loginForm.route)}>{loginForm.signIn}</p>
+                            <div className="text-center">
+                                <span className="already">{loginForm.question}</span>
+                                <span className="signin" onClick={() => route(loginForm.route)}>{loginForm.signIn}</span>
                             </div>
                         </FormGroup>
                     </Form>

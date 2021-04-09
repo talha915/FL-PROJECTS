@@ -1,268 +1,326 @@
-
 @import 'variables';
+
 .notifications {
-background-color: $primary;
-min-height: 100vh;
+    background-color: $primary;
+    min-height: 100vh;
 
-.session-btn-wrapper {
-display: flex;
-justify-content: center;
-margin: 30px 0 40px;
-align-items: center;
-position: relative;
-.btn-outline-secondary {
-&.false-btn {
-background-color: $ebony-clay;
-padding: 10px 1.45vw;
-color: $white;
-border: 0;
-border-radius: 0;
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-right: 15px;
-}
-}
-.btn-outline-secondary{
-&.true-btn {
-border: 2px solid $enury;
-color: $white;
-border-radius: 0;
-padding: 15px 60px;
-margin: 0 20px;
-min-width: 13.2vw;
-}
-}
-}
-.session-cards-wrapper {
-display: flex;
-flex-wrap: wrap;
-box-sizing: border-box;
-.session-cards {
-width: 50%;
-padding: 20px 30px;
-.card {
-border: 1px solid $petite-orchid;
-border-radius: 0;
-background-color: transparent;
-color: $white;
-&.live-session {
-background-color: $petite-orchid;
-color: $black;
-}
-.card-content {
-display: flex;
-justify-content: space-between;
-}
-.session-amount {
-height: 40px;
-width: 60px;
-display: flex;
-align-items: center;
-justify-content: center;
-border: 1px solid $enury;
-border-radius: 5px;
-font-size: 20px;
-background-color: $ebony-clay;
-color: $white;
-}
-}
+    .session-btn-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0 40px;
+        align-items: center;
+        position: relative;
 
-.btn-secondary {
-background-color: $ebony-clay;
-color: $white;
-padding: 10px 30px;
-border: 0;
-border-radius: 0;
-max-width: 200px;
-margin: 0 auto;
-}
-}
-}
-.heading {
-color: $enury;
-}
-.subheading {
-color: $waikawa-gray;
-}
-.label {
-color: $white;
-padding-top: 50px;
-}
-.session-user-right-container {
-padding: 5vh 3.5vw 0 3.5vw;
+        .btn-outline-secondary {
+            &.false-btn {
+                background-color: $ebony-clay;
+                padding: 10px 1.45vw;
+                color: $white;
+                border: 0;
+                border-radius: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+            }
+        }
 
-.title {
-text-align: left;
-color: $white;
-font-size: 1.6vw;
-font-weight: 400;
-position: relative;
-i{
-position: absolute;
-left: -35px;
-top: 1px;
-&::before {
-color: $white;
-}
-}
-}
-.add-btn-wrapper {
-text-align: right;
-}
-.addBtn {
-background-color: transparent;
-border: 1px solid $enury;
-border-radius: 0;
-padding: 2.3vh 3.125vw;
-min-width:14.4vw;
-text-align: center;
-color: $white;
-font-size: 18px;
-&:hover {
-background-color: $ebony-clay;
-}
-}
-.carousel-root {
-.thumbs-wrapper {
-display: none;
-}
-.carousel {
-.control-dots {
-.dot {
-opacity: 0.5;
-box-shadow: none;
-width: 15px;
-height: 15px;
-outline: none;
-&.selected {
-opacity: 1;
-}
-}
-}
-img {
-opacity: 0.9;
-}
-}
-}
-.session-info {
-display: flex;
-align-items: center;
-color: $white;
-font-weight: 300;
-padding-top: 6vh;
-padding-bottom: 4vh;
-.session-status {
-font-size: 1.45vw;
-.Cancelled,
-.Completed,
-.Booked{
-width: 3.17vw;
-height: 6.5vh;
-border-radius: 50%;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-margin-right: 5px;
-}
-.Cancelled {
-background-color: $milano-red;
-}
-.Completed,
-.Booked {
-background-color: $secondary;
-}
-}
-.session-amount {
-font-size: 1.45vw;
-color: $black;
-display: flex;
-align-items: center;
-justify-content: center;
-width: 6.9vw;
-height: 5.7vh;
-background-color: $secondary;
-margin: 0 1.56vw 0 3.02vw;
-}
-.cancel-policy-link {
-font-size: 1.12vw;
-}
-}
-.session-detail-wrapper {
-color: $white;
-font-weight: 300;
-.session-heading {
-font-size: 1.52vw;
-}
-.session-type {
-font-size: 1.05vw;
-opacity: 0.68;
-}
-.session-date-time {
-font-size: 1.1vw;
-margin-bottom: 0;
-}
-.session-info-heading,
-.session-info-content {
-font-size: 1.1vw;
-}
-.session-info-content {
-opacity: 0.7;
-}
-}
-&.audio-video-container {
-padding: 5vh 6.12vw;
-.App {
-display: flex;
-align-items: center;
-justify-content: center;
-#local_stream {
-margin: 0 auto;
-}
-}
-.start-session-btn-wrapper {
-text-align: center;
-margin: 7vh 0 0;
-.start-session-btn {
-background-color: $enury !important;
-border: 1px solid $enury !important;
-border-radius: 0;
-padding: 2.2vh 3.125vw;
-margin: 0 20px;
-min-width: 270px;
-text-align: center;
-color: $black;
-font-size: 18px;
-&:hover {
-background-color: $ebony-clay;
-}
-}
-}
-&.session-started {
-#local_stream {
-margin: 0;
-position: fixed;
-height: 100vh !important;
-width: auto !important;
-left: 0;
-right: 0;
-top: 0;
-bottom: 0;
-video {
-object-fit: contain !important;
-}
-}
-.start-session-btn-wrapper {
-.start-session-btn {
-position: fixed;
-top: 20px;
-right: 0px;
-padding: 2.2vh 2.125vw;
-min-width: inherit;
-}
-}
-}
-}
-}
+        .btn-outline-secondary {
+            &.true-btn {
+                border: 2px solid $enury;
+                color: $white;
+                border-radius: 0;
+                padding: 15px 60px;
+                margin: 0 20px;
+                min-width: 18.2vw;
+                &.active {
+                    background-color: $secondary;
+                }
+            }
+        }
+    }
+
+    .session-cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+
+        .session-cards {
+            width: 50%;
+            padding: 20px 30px;
+
+            .card {
+                border: 1px solid $petite-orchid;
+                border-radius: 0;
+                background-color: transparent;
+                color: $white;
+
+                &.live-session {
+                    background-color: $petite-orchid;
+                    color: $black;
+                }
+
+                .card-content {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .session-amount {
+                    height: 40px;
+                    width: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid $enury;
+                    border-radius: 5px;
+                    font-size: 20px;
+                    background-color: $ebony-clay;
+                    color: $white;
+                }
+            }
+
+            .btn-secondary {
+                background-color: $ebony-clay;
+                color: $white;
+                padding: 10px 30px;
+                border: 0;
+                border-radius: 0;
+                max-width: 200px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .heading {
+        color: $enury;
+    }
+
+    .subheading {
+        color: $waikawa-gray;
+    }
+
+    .label {
+        color: $white;
+        padding-top: 50px;
+    }
+
+    .session-user-right-container {
+        padding: 5vh 3.5vw 0 3.5vw;
+
+        .title {
+            text-align: left;
+            color: $white;
+            font-size: 1.6vw;
+            font-weight: 400;
+            position: relative;
+
+            i {
+                position: absolute;
+                left: -35px;
+                top: 1px;
+
+                &::before {
+                    color: $white;
+                }
+            }
+        }
+
+        .add-btn-wrapper {
+            text-align: right;
+        }
+
+        .addBtn {
+            background-color: transparent;
+            border: 1px solid $enury;
+            border-radius: 0;
+            padding: 2.3vh 3.125vw;
+            min-width: 14.4vw;
+            text-align: center;
+            color: $white;
+            font-size: 18px;
+
+            &:hover {
+                background-color: $ebony-clay;
+            }
+        }
+
+        .carousel-root {
+            .thumbs-wrapper {
+                display: none;
+            }
+
+            .carousel {
+                .control-dots {
+                    .dot {
+                        opacity: 0.5;
+                        box-shadow: none;
+                        width: 15px;
+                        height: 15px;
+                        outline: none;
+
+                        &.selected {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                img {
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .session-info {
+            display: flex;
+            align-items: center;
+            color: $white;
+            font-weight: 300;
+            padding-top: 6vh;
+            padding-bottom: 4vh;
+
+            .session-status {
+                font-size: 1.45vw;
+
+                .Cancelled,
+                .Completed,
+                .Booked {
+                    width: 3.17vw;
+                    height: 6.5vh;
+                    border-radius: 50%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 5px;
+                }
+
+                .Cancelled {
+                    background-color: $milano-red;
+                }
+
+                .Completed,
+                .Booked {
+                    background-color: $secondary;
+                }
+            }
+
+            .session-amount {
+                font-size: 1.45vw;
+                color: $black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 6.9vw;
+                height: 5.7vh;
+                background-color: $secondary;
+                margin: 0 1.56vw 0 3.02vw;
+            }
+
+            .cancel-policy-link {
+                font-size: 1.12vw;
+            }
+        }
+
+        .session-detail-wrapper {
+            color: $white;
+            font-weight: 300;
+
+            .session-heading {
+                font-size: 1.52vw;
+            }
+
+            .session-type {
+                font-size: 1.05vw;
+                opacity: 0.68;
+            }
+
+            .session-date-time {
+                font-size: 1.1vw;
+                margin-bottom: 0;
+            }
+
+            .session-info-heading,
+            .session-info-content {
+                font-size: 1.1vw;
+            }
+
+            .session-info-content {
+                opacity: 0.7;
+            }
+        }
+
+        &.audio-video-container {
+            padding: 5vh 6.12vw;
+
+            .App {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                #local_stream {
+                    margin: 0 auto;
+                }
+            }
+
+            .start-session-btn-wrapper {
+                text-align: center;
+                margin: 7vh 0 0;
+
+                .start-session-btn {
+                    background-color: $enury !important;
+                    border: 1px solid $enury !important;
+                    border-radius: 0;
+                    padding: 2.2vh 3.125vw;
+                    margin: 0 20px;
+                    min-width: inherit;
+                    text-align: center;
+                    color: $black;
+                    font-size: 18px;
+
+                    &:hover {
+                        background-color: $ebony-clay;
+                    }
+                }
+            }
+
+            &.session-started {
+                #local_stream {
+                    margin: 0;
+                    position: fixed;
+                    height: 100vh !important;
+                    width: auto !important;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+
+                    video {
+                        object-fit: contain !important;
+                    }
+                }
+
+                .start-session-btn-wrapper {
+                    .start-session-btn {
+                        position: fixed;
+                        top: 20px;
+                        right: 0px;
+                        padding: 2.2vh 2.125vw;
+                        min-width: inherit;
+                    }
+                }
+            }
+            .video-check-wrapper {
+                display: block;
+                margin: 0 auto;
+            }
+            .audio-check-wrapper {
+                margin-bottom: 15px;
+                canvas {
+                    width: 300px !important;
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+        }
+    }
 
 }

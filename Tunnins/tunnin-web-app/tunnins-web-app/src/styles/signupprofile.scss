@@ -9,9 +9,18 @@
     
     .signup-second-form-wrapper {
         justify-content: space-between;
+        max-height: 530px;
+        flex-direction: column;
+        textarea {
+            height: 22.1vh;
+        }
         .btn-primary {
             min-width: 280px !important;
             margin-top: 100px;
+        }
+        .select-all {
+            font-size: 1.1vw;
+            color: $white;
         }
     }
     .heading {
@@ -41,6 +50,9 @@
         .checkboxes {
             width: 25%;
             margin-bottom: 10px;
+            > label {
+                align-items: flex-start !important;
+            }
         }
     }
 }
