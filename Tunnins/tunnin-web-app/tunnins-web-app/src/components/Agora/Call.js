@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import AgoraRTC from "agora-rtc-sdk";
 
+import {
+    Button
+} from 'reactstrap';
+
 // Redux
 import { useSelector } from "react-redux";
 
@@ -173,11 +177,24 @@ function Call(props) {
         checkUserType();
     }
 
+    const disableVideo=()=> {
+        AgoraRTC.createStream({
+            streamID: rtc.params.uid,
+            audio: true,
+            video: false,
+            screen: false,
+            width: 3840,
+            height: 2160,
+            framerate: 60,
+            bitrate: 6500,
+        });
+    }
 
 
     return (
         <div>
             <div id="local_stream" className="local_stream" style={{ width: "1080px", height: "720px" }}></div>
+            
             {/* <div
                 id="remote_video_"
                 style={{ width: "400px", height: "400px" }}

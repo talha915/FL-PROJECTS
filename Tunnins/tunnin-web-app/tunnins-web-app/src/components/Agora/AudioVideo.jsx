@@ -6,6 +6,9 @@ import {
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
+// Action
+import { fetchEarning } from '../../actions/earnings';
+
 // Router
 import { withRouter } from 'react-router-dom';
 
@@ -24,9 +27,14 @@ import start_session_img from '../../images/start-session-img.png';
 function AudioVideo(props) {
 
     const [status, setStatus] = useState(false);
+    const [disableVideo, setDisableVideo] = useState(false);
 
     const startSession = () => {
         setStatus(!status);
+    }
+
+    const disableSession=()=> {
+
     }
 
     let sessionId = props.location.sessionRes._id;
@@ -51,9 +59,12 @@ function AudioVideo(props) {
                         }
                         <div className="start-session-btn-wrapper">
                             {status ?
-                                <Button className="start-session-btn" onClick={() => startSession()}>
-                                    End Session
-                                </Button>
+                                <div>
+                                    <Button className="start-session-btn" onClick={() => startSession()}>
+                                        End Session
+                                    </Button>
+                                    <Button onClick={()=>disableSession()}>Disable Video</Button>
+                                </div>
                                 :
                                 <Button className="start-session-btn" onClick={() => startSession()}>
                                     Start Session
