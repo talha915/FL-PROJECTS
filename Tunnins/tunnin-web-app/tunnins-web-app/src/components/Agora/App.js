@@ -34,7 +34,7 @@ function App(props) {
 
     return (
         <div className="App">
-            <Call />
+            <Call disableVideo={props.videoStatus}/>
         </div>
     );
 

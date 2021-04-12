@@ -13,16 +13,11 @@ function Mic() {
         startRecording();
     }, []);
 
-    const onData = (recordedBlob) => {
-        console.log('chunk of real-time data is: ', recordedBlob);
-    }
-
     return (
         <div className="audio-check-wrapper">
         <ReactMic
             record={record}
             className="sound-wave"
-            onData={onData}
             strokeColor="#fff"
             backgroundColor="#D0A592"
         />

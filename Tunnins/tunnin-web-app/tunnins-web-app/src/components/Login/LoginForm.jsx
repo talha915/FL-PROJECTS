@@ -35,6 +35,7 @@ function LoginForm(props) {
     }
 
     const [modal, setModal] = useState(false);
+    const [viewPass, setViewPass] = useState(false);
 
     const [datacall, setDataCall] = useState({});
 
@@ -43,6 +44,10 @@ function LoginForm(props) {
     const toggle = () => {
         setModal(!modal);
         dispatch(updateModal('forgot'));
+    }
+
+    const togglePass=()=> {
+        setViewPass(!viewPass);
     }
 
     const modalState = useSelector(state => state.updateModal);
@@ -78,9 +83,9 @@ function LoginForm(props) {
                         </FormGroup>
                         <FormGroup className="custom-input-wrapper">
                             <Label for="examplePassword">{loginForm.password}</Label>
-                            <Input type="password" name="password" id="examplePassword" placeholder="***************" onChange={(e)=>handleChange('password', e.target.value)} />
+                            <Input type={viewPass ? "text": "password"} name="password" id="examplePassword" placeholder="***************" onChange={(e)=>handleChange('password', e.target.value)} />
                             <span className="input-icons"><i className="icon-lock-unlock"></i></span>
-                            <span className="input-icons password"><i className="icon-outline-visibility_off-24px"></i></span>
+                            <span className="input-icons password" onClick={()=>togglePass()}><i className="icon-outline-visibility_off-24px"></i></span>
                         </FormGroup>
                         <FormGroup className="d-flex justify-content-between align-items-center mb-5" check >
                             <Label className="tunnin-checkbox" check>

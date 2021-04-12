@@ -27,14 +27,14 @@ import start_session_img from '../../images/start-session-img.png';
 function AudioVideo(props) {
 
     const [status, setStatus] = useState(false);
-    const [disableVideo, setDisableVideo] = useState(false);
+    const [videoStatus, setVideoStatus] = useState(true);
 
     const startSession = () => {
         setStatus(!status);
     }
 
     const disableSession=()=> {
-
+        setVideoStatus(false);
     }
 
     let sessionId = props.location.sessionRes._id;
@@ -50,7 +50,7 @@ function AudioVideo(props) {
                             Test Audio & Video
                         </p>
                         {status ?
-                            <App sessionId={sessionId} />
+                            <App sessionId={sessionId} videoStatus={videoStatus}/>
                             :
                             <div>
                                 <WebcamComponent />
@@ -63,7 +63,7 @@ function AudioVideo(props) {
                                     <Button className="start-session-btn" onClick={() => startSession()}>
                                         End Session
                                     </Button>
-                                    <Button onClick={()=>disableSession()}>Disable Video</Button>
+                                    <Button className="start-session-btn" onClick={()=>disableSession()}>Disable Video</Button>
                                 </div>
                                 :
                                 <Button className="start-session-btn" onClick={() => startSession()}>
