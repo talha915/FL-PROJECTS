@@ -3,6 +3,7 @@ import localData from '../Data/Data.json';
 
 export const updateModal = (typeModal) => {
     if(typeModal == 'forgot') {
+        console.log("Working: ", typeModal);
         return {
             type: 'forgotPassword',
             payload: localData.forgotPassword
