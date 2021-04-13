@@ -14,7 +14,7 @@ import { getFetchParam } from '../../actions/getFetchParam';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { listed_notification, trainer_user_type, upcoming_session, past_session, past_sessions, routeAgora } from '../../constants/constants';
+import { listed_notification, trainer_user_type, upcoming_session, upcoming, past, past_sessions, routeAgora } from '../../constants/constants';
 
 // Styles
 import '../../styles/notifications.scss';
@@ -29,27 +29,25 @@ function Notification(props) {
 
     const [userType, setUserType] = useState('');
     const [callAgora, setAgora] = useState(false);
+    const [sessionType, setSessionType] = useState();
 
     const dispatch = useDispatch();
     const getNotification = useSelector(state => state.notification);
 
     const userInfo = useSelector(state => state.postFetch);
 
-    const upcomingSessions = useSelector(state => state.getApi);
+    const sessions = useSelector(state => state.getApi);
 
     const dispatchCheckUser=()=> {
         if(userInfo.hasOwnProperty('userLogged')) {
-            console.log("User Ifo: ", userInfo.userLogged.userType);
             setUserType(userInfo.userLogged.userType);  
             dispatch(ListNotification(listed_notification, userInfo.userLogged.userType)); 
-            // UpComing Sessions
+            // UpComing Sessions By Default
             let userId = userInfo.userLogged._id;
             dispatch(getFetchParam(upcoming_session, userId));
         }
         else {
             setUserType(trainer_user_type);
-            //dispatch(ListNotification(listed_notification, userInfo.userLogged.userType)); 
-
         }
     }
 
@@ -61,7 +59,7 @@ function Notification(props) {
     },[]);
 
     const dipatchGetCards=()=> {
-        if(upcomingSessions.hasOwnProperty('upcomingSession')) {
+        if(sessions.hasOwnProperty('upcomingSession')) {
 
         }
     }
@@ -70,47 +68,9 @@ function Notification(props) {
         dispatch(ListNotification(listed_notification, userType));
     }
 
-    // const getCards = () => {
-    //     if (getNotification.hasOwnProperty('data')) {
-    //         let lists = getNotification.data.cards;
-    //         let cards = lists.map((data, index) => {
-    //             return (
-    //                 <div key={index} className="session-cards">
-    //                     <Card body className="card-style">
-    //                         <div className="card-content">
-    //                             <div>
-    //                                 <CardTitle tag="h5">{data.heading}</CardTitle>
-    //                                 <CardText>{data.date}</CardText>
-    //                                 <CardText>{data.time}</CardText>
-    //                             </div>
-    //                             {userType && userType === "user" ? 
-    //                                 <div>
-    //                                     {data.status!=="Booked"?<CardText>{data.status}</CardText>: ''}
-    //                                     <Button onClick={()=>{cardRouteUser(data, index)}}>{data.golive}</Button>
-    //                                 </div>
-    //                             :
-    //                                 <div>
-    //                                     <CardText className="session-amount">$21</CardText>
-    //                                     <CardText>10 users booked</CardText>
-    //                                 </div>
-    //                             }
-    //                         </div>
-    //                         {userType && userType === trainer_user_type ? 
-    //                             <Button onClick={()=>{cardRoute(data, index)}}>{data.golive}</Button> :
-    //                             ''
-    //                         }
-    //                     </Card>
-    //                 </div>
-    //             )
-    //         })
-    //         return cards;
-    //     }
-    // }
-
-
     const getCards = () => {
-        if (upcomingSessions.hasOwnProperty('upcomingSession')) {
-            let lists = upcomingSessions.upcomingSession;
+        if (sessions.hasOwnProperty('upcomingSession')) {
+            let lists = sessions.upcomingSession;
             let cards = lists.map((data, index) => {
                 return (
                     <div key={index} className="session-cards">
@@ -196,12 +156,14 @@ function Notification(props) {
         if (data.sessionType) {
             let userId = userInfo.userLogged._id;
             console.log("Data: ", data);
-            if(data.route === past_session) {
-                console.log("Calling Past");
+            if(data.route === past) {
+                // Past Sessions On Click
+                setSessionType(past);
                 dispatch(getFetchParam(past_sessions, userId));
             }
             else {
-                console.log("Calling Upcoming");
+                // UpComing Sessions On Click
+                setSessionType(upcoming);
                 dispatch(getFetchParam(upcoming_session, userId));
             }
             dispatch(ListNotification(data.route, userType));
