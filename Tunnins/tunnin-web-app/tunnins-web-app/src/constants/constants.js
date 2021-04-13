@@ -43,7 +43,7 @@ export const cancel_session = 'cancelSession';
 export const cancelled_session = 'cancelledSession';
 export const host_type = 'host';
 export const audience_type = 'audience';
-
+export const past_session = 'past';
 
 export const agora_app_id = '1c3aa8a838d14cd99bd626ab94291542';
 
@@ -58,3 +58,4 @@ export const user_logout = "users/logout";
 export const agora_key = "session/agoraTokenbySessionID/";
 export const create_session = "session/";
 export const upcoming_session = "session/upcoming_session/";
+export const past_sessions = "session/past_sessions/";

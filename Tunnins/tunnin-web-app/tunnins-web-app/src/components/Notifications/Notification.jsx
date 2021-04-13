@@ -14,7 +14,7 @@ import { getFetchParam } from '../../actions/getFetchParam';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { listed_notification, trainer_user_type, upcoming_session, routeAgora } from '../../constants/constants';
+import { listed_notification, trainer_user_type, upcoming_session, past_session, past_sessions, routeAgora } from '../../constants/constants';
 
 // Styles
 import '../../styles/notifications.scss';
@@ -48,7 +48,8 @@ function Notification(props) {
         }
         else {
             setUserType(trainer_user_type);
-            dispatchNotification();
+            //dispatch(ListNotification(listed_notification, userInfo.userLogged.userType)); 
+
         }
     }
 
@@ -193,6 +194,16 @@ function Notification(props) {
 
     const routeTo = (data, index) => {
         if (data.sessionType) {
+            let userId = userInfo.userLogged._id;
+            console.log("Data: ", data);
+            if(data.route === past_session) {
+                console.log("Calling Past");
+                dispatch(getFetchParam(past_sessions, userId));
+            }
+            else {
+                console.log("Calling Upcoming");
+                dispatch(getFetchParam(upcoming_session, userId));
+            }
             dispatch(ListNotification(data.route, userType));
         }
         else {
