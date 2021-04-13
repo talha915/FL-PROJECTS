@@ -38,12 +38,13 @@ function Notification(props) {
 
     const sessions = useSelector(state => state.getApi);
 
-    const dispatchCheckUser=()=> {
-        if(userInfo.hasOwnProperty('userLogged')) {
-            setUserType(userInfo.userLogged.userType);  
-            dispatch(ListNotification(listed_notification, userInfo.userLogged.userType)); 
+    const dispatchCheckUser = () => {
+        if (userInfo.hasOwnProperty('userLogged')) {
+            setUserType(userInfo.userLogged.userType);
+            dispatch(ListNotification(listed_notification, userInfo.userLogged.userType));
             // UpComing Sessions By Default
             let userId = userInfo.userLogged._id;
+            setSessionType(upcoming);
             dispatch(getFetchParam(upcoming_session, userId));
         }
         else {
@@ -56,10 +57,10 @@ function Notification(props) {
         dispatchCheckUser();
         dispatchNotification();
         dipatchGetCards();
-    },[]);
+    }, []);
 
-    const dipatchGetCards=()=> {
-        if(sessions.hasOwnProperty('upcomingSession')) {
+    const dipatchGetCards = () => {
+        if (sessions.hasOwnProperty('upcomingSession')) {
 
         }
     }
@@ -69,8 +70,18 @@ function Notification(props) {
     }
 
     const getCards = () => {
-        if (sessions.hasOwnProperty('upcomingSession')) {
-            let lists = sessions.upcomingSession;
+        let lists;
+        if (sessionType === past) {
+            if (sessions.hasOwnProperty('pastSession')) {
+                lists = sessions.pastSession;
+            }
+        }
+        else {
+            if (sessions.hasOwnProperty('upcomingSession')) {
+                lists = sessions.upcomingSession;
+            }
+        }
+        if (lists instanceof Array) {
             let cards = lists.map((data, index) => {
                 return (
                     <div key={index} className="session-cards">
@@ -81,20 +92,20 @@ function Notification(props) {
                                     <CardText>{data.fromDate}</CardText>
                                     <CardText>{data.fromTime} - {data.toTime}</CardText>
                                 </div>
-                                {userType && userType === "user" ? 
+                                {userType && userType === "user" ?
                                     <div>
-                                        {data.status!=="Booked"?<CardText>{data.status}</CardText>: ''}
-                                        <Button onClick={()=>{cardRouteUser(data, index)}}>View Details</Button>
+                                        {data.status !== "Booked" ? <CardText>{data.status}</CardText> : ''}
+                                        <Button onClick={() => { cardRouteUser(data, index) }}>View Details</Button>
                                     </div>
-                                :
+                                    :
                                     <div>
                                         <CardText className="session-amount">${data.price}</CardText>
                                         <CardText>{data.detail}</CardText>
                                     </div>
                                 }
                             </div>
-                            {userType && userType === trainer_user_type ? 
-                                <Button onClick={()=>{cardRouteAgora(data)}}>Go Live</Button> :
+                            {userType && userType === trainer_user_type ?
+                                <Button onClick={() => { cardRouteAgora(data) }}>Go Live</Button> :
                                 ''
                             }
                         </Card>
@@ -105,15 +116,15 @@ function Notification(props) {
         }
     }
 
-    const cardRouteAgora=(data)=> {
+    const cardRouteAgora = (data) => {
         props.history.push({
             pathname: routeAgora,
             sessionRes: data
         });
     }
 
-    const cardRoute=(data, index)=> {
-        if(data.golive === data.past) {
+    const cardRoute = (data, index) => {
+        if (data.golive === data.past) {
             props.history.push(data.routeTo);
         }
         else {
@@ -122,7 +133,7 @@ function Notification(props) {
         }
     }
 
-    const cardRouteUser=(data, index)=> {
+    const cardRouteUser = (data, index) => {
         props.history.push({
             pathname: data.routeTo,
             state: data
@@ -132,19 +143,19 @@ function Notification(props) {
     const getBtns = () => {
         if (getNotification.hasOwnProperty('data')) {
             let btnList = getNotification.data.btns;
-            if(userType !== trainer_user_type) {
+            if (userType !== trainer_user_type) {
                 btnList = JSON.parse(JSON.stringify(getNotification.data.btns));
-                for(let i=0; i<btnList.length; i++) {
+                for (let i = 0; i < btnList.length; i++) {
                     btnList[i].flag = btnList[i].sessionType;
                 }
-            }            
+            }
             let btns = btnList.map((data, index) => {
                 return (
                     <div key={index} className="session-btns">
-                        {data.flag ?                   
-                        <Button color="outline-secondary" className={data.sessionType ? "true-btn" : "false-btn"} onClick={() => routeTo(data, index)}>
-                            {data.title}
-                        </Button>: ''}     
+                        {data.flag ?
+                            <Button color="outline-secondary" className={data.sessionType ? "true-btn" : "false-btn"} onClick={() => routeTo(data, index)}>
+                                {data.title}
+                            </Button> : ''}
                     </div>
                 )
             });
@@ -156,7 +167,7 @@ function Notification(props) {
         if (data.sessionType) {
             let userId = userInfo.userLogged._id;
             console.log("Data: ", data);
-            if(data.route === past) {
+            if (data.route === past) {
                 // Past Sessions On Click
                 setSessionType(past);
                 dispatch(getFetchParam(past_sessions, userId));
@@ -191,7 +202,7 @@ function Notification(props) {
                         <div className="session-cards-wrapper">
                             {getCards()}
                         </div>
-                        {callAgora ? <App/> : ''}
+                        {callAgora ? <App /> : ''}
                     </Col>
                 </Row>
             </div>
