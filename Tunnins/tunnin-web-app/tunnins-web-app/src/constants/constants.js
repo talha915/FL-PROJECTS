@@ -45,6 +45,7 @@ export const host_type = 'host';
 export const audience_type = 'audience';
 export const past = 'past';
 export const upcoming = 'upcoming';
+export const toggle_pass = 'toggle_pass';
 
 export const agora_app_id = '1c3aa8a838d14cd99bd626ab94291542';
 
