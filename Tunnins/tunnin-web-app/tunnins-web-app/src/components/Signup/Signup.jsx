@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import { Row, Col, Label, Input, Button, FormGroup} from 'reactstrap';
+import { Row, Col, Label, Button, FormGroup} from 'reactstrap';
 
 import Checkbox from "react-custom-checkbox";
 
 import logo from '../../images/tunnin-logo.png';
 
 // Constants
-import { sign_up, signed_up, toggle_pass } from '../../constants/constants';
+import { sign_up, signed_up } from '../../constants/constants';
 
 // Actions
 import { Signup } from '../../actions/Signup';
