@@ -117,7 +117,7 @@ function SessionDetail(props) {
                                             <CardText>{sessionDetail.data.detailTime}</CardText>
                                         </div>
                                         <div>
-                                            <CardText className="session-amount">$21</CardText>
+                                            <CardText className="session-amount">{props.history.location.pathname === "/session-details-past" ? "Earned $21": "$21"}</CardText>
                                             <CardText>{sessionDetail.data.booked}</CardText>
                                         </div>
                                     </div>

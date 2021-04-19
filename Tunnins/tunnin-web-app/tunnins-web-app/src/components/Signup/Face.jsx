@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Button } from 'reactstrap';
 
@@ -22,6 +22,7 @@ import { withRouter } from 'react-router-dom';
 
 function Face(props) {
    
+    const [uploaded_image, setImage] = useState([]);
     const dispatch = useDispatch();
     const signUpFace = useSelector(state => state.profileFace);
 
@@ -50,6 +51,7 @@ function Face(props) {
                     <div className="d-flex">
                         {uploads(signUpFace.data)}
                     </div>
+                    {getUploadedImages()}
                     <div className="next-btn-wrapper">
                         <Button color="primary" size="lg" onClick={()=>routeTo(signUpFace.data.route)}>
                             {signUpFace.data.btnText}
@@ -82,10 +84,29 @@ function Face(props) {
         return uploads;
     }
 
-    let uploaded_image;
+    // let uploaded_image;
+
+    // const uploadedFile=(event)=> {
+    //     uploaded_image = event.target.files[0];
+    // }
+
+
+    const getUploadedImages=()=> {
+        if(uploaded_image) {
+            let images = uploaded_image.map((data, index)=> {
+                return(
+                    <span key={index} >
+                        {data}
+                    </span>
+                );
+            });
+            return images;
+        }
+    }
 
     const uploadedFile=(event)=> {
-        uploaded_image = event.target.files[0];
+        let image = URL.createObjectURL(event.target.files[0]);
+        setImage(uploaded_image=>[...uploaded_image, <img src={image} alt={image.name} style={{height: "150px"}}/>]);
     }
 
     return (

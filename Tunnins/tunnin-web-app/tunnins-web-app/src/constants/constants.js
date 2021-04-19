@@ -60,4 +60,7 @@ export const user_logout = "users/logout";
 export const agora_key = "session/agoraTokenbySessionID/";
 export const create_session = "session/";
 export const upcoming_session = "session/upcoming_session/";
+export const upcoming_client_sessions = "session/upcoming_client_sessions/";
 export const past_sessions = "session/past_sessions/";
+export const past_client_sessions = "session/past_client_sessions/";
+export const complete_session = "session/complete_session/";

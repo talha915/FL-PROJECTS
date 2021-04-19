@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { fetchEarning } from '../../actions/earnings';
+import { patchFetch } from '../../actions/patchApi';
 
 // Router
 import { withRouter } from 'react-router-dom';
@@ -23,21 +24,40 @@ import App from '../Agora/App';
 
 // image
 import start_session_img from '../../images/start-session-img.png';
+import { complete_session } from '../../constants/constants';
 
 function AudioVideo(props) {
 
+    const dispatch = useDispatch();
     const [status, setStatus] = useState(false);
     const [videoStatus, setVideoStatus] = useState(true);
 
+    const userInfo = useSelector(state => state.postFetch);
+    
+    let userId;
+
+    if (userInfo.hasOwnProperty('userLogged')) {
+        if (userInfo.userLogged) {
+            userId = userInfo.userLogged._id;
+        }
+    }
+
+    let sessionId = props.location.sessionRes._id;
+
     const startSession = () => {
         setStatus(!status);
+        if(status) {
+            completeSession();
+        }
+    }
+
+    const completeSession=()=> {
+        dispatch(patchFetch(complete_session, sessionId+"/"+userId));
     }
 
     const disableSession=()=> {
         setVideoStatus(false);
     }
-
-    let sessionId = props.location.sessionRes._id;
 
     return (
         <div className="notifications">
@@ -63,7 +83,7 @@ function AudioVideo(props) {
                                     <Button className="start-session-btn" onClick={() => startSession()}>
                                         End Session
                                     </Button>
-                                    <Button className="start-session-btn" onClick={()=>disableSession()}>Disable Video</Button>
+                                    <Button className="start-session-btn" onClick={()=>startSession()}>Disable Video</Button>
                                 </div>
                                 :
                                 <Button className="start-session-btn" onClick={() => startSession()}>

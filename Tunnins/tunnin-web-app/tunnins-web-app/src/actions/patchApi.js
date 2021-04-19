@@ -7,13 +7,14 @@ import axios from 'axios';
 export const patchFetch=(apiType, params)=> {
     return async (dispatch) => {     
         try {
+            console.log("Complete Url: ",(url+apiType),params);
             let res = await axios.patch((url+apiType), params);     
             console.log("Res of Patch Agora: ", res);
             if(res.status === fine_res) {
                 let { data } = res.data;
-                console.log("Res of Patch Agora: ", data);
+                console.log("Res of Patch Agora: ", res);
                 dispatch({
-                    type: agora_key,
+                    type: apiType,
                     payload: data,
                 });
             }

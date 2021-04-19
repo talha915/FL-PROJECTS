@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input, Row, Col, Card, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle } from 'reactstrap';
+import React, { useEffect } from 'react';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -30,7 +28,16 @@ function Sidebar(props) {
         dispatch(ListNotification(listed_notification));
     }
 
-    const routeTo=(location)=> {
+    const routeTo=(location, data)=> {
+        let lists = getNotification.data.sideList;
+        for(let i=0; i<lists.length; i++) {
+            console.log("List: ", lists[i]);
+            lists[i].active = false;
+            console.log("Data: ", data);
+            if(lists[i].name === data.name) {
+                lists[i].active = true;
+            }
+        }
         props.history.push(location);
     }
 
@@ -39,7 +46,7 @@ function Sidebar(props) {
             let lists = getNotification.data.sideList;
             let sidebar = lists.map((data, index)=> {
                 return(
-                    <li key={index} className="list" onClick={()=>routeTo(data.route)}>
+                    <li key={index} className={data.active ? "list active": "list"} onClick={()=>routeTo(data.route, data)}>
                         <i className={data.icon}></i>{data.name}
                     </li>
                 )

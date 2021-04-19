@@ -16,8 +16,12 @@ import { get_auth, notification_route } from '../../constants/constants';
 // Router
 import { withRouter } from 'react-router-dom';
 
+// Toaster
+import toast, { Toaster } from 'react-hot-toast';
+
 // Style
 import '../../styles/login.scss';
+
 import { fine_res } from '../../constants/api_env';
 
 function LoginForm(props) {
@@ -30,7 +34,7 @@ function LoginForm(props) {
     }, []);
 
 
-    const setFormData=()=> {
+    const setFormData = () => {
         setForm(props.formData);
     }
 
@@ -46,7 +50,7 @@ function LoginForm(props) {
         dispatch(updateModal('forgot'));
     }
 
-    const togglePass=()=> {
+    const togglePass = () => {
         setViewPass(!viewPass);
     }
 
@@ -61,7 +65,7 @@ function LoginForm(props) {
         setDataCall(data);
     }
 
-    const routeSignUp=()=> {
+    const routeSignUp = () => {
         props.history.push('/signup');
     }
 
@@ -78,26 +82,26 @@ function LoginForm(props) {
                     <Form >
                         <FormGroup className="custom-input-wrapper">
                             <Label for="exampleEmail">{loginForm.email}</Label>
-                            <Input type="email" name="email" id="exampleEmail" placeholder="dodgeui2020@gmail.com" onChange={(e)=>handleChange('username', e.target.value)}/>
+                            <Input type="email" name="email" id="exampleEmail" placeholder="dodgeui2020@gmail.com" onChange={(e) => handleChange('username', e.target.value)} />
                             <span className="input-icons"><i className="icon-mail"></i></span>
                         </FormGroup>
                         <FormGroup className="custom-input-wrapper">
                             <Label for="examplePassword">{loginForm.password}</Label>
-                            <Input type={viewPass ? "text": "password"} name="password" id="examplePassword" placeholder="***************" onChange={(e)=>handleChange('password', e.target.value)} />
+                            <Input type={viewPass ? "text" : "password"} name="password" id="examplePassword" placeholder="***************" onChange={(e) => handleChange('password', e.target.value)} />
                             <span className="input-icons"><i className="icon-lock-unlock"></i></span>
-                            <span className="input-icons password" onClick={()=>togglePass()}><i className="icon-outline-visibility_off-24px"></i></span>
+                            <span className="input-icons password" onClick={() => togglePass()}><i className="icon-outline-visibility_off-24px"></i></span>
                         </FormGroup>
                         <FormGroup className="d-flex justify-content-between align-items-center mb-5" check >
                             <Label className="tunnin-checkbox" check>
                                 <Input type="checkbox" /> {loginForm.remember}
                             </Label>
                             <Label check>
-                                <a className="tunnin-link" href="#" onClick={()=>toggle()}>{loginForm.forgot}</a>
+                                <a className="tunnin-link" href="#" onClick={() => toggle()}>{loginForm.forgot}</a>
                             </Label>
                         </FormGroup>
                         <FormGroup className="text-center">
-                            <Button color="primary" size="lg" onClick={()=>userLogin()}>{loginForm.loginBtn}</Button>
-                            <p className="text-grey mt-3">Don’t have an account? <a className="tunnin-link" onClick={()=>routeSignUp()}>SIGNUP</a></p>
+                            <Button color="primary" size="lg" onClick={() => userLogin()}>{loginForm.loginBtn}</Button>
+                            <p className="text-grey mt-3">Don’t have an account? <a className="tunnin-link" onClick={() => routeSignUp()}>SIGNUP</a></p>
                         </FormGroup>
                     </Form>
                     <ModalPopup isOpen={modal} loginData={modalState} sendData={getDataFromChild} />
@@ -108,20 +112,23 @@ function LoginForm(props) {
 
     let form = {};
 
-    const handleChange=(field, data)=> {
+    const handleChange = (field, data) => {
         form[field] = data;
     }
 
-    const userLogin=()=> {
-        if(Object.keys(form).length == 2) {
+    const userLogin = () => {
+        if (Object.keys(form).length == 2) {
             dispatch(postFetch(get_auth, form));
-        }    
+        }
     }
 
     const userInfo = useSelector(state => state.postFetch);
-    
+
+    const notify = () => toast('Here is your toast.');
+
     if (userInfo.hasOwnProperty('userLogged')) {
         if (userInfo.userLoginStatus === fine_res) {
+            notify();
             props.history.push(notification_route);
         }
     }
@@ -129,6 +136,10 @@ function LoginForm(props) {
     return (
         <div>
             {getFormData()}
+            <Toaster
+                position="bottom-right"
+                reverseOrder={false}
+            />
         </div>
     )
 }

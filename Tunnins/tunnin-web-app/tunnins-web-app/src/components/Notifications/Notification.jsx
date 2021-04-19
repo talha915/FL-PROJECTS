@@ -14,7 +14,18 @@ import { getFetchParam } from '../../actions/getFetchParam';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { listed_notification, trainer_user_type, upcoming_session, upcoming, past, past_sessions, routeAgora } from '../../constants/constants';
+import { 
+    listed_notification, 
+    trainer_user_type, 
+    upcoming_session, 
+    upcoming_client_sessions, 
+    client_user_type, 
+    upcoming, 
+    past, 
+    past_sessions, 
+    past_client_sessions,
+    routeAgora } 
+    from '../../constants/constants';
 
 // Styles
 import '../../styles/notifications.scss';
@@ -40,15 +51,23 @@ function Notification(props) {
 
     const dispatchCheckUser = () => {
         if (userInfo.hasOwnProperty('userLogged')) {
-            setUserType(userInfo.userLogged.userType);
-            dispatch(ListNotification(listed_notification, userInfo.userLogged.userType));
-            // UpComing Sessions By Default
-            let userId = userInfo.userLogged._id;
-            setSessionType(upcoming);
-            dispatch(getFetchParam(upcoming_session, userId));
-        }
-        else {
-            setUserType(trainer_user_type);
+            console.log("User: ", userInfo.userLogged.userType);
+            if(userInfo.userLogged.userType === client_user_type) {
+                setUserType(userInfo.userLogged.userType);
+                dispatch(ListNotification(listed_notification, userInfo.userLogged.userType));
+                // UpComing Sessions By Default
+                let userId = userInfo.userLogged._id;
+                setSessionType(upcoming);
+                dispatch(getFetchParam(upcoming_client_sessions, userId));
+            }
+            else {
+                setUserType(userInfo.userLogged.userType);
+                dispatch(ListNotification(listed_notification, userInfo.userLogged.userType));
+                // UpComing Sessions By Default
+                let userId = userInfo.userLogged._id;
+                setSessionType(upcoming);
+                dispatch(getFetchParam(upcoming_session, userId));
+            }
         }
     }
 
@@ -169,13 +188,25 @@ function Notification(props) {
             console.log("Data: ", data);
             if (data.route === past) {
                 // Past Sessions On Click
-                setSessionType(past);
-                dispatch(getFetchParam(past_sessions, userId));
+                if(userType === client_user_type) {
+                    setSessionType(past);
+                    dispatch(getFetchParam(past_client_sessions, userId));
+                }
+                else {
+                    setSessionType(past);
+                    dispatch(getFetchParam(past_sessions, userId));
+                }
             }
             else {
                 // UpComing Sessions On Click
-                setSessionType(upcoming);
-                dispatch(getFetchParam(upcoming_session, userId));
+                if(userType === client_user_type) {
+                    setSessionType(upcoming);
+                    dispatch(getFetchParam(upcoming_client_sessions, userId));
+                }
+                else {
+                    setSessionType(upcoming);
+                    dispatch(getFetchParam(upcoming_session, userId));
+                }
             }
             dispatch(ListNotification(data.route, userType));
         }

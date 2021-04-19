@@ -266,27 +266,32 @@
             {
                 "name": "My Sessions",
                 "icon": "icon-frame-4 d-block",
-                "route": "/notification"
+                "route": "/notification",
+                "active": true
             },
             {
                 "name": "My Earnings",
                 "icon": "icon-earnings d-block",
-                "route": "/my-earnings"
+                "route": "/my-earnings",
+                "active": false
             },
             {
                 "name": "Payouts",
                 "icon": "icon-pay d-block",
-                "route": "/payouts"
+                "route": "/payouts",
+                "active": false
             },
             {
                 "name": "Ratings & Reviews",
                 "icon": "icon-review d-block",
-                "route": "/ratings"
+                "route": "/ratings",
+                "active": false
             },
             {
                 "name": "Settings",
                 "icon": "icon-settings d-block",
-                "route": "/settings-contact"
+                "route": "/settings-contact",
+                "active": false
             }
         ],
         "btns": [

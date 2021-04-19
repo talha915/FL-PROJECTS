@@ -10,6 +10,7 @@ export const postFetch = (dataType, params) => {
             let res = await axios.post((url+dataType), params);
             if (res.status === fine_res) {
                 let { data } = res.data;
+                
                 dispatch({
                     type: dataType,
                     payload: data,
