@@ -64,3 +64,4 @@ export const upcoming_client_sessions = "session/upcoming_client_sessions/";
 export const past_sessions = "session/past_sessions/";
 export const past_client_sessions = "session/past_client_sessions/";
 export const complete_session = "session/complete_session/";
+export const get_profile = "users/";

@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 // Action
 import { fetchEarning } from '../../actions/earnings';
 import { patchFetch } from '../../actions/patchApi';
+import { getFetchParam } from '../../actions/getFetchParam';
 
 // Router
 import { withRouter } from 'react-router-dom';
@@ -52,7 +53,7 @@ function AudioVideo(props) {
     }
 
     const completeSession=()=> {
-        dispatch(patchFetch(complete_session, sessionId+"/"+userId));
+        dispatch(getFetchParam(complete_session, sessionId+"/"+userId));
     }
 
     const disableSession=()=> {

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import {
-    Button, Form, FormGroup, Label, Input, Row, Col, Card, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle
+    Button, Form, FormGroup, Label, Input, Row, Col
 } from 'reactstrap';
 
 // Redux
@@ -14,10 +13,13 @@ import { userProfile } from '../../actions/userProfile';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { user_profile, user_edit_profile } from '../../constants/constants';
+import { user_profile, user_edit_profile, get_profile } from '../../constants/constants';
 
 // Styles
 import '../../styles/profile.scss';
+
+// Actions
+import { getFetchParam } from '../../actions/getFetchParam';
 
 // Components
 import Header from '../Header/Header';
@@ -28,21 +30,37 @@ import profileDp from '../../images/profile-dp.png';
 function UserProfile(props) {
 
     const dispatch = useDispatch();
+    const userInfo = useSelector(state => state.postFetch);
+    
+    let userId;
 
     useEffect(()=> {
+        getUserTrainerId();
         dispatchUserProfile();
     });
+
+    const getUserTrainerId = () => {
+        if (userInfo.hasOwnProperty('userLogged')) {
+            if (userInfo.userLogged) {
+                userId = userInfo.userLogged._id;
+            }
+        }
+    }
 
     const dispatchUserProfile=()=> {
         if(props.history.location.pathname === "/edit-user-profile") {
             dispatch(userProfile(user_edit_profile));
         }
         else {
+            dispatch(getFetchParam(get_profile, userId));
             dispatch(userProfile(user_profile));
         }
     }
 
     const users = useSelector(state => state.userProfile);
+    
+    // User Profile
+    const usersProfile = useSelector(state=> state.getApi);
 
     const getUpperPart=()=> {
         if(users.hasOwnProperty('data')) {
@@ -87,8 +105,9 @@ function UserProfile(props) {
     }
 
     const getProfile=()=> {
-        if(users.hasOwnProperty('data')) {
+        if(users.hasOwnProperty('data') && usersProfile.hasOwnProperty('userProfile')) {
             let profile = users.data.userDetails;
+            let usersProfile = usersProfile.userProfile;
             return(
                 <Col>
                 <div className="d-flex align-items-center">
@@ -148,7 +167,8 @@ function UserProfile(props) {
     }
 
     const getUserForm=()=> {
-        if(users.hasOwnProperty('data')) {
+        if(users.hasOwnProperty('data')  && usersProfile.hasOwnProperty('userProfile')) {
+            let usersProfile = usersProfile.userProfile;
             let form = users.data.userDetails.userform.map((data, index)=> {
                 return(
                     <Col className={data.paddingClass} key={index}>
