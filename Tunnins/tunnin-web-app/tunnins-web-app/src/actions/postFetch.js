@@ -4,13 +4,18 @@ import { user_logged_in } from '../constants/constants';
 // axios
 import axios from 'axios';
 
+// Toastify
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+
 export const postFetch = (dataType, params) => {
     return async (dispatch) => {
         try {
             let res = await axios.post((url+dataType), params);
             if (res.status === fine_res) {
                 let { data } = res.data;
-                
+                toast.success('Success', {position: toast.POSITION.BOTTOM_RIGHT});
                 dispatch({
                     type: dataType,
                     payload: data,
@@ -20,6 +25,7 @@ export const postFetch = (dataType, params) => {
         }
         catch (error) {
             console.log("Complete Err: ", error.response);
+            toast.error(error.response.data.message, {position: toast.POSITION.BOTTOM_RIGHT, autoClose: false});
             dispatch({
                 type: dataType,
                 payload: error.response,
