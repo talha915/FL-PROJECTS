@@ -36,10 +36,11 @@ function About(props) {
     }
 
     const getSettings = useSelector(state => state.settings);
+    const getTermsCondition = useSelector(state => state.getApi);
 
     const getAbout = () => {
-        if (getSettings.hasOwnProperty('about')) {
-            let about = getSettings.about;
+        if (getTermsCondition.hasOwnProperty('pagesData')) {
+            let about = getTermsCondition.pagesData.about;
             return (
                 <div className="about">
                     <div className="settings-container">
@@ -48,7 +49,7 @@ function About(props) {
                             {about.title}
                         </h5>
                         <p>
-                            {about.description}
+                            {about.content}
                         </p>
                     </div>
                 </div>

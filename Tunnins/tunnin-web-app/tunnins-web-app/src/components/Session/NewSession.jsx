@@ -36,6 +36,7 @@ function AddSession(props) {
 
     const dispatch = useDispatch();
     const [uploaded_image, setImage] = useState([]);
+    const [uploadedImageFile, setUploadedFile] = useState([]);
     const [form, setform] = useState({});
     const [editForm, setEditForm] = useState({});
 
@@ -103,6 +104,7 @@ function AddSession(props) {
     const dispatchCreateSession=()=> {
         let bodyFormData = new FormData();
         if(userFetch.hasOwnProperty('userLogged')) {
+            console.log("Uploaded Image: ", uploadedImageFile);
             bodyFormData.append("trainerId", userFetch.userLogged._id);
             bodyFormData.append("catId", sessionForm.category);
             bodyFormData.append("title", sessionForm.name_of_class);
@@ -114,7 +116,7 @@ function AddSession(props) {
             bodyFormData.append("userLimit", userFetch.userLogged._id);
             bodyFormData.append("requirements", sessionForm.what_you_need);
             bodyFormData.append("detail", sessionForm.about);
-            bodyFormData.append("images", uploaded_image);
+            bodyFormData.append("images", uploadedImageFile);
             bodyFormData.append("competencylevel", "Beginner");
         }
         console.log("Body Form Data: ", bodyFormData);
@@ -190,7 +192,12 @@ function AddSession(props) {
       };
 
     const uploadedFile=(event)=> {
-        let image = URL.createObjectURL(event.target.files[0]);
+        let imageFile = event.target.files[0];
+        if(uploadedImageFile < 4) {
+            setUploadedFile(...uploadedImageFile, imageFile);
+        }
+        let image = URL.createObjectURL(imageFile);
+        console.log("Images: ", imageFile);
         setImage(uploaded_image=>[...uploaded_image, <img src={image} alt={image.name} style={{height: "150px"}}/>]);
         //uploaded_image = <img src={image} alt={image.name} />;
         console.log("Uploaded Image: ",(uploaded_image));

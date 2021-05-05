@@ -36,27 +36,25 @@ function Terms(props) {
     }
 
     const getSettings = useSelector(state => state.settings);
+    const getTermsCondition = useSelector(state => state.getApi);
 
-    const getTerms = () => {
-        if (getSettings.hasOwnProperty('terms')) {
-            let settingTerms = getSettings.terms;
+    const getTerms = () => {   
+        if(getTermsCondition.hasOwnProperty('pagesData')) {
+            let termsCondition = getTermsCondition.pagesData.terms;
             return (
                 <div className="terms">
                     <div className="settings-container">
                         <h5 className="settings-heading">
                             <i className="icon-portable-document-format"></i>
-                            {settingTerms.title}
+                            {termsCondition.title}
                         </h5>
                         <p>
-                            {settingTerms.description}
-                        </p>
-                        <p>
-                            {settingTerms.descriptionFooter}
+                            {termsCondition.content}
                         </p>
                     </div>
                 </div>
             );
-        }
+        }    
     }
 
     const getSettingSidebar = () => {

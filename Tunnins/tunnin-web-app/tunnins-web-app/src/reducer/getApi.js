@@ -1,5 +1,5 @@
 // Constants
-import { user_logout, upcoming_session, upcoming_client_sessions, past_sessions, agora_key, get_profile } from '../constants/constants';
+import { user_logout, upcoming_session, upcoming_client_sessions, past_sessions, agora_key, get_profile, pages } from '../constants/constants';
 
 const initialState = {
 
@@ -36,7 +36,25 @@ export default function(state=initialState, actions) {
             return {
                 ...state,
                 userProfile: actions.payload
-            }                
+            }
+        case pages:
+            let pageData = JSON.parse(JSON.stringify(actions.payload));
+            let parsedPage = {};
+            for (let i = 0; i < pageData.length; i++) {
+                if (pageData[i].title === "Terms & Conditions") {
+                    parsedPage.terms = pageData[i];
+                }
+                if (pageData[i].title === "Privacy Policy") {
+                    parsedPage.privacy = pageData[i];
+                }
+                if (pageData[i].title === "About Us") {
+                    parsedPage.about = pageData[i];
+                }
+            }
+            return {
+                ...state,
+                pagesData: parsedPage
+            }
         default:
             return state;    
     }

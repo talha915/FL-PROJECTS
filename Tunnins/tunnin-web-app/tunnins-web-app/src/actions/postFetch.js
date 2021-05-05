@@ -11,6 +11,8 @@ toast.configure()
 
 export const postFetch = (dataType, params) => {
     return async (dispatch) => {
+        console.log("DataType: ", dataType);
+        console.log("Params: ", params);
         try {
             let res = await axios.post((url+dataType), params);
             if (res.status === fine_res) {
@@ -25,7 +27,7 @@ export const postFetch = (dataType, params) => {
         }
         catch (error) {
             console.log("Complete Err: ", error.response);
-            toast.error(error.response.data.message, {position: toast.POSITION.BOTTOM_RIGHT, autoClose: false});
+            //toast.error(error.response.data.message, {position: toast.POSITION.BOTTOM_RIGHT, autoClose: false});
             dispatch({
                 type: dataType,
                 payload: error.response,

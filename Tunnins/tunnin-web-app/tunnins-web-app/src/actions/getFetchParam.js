@@ -39,7 +39,7 @@ export const getFetchParam = (apiType, param) => {
         }
         catch(error) {
             console.log("Complete Err: ", error.response);
-            toast.error(error.response.data.message, {position: toast.POSITION.BOTTOM_RIGHT, autoClose: false});
+            //toast.error(error.response.data.message, {position: toast.POSITION.BOTTOM_RIGHT, autoClose: false});
             dispatch({
                 type: apiType,
                 payload: error.response,

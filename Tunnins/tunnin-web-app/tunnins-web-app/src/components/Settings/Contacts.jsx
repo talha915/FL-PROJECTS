@@ -8,12 +8,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { settings } from '../../actions/settings';
+import { getFetch } from '../../actions/getFetch';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { setting_contact } from '../../constants/constants';
+import { setting_contact, pages } from '../../constants/constants';
 
 // Styles
 import '../../styles/settings.scss';
@@ -29,7 +30,12 @@ function Contacts(props) {
 
     useEffect(() => {
         dispatchContact();
+        dispatchPages();
     }, []);
+
+    const dispatchPages=()=> {
+        dispatch(getFetch(pages));
+    }
 
     const dispatchContact = () => {
         dispatch(settings(setting_contact));

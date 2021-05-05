@@ -36,10 +36,11 @@ function Privacy(props) {
     }
 
     const getSettings = useSelector(state => state.settings);
+    const getTermsCondition = useSelector(state => state.getApi);
 
     const getPrivacy = () => {
-        if (getSettings.hasOwnProperty('privacy')) {
-            let privacy = getSettings.privacy;
+        if (getTermsCondition.hasOwnProperty('pagesData')) {
+            let privacy = getTermsCondition.pagesData.privacy;
             return (
                 <div className="privacy">
                     <div className="settings-container">
@@ -48,7 +49,7 @@ function Privacy(props) {
                             {privacy.title}
                         </h5>
                         <p>
-                            {privacy.description}
+                            {privacy.content}
                         </p>
                     </div>
                 </div>

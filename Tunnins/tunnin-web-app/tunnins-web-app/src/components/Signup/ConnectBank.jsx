@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Label, Input, Button, FormGroup } from 'reactstrap';
 
@@ -24,10 +24,11 @@ import { fine_res } from '../../constants/api_env';
 function ConnectBank(props) {
 
     const dispatch = useDispatch();
+    const [accountNumber, setAccount] = useState('');
 
     useEffect(() => {
         dispatchConnectBank();
-    }, [])
+    }, []);
 
     const dispatchConnectBank = () => {
         dispatch(connectBank(connect_bank, null));
@@ -38,22 +39,17 @@ function ConnectBank(props) {
     const allStates = useSelector(state => state);
 
     const routeTo=(location)=> {
-        console.log("State: ", allStates);
+        console.log("All States", allStates);
         let bodyFormData = new FormData();
-        bodyFormData.append("fullName", allStates.signedup.f_name);
-        bodyFormData.append("username", allStates.signupProfile.signedUpProfile.username);
-        bodyFormData.append("email", allStates.signedup.email);
-        bodyFormData.append("password", allStates.signedup.c_pass);
+        bodyFormData.append("fullName", "123_allStates.signedup.f_name");
+        bodyFormData.append("username", "123_allStates.signupProfile.signedUpProfile.username");
+        bodyFormData.append("email", "123_allStates.signedup.email");
+        bodyFormData.append("password", "123_allStates.signedup.c_pass");
         bodyFormData.append("userType", "trainer");
-        bodyFormData.append("dob", allStates.signedup.dob);
-        bodyFormData.append("trainer_Cat", allStates.signupProfile.signedUpProfile.trainer_cat);
-        //bodyFormData.append("profilePic", "abc xyz");
-        bodyFormData.append("about", allStates.signupProfile.signedUpProfile.about);
-
-
+        bodyFormData.append("dob", "123_allStates.signedup.dob");
+        bodyFormData.append("trainer_Cat", "123_allStates.signupProfile.signedUpProfile.trainer_cat");
+        bodyFormData.append("about", "123_allStates.signupProfile.signedUpProfile.about");
         dispatch(postFetch(create_user, bodyFormData));
-
-            
     }
 
     const loginUser=()=> {
@@ -65,6 +61,7 @@ function ConnectBank(props) {
     }
 
     const userInfo = useSelector(state => state.postFetch);
+    console.log("UserInfo: ", userInfo);
     
     if(userInfo.hasOwnProperty('userLogged')) {
         props.history.push(notification_route);
@@ -75,15 +72,11 @@ function ConnectBank(props) {
         console.log("UserCheck", userCheck);
         if (userCheck === fine_res) {
             loginUser();
-            //props.history.push(location);
         }
         else {
             console.log("Error: ", userCheck);
         }
     }
-    
-
-    
 
     const getConnectBank = () => {
         if (connectbank.hasOwnProperty('data')) {
@@ -113,7 +106,8 @@ function ConnectBank(props) {
     }
 
     const selectedValue = (field, data) => {
-        dispatch(connectBank(field, data));
+        //dispatch(connectBank(field, data));
+        setAccount(data);
     }
 
     return (
