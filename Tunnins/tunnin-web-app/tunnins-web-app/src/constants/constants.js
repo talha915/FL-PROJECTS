@@ -66,3 +66,4 @@ export const past_client_sessions = "session/past_client_sessions/";
 export const complete_session = "session/complete_session/";
 export const get_profile = "users/";
 export const pages = "pages/allPages";
+export const stripe_account = "payments/get_stripe/";

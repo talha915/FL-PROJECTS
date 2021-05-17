@@ -102,14 +102,18 @@ function Notification(props) {
         }
         if (lists instanceof Array) {
             let cards = lists.map((data, index) => {
+                let date = new Date(JSON.parse(data.fromDate));
+                let fromDate = (date.getMonth()+1)+"/"+(date.getDate())+"/"+(date.getFullYear());
+                let fromTime = new Date(fromDate+" "+data.fromTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
+                let toTime = new Date(fromDate+" "+data.toTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
                 return (
                     <div key={index} className="session-cards">
                         <Card body className="card-style">
                             <div className="card-content">
                                 <div>
-                                    <CardTitle tag="h5">{data.title}</CardTitle>
-                                    <CardText>{data.fromDate}</CardText>
-                                    <CardText>{data.fromTime} - {data.toTime}</CardText>
+                                    <CardTitle tag="h5">{data.title}</CardTitle>                              
+                                    <CardText>{fromDate}</CardText>
+                                    <CardText>{fromTime} - {toTime}</CardText>
                                 </div>
                                 {userType && userType === "user" ?
                                     <div>

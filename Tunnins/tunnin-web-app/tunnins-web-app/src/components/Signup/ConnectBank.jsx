@@ -5,7 +5,7 @@ import { Label, Input, Button, FormGroup } from 'reactstrap';
 import logo from '../../images/tunnin-logo.png';
 
 // Constants
-import { connect_bank, account_number, create_user, get_auth, notification_route } from '../../constants/constants';
+import { connect_bank, account_number, create_user, get_auth, notification_route, stripe_account } from '../../constants/constants';
 
 // Style
 import '../../styles/connectBank.scss';
@@ -39,6 +39,7 @@ function ConnectBank(props) {
     const allStates = useSelector(state => state);
 
     const routeTo=(location)=> {
+        dispatchStripe();
         console.log("All States", allStates);
         let bodyFormData = new FormData();
         bodyFormData.append("fullName", "123_allStates.signedup.f_name");
@@ -50,6 +51,14 @@ function ConnectBank(props) {
         bodyFormData.append("trainer_Cat", "123_allStates.signupProfile.signedUpProfile.trainer_cat");
         bodyFormData.append("about", "123_allStates.signupProfile.signedUpProfile.about");
         dispatch(postFetch(create_user, bodyFormData));
+    }
+
+    const dispatchStripe=()=> {
+        //console.log("Value: ", accountNumber);
+        let stripeObj = {
+            "stripeId" : accountNumber
+        }
+        dispatch(postFetch(stripe_account, stripeObj));
     }
 
     const loginUser=()=> {
@@ -106,7 +115,7 @@ function ConnectBank(props) {
     }
 
     const selectedValue = (field, data) => {
-        //dispatch(connectBank(field, data));
+        dispatch(connectBank(field, data));
         setAccount(data);
     }
 
