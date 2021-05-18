@@ -3,6 +3,8 @@ import {
     Button, Row, Col, Card, CardText, CardTitle
 } from 'reactstrap';
 
+import moment from 'moment';
+
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
@@ -41,6 +43,7 @@ function Notification(props) {
     const [userType, setUserType] = useState('');
     const [callAgora, setAgora] = useState(false);
     const [sessionType, setSessionType] = useState();
+    const [statusLive, setStatusLive] = useState(false);
 
     const dispatch = useDispatch();
     const getNotification = useSelector(state => state.notification);
@@ -106,6 +109,19 @@ function Notification(props) {
                 let fromDate = (date.getMonth()+1)+"/"+(date.getDate())+"/"+(date.getFullYear());
                 let fromTime = new Date(fromDate+" "+data.fromTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
                 let toTime = new Date(fromDate+" "+data.toTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
+                let today = new Date();
+                let todayDate = (today.getMonth()+1)+"/"+(today.getDate())+"/"+(today.getFullYear());
+                if(fromDate != todayDate) {
+                    let cTime = new Date();
+                    let currentTime = Date.parse(cTime.getHours())+Date.parse(cTime.getMinutes());
+                    console.log("Current Time: ", currentTime);
+                    let fromHour = JSON.parse(data.fromDate.split(":"));
+                    console.log("From Time: ", fromHour);
+                    let diff = currentTime - fromHour;
+                    if(diff <= 3600000 && diff>=0) {
+                        setStatusLive(true);
+                    }
+                }
                 return (
                     <div key={index} className="session-cards">
                         <Card body className="card-style">
@@ -127,8 +143,11 @@ function Notification(props) {
                                     </div>
                                 }
                             </div>
-                            {userType && userType === trainer_user_type ?
+                            {((userType && userType === trainer_user_type) && (statusLive)) ?
                                 <Button onClick={() => { cardRouteAgora(data) }}>Go Live</Button> :
+                                ((userType && userType === trainer_user_type) && (!statusLive)) ?
+                                <Button onClick={() => { cardRouteUser(data, index) }}>View Details</Button>
+                                :
                                 ''
                             }
                         </Card>
@@ -157,6 +176,7 @@ function Notification(props) {
     }
 
     const cardRouteUser = (data, index) => {
+        data.routeTo = "/session-details-past";
         props.history.push({
             pathname: data.routeTo,
             state: data
