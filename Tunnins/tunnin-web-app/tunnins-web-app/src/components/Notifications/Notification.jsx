@@ -111,7 +111,7 @@ function Notification(props) {
                 let toTime = new Date(fromDate+" "+data.toTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
                 let today = new Date();
                 let todayDate = (today.getMonth()+1)+"/"+(today.getDate())+"/"+(today.getFullYear());
-                if(fromDate != todayDate) {
+                if(fromDate == todayDate) {
                     let cTime = new Date();
                     let currentTime = Date.parse(cTime.getHours())+Date.parse(cTime.getMinutes());
                     console.log("Current Time: ", currentTime);
@@ -143,12 +143,12 @@ function Notification(props) {
                                     </div>
                                 }
                             </div>
-                            {((userType && userType === trainer_user_type) && (statusLive)) ?
-                                <Button onClick={() => { cardRouteAgora(data) }}>Go Live</Button> :
-                                ((userType && userType === trainer_user_type) && (!statusLive)) ?
-                                <Button onClick={() => { cardRouteUser(data, index) }}>View Details</Button>
+                            {((userType && userType === trainer_user_type) && (statusLive && statusLive)) ?
+                                <Button onClick={() => { cardRouteAgora(data) }}>Go Live</Button> 
+                                // ((userType && userType === trainer_user_type) && (!statusLive&&statusLive)) ?
+                                
                                 :
-                                ''
+                                <Button onClick={() => { cardRouteUserDetails(data, index) }}>View Details</Button>
                             }
                         </Card>
                     </div>
@@ -176,7 +176,15 @@ function Notification(props) {
     }
 
     const cardRouteUser = (data, index) => {
-        data.routeTo = "/session-details-past";
+        props.history.push({
+            pathname: data.routeTo,
+            state: data
+        })
+    }
+
+    const cardRouteUserDetails=(data, index)=> {
+        console.log("Working");
+        data.routeTo = "/session-details";
         props.history.push({
             pathname: data.routeTo,
             state: data

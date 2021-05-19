@@ -1,6 +1,6 @@
 // Constants
 import { url } from '../constants/api_env';
-import { upcoming_client_sessions } from '../constants/constants';
+import { upcoming_client_sessions, sessionById } from '../constants/constants';
 
 // axios
 import axios from 'axios';
