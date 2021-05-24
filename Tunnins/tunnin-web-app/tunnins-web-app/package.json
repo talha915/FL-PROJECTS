@@ -59,5 +59,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://54.225.0.46:8052/"
+  "proxy": "http://54.225.0.46:8052/",
+  "headers": {
+    "Access-Control-Allow-Origin": "*"
+  }
 }

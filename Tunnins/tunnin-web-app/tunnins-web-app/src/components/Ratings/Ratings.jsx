@@ -9,12 +9,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { ratingReview } from '../../actions/ratingReview';
+import { getFetchParam } from '../../actions/getFetchParam';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { ratingReviews } from '../../constants/constants';
+import { ratingReviews, get_reviews } from '../../constants/constants';
 
 // Styles
 import '../../styles/ratings.scss';
@@ -27,6 +28,8 @@ import dp from '../../images/dp.png';
 
 function Ratings(props) {
 
+    const trainerId = useSelector(state => state.postFetch);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -36,9 +39,15 @@ function Ratings(props) {
 
     const dispatchRatings = () => {
         dispatch(ratingReview(ratingReviews));
+        if(trainerId.hasOwnProperty('userLogged')) {
+            let trainId = trainerId.userLogged._id;
+            console.log("Trainer Id: ", trainId);
+            dispatch(getFetchParam(get_reviews, trainId));
+        }
     }
 
     const getRatings = useSelector(state => state.ratingReview);
+    const getRatingReviews = useSelector(state => state.getApi);
 
     const getRating=()=> {
         if(getRatings.hasOwnProperty('data')) {
@@ -85,8 +94,8 @@ function Ratings(props) {
     }
 
     const getList=()=> {
-        if(getRatings.hasOwnProperty('data')) {
-            let ratingList = getRatings.data.ratingList.map((data, index)=> {
+        if(getRatingReviews.hasOwnProperty('getReviews')) {
+            let cards = getRatingReviews.getReviews.UserData.map((data, index)=> {
                 return(
                     <Col sm="4" key={index}>
                         <div  className="ratings-cards">
@@ -94,20 +103,19 @@ function Ratings(props) {
                                 <div className="card-content">
                                     <div className="d-flex justify-content-between align=items-center">
                                         <CardTitle className="d-flex align=items-center" tag="h5">
-                                            <img src={dp} alt="user-dp" />
+                                            <img src={data.userProfilePic}  />
                                             <span className="name-date-wrapper"> 
-                                                <span className="name">{data.name}</span>
-                                                <span className="date">{data.date}</span>
+                                                <span className="name">{data.userfullName}</span>
+                                                <span className="date">{data.dateTime}</span>
                                             </span>
-                                        </CardTitle>
-                                        
+                                        </CardTitle>                                   
                                         <CardText className="rating">
-                                            {data.rating}
+                                            {data.userRating}
                                             <i className="icon-Star"></i>
                                         </CardText>
                                     </div>
                                     <div>
-                                        <CardText className="rating-content">{data.content}</CardText>
+                                        <CardText className="rating-content">{data.userReview}</CardText>
                                     </div>
                                 </div>
                             </Card>
@@ -115,8 +123,9 @@ function Ratings(props) {
                     </Col>
                 )
             });
-            return ratingList;
+            return cards;
         }
+       
     }
 
     const getpagePoint=()=> {

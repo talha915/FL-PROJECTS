@@ -95,6 +95,7 @@ function Header(props) {
 
     const routeTo=(location)=> {
         props.history.push(location);
+        console.log("Loc: ", location);
     }
 
     const logout=()=> {
@@ -105,6 +106,7 @@ function Header(props) {
 
     if(logUser.hasOwnProperty('logout')) {
         if(logUser.logout.status === fine_res) {
+            console.log("Fine");
             props.history.push("/signup");
         }
     }

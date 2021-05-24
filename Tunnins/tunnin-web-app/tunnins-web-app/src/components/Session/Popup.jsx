@@ -5,12 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { sessionModal } from '../../actions/sessionModal';
+import { postFetchParams } from '../../actions/postFetchParam';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { close_modal, add_session_modal, cancelled_session_modal } from '../../constants/constants';
+import { close_modal, add_session_modal, cancelled_session_modal, cancel_session_api } from '../../constants/constants';
 
 import done from '../../images/done.png';
 
@@ -22,12 +23,16 @@ function Popup(props) {
     const [cancelAction, cancelled] = useState('');    
 
     const modalOperate=(item)=> {
-        console.log("Item: ", item);
         if(item.hasOwnProperty("action")) {
             if(item.action === "yes") {
                 dispatch(sessionModal(close_modal));
                 cancelled("yes");
                 dispatch(sessionModal(cancelled_session_modal));
+                let ids = props.ids;
+                let sessionId = ids._id;
+                let trainerId = ids.trainerId;
+                console.log("Props................................: ", props);
+                dispatch(postFetchParams(cancel_session_api,sessionId+'/'+trainerId));
             }
             else {
                 dispatch(sessionModal(close_modal));
@@ -41,6 +46,7 @@ function Popup(props) {
             dispatch(sessionModal(close_modal));
             if(props.action_type == add_session_modal) {
                 let routeTo = item.route;
+                console.log("Route TPO: ", routeTo);
                 props.history.push(routeTo);
             }
         }

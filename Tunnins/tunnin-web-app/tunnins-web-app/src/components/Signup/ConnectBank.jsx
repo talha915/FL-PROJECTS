@@ -42,14 +42,14 @@ function ConnectBank(props) {
         dispatchStripe();
         console.log("All States", allStates);
         let bodyFormData = new FormData();
-        bodyFormData.append("fullName", "123_allStates.signedup.f_name");
-        bodyFormData.append("username", "123_allStates.signupProfile.signedUpProfile.username");
-        bodyFormData.append("email", "123_allStates.signedup.email");
-        bodyFormData.append("password", "123_allStates.signedup.c_pass");
+        bodyFormData.append("fullName", allStates.signedup.f_name);
+        bodyFormData.append("username", allStates.signupProfile.signedUpProfile.username);
+        bodyFormData.append("email", allStates.signedup.email);
+        bodyFormData.append("password", allStates.signedup.c_pass);
         bodyFormData.append("userType", "trainer");
-        bodyFormData.append("dob", "123_allStates.signedup.dob");
-        bodyFormData.append("trainer_Cat", "123_allStates.signupProfile.signedUpProfile.trainer_cat");
-        bodyFormData.append("about", "123_allStates.signupProfile.signedUpProfile.about");
+        bodyFormData.append("dob", allStates.signedup.dob);
+        bodyFormData.append("trainer_Cat", allStates.signupProfile.signedUpProfile.trainer_cat);
+        bodyFormData.append("about", allStates.signupProfile.signedUpProfile.about);
         dispatch(postFetch(create_user, bodyFormData));
     }
 

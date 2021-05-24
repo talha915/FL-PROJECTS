@@ -1,5 +1,5 @@
 // Constants
-import { get_auth, create_user, create_session } from '../constants/constants';
+import { get_auth, create_user, create_session, cancel_session_api } from '../constants/constants';
 
 const initialState = {
     
@@ -24,7 +24,13 @@ export default function(state=initialState, actions) {
                 ...state,
                 createdSession: actions.payload,
                 createdSessionStatus: actions.status
-            }    
+            }  
+        case cancel_session_api:
+            return {
+                ...state,
+                cancelledSession: actions.payload,
+                cancelledStatus: actions.status
+            }      
         default:
             return state;    
     }

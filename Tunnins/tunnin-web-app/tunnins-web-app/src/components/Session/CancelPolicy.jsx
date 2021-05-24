@@ -24,7 +24,7 @@ import '../../styles/cancelpolicy.scss';
 
 import dp from '../../images/dp.png';
 
-function CancelledPolicy() {
+function CancelledPolicy(props) {
 
     const dispatch = useDispatch();
 
@@ -45,7 +45,7 @@ function CancelledPolicy() {
                 <div>
                     <div className="cancel">
                         <h6 className="title m-0">
-                            <i className="icon-chevron-left"></i>
+                            <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
                             {cancelationPolicy.data.title}
                         </h6>
                         <p className="cancel-policy-text">
@@ -76,4 +76,4 @@ function CancelledPolicy() {
     )
 }
 
-export default CancelledPolicy;
+export default withRouter(CancelledPolicy);

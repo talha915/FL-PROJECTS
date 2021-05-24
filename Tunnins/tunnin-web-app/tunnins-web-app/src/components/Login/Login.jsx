@@ -26,6 +26,7 @@ function Login(props) {
 
     const getLoginForm=()=> {
         if(Object.keys(loginform).length > 0) {
+            console.log("Login Form: ", loginform);
             return (
                 <LoginForm formData={loginform}/>
             )

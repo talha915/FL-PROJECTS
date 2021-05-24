@@ -15,6 +15,8 @@ import { getFetchParam } from '../../actions/getFetchParam';
 // Router
 import { withRouter } from 'react-router-dom';
 
+import moment from 'moment';
+
 // Constants
 import { session_details, session_past_details, cancel_session_modal, cancelled_session_modal, sessionById, get_booked_users } from '../../constants/constants';
 
@@ -71,7 +73,7 @@ function SessionDetail(props) {
     const popup = useSelector(state => state.sessionModal);
 
     const dispactedSessionById = useSelector(state => state.getApi);
-    console.log("Dispatched One: ", dispactedSessionById);
+    console.log("Dispatch Session Id: ", dispactedSessionById);
 
     const getUpper = () => {
         if (sessionDetail.hasOwnProperty('data')) {
@@ -119,6 +121,10 @@ function SessionDetail(props) {
         if (data == "cancel") {
             detailTypeAction(data);
             dispatch(sessionModal(cancel_session_modal));
+            if(dispactedSessionById.hasOwnProperty('sessionByIdRes')) {
+                let ids = dispactedSessionById.sessionByIdRes.data.Session;
+                console.log("IDs: ", ids);
+            }
         }
         else {
             props.history.push(type.route);
@@ -126,15 +132,22 @@ function SessionDetail(props) {
     }
 
     const getUpperCard = () => {
+        console.log("Session: ", dispactedSessionById);
         if (dispactedSessionById.hasOwnProperty('sessionByIdRes')) {
             let sessionById = dispactedSessionById.sessionByIdRes;
             if (sessionById.hasOwnProperty('data')) {
                 let res = sessionById.data;
                 console.log("Final Res: ", res);
-                let date = new Date(JSON.parse(res.Session.fromDate));
-                let fromDate = (date.getMonth() + 1) + "/" + (date.getDate()) + "/" + (date.getFullYear());
-                let fromTime = new Date(fromDate + " " + res.Session.fromTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
-                let toTime = new Date(fromDate + " " + res.Session.toTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
+                // let date = new Date(JSON.parse(res.Session.fromDate));
+                // let fromDate = (date.getMonth() + 1) + "/" + (date.getDate()) + "/" + (date.getFullYear());
+                // let fromTime = new Date(fromDate + " " + res.Session.fromTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
+                // let toTime = new Date(fromDate + " " + res.Session.toTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
+                
+                let fromDate = moment(res.Session.fromDate, "x").format("DD MMMM, YYYY");
+                let fromTime = moment(res.Session.fromTime,'HHmmss').format("hh:mm A");
+                let toTime = moment(res.Session.toTime,'HHmmss').format("hh:mm A");
+                
+                
                 return (
                     <div>
                         <div className="top-borderless-card">
@@ -214,7 +227,7 @@ function SessionDetail(props) {
                             <Row>
                                 {getBookedUsers()}
                                 {detailType === "cancel" ?
-                                    <Popup modalState={popup} />
+                                    <Popup modalState={popup} ids={dispactedSessionById.sessionByIdRes.data.Session} />
                                     :
                                     ''
                                 }

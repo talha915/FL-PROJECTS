@@ -124,11 +124,9 @@ function LoginForm(props) {
 
     const userInfo = useSelector(state => state.postFetch);
 
-    const notify = () => toast('Here is your toast.');
-
+    
     if (userInfo.hasOwnProperty('userLogged')) {
         if (userInfo.userLoginStatus === fine_res) {
-            notify();
             props.history.push(notification_route);
         }
     }
@@ -136,10 +134,6 @@ function LoginForm(props) {
     return (
         <div>
             {getFormData()}
-            <Toaster
-                position="bottom-right"
-                reverseOrder={false}
-            />
         </div>
     )
 }

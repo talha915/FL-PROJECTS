@@ -3,8 +3,6 @@ import {
     Button, Row, Col, Card, CardText, CardTitle
 } from 'reactstrap';
 
-import moment from 'moment';
-
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
@@ -14,6 +12,8 @@ import { getFetchParam } from '../../actions/getFetchParam';
 
 // Router
 import { withRouter } from 'react-router-dom';
+
+import moment from 'moment';
 
 // Constants
 import { 
@@ -105,22 +105,33 @@ function Notification(props) {
         }
         if (lists instanceof Array) {
             let cards = lists.map((data, index) => {
-                let date = new Date(JSON.parse(data.fromDate));
-                let fromDate = (date.getMonth()+1)+"/"+(date.getDate())+"/"+(date.getFullYear());
-                let fromTime = new Date(fromDate+" "+data.fromTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
-                let toTime = new Date(fromDate+" "+data.toTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
-                let today = new Date();
-                let todayDate = (today.getMonth()+1)+"/"+(today.getDate())+"/"+(today.getFullYear());
+                let fromDate = moment(data.fromDate, "x").format("DD MMMM, YYYY");
+                let todayDate = moment().format("DD MMMM, YYYY");
+                let fromTime = moment(data.fromTime,'HHmmss').format("hh:mm A");
+                let toTime = moment(data.toTime,'HHmmss').format("hh:mm A");
+                // let date = new Date(JSON.parse(data.fromDate));
+                // let fromDate = (date.getMonth()+1)+"/"+(date.getDate())+"/"+(date.getFullYear());
+                // let fromTime = new Date(fromDate+" "+data.fromTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
+                // let toTime = new Date(fromDate+" "+data.toTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
+                // let today = new Date();
+                // let todayDate = (today.getMonth()+1)+"/"+(today.getDate())+"/"+(today.getFullYear());
                 if(fromDate == todayDate) {
-                    let cTime = new Date();
-                    let currentTime = Date.parse(cTime.getHours())+Date.parse(cTime.getMinutes());
-                    console.log("Current Time: ", currentTime);
-                    let fromHour = JSON.parse(data.fromDate.split(":"));
-                    console.log("From Time: ", fromHour);
-                    let diff = currentTime - fromHour;
-                    if(diff <= 3600000 && diff>=0) {
+                    let currentTime = moment().format('hh:mm');
+                    let currentHour = moment().format('hh');
+                    let fromHour = moment(data.fromTime,'HH').format("hh");
+                    let diff = fromHour - currentHour;
+                    if(diff == 1 && currentTime == toTime) {
                         setStatusLive(true);
                     }
+                    // let cTime = new Date();
+                    // let currentTime = Date.parse(cTime.getHours())+Date.parse(cTime.getMinutes());
+                    // console.log("Current Time: ", currentTime);
+                    // let fromHour = JSON.parse(data.fromDate.split(":"));
+                    // console.log("From Time: ", fromHour);
+                    // let diff = currentTime - fromHour;
+                    // if(diff <= 3600000 && diff>=0) {
+                    //     setStatusLive(true);
+                    // }
                 }
                 return (
                     <div key={index} className="session-cards">

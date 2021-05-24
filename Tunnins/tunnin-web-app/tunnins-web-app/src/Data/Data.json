@@ -561,7 +561,7 @@
             "btn": [
                 {
                     "title": "Ok",
-                    "route": "/session-details"
+                    "route": "/notification"
                 }
             ]
         },
