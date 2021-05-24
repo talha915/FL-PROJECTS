@@ -95,35 +95,37 @@ function Ratings(props) {
 
     const getList=()=> {
         if(getRatingReviews.hasOwnProperty('getReviews')) {
-            let cards = getRatingReviews.getReviews.UserData.map((data, index)=> {
-                return(
-                    <Col sm="4" key={index}>
-                        <div  className="ratings-cards">
-                            <Card body className="card-style">
-                                <div className="card-content">
-                                    <div className="d-flex justify-content-between align=items-center">
-                                        <CardTitle className="d-flex align=items-center" tag="h5">
-                                            <img src={data.userProfilePic}  />
-                                            <span className="name-date-wrapper"> 
-                                                <span className="name">{data.userfullName}</span>
-                                                <span className="date">{data.dateTime}</span>
-                                            </span>
-                                        </CardTitle>                                   
-                                        <CardText className="rating">
-                                            {data.userRating}
-                                            <i className="icon-Star"></i>
-                                        </CardText>
+            if(getRatingReviews.getReviews.hasOwnProperty('UserData')) {
+                let cards = getRatingReviews.getReviews.UserData.map((data, index)=> {
+                    return(
+                        <Col sm="4" key={index}>
+                            <div  className="ratings-cards">
+                                <Card body className="card-style">
+                                    <div className="card-content">
+                                        <div className="d-flex justify-content-between align=items-center">
+                                            <CardTitle className="d-flex align=items-center" tag="h5">
+                                                <img src={data.userProfilePic}  />
+                                                <span className="name-date-wrapper"> 
+                                                    <span className="name">{data.userfullName}</span>
+                                                    <span className="date">{data.dateTime}</span>
+                                                </span>
+                                            </CardTitle>                                   
+                                            <CardText className="rating">
+                                                {data.userRating}
+                                                <i className="icon-Star"></i>
+                                            </CardText>
+                                        </div>
+                                        <div>
+                                            <CardText className="rating-content">{data.userReview}</CardText>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <CardText className="rating-content">{data.userReview}</CardText>
-                                    </div>
-                                </div>
-                            </Card>
-                        </div>
-                    </Col>
-                )
-            });
-            return cards;
+                                </Card>
+                            </div>
+                        </Col>
+                    )
+                });
+                return cards;
+            }
         }
        
     }

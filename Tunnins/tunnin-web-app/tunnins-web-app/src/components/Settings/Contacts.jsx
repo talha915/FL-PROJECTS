@@ -9,12 +9,13 @@ import { useDispatch, useSelector } from "react-redux";
 // Action
 import { settings } from '../../actions/settings';
 import { getFetch } from '../../actions/getFetch';
+import { postFetch } from '../../actions/postFetch';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { setting_contact, pages } from '../../constants/constants';
+import { setting_contact, pages, user_contact_support } from '../../constants/constants';
 
 // Styles
 import '../../styles/settings.scss';
@@ -26,7 +27,11 @@ import Sidebar from '../Sidebar/Sidebar';
 
 function Contacts(props) {
 
+    const [userQuery, setUserQuery] = useState('');
+
     const dispatch = useDispatch();
+
+    const userDetails = useSelector(state => state.postFetch);
 
     useEffect(() => {
         dispatchContact();
@@ -53,15 +58,34 @@ function Contacts(props) {
                             <i className="icon-avatar"></i>
                             {contacts.title}
                         </h5>
-                        <textarea className="contact-admin-textarea" name="contact" id="contactAdmin" cols="30" rows="10" placeholder={contacts.description}></textarea>
+                        <textarea className="contact-admin-textarea" name="contact" id="contactAdmin" cols="30" rows="10" placeholder={contacts.description} onChange={(e)=>handleChange(e.target.value)}></textarea>
                         <div className="text-center">
-                            <Button color="primary" className="action-btn">
+                            <Button color="primary" className="action-btn" onClick={()=>sendQuery()}>
                                 {contacts.btn}
                             </Button>
                         </div>
                    </div>
                 </div>
             );
+        }
+    }
+
+    const handleChange=(data)=> {
+        setUserQuery(data);
+    }
+
+    const sendQuery=()=> {
+        console.log("Query: ", userQuery);
+        if(userDetails.hasOwnProperty('userLogged')) {
+            let obj = {
+                "name" : userDetails.userLogged.fullName,
+                "title" : "Query",
+                "query" : userQuery,
+                "email" : userDetails.userLogged.email,
+                "userId" : userDetails.userLogged._id
+            }
+            console.log("Obj: ", obj);
+            dispatch(postFetch(user_contact_support,obj));
         }
     }
 
