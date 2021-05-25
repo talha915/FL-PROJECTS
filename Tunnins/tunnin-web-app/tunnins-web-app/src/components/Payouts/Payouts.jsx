@@ -17,6 +17,9 @@ import { withRouter } from 'react-router-dom';
 // Constants
 import { getPayouts, payments_api } from '../../constants/constants';
 
+// Moment
+import moment from 'moment';
+
 // Styles
 import '../../styles/payout.scss';
 
@@ -99,13 +102,15 @@ function Payouts(props) {
     const getTableValues = () => {
         if (trainerPayouts.hasOwnProperty('payouts')) {
             let payouts = trainerPayouts.payouts.map((data, index) => {
+                let payoutDate = moment(data.payoutDate, "x").format("MMMM DD, YYYY");
+                let payPeriod = moment(data.payPeriod, "x").format("MMMM DD, YYYY");
                 return (
                     <tr key={index}>
                         <td>
-                            {data.payoutDate}
+                            {payoutDate}
                         </td>
                         <td>
-                            {data.payPeriod}
+                            {payPeriod}
                         </td>
                         <td>
                             ${data.earning}
