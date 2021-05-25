@@ -72,3 +72,4 @@ export const get_booked_users = 'session/get_booked_users/';
 export const get_reviews = 'trainers/getReviews_ratings/';
 export const cancel_session_api = "session/cancel_session/";
 export const user_contact_support = "contacts";
+export const payments_api = "payments/get_payout/";

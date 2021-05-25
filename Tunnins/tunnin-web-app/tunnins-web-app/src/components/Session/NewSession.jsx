@@ -95,7 +95,7 @@ function AddSession(props) {
         dispatch(addedSession(sessionForm));   
         if(props.history.location.pathname === "/edit-session") {
             //props.history.push('/home-past');
-            dispatchEditSession();
+            //dispatchEditSession();
         }
         else {
             dispatch(sessionModal(add_session_modal));
@@ -103,27 +103,27 @@ function AddSession(props) {
         }
     }
 
-    const dispatchEditSession=()=> {
-        let bodyFormData = new FormData();
-        if(userFetch.hasOwnProperty('userLogged')) {
-            console.log("Uploaded Image: ", uploadedImageFile);
-            bodyFormData.append("trainerId", userFetch.userLogged._id);
-            bodyFormData.append("catId", sessionForm.category);
-            bodyFormData.append("title", sessionForm.name_of_class);
-            bodyFormData.append("fromDate", Date.parse(sessionForm.start_date));
-            bodyFormData.append("toDate", Date.parse(sessionForm.end_date));
-            bodyFormData.append("fromTime", sessionForm.start_time);
-            bodyFormData.append("toTime", sessionForm.end_time);
-            bodyFormData.append("price", sessionForm.session_price);
-            bodyFormData.append("userLimit", userFetch.userLogged._id);
-            bodyFormData.append("requirements", sessionForm.what_you_need);
-            bodyFormData.append("detail", sessionForm.about);
-            bodyFormData.append("images", uploadedImageFile);
-            bodyFormData.append("competencylevel", "Beginner");
-        }
-        console.log("Body Form Data: ", bodyFormData);
-        dispatch(postFetch(create_session, bodyFormData));
-    }
+    // const dispatchEditSession=()=> {
+    //     let bodyFormData = new FormData();
+    //     if(userFetch.hasOwnProperty('userLogged')) {
+    //         console.log("Uploaded Image: ", uploadedImageFile);
+    //         bodyFormData.append("trainerId", userFetch.userLogged._id);
+    //         bodyFormData.append("catId", sessionForm.category);
+    //         bodyFormData.append("title", sessionForm.name_of_class);
+    //         bodyFormData.append("fromDate", Date.parse(sessionForm.start_date));
+    //         bodyFormData.append("toDate", Date.parse(sessionForm.end_date));
+    //         bodyFormData.append("fromTime", sessionForm.start_time);
+    //         bodyFormData.append("toTime", sessionForm.end_time);
+    //         bodyFormData.append("price", sessionForm.session_price);
+    //         bodyFormData.append("userLimit", userFetch.userLogged._id);
+    //         bodyFormData.append("requirements", sessionForm.what_you_need);
+    //         bodyFormData.append("detail", sessionForm.about);
+    //         bodyFormData.append("images", uploadedImageFile);
+    //         bodyFormData.append("competencylevel", "Beginner");
+    //     }
+    //     console.log("Body Form Data: ", bodyFormData);
+    //     dispatch(postFetch(create_session, bodyFormData));
+    // }
 
     const dispatchCreateSession=()=> {
         let bodyFormData = new FormData();

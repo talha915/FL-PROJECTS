@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react';
-import { Table, Row, Col, Card, CardText,  Input,
-    CardTitle} from 'reactstrap';
+import {
+    Table, Row, Col, Card, CardText, Input,
+    CardTitle
+} from 'reactstrap';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { fetchPayout } from '../../actions/payouts';
+import { getFetchParam } from '../../actions/getFetchParam';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { getPayouts } from '../../constants/constants';
+import { getPayouts, payments_api } from '../../constants/constants';
 
 // Styles
 import '../../styles/payout.scss';
@@ -25,26 +28,36 @@ function Payouts(props) {
 
     const dispatch = useDispatch();
 
-    useEffect(()=> {
+    useEffect(() => {
         dispatchPayouts();
+        dispatchPayoutsDetails();
     }, []);
 
-    const dispatchPayouts=()=> {
+    const dispatchPayouts = () => {
         dispatch(fetchPayout(getPayouts));
     }
 
     const payouts = useSelector(state => state.payouts);
+    const userLogged = useSelector(state => state.postFetch);
+    const trainerPayouts = useSelector(state => state.getApi);
 
-    const getUpperPart=()=> {
-        if(payouts.hasOwnProperty('data')) {
+    const dispatchPayoutsDetails = () => {
+        if (userLogged.hasOwnProperty('userLogged')) {
+            let userId = userLogged.userLogged._id;
+            dispatch(getFetchParam(payments_api, userId));
+        }
+    }
+
+    const getUpperPart = () => {
+        if (payouts.hasOwnProperty('data')) {
             let pays = payouts.data;
-            return(
+            return (
                 <div>
                     <Row>
                         <Col>
-                        <h1 className="payouts-heading">
-                            {pays.heading}
-                        </h1>
+                            <h1 className="payouts-heading">
+                                {pays.heading}
+                            </h1>
                         </Col>
                     </Row>
                     <Row>
@@ -59,20 +72,20 @@ function Payouts(props) {
         }
     }
 
-    const getInputs=(data)=> {
-        let cards = data.map((items, index)=> {
-            return(
-                <div className="payout-date-feilds"  key={index}>
-                    <span className="date-label">{items.label}</span> <Input type={items.type}  placeholder={items.placeholder} />
+    const getInputs = (data) => {
+        let cards = data.map((items, index) => {
+            return (
+                <div className="payout-date-feilds" key={index}>
+                    <span className="date-label">{items.label}</span> <Input type={items.type} placeholder={items.placeholder} />
                 </div>
             )
         });
         return cards;
     }
 
-    const getTableHeaders=()=> {
-        if(payouts.hasOwnProperty('data')) {
-            let tableHeaders = payouts.data.tableHeader.map((data, index)=> {
+    const getTableHeaders = () => {
+        if (payouts.hasOwnProperty('data')) {
+            let tableHeaders = payouts.data.tableHeader.map((data, index) => {
                 return (
                     <th key={index}>
                         {data.title}
@@ -83,34 +96,34 @@ function Payouts(props) {
         }
     }
 
-    const getTableValues=()=> {
-        if(payouts.hasOwnProperty('data')) {
-            let getValues = payouts.data.tableValues.map((data, index)=>{
+    const getTableValues = () => {
+        if (trainerPayouts.hasOwnProperty('payouts')) {
+            let payouts = trainerPayouts.payouts.map((data, index) => {
                 return (
                     <tr key={index}>
                         <td>
-                            {data.date}
+                            {data.payoutDate}
                         </td>
                         <td>
-                            {data.period}
+                            {data.payPeriod}
                         </td>
                         <td>
-                            {data.earnings}
+                            ${data.earning}
                         </td>
                         <td>
-                            {data.fees}
+                            ${data.fee}
                         </td>
                         <td>
-                            {data.totalpayouts}
+                            ${data.total}
                         </td>
                     </tr>
                 )
             });
-            return getValues;
+            return payouts;
         }
     }
 
-    return(
+    return (
         <div className="payouts">
             <Header />
             <div className="container-fluid">
@@ -135,7 +148,7 @@ function Payouts(props) {
                                     </tbody>
                                 </Table>
                             </div>
-                        </div>      
+                        </div>
                     </Col>
                 </Row>
             </div>
