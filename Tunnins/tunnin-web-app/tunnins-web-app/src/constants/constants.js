@@ -77,3 +77,4 @@ export const payments_api = "payments/get_payout/";
 export const total_earnings = "earnings/total_earnings/";
 export const earning_details = "earnings/earning_details/";
 export const all_faqs = "faqs/allFaqs/trainer";
+export const bank_details_api = "bank/";
