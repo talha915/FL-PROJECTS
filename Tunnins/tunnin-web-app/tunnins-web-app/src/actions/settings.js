@@ -54,6 +54,7 @@ export const settings=(type)=> {
         }
     }
     else {
+        console.log("This Case is Called");
         let faqs = JSON.parse(JSON.stringify(localData.settings.faqs));
         let data = faqs.quesList;
         for(let i=0; i<data.length; i++) {

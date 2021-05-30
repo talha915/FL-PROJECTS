@@ -100,31 +100,35 @@ function Payouts(props) {
     }
 
     const getTableValues = () => {
+        console.log("Trainer Payouts: ", trainerPayouts);
         if (trainerPayouts.hasOwnProperty('payouts')) {
-            let payouts = trainerPayouts.payouts.map((data, index) => {
-                let payoutDate = moment(data.payoutDate, "x").format("MMMM DD, YYYY");
-                let payPeriod = moment(data.payPeriod, "x").format("MMMM DD, YYYY");
-                return (
-                    <tr key={index}>
-                        <td>
-                            {payoutDate}
-                        </td>
-                        <td>
-                            {payPeriod}
-                        </td>
-                        <td>
-                            ${data.earning}
-                        </td>
-                        <td>
-                            ${data.fee}
-                        </td>
-                        <td>
-                            ${data.total}
-                        </td>
-                    </tr>
-                )
-            });
-            return payouts;
+            let trainerpays = trainerPayouts.payouts;
+            if(trainerpays instanceof Array) {
+                let payouts = trainerPayouts.payouts.map((data, index) => {
+                    let payoutDate = moment(data.payoutDate, "x").format("MMMM DD, YYYY");
+                    let payPeriod = moment(data.payPeriod, "x").format("MMMM DD, YYYY");
+                    return (
+                        <tr key={index}>
+                            <td>
+                                {payoutDate}
+                            </td>
+                            <td>
+                                {payPeriod}
+                            </td>
+                            <td>
+                                ${data.earning}
+                            </td>
+                            <td>
+                                ${data.fee}
+                            </td>
+                            <td>
+                                ${data.total}
+                            </td>
+                        </tr>
+                    )
+                });
+                return payouts;
+            }
         }
     }
 

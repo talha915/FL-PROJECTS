@@ -8,12 +8,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { cancelPolicy } from '../../actions/cancelPolicy';
+import { getFetch } from '../../actions/getFetch';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { cancel_policy } from '../../constants/constants';
+import { cancel_policy, pages } from '../../constants/constants';
 
 // Components
 import Header from '../Header/Header';
@@ -30,30 +31,41 @@ function CancelledPolicy(props) {
 
     useEffect(() => {
         dispatchSessionPolicy();
+        dispatchCancelPolicy();
     }, []);
 
     const dispatchSessionPolicy = () => {
         dispatch(cancelPolicy(cancel_policy));
     }
 
+    const dispatchCancelPolicy=()=> {
+        dispatch(getFetch(pages));
+    }
+
     const cancelationPolicy = useSelector(state => state.cancelPolicy);
     console.log("Cons, ", cancelationPolicy);
 
+    const getApi = useSelector(state=>state.getApi);
+
     const getCancelPolicyData = () => {
-        if (cancelationPolicy.hasOwnProperty('data')) {
-            return (
-                <div>
-                    <div className="cancel">
-                        <h6 className="title m-0">
-                            <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
-                            {cancelationPolicy.data.title}
-                        </h6>
-                        <p className="cancel-policy-text">
-                            {cancelationPolicy.data.content}
-                        </p>
+        if(getApi.hasOwnProperty('pagesData')) {
+            let pages = getApi.pagesData;
+            if(pages.hasOwnProperty('cancelPolicy')) {
+                let cancelPolicy = pages.cancelPolicy;
+                return (
+                    <div>
+                        <div className="cancel">
+                            <h6 className="title m-0">
+                                <i className="icon-chevron-left" onClick={()=>props.history.goBack()}></i>
+                                {cancelPolicy.title}
+                            </h6>
+                            <p className="cancel-policy-text">
+                                {cancelPolicy.content}
+                            </p>
+                        </div>
                     </div>
-                </div>
-            )
+                )
+            }
         }
     }
 

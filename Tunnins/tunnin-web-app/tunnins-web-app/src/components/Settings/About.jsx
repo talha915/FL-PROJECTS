@@ -36,11 +36,10 @@ function About(props) {
     }
 
     const getSettings = useSelector(state => state.settings);
-    const getTermsCondition = useSelector(state => state.getApi);
 
     const getAbout = () => {
-        if (getTermsCondition.hasOwnProperty('pagesData')) {
-            let about = getTermsCondition.pagesData.about;
+        if(getSettings.hasOwnProperty('about')) {
+            let about = getSettings.about;
             return (
                 <div className="about">
                     <div className="settings-container">
@@ -49,12 +48,29 @@ function About(props) {
                             {about.title}
                         </h5>
                         <p>
-                            {about.content}
+                            {about.description}
+                        </p>
+                        <p>
+                            <ul>
+                                {about.detailTitle}
+                                {getPoints(about)}
+                            </ul>
                         </p>
                     </div>
                 </div>
             );
         }
+    }
+
+    const getPoints = (data) => {
+        let details = data.details.map((item, index) => {
+            return (
+                <li key={index}>
+                    {item.content}
+                </li>
+            )
+        });
+        return details;
     }
 
     const getSettingSidebar = () => {

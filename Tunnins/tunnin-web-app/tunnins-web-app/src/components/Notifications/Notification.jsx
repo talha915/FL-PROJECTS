@@ -145,7 +145,7 @@ function Notification(props) {
                                 {userType && userType === "user" ?
                                     <div>
                                         {data.status !== "Booked" ? <CardText>{data.status}</CardText> : ''}
-                                        <Button onClick={() => { cardRouteUser(data, index) }}>View Details</Button>
+                                        {/* <Button onClick={() => { cardRouteUser(data, index) }}>View Details</Button> */}
                                     </div>
                                     :
                                     <div>

@@ -38,9 +38,11 @@ function Privacy(props) {
     const getSettings = useSelector(state => state.settings);
     const getTermsCondition = useSelector(state => state.getApi);
 
+    console.log("Get Settings: ", getSettings);
+
     const getPrivacy = () => {
-        if (getTermsCondition.hasOwnProperty('pagesData')) {
-            let privacy = getTermsCondition.pagesData.privacy;
+        if(getSettings.hasOwnProperty('privacy')) {
+            let privacy = getSettings.privacy;
             return (
                 <div className="privacy">
                     <div className="settings-container">
@@ -49,12 +51,75 @@ function Privacy(props) {
                             {privacy.title}
                         </h5>
                         <p>
-                            {privacy.content}
+                            {privacy.lastUpdated}
+                        </p>
+                        <p>
+                            <ul>
+                                {getOverView(privacy)}
+                                {getPersonalData(privacy)}
+                                {getCategories(privacy)}
+                            </ul>    
                         </p>
                     </div>
                 </div>
             );
         }
+    }
+
+    const getCategories=(data)=> {
+        return(
+            <p>
+                <li>
+                    {data.categoriesDataCollectHeading}
+                </li>
+                {data.categoriesDescription}
+                {getCategoriesList(data.categoriesDescriptionList)}
+                {data.finalCategories}
+            </p>
+        )
+    }
+
+    const getCategoriesList=(data) => {
+        let list = data.map((item, index)=> {
+            return(
+                <li key={index}>
+                    {item.list}
+                </li>
+            );
+        });
+        return list;
+    }
+
+    const getPersonalData=(data)=> {
+        return(
+            <p>
+                <li>
+                    {data.personalDataHeading}
+                </li>
+                {data.personalDataList[0].personalData}
+            </p>
+        )
+    }
+
+    const getOverView=(data)=> {
+        let privacy = data;
+        return(
+            <p>
+                <li>
+                    {privacy.overviewHeading}
+                </li>
+                {getOverViewList(privacy)}
+            </p>
+        );
+    }
+
+    const getOverViewList=(data)=> {
+        let list = data.overviewList.map((item, index)=> {
+            return(
+                <p key={index}>{item.overView}</p>
+            )
+        });
+        return list;
     }
 
     const getSettingSidebar = () => {

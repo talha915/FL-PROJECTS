@@ -33,6 +33,7 @@ import suser from '../../images/session-user.png';
 function SessionDetail(props) {
 
     const [detailType, detailTypeAction] = useState('');
+    let totalBookedUsers;
 
     const dispatch = useDispatch();
 
@@ -162,7 +163,9 @@ function SessionDetail(props) {
                                             </div>
                                             <div>
                                                 <CardText className="session-amount">{props.history.location.pathname === "/session-details-past" ? "Earned $" + res.Session.price : "$" + res.Session.price}</CardText>
-                                                <CardText>{res.Session.userLimit} Users Booked</CardText>
+                                                {dispactedSessionById.hasOwnProperty('bookedUsers') ?
+                                                    <CardText>{dispactedSessionById.bookedUsers.TotalBooked} Users Booked</CardText>
+                                                    : ''}
                                             </div>
                                         </div>
                                     </Card>
@@ -195,20 +198,25 @@ function SessionDetail(props) {
     }
 
     const getBookedUsers = () => {
-        if (sessionDetail.hasOwnProperty('data')) {
-            let users = sessionDetail.data.usersList.map((data, index) => {
-                return (
-                    <Col key={index}>
-                        <Card className="card-style session-user-card">
-                            <CardBody>
-                                <img src={suser} alt="user-dp" />
-                                <span className="session-user-name">{data.name}</span>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                )
-            });
-            return users;
+        if(dispactedSessionById.hasOwnProperty('bookedUsers')) {
+            let bookUsers = dispactedSessionById.bookedUsers;
+            console.log("Total Book: ", bookUsers.TotalBooked);
+            totalBookedUsers = bookUsers.TotalBooked;
+            if(bookUsers.hasOwnProperty('bookedUsers')) {
+                let users = bookUsers.bookedUsers.map((data, index) => {
+                    return (
+                        <Col key={index}>
+                            <Card className="card-style session-user-card">
+                                <CardBody>
+                                    {/* <img src={"uploads/"+data.profilePic} alt="user-dp" /> */}
+                                    <span className="session-user-name">{data.fullName}</span>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    )
+                });
+                return users;
+            }
         }
     }
 

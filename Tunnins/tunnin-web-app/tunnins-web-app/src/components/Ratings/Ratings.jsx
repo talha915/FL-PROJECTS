@@ -104,7 +104,7 @@ function Ratings(props) {
                                     <div className="card-content">
                                         <div className="d-flex justify-content-between align=items-center">
                                             <CardTitle className="d-flex align=items-center" tag="h5">
-                                                <img src={data.userProfilePic}  />
+                                                {/* <img src="https://api.tunnin.io/uploads/"{data.userProfilePic}  /> */}
                                                 <span className="name-date-wrapper"> 
                                                     <span className="name">{data.userfullName}</span>
                                                     <span className="date">{data.dateTime}</span>

@@ -1288,11 +1288,64 @@
         },
         "about": {
             "title": "About Us",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            "description": "Tunnin is a platform which enables Trainers to offer live fitness classes to their Customers. Both Trainers and Customers can enjoy complete flexibility by choosing when and where they want to workout. ",
+            "detailTitle": "For Trainers",
+            "details": [
+                {
+                    "content": "Add another revenue stream for your business."
+                },
+                {
+                    "content": "No capacity limit on your classes – so you can literally earn as much as you want."
+                },
+                {
+                    "content": "Enjoy complete flexibility by choosing when you want to offer classes through the platform."
+                },
+                {
+                    "content": "Fully remote solution so you can host your classes from literally anywhere."
+                },
+                {
+                    "content": "No commitment needed. Simply offer classes whenever you feel like it."
+                }
+            ]
         },
         "privacy": {
-            "title": "Privacy Policy",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            "title": "PRIVACY POLICY",
+            "lastUpdated": "Last Updated: June 1, 2021",
+            "overviewHeading": "OVERVIEW",
+            "overviewList": [
+                {
+                    "overView": "Tunnin, Inc. (“Tunnin,” “we,” “us,” “our”) respect your privacy and are committed to protecting the personal data we hold about you. If you have questions, comments, or concerns about this Privacy Policy or our processing of personal data, please see the bottom of this Privacy Policy for information about how to contact us. Tunnin is the data controller of the personal data collected, and is responsible for the processing of your personal data."
+                },
+                {
+                    "overView": "Tunnin is a platform which enables users to share their content; other users to enjoy content and for some to do both. We refer to those users who share content as “Trainers” and those users who pay to view Trainers’ content as “Customers”. This Privacy Policy explains our practices with respect to personal data we collect and process about you. This includes information we collect through, or in association with, our website located at www.tunnin.io, our mobile app, our services that we may offer from time to time via our website, our related social media sites (Twitter and Instagram), or otherwise through your interactions with us (the website, our social media pages, and services, collectively, the “Services”)."
+                },
+                {
+                    "overView": "Please review the following to understand how we process and safeguard personal data about you. By using any of our Services, whether by visiting our website or otherwise, and/or by voluntarily providing personal data to us, you acknowledge that you have read and understand the practices contained in this Privacy Policy. This Privacy Policy may be revised from time to time, so please ensure that you check this Privacy Policy periodically to remain fully informed."
+                }
+            ],
+            "personalDataHeading": "PERSONAL DATA WE COLLECT",
+            "personalDataList": [
+                {
+                    "personalData": "We collect information that identifies, relates to, describes, is reasonably capable of being associated with, or could reasonably be linked, directly or indirectly, with a particular consumer or household (“personal data”). In addition, we may collect data that is not identifiable to you or otherwise associated with you, such as aggregated data, and is not personal data. To the extent this data is stored or associated with personal data, it will be treated as personal data; otherwise, the data is not subject to this Privacy Policy."
+                }
+            ],
+            "categoriesDataCollectHeading": "Categories of Personal Data We Collect",
+            "categoriesDescription": "The types of personal data we collect about you depends on your interactions with us and your use of the Services. In the past twelve (12) months, we collected the below categories of personal data from our users:",
+            "categoriesDescriptionList": [
+                {
+                    "list": "Identifiers such as a real name, alias, postal address, internet protocol address, email address, account name, or other similar identifiers."
+                },
+                {
+                    "list": "Internet or other electronic network activity information, including, but not limited to, browsing history, search history, and information regarding a consumer’s interaction with an internet website, application, or advertisement."
+                },
+                {
+                    "list": "Audio, electronic, visual, thermal, olfactory, or similar information."
+                },
+                {
+                    "list": "Professional or employment-related information."
+                }
+            ],
+            "finalCategories": "We will not collect additional categories of personal data other than those categories listed above. If we intend to collect additional categories of personal data, we will provide you with a new notice at or before the time of collection."
         },
         "faqs": {
             "title": "FAQ's",

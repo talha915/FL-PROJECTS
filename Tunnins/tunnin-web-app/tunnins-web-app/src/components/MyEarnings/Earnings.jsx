@@ -7,12 +7,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { fetchEarning } from '../../actions/earnings';
+import { getFetchParam } from '../../actions/getFetchParam';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { getEarnings } from '../../constants/constants';
+import { getEarnings, total_earnings } from '../../constants/constants';
 
 // Styles
 import '../../styles/earnings.scss';
@@ -27,6 +28,7 @@ function Earnings(props) {
 
     useEffect(()=> {
         dispatchEarnings();
+        dispatchTrainerEarning();
     }, []);
 
     const dispatchEarnings=()=> {
@@ -34,6 +36,15 @@ function Earnings(props) {
     }
 
     const getEarn = useSelector(state => state.earnings);
+    const postFetch = useSelector(state=> state.postFetch);
+
+    const dispatchTrainerEarning=()=> {
+        if(postFetch.hasOwnProperty('userLogged')) {
+            let trainerId = postFetch.userLogged._id;
+            console.log("UserId: ", trainerId);
+            dispatch(getFetchParam(total_earnings, trainerId));
+        }
+    }
 
     const getUpperPart=()=> {
         if(getEarn.hasOwnProperty('data')) {

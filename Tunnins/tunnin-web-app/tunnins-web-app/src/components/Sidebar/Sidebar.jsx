@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -17,15 +17,25 @@ import '../../styles/notifications.scss';
 
 function Sidebar(props) {
 
+    const [userType, setUserType] = useState('');
+
     const dispatch = useDispatch();
     const getNotification = useSelector(state => state.notification);
+    const userInfo = useSelector(state => state.postFetch);
 
     useEffect(() => {
         dispatchNotification();
+        dispatchCheckUser();
     }, []);
 
     const dispatchNotification=()=> {
         dispatch(ListNotification(listed_notification));
+    }
+
+    const dispatchCheckUser=()=> {
+        if (userInfo.hasOwnProperty('userLogged')) {
+            setUserType(userInfo.userLogged.userType);
+        }
     }
 
     const routeTo=(location, data)=> {
@@ -57,7 +67,10 @@ function Sidebar(props) {
 
     return(
         <ul>
-            {getSidebar()}
+            {userType === "user" ?
+                        '' :
+                getSidebar()
+            }
         </ul>
     )
 

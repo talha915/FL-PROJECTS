@@ -8,12 +8,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { settings } from '../../actions/settings';
+import { getFetch } from '../../actions/getFetch';
+import { toggleCollapse } from '../../actions/toggleCollapse';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { setting_faqs } from '../../constants/constants';
+import { setting_faqs, all_faqs } from '../../constants/constants';
 
 // Styles
 import '../../styles/settings.scss';
@@ -25,8 +27,8 @@ import Sidebar from '../Sidebar/Sidebar';
 
 function Faqs(props) {
 
-    const toggle=(data, index)=>{
-        dispatch(settings(data));
+    const toggle=(allFaqs, data, index)=>{
+        dispatch(toggleCollapse(allFaqs, data, index));
     }
 
     const dispatch = useDispatch();
@@ -37,9 +39,11 @@ function Faqs(props) {
 
     const dispatchContact = () => {
         dispatch(settings(setting_faqs));
+        dispatch(getFetch(all_faqs));
     }
 
     const getSettings = useSelector(state => state.settings);
+    const getApi = useSelector(state=>state.getApi);
 
     const getFaqs = () => {
         if (getSettings.hasOwnProperty('faqs')) {
@@ -61,25 +65,26 @@ function Faqs(props) {
     }
 
     const getQuestions=()=> {
-        if(getSettings.hasOwnProperty('faqs')) {
-            let quesLists = getSettings.faqs.quesList;
-            console.log("quesList", getSettings.faqs);
-            let ques = quesLists.map((data, index)=> {
-                return(
-                    <Card key={index} onClick={()=>toggle(data, index)}>
-                        <CardHeader>
-                            {data.title}
-                            <i className="icon-chevron-down"></i>
-                        </CardHeader>
-                        <Collapse isOpen={data.flag}>
-                            <CardBody>
-                                {data.description}
-                            </CardBody>
-                        </Collapse>                    
-                    </Card>
-                );
-            });
-            return ques;
+        if(getApi.hasOwnProperty('allFaqs')) {
+            let allFaqs = getApi.allFaqs;
+            if(allFaqs instanceof Array) {
+                let ques = allFaqs.map((data, index)=> {
+                    return(
+                        <Card key={index} onClick={()=>toggle(allFaqs, data, index)}>
+                            <CardHeader>
+                                {data.question}
+                                <i className="icon-chevron-down"></i>
+                            </CardHeader>
+                            <Collapse isOpen={data.flag}>
+                                <CardBody>
+                                    {data.answer}
+                                </CardBody>
+                            </Collapse>                    
+                        </Card>
+                    );
+                });
+                return ques;
+            }
         }
     }
 
