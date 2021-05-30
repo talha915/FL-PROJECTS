@@ -1,5 +1,5 @@
 // Constants
-import { user_logout, upcoming_session, upcoming_client_sessions, past_sessions, agora_key, get_profile, pages, sessionById, get_booked_users, get_reviews, payments_api, all_faqs, toggle_faq } from '../constants/constants';
+import { user_logout, upcoming_session, upcoming_client_sessions, past_sessions, agora_key, get_profile, pages, sessionById, get_booked_users, get_reviews, payments_api, all_faqs, toggle_faq, total_earnings } from '../constants/constants';
 
 const initialState = {
 
@@ -91,7 +91,12 @@ export default function(state=initialState, actions) {
             return {
                 ...state, 
                 allFaqs: actions.payload
-            }                     
+            }
+        case total_earnings:
+            return {
+                ...state,
+                trainerEarning: actions.payload
+            }                         
         default:
             return state;    
     }

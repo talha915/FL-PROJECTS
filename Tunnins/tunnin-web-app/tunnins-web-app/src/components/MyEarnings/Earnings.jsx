@@ -5,6 +5,9 @@ import { Table, Row, Col, Card, CardText,
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
+// Moment
+import moment from 'moment';
+
 // Action
 import { fetchEarning } from '../../actions/earnings';
 import { getFetchParam } from '../../actions/getFetchParam';
@@ -37,11 +40,13 @@ function Earnings(props) {
 
     const getEarn = useSelector(state => state.earnings);
     const postFetch = useSelector(state=> state.postFetch);
+    const getApi = useSelector(state=> state.getApi);
+
+    console.log("Get API: ", getApi);
 
     const dispatchTrainerEarning=()=> {
         if(postFetch.hasOwnProperty('userLogged')) {
             let trainerId = postFetch.userLogged._id;
-            console.log("UserId: ", trainerId);
             dispatch(getFetchParam(total_earnings, trainerId));
         }
     }
@@ -71,6 +76,15 @@ function Earnings(props) {
     }
 
     const getUpperCards=(data)=> {
+        if(getApi.hasOwnProperty('trainerEarning')) {
+            let res = getApi.trainerEarning;
+            if(res.hasOwnProperty('gross') && res.hasOwnProperty('netIncome')) {
+                let gross = res.gross;
+                let netIncome = res.netIncome;
+                data[0].price = gross;
+                data[1].price = netIncome;
+            }
+        }
         let cards = data.map((items, index)=> {
             return(
                 <Col key={index}>
@@ -105,29 +119,43 @@ function Earnings(props) {
     }
 
     const getTableValues=()=> {
-        if(getEarn.hasOwnProperty('data')) {
-            let getValues = getEarn.data.tableValues.map((data, index)=>{
-                return (
-                    <tr key={index}>
-                        <td>
-                            {data.nameofSession}
-                        </td>
-                        <td>
-                            {data.date}
-                        </td>
-                        <td>
-                            {data.time}
-                        </td>
-                        <td>
-                            {data.users}
-                        </td>
-                        <td>
-                            {data.earnings}
-                        </td>
-                    </tr>
-                )
-            });
-            return getValues;
+        if(getApi.hasOwnProperty('trainerEarning')) {
+            let res = getApi.trainerEarning;
+            if(res.hasOwnProperty('Data')) {
+                if(res.Data instanceof Array) {
+                    let getValues = res.Data.map((data, index)=>{
+                        let sessionDate = moment(data.SessionDate, "x").format("MMMM DD, YYYY");
+                        let fromTime = moment(data.SessionFromTime,'HHmmss').format("hh:mm A");
+                        let toTime = moment(data.SessionToTime,'HHmmss').format("hh:mm A");
+                        return (
+                            <tr key={index}>
+                                <td>
+                                    {data.SessionName}
+                                </td>
+                                <td>
+                                    {sessionDate}
+                                </td>
+                                <td>
+                                    {fromTime} - {toTime}
+                                </td>
+                                <td>
+                                    {data.totalUsers}
+                                </td>
+                                <td>
+                                    {data.fee}
+                                </td>
+                                <td>
+                                    {data.grossEarning}
+                                </td>
+                                <td>
+                                    {data.netIncome}
+                                </td>
+                            </tr>
+                        )
+                    });
+                    return getValues;
+                }
+            }
         }
     }
 
