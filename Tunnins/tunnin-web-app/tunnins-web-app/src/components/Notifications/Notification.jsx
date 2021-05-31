@@ -43,7 +43,6 @@ function Notification(props) {
     const [userType, setUserType] = useState('');
     const [callAgora, setAgora] = useState(false);
     const [sessionType, setSessionType] = useState();
-    const [statusLive, setStatusLive] = useState(false);
 
     const dispatch = useDispatch();
     const getNotification = useSelector(state => state.notification);
@@ -109,6 +108,7 @@ function Notification(props) {
                 let todayDate = moment().format("DD MMMM, YYYY");
                 let fromTime = moment(data.fromTime,'HHmmss').format("hh:mm A");
                 let toTime = moment(data.toTime,'HHmmss').format("hh:mm A");
+                let statusLive = false;
                 // let date = new Date(JSON.parse(data.fromDate));
                 // let fromDate = (date.getMonth()+1)+"/"+(date.getDate())+"/"+(date.getFullYear());
                 // let fromTime = new Date(fromDate+" "+data.fromTime).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
@@ -116,13 +116,22 @@ function Notification(props) {
                 // let today = new Date();
                 // let todayDate = (today.getMonth()+1)+"/"+(today.getDate())+"/"+(today.getFullYear());
                 if(fromDate == todayDate) {
-                    let currentTime = moment().format('hh:mm');
+                    let currentTime = moment().format('x');
                     let currentHour = moment().format('hh');
                     let fromHour = moment(data.fromTime,'HH').format("hh");
+                    let fromTime = moment(data.fromTime, 'HH:mm').format('x');
                     let diff = fromHour - currentHour;
-                    if(diff == 1 && currentTime == toTime) {
-                        setStatusLive(true);
+                    console.log("Diff: ", diff);
+                    let timeDiff = currentTime - fromTime;
+                    console.log("Time Diff: ", timeDiff);
+                    if(timeDiff > 0 && timeDiff <= 3600000) {
+                        statusLive = true;
                     }
+                    // if(diff == 1 && currentTime == toTime) {
+                    //     setStatusLive(true);
+                    // }
+
+
                     // let cTime = new Date();
                     // let currentTime = Date.parse(cTime.getHours())+Date.parse(cTime.getMinutes());
                     // console.log("Current Time: ", currentTime);
@@ -157,7 +166,9 @@ function Notification(props) {
                             {((userType && userType === trainer_user_type) && (statusLive && statusLive)) ?
                                 <Button onClick={() => { cardRouteAgora(data) }}>Go Live</Button> 
                                 // ((userType && userType === trainer_user_type) && (!statusLive&&statusLive)) ?
-                                
+                                :
+                                (userType && userType === trainer_user_type) && (statusLive && statusLive) ?
+                                <Button onClick={() => { cardRouteAgora(data) }}>Go Live</Button>
                                 :
                                 <Button onClick={() => { cardRouteUserDetails(data, index) }}>View Details</Button>
                             }
@@ -194,7 +205,6 @@ function Notification(props) {
     }
 
     const cardRouteUserDetails=(data, index)=> {
-        console.log("Working");
         data.routeTo = "/session-details";
         props.history.push({
             pathname: data.routeTo,
