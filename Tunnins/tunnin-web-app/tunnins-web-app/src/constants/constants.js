@@ -52,6 +52,7 @@ export const agora_app_id = '1c3aa8a838d14cd99bd626ab94291542';
 
 // Routes
 export const routeAgora = "/test-audio-video";
+export const earning_details_route = "/earning-details";
 
 // APIS
 export const categories_list = "categories/list";

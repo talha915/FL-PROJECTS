@@ -16,7 +16,7 @@ import { getFetchParam } from '../../actions/getFetchParam';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { getEarnings, total_earnings } from '../../constants/constants';
+import { getEarnings, total_earnings, earning_details_route } from '../../constants/constants';
 
 // Styles
 import '../../styles/earnings.scss';
@@ -51,28 +51,27 @@ function Earnings(props) {
         }
     }
 
-    const getUpperPart=()=> {
-        if(getEarn.hasOwnProperty('data')) {
-            let earnings = getEarn.data;
-            return(
-                <Row>
-                    <Col>
-                        <div className="d-flex align-items-center">
-                            <h1 className="earning-heading">
-                                {earnings.heading}
-                            </h1>
-                           <div className="d-flex align-items-center earning-stats-wrapper">
-                                {getUpperCards(earnings.upperCards)}
-                           </div>
-                        </div>
-                    </Col>
-                </Row>
-            )
+    const getUpperPart = () => {
+        if (getEarn.hasOwnProperty('data') && getApi.hasOwnProperty('trainerEarning')) {
+            let res = getApi.trainerEarning;
+            if (res.hasOwnProperty('gross') && res.hasOwnProperty('netIncome')) {
+                let earnings = getEarn.data;
+                return (
+                    <Row>
+                        <Col>
+                            <div className="d-flex align-items-center">
+                                <h1 className="earning-heading">
+                                    {earnings.heading}
+                                </h1>
+                                <div className="d-flex align-items-center earning-stats-wrapper">
+                                    {getUpperCards(earnings.upperCards)}
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                );
+            }
         }
-    }
-
-    const routeTo=(location)=> {
-        props.history.push(location);
     }
 
     const getUpperCards=(data)=> {
@@ -88,7 +87,7 @@ function Earnings(props) {
         let cards = data.map((items, index)=> {
             return(
                 <Col key={index}>
-                    <Card body className="card-style" onClick={()=>routeTo(items.route)}>
+                    <Card body className="card-style">
                         <div className="card-content">
                             <div className="stock-icon-wrapper">
                                 <i className="icon-stocks"></i>
@@ -118,6 +117,13 @@ function Earnings(props) {
         }
     }
 
+    const detailEarning=(data)=> {
+        props.history.push({
+            pathname: earning_details_route,
+            res: data
+        });
+    }
+
     const getTableValues=()=> {
         if(getApi.hasOwnProperty('trainerEarning')) {
             let res = getApi.trainerEarning;
@@ -128,7 +134,7 @@ function Earnings(props) {
                         let fromTime = moment(data.SessionFromTime,'HHmmss').format("hh:mm A");
                         let toTime = moment(data.SessionToTime,'HHmmss').format("hh:mm A");
                         return (
-                            <tr key={index}>
+                            <tr key={index} onClick={()=>{detailEarning(data)}}>
                                 <td>
                                     {data.SessionName}
                                 </td>

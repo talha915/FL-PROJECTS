@@ -9,12 +9,16 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Action
 import { fetchEarningDetail } from '../../actions/earningDetails';
+import { getFetchParam } from '../../actions/getFetchParam';
+
+// Moment
+import moment from 'moment';
 
 // Router
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { getEarningDetail } from '../../constants/constants';
+import { getEarningDetail, earning_details } from '../../constants/constants';
 
 // Styles
 import '../../styles/earnings.scss';
@@ -34,17 +38,31 @@ function EarningDetails(props) {
 
     useEffect(() => {
         dispatchEarningDetail();
+        dispatchSessionEarningDetails();
     }, []);
 
     const dispatchEarningDetail = () => {
         dispatch(fetchEarningDetail(getEarningDetail));
     }
 
+    const dispatchSessionEarningDetails=()=> {
+        let id = props.location.res.SessionID;
+        dispatch(getFetchParam(earning_details, id));
+    }
+
     const getEarn = useSelector(state => state.earningDetails);
 
+    console.log("Props: ", props.location);
+
+    const getApi = useSelector(state=> state.getApi);
+
     const getUpperPart = () => {
-        if (getEarn.hasOwnProperty('data')) {
+        if (getEarn.hasOwnProperty('data') && getApi.hasOwnProperty('earningDetail')) {
             let earnings = getEarn.data;
+            let detailEarning = getApi.earningDetail;
+            let sessionDate = moment(detailEarning.sessionDate, "x").format("MMMM DD, YYYY");
+            let fromTime = moment(detailEarning.sessionFromTime,'HHmmss').format("hh:mm A");
+            let toTime = moment(detailEarning.sessionToTime,'HHmmss').format("hh:mm A");
             return (
                 <div>
                     <Row>
@@ -60,13 +78,13 @@ function EarningDetails(props) {
                             <Card body className="card-style earning-info-card">
                                 <div className="card-content">
                                     <div>
-                                        <CardTitle tag="h5">{earnings.leftSection.name}</CardTitle>
-                                        <CardText className="date">{earnings.leftSection.date}</CardText>
-                                        <CardText className="time">{earnings.leftSection.time}</CardText>
+                                        <CardTitle tag="h5">{detailEarning.sessionName}</CardTitle>
+                                        <CardText className="date">{sessionDate}</CardText>
+                                        <CardText className="time">{fromTime} - {toTime}</CardText>
                                     </div>
                                     <div>
                                         <CardText className="session-amount">{earnings.leftSection.price}</CardText>
-                                        <CardText>{earnings.leftSection.booked}</CardText>
+                                        <CardText>{detailEarning.totalBooked} Users Booked</CardText>
                                     </div>
                                 </div>
                             </Card>
@@ -79,24 +97,30 @@ function EarningDetails(props) {
     }
 
     const getUpperCards = (data) => {
-        let cards = data.map((items, index) => {
-            return (
-                <Col key={index} sm="2">
-                    <Card body className="card-style earning-stats">
-                        <div className="card-content ">
-                            <div>
-                                <img src={stocks} alt="icons"/>
+        if(getApi.hasOwnProperty('earningDetail')) {
+            let details = getApi.earningDetail;
+            let cards = data.map((items, index) => {
+                data[0].price = details.totalBooked;
+                data[1].price = details.gross;
+                data[2].price = details.netIncome;
+                return (
+                    <Col key={index} sm="2">
+                        <Card body className="card-style earning-stats">
+                            <div className="card-content ">
+                                <div>
+                                    <img src={stocks} alt="icons"/>
+                                </div>
+                                <div className="ml-4">
+                                    <CardTitle className={items.textClass} tag="h5">{items.price}</CardTitle>
+                                    <CardText>{items.title}</CardText>
+                                </div>
                             </div>
-                            <div className="ml-4">
-                                <CardTitle className={items.textClass} tag="h5">{items.price}</CardTitle>
-                                <CardText>{items.title}</CardText>
-                            </div>
-                        </div>
-                    </Card>
-                </Col>
-            )
-        });
-        return cards;
+                        </Card>
+                    </Col>
+                )
+            });
+            return cards;
+        }
     }
 
     const getTableHeaders = () => {
@@ -113,25 +137,29 @@ function EarningDetails(props) {
     }
 
     const getTableValues = () => {
-        if (getEarn.hasOwnProperty('data')) {
-            let getValues = getEarn.data.tableValues.map((data, index) => {
-                return (
-                    <tr key={index}>
-                        <td>
-                        <img className="dp-img" src={tdp} alt="credit-card-picture"/>
-                            {data.name}
-                        </td>
-                        <td>
-                            <img className="cc-img" src={cc} alt="credit-card-picture"/>
-                            {data.card}
-                        </td>
-                        <td>
-                            {data.date}
-                        </td>
-                    </tr>
-                )
-            });
-            return getValues;
+        if(getApi.hasOwnProperty('earningDetail')) {
+            let res = getApi.earningDetail;
+            if(res.hasOwnProperty('Data')) {
+                let earnDetails = res.Data.map((data, index)=> {
+                    let date = moment(data.receivingDate, "x").format("MMMM DD, YYYY");
+                    return (
+                        <tr key={index}>
+                            <td>
+                                <img className="dp-img" src={"uploads/" + data.profilePic} alt="credit-card-picture" />
+                                {data.fullName}
+                            </td>
+                            <td>
+                                {/* <img className="cc-img" src={cc} alt="credit-card-picture"/> */}
+                                {data.method}
+                            </td>
+                            <td>
+                                {date}
+                            </td>
+                        </tr>
+                    );
+                });
+                return earnDetails;
+            }
         }
     }
 
