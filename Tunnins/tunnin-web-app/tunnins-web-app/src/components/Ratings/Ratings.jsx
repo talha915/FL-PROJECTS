@@ -49,22 +49,25 @@ function Ratings(props) {
     const getRatings = useSelector(state => state.ratingReview);
     const getRatingReviews = useSelector(state => state.getApi);
 
-    const getRating=()=> {
-        if(getRatings.hasOwnProperty('data')) {
-            return (
-                <Row>
-                    <Col>
-                        <h6 className="ratings-heading">
-                            {getRatings.data.heading}
-                        </h6>
-                    </Col>
-                    <Col>
-                        <p className="number-of-ratings">
-                            {getRatings.data.rightheaing}
-                        </p>
-                    </Col>
-                </Row>
-            )
+    const getRating = () => {
+        if (getRatingReviews.hasOwnProperty('getReviews')) {
+            let trainerData = getRatingReviews.getReviews.TraienrData[0];
+            if (getRatings.hasOwnProperty('data')) {
+                return (
+                    <Row>
+                        <Col>
+                            <h6 className="ratings-heading">
+                                {getRatings.data.heading}
+                            </h6>
+                        </Col>
+                        <Col>
+                            <p className="number-of-ratings">
+                                {trainerData.TotalReviews} Ratings & Reviews
+                            </p>
+                        </Col>
+                    </Row>
+                )
+            }
         }
     }
 
@@ -131,24 +134,27 @@ function Ratings(props) {
     }
 
     const getpagePoint=()=> {
-        return(
-            <div className="rating-detail-page-points">
-                <div className="rating-points-container">
-                    <div className="rating-points">
-                        <div>
-                            <div className="d-flex align-items-center">
-                                <span className="rating" >4.7</span>
-                                <i className="icon-Star"></i>
+        if(getRatingReviews.hasOwnProperty('getReviews')) {
+            let trainerData = getRatingReviews.getReviews.TraienrData[0];
+            return(
+                <div className="rating-detail-page-points">
+                    <div className="rating-points-container">
+                        <div className="rating-points">
+                            <div>
+                                <div className="d-flex align-items-center">
+                                    <span className="rating" >{trainerData.trainerRating}</span>
+                                    <i className="icon-Star"></i>
+                                </div>
+                                <p className="out-of-five">Out of 5</p>
                             </div>
-                            <p className="out-of-five">Out of 5</p>
                         </div>
                     </div>
+                    <div>
+                        <span className="rating-count">{trainerData.TotalReviews} Ratings & Reviews</span>
+                    </div>
                 </div>
-                <div>
-                    <span className="rating-count">500 Ratings & Reviews</span>
-                </div>
-            </div>
-        )
+            );
+        }
     }
 
     const getSessionRating=()=> {

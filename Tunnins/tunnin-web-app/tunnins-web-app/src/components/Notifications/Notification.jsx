@@ -122,7 +122,7 @@ function Notification(props) {
                     let fromTime = moment(data.fromTime, 'HH:mm').format('x');
                     let diff = fromHour - currentHour;
                     console.log("Diff: ", diff);
-                    let timeDiff = currentTime - fromTime;
+                    let timeDiff = fromTime - currentTime;
                     console.log("Time Diff: ", timeDiff);
                     if(timeDiff > 0 && timeDiff <= 3600000) {
                         statusLive = true;
