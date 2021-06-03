@@ -128,7 +128,15 @@ function SessionDetail(props) {
             }
         }
         else {
-            props.history.push(type.route);
+            if(dispactedSessionById.hasOwnProperty('sessionByIdRes')) {
+                let ids = dispactedSessionById.sessionByIdRes.data.Session;
+                console.log("IDs: ", ids);
+                props.history.push({
+                    pathname: type.route,
+                    sessionDetailedId: ids
+                });
+                // props.history.push(type.route);
+            }
         }
     }
 

@@ -17,13 +17,14 @@ import { getFetch } from '../../actions/getFetch';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { add_session, add_session_modal, categories_list, create_session } from '../../constants/constants';
+import { add_session, add_session_modal, categories_list, create_session, update_created_session_api } from '../../constants/constants';
 
 // Styles
 import '../../styles/newsession.scss';
 
 // Action
 import { postFetch } from '../../actions/postFetch';
+import { postFetchParams } from '../../actions/postFetchParam';
 
 // Components
 import Header from '../Header/Header';
@@ -95,7 +96,7 @@ function AddSession(props) {
         dispatch(addedSession(sessionForm));   
         if(props.history.location.pathname === "/edit-session") {
             //props.history.push('/home-past');
-            //dispatchEditSession();
+            dispatchEditCreatedSession();
         }
         else {
             dispatch(sessionModal(add_session_modal));
@@ -103,27 +104,32 @@ function AddSession(props) {
         }
     }
 
-    // const dispatchEditSession=()=> {
-    //     let bodyFormData = new FormData();
-    //     if(userFetch.hasOwnProperty('userLogged')) {
-    //         console.log("Uploaded Image: ", uploadedImageFile);
-    //         bodyFormData.append("trainerId", userFetch.userLogged._id);
-    //         bodyFormData.append("catId", sessionForm.category);
-    //         bodyFormData.append("title", sessionForm.name_of_class);
-    //         bodyFormData.append("fromDate", Date.parse(sessionForm.start_date));
-    //         bodyFormData.append("toDate", Date.parse(sessionForm.end_date));
-    //         bodyFormData.append("fromTime", sessionForm.start_time);
-    //         bodyFormData.append("toTime", sessionForm.end_time);
-    //         bodyFormData.append("price", sessionForm.session_price);
-    //         bodyFormData.append("userLimit", userFetch.userLogged._id);
-    //         bodyFormData.append("requirements", sessionForm.what_you_need);
-    //         bodyFormData.append("detail", sessionForm.about);
-    //         bodyFormData.append("images", uploadedImageFile);
-    //         bodyFormData.append("competencylevel", "Beginner");
-    //     }
-    //     console.log("Body Form Data: ", bodyFormData);
-    //     dispatch(postFetch(create_session, bodyFormData));
-    // }
+    const dispatchEditCreatedSession=()=> {
+        console.log("Props: ", props.location);
+        let bodyFormData = new FormData();
+        if(props.location.hasOwnProperty('sessionDetailedId')) {
+            let details = props.location.sessionDetailedId;
+            if(details.hasOwnProperty('_id')) {
+                let sessionId = details._id;
+                if(userFetch.hasOwnProperty('userLogged')) {
+                    bodyFormData.append("trainerId", userFetch.userLogged._id);
+                    bodyFormData.append("catId", sessionForm.category);
+                    bodyFormData.append("title", sessionForm.name_of_class);
+                    bodyFormData.append("fromDate", Date.parse(sessionForm.start_date));
+                    bodyFormData.append("toDate", Date.parse(sessionForm.end_date));
+                    bodyFormData.append("fromTime", sessionForm.start_time);
+                    bodyFormData.append("toTime", sessionForm.end_time);
+                    bodyFormData.append("price", sessionForm.session_price);
+                    bodyFormData.append("userLimit", 10);
+                    bodyFormData.append("requirements", sessionForm.what_you_need);
+                    bodyFormData.append("detail", sessionForm.about);
+                    bodyFormData.append("images", uploadedImageFile);
+                    bodyFormData.append("competencylevel", "Beginner");
+                }
+                dispatch(postFetchParams(update_created_session_api,sessionId, bodyFormData));
+            }
+        }
+    }
 
     const dispatchCreateSession=()=> {
         let bodyFormData = new FormData();

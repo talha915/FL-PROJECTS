@@ -8,12 +8,12 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
-export const postFetchParams = (dataType, params) => {
+export const postFetchParams = (dataType, params, body) => {
     return async (dispatch) => {
         console.log("DataType: ", dataType);
         console.log("Params: ", params);
         try {
-            let res = await axios.post((url+dataType+params));
+            let res = await axios.post((url+dataType+params),body);
             if (res.status === fine_res) {
                 let { data } = res.data;
                 toast.success('Success', {position: toast.POSITION.BOTTOM_RIGHT});
