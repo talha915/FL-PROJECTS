@@ -17,7 +17,7 @@ import { getFetch } from '../../actions/getFetch';
 import { withRouter } from 'react-router-dom';
 
 // Constants
-import { add_session, add_session_modal, categories_list, create_session, update_created_session_api } from '../../constants/constants';
+import { add_session, add_session_modal, categories_list, create_session, update_created_session_api, user_profile_pic } from '../../constants/constants';
 
 // Styles
 import '../../styles/newsession.scss';
@@ -73,7 +73,6 @@ function AddSession(props) {
 
     const getSessionTop = () => {
         if (newSession.hasOwnProperty('data')) {
-            console.log("Edit Session", editSession);
             return (
                 <Row className="mb-3">
                     <Col className="d-flex align-items-center col-sm-6">
@@ -105,7 +104,6 @@ function AddSession(props) {
     }
 
     const dispatchEditCreatedSession=()=> {
-        console.log("Props: ", props.location);
         let bodyFormData = new FormData();
         if(props.location.hasOwnProperty('sessionDetailedId')) {
             let details = props.location.sessionDetailedId;
@@ -176,31 +174,57 @@ function AddSession(props) {
 
     const getuploads=()=> {
         if (newSession.hasOwnProperty('data')) {
-            let cards = newSession.data.cardList;
-            let cardList = cards.map((data, index)=> {
-                return(
-                    <Col sm="3" key={index}>
-                        <Card className="uploads">
-                            <label htmlFor="fileUpload">
-                                <div className="d-none upload-icon-wrapper">
-                                    {data.icon}
-                                </div>
-                                {props.history.location.pathname === "/add-new-session"
-                                    ?
-                                    <i className="icon-cloud"></i>
-                                    :
-                                    <span className="delete-img-wrapper">
-                                        <i className="icon-delete"></i>
-                                    </span>
-                                }
-                            </label>
-                            {/* {uploaded_image && uploaded_image} */}
-                            <input hidden id="fileUpload" type="file" onChange={(e)=>uploadedFile(e)} />
-                        </Card>
-                    </Col>
-                );
-            });
-            return cardList;
+            if(props.location.hasOwnProperty('sessionDetailedId')) {
+                let detailData = props.location.sessionDetailedId;
+                if(detailData.hasOwnProperty('images')) {
+                    let editImage = detailData.images;
+                    let cardList = editImage.map((data, index)=> {
+                        return(
+                            <Col sm="3" key={index}>
+                                <Card className="uploads">
+                                    <label htmlFor="fileUpload">
+                                        <img src={"uploads/"+data} height="150" width="150" />
+                                        <span className="delete-img-wrapper">
+                                            <i className="icon-delete"></i>
+                                        </span>
+                                       
+                                    </label>
+                                    {/* {uploaded_image && uploaded_image} */}
+                                    <input hidden id="fileUpload" type="file" onChange={(e)=>uploadedFile(e)} />
+                                </Card>
+                            </Col>
+                        );
+                    });
+                    return cardList;
+                }
+            }
+            else {
+                let cards = newSession.data.cardList;
+                let cardList = cards.map((data, index)=> {
+                    return(
+                        <Col sm="3" key={index}>
+                            <Card className="uploads">
+                                <label htmlFor="fileUpload">
+                                    <div className="d-none upload-icon-wrapper">
+                                        {data.icon}
+                                    </div>
+                                    {props.history.location.pathname === "/add-new-session"
+                                        ?
+                                        <i className="icon-cloud"></i>
+                                        :
+                                        <span className="delete-img-wrapper">
+                                            <i className="icon-delete"></i>
+                                        </span>
+                                    }
+                                </label>
+                                {/* {uploaded_image && uploaded_image} */}
+                                <input hidden id="fileUpload" type="file" onChange={(e)=>uploadedFile(e)} />
+                            </Card>
+                        </Col>
+                    );
+                });
+                return cardList;
+            }
         }
     }
 
@@ -225,6 +249,12 @@ function AddSession(props) {
         let imageFile = event.target.files[0];
         if(uploadedImageFile < 4) {
             setUploadedFile(...uploadedImageFile, imageFile);
+            if(userFetch.hasOwnProperty('userLogged')) {
+                let trainerId = userFetch.userLogged._id;
+                let bodyFormData = new FormData();
+                bodyFormData.append("profilePic", imageFile);
+                dispatch(postFetchParams(user_profile_pic,trainerId,bodyFormData));
+            }
         }
         let image = URL.createObjectURL(imageFile);
         console.log("Images: ", imageFile);

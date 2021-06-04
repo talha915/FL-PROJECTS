@@ -1,5 +1,5 @@
 // Constants
-import { get_auth, create_user, create_session, cancel_session_api, user_contact_support, update_created_session_api } from '../constants/constants';
+import { get_auth, create_user, create_session, cancel_session_api, user_contact_support, update_created_session_api, user_profile_pic } from '../constants/constants';
 
 const initialState = {
     
@@ -42,7 +42,13 @@ export default function(state=initialState, actions) {
                 ...state,
                 userContactSupoort: actions.payload,
                 userContactStatus: actions.status
-            }          
+            } 
+        case user_profile_pic:
+            return {
+                ...state,
+                userProfilePayload: actions.payload,
+                userProfileStatus: actions.status
+            }             
         default:
             return state;    
     }

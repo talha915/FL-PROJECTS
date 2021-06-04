@@ -12,6 +12,7 @@ export const postFetchParams = (dataType, params, body) => {
     return async (dispatch) => {
         console.log("DataType: ", dataType);
         console.log("Params: ", params);
+        console.log("Full: ", url+dataType+params+body);
         try {
             let res = await axios.post((url+dataType+params),body);
             if (res.status === fine_res) {
