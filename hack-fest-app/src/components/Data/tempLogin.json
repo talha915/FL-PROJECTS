@@ -1,0 +1,20 @@
+{
+    "allows": [
+        {
+            "username": "talha123@gmail.com",
+            "password": "talha123"
+        },
+        {
+            "username": "aqeel123@gmail.com",
+            "password": "aqeel123"
+        },
+        {
+            "username": "omer123@gmail.com",
+            "password": "omer123"
+        },
+        {
+            "username": "abdulmoeez123@gmail.com",
+            "password": "abdulmoeez123"
+        }
+    ]
+}

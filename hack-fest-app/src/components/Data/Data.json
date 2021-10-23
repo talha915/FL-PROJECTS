@@ -1,0 +1,51 @@
+{
+    "login": {
+        "route": "/signup",
+        "form": [
+            {
+                "label": "Username",
+                "type": "email",
+                "name": "email",
+                "placeholder": "example@example.com"
+            },
+            {
+                "label": "Password",
+                "type": "password",
+                "name": "password",
+                "placeholder": "*********"
+            }
+        ]   
+    },
+    "signup": {
+        "route": "/",
+        "form": [
+            {
+                "label": "Username",
+                "type": "email",
+                "name": "email",
+                "placeholder": "example@example.com"
+            },
+            {
+                "label": "Password",
+                "type": "password",
+                "name": "password",
+                "placeholder": "*********"
+            }
+        ]
+    },
+    "dashboard": {
+        "leftmenu": {
+            "heading": "team 286",
+            "btns": [
+                {
+                    "title": "create new channel",
+                    "allow": true
+                },
+                {
+                    "title": "add in chat",
+                    "allow": true
+                }
+            ]
+        }
+    }
+}

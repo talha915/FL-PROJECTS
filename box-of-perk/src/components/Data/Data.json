@@ -1,0 +1,94 @@
+{
+    "login": {
+        "logo": "/images/box-of-perk-logo.PNG",
+        "formFields": [
+            {
+                "type": "email",
+                "placeholder": "Email"
+            },
+            {
+                "type": "password",
+                "placeholder": "Password"
+            }
+        ],
+        "forgot": "Forgot your password?",
+        "loginBtn": "LOGIN",
+        "signuptext": "Don’t have an account? SIGN UP"
+    },
+    "register": {
+        "step1":[
+            {
+                "title": "Organization no",
+                "size": 12,
+                "type": "text"
+            },
+            {
+                "title": "Company Name",
+                "size": 12,
+                "type": "text"
+            },
+            {
+                "title": "Address",
+                "size": 12,
+                "type": "text"
+            },
+            {
+                "title": "City",
+                "size": 6,
+                "type": "text"
+            },
+            {
+                "title": "Post Code",
+                "size": 6,
+                "type": "text"
+            },
+            {
+                "title": "Email",
+                "size": 6,
+                "type": "email"
+            },
+            {
+                "title": "Phone",
+                "size": 6,
+                "type": "text"
+            }
+        ],
+        "step2": [
+            {
+                "title": "First Name",
+                "size": 6,
+                "type": "text"
+            },
+            {
+                "title": "Last Name",
+                "size": 6,
+                "type": "text"
+            },
+            {
+                "title": "Department",
+                "size": 12,
+                "type": "text"
+            },
+            {
+                "title": "Email",
+                "size": 12,
+                "type": "email"
+            },
+            {
+                "title": "Password",
+                "size": 12,
+                "type": "password"
+            },
+            {
+                "title": "Re-enter Password",
+                "size": 12,
+                "type": "password"
+            },
+            {
+                "title": "Mobile",
+                "size": 12,
+                "type": "text"
+            }
+        ]
+    }
+}
