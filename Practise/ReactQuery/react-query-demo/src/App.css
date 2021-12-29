@@ -30,3 +30,9 @@
   border: 2px solid #ccc;
   border-radius: 20px;
 }
+
+.nav-btn:hover {
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
