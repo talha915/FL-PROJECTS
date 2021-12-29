@@ -1,0 +1,14 @@
+{
+    "homeBtns": [
+        {
+            "id": 1,
+            "name": "Planets",
+            "value": "planets"
+        },
+        {
+            "id": 2,
+            "name": "People",
+            "value": "people"
+        }
+    ]
+}

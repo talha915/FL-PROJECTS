@@ -1,14 +1,16 @@
-const Navbar=()=> {
+import '../../App.css';
+
+const Navbar=({setPage})=> {
     return(
         <nav>
-            <button>
+            <button onClick={()=> setPage('planets')} className="nav-btn">
                 Planets
             </button>
-            <button>
+            <button onClick={()=> setPage('People')} className="nav-btn">
                 People
             </button>
         </nav>
     )
 }
 
-export const Navbar;
+export default Navbar;
