@@ -9,6 +9,17 @@ const Cards = (props) => {
             return (
                 <div className="card" key={index}>
                     <h3>{item.name}</h3>
+                    {item.population ?
+                    <Fragment> 
+                        <p>Population - {item.population}</p>
+                        <p>climate - {item.climate}</p>
+                    </Fragment>
+                    :
+                    <Fragment> 
+                        <p>Height - {item.height}</p>
+                        <p>Birth Year - {item.birth_year}</p>
+                    </Fragment>}
+
                 </div>
             );
         });

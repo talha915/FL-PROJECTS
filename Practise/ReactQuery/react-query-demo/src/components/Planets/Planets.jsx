@@ -17,13 +17,14 @@ const Planets=()=> {
     const getStatus=(status)=> {
         return(
             status === 'loading' ? 
-            <div>
+            <h2>
                 Loading data...
-            </div>
-            : status === 'error' ?
-            <div>
+            </h2>
+            : 
+            status === 'error' ?
+            <h2>
                 Error while Fetching
-            </div>
+            </h2>
             :
             <div>
                 {renderData(data)}
