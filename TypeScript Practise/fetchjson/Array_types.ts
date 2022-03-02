@@ -1,3 +1,4 @@
+export {};
 const cars: string[] = ['ford', 'bmw', 'toyota', 'honda'];
 
 //const myCars = cars;
