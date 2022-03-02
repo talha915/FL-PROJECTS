@@ -15,3 +15,14 @@ const anotherError = (message: string): void => {
         throw new Error(message);
     }
 }
+
+const foreCast = {
+    date: new Date(),
+    weather: 'Sunny'
+};
+
+const checkWeather = (foreCast: {date: Date, weather: string}): void => {
+    console.log(`Date is: ${foreCast.date} && Weather is: ${foreCast.weather}`);
+}
+
+checkWeather(foreCast);
