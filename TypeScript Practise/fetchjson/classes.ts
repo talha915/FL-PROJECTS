@@ -1,8 +1,4 @@
 class Vehicle {
-    drive(): void {
-        console.log("Let's drive");
-    }
-
     honk(): void {
         console.log("Beep");
     }
@@ -12,8 +8,17 @@ class Vehicle {
     }
 }
 
-const vehicle = new Vehicle();
-vehicle.drive();
-vehicle.honk();
-const hornMethod = vehicle.horn();
+class Car extends Vehicle {
+    private drive(): void {
+        console.log("Hello Let's drive and chat");
+    }
+    checkDrive(): void {
+        this.drive();
+    }
+}
+
+const car = new Car();
+car.checkDrive();
+car.honk();
+const hornMethod = car.horn();
 console.log(hornMethod);
