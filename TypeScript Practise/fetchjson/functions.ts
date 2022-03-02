@@ -26,3 +26,16 @@ const checkWeather = (foreCast: {date: Date, weather: string}): void => {
 }
 
 checkWeather(foreCast);
+
+//Another way of doing to above function
+const logWeather = ({
+    date, weather
+    }: {
+        date: Date, 
+        weather: string
+    }): void => {
+        console.log("Another way of doing this: ");
+        console.log(`Date is: ${date} && Weather is: ${weather}`);
+}
+
+logWeather(foreCast);
