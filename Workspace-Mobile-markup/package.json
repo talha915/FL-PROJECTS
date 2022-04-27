@@ -4,7 +4,7 @@
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",
     "bootstrap": "^4.3.1",
-    "grunt": "1.0.1",
+    "grunt": "1.5.2",
     "grunt-browser-sync": "^2.2.0",
     "grunt-cli": "1.2.0",
     "grunt-combine-media-queries": "1.0.20",
